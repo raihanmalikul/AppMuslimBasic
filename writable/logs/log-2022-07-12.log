@@ -1,0 +1,223 @@
+ERROR - 2022-07-12 05:31:58 --> Unknown table 'appecommerce.m_loginadmin'
+ERROR - 2022-07-12 05:46:58 --> Unknown column 'status' in 'field list'
+CRITICAL - 2022-07-12 08:25:37 --> Call to a member function first() on string
+in APPPATH\Controllers\LoginAdmin.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 08:26:38 --> Cannot use object of type App\Models\LoginAdminModel as array
+in APPPATH\Controllers\LoginAdmin.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:02:29 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\Admin\Pages\Login.php on line 72.
+ 1 APPPATH\Views\Admin\Pages\Login.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'APPPATH\\Views\\Admin\\Pages\\Login.php', 72)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Login.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Login', [], true)
+ 5 APPPATH\Controllers\LoginAdmin.php(18): view('Admin/Pages/Login', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:03:47 --> Call to undefined method CodeIgniter\Session\Session::flashdata()
+in APPPATH\Views\Admin\Pages\Login.php on line 75.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Login', [], true)
+ 4 APPPATH\Controllers\LoginAdmin.php(18): view('Admin/Pages/Login', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:27:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::where()
+in APPPATH\Controllers\LoginAdmin.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:30:35 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1576.
+ 1 SYSTEMPATH\BaseModel.php(1576): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\LoginAdmin.php(34): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:30:56 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 1576.
+ 1 SYSTEMPATH\BaseModel.php(1576): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\LoginAdmin.php(34): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:33:20 --> Allowed fields must be specified for model: App\Models\LoginAdminModel
+in SYSTEMPATH\BaseModel.php on line 1138.
+ 1 SYSTEMPATH\BaseModel.php(1138): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\LoginAdminModel')
+ 2 SYSTEMPATH\BaseModel.php(841): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update(null, [...])
+ 4 APPPATH\Controllers\LoginAdmin.php(35): CodeIgniter\Model->update()
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:37:13 --> Undefined property: App\Controllers\LoginAdmin::$db
+in APPPATH\Controllers\LoginAdmin.php on line 33.
+ 1 APPPATH\Controllers\LoginAdmin.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\LoginAdmin::$db', 'APPPATH\\Controllers\\LoginAdmin.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:38:03 --> Undefined property: App\Controllers\LoginAdmin::$db
+in APPPATH\Controllers\LoginAdmin.php on line 34.
+ 1 APPPATH\Controllers\LoginAdmin.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\LoginAdmin::$db', 'APPPATH\\Controllers\\LoginAdmin.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->actionLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:43:25 --> Call to undefined method CodeIgniter\Session\Session::set_flashdata()
+in APPPATH\Controllers\LoginAdmin.php on line 66.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->logout()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:47:43 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\Admin\Pages\Dashboard.php on line 300.
+ 1 APPPATH\Views\Admin\Pages\Dashboard.php(300): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'APPPATH\\Views\\Admin\\Pages\\Dashboard.php', 300)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Dashboard.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Dashboard.php', [], true)
+ 5 APPPATH\Controllers\Pages.php(10): view('Admin/Pages/Dashboard.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pages->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:49:56 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\Admin\Pages\Dashboard.php on line 300.
+ 1 APPPATH\Views\Admin\Pages\Dashboard.php(300): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'APPPATH\\Views\\Admin\\Pages\\Dashboard.php', 300)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Dashboard.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Dashboard.php', [], true)
+ 5 APPPATH\Controllers\Pages.php(14): view('Admin/Pages/Dashboard.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pages->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:50:25 --> Undefined property: App\Controllers\Pages::$load
+in APPPATH\Controllers\Pages.php on line 9.
+ 1 APPPATH\Controllers\Pages.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$load', 'APPPATH\\Controllers\\Pages.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:51:47 --> Undefined property: App\Controllers\Pages::$load
+in APPPATH\Controllers\Pages.php on line 9.
+ 1 APPPATH\Controllers\Pages.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$load', 'APPPATH\\Controllers\\Pages.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 10:59:00 --> Undefined property: App\Controllers\Pages::$session
+in APPPATH\Controllers\Pages.php on line 10.
+ 1 APPPATH\Controllers\Pages.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$session', 'APPPATH\\Controllers\\Pages.php', 10)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 11:00:05 --> Undefined property: App\Controllers\Pages::$session
+in APPPATH\Controllers\Pages.php on line 9.
+ 1 APPPATH\Controllers\Pages.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$session', 'APPPATH\\Controllers\\Pages.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 11:01:25 --> Undefined property: App\Controllers\Pages::$session
+in APPPATH\Controllers\Pages.php on line 9.
+ 1 APPPATH\Controllers\Pages.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$session', 'APPPATH\\Controllers\\Pages.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 11:07:02 --> Undefined property: App\Controllers\Pages::$session
+in APPPATH\Controllers\Pages.php on line 11.
+ 1 APPPATH\Controllers\Pages.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$session', 'APPPATH\\Controllers\\Pages.php', 11)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 20:54:33 --> Class "Config\App\Filters\Auth" not found
+in SYSTEMPATH\Filters\Filters.php on line 166.
+ 1 SYSTEMPATH\CodeIgniter.php(440): CodeIgniter\Filters\Filters->run('admin/dashboard', 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 20:59:01 --> Undefined property: App\Controllers\Pages::$session
+in APPPATH\Controllers\Pages.php on line 9.
+ 1 APPPATH\Controllers\Pages.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Pages::$session', 'APPPATH\\Controllers\\Pages.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Pages->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 21:08:46 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Views\Admin\Pages\Login.php on line 43.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Login', [], true)
+ 4 APPPATH\Controllers\LoginAdmin.php(18): view('Admin/Pages/Login', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->index()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 21:09:21 --> Array to string conversion
+in APPPATH\Views\Admin\Pages\Login.php on line 43.
+ 1 APPPATH\Views\Admin\Pages\Login.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\Admin\\Pages\\Login.php', 43)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Login.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Login', [], true)
+ 5 APPPATH\Controllers\LoginAdmin.php(18): view('Admin/Pages/Login', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginAdmin->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginAdmin))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-12 22:06:36 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\Admin\Pages\Dashboard.php on line 300.
+ 1 APPPATH\Views\Admin\Pages\Dashboard.php(300): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'APPPATH\\Views\\Admin\\Pages\\Dashboard.php', 300)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Dashboard.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Dashboard.php', [], true)
+ 5 APPPATH\Controllers\Pages.php(20): view('Admin/Pages/Dashboard.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Pages->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
