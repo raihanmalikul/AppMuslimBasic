@@ -7,42 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MuslimBasic</title>
     <!-- <link rel="shortcut icon" type="image/ico" href=""> -->
-    <!-- <link href="/assets/tailwind/css/output.css" rel="stylesheet" /> -->
-    <style>
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
+    <link href="/assets/tailwind/css/output.css" rel="stylesheet" />
 
-        body {
-            font-family: "Gill Sans MT", sans-serif;
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
-
-        .navbar-fixed {
-            @apply fixed z-[9999] bg-transparent bg-opacity-70 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
-            box-shadow: inset 0 -1px 0 0 rgb(0, 0, 0, 0.2);
-        }
-
-        .hamburger-line {
-            @apply my-2 block h-[2px] w-[30px] bg-dark dark:bg-white;
-        }
-
-        .hamburger-active > span:nth-child(1) {
-            @apply rotate-45;
-        }
-
-        .hamburger-active > span:nth-child(2) {
-            @apply scale-0;
-        }
-
-        .hamburger-active > span:nth-child(3) {
-            @apply -rotate-45;
-        }
-
-        #dark-toggle:checked ~ label div.toggle-circle {
-            @apply translate-x-3;
-        }
-    </style>
-    <!-- <script src="/assets/tailwind/js/script.js"></script> -->
+    </script>
 </head>
 
 <body>
@@ -118,9 +91,9 @@
     <!-- Hero Product Lists Start -->
     <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
-            <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4">
                 <a href="#" class="group">
-                    <div class="w-80 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                         <img src="/assets/tailwind/img/toko/foto11.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Earthen Bottle</h3>
@@ -128,7 +101,7 @@
                 </a>
 
                 <a href="#" class="group">
-                    <div class="w-80 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                         <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Nomad Tumbler</h3>
@@ -136,7 +109,7 @@
                 </a>
 
                 <a href="#" class="group">
-                    <div class="w-80 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                         <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Focus Paper Refill</h3>
@@ -144,7 +117,7 @@
                 </a>
 
                 <a href="#" class="group">
-                    <div class="w-80 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                         <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Machined Mechanical Pencil</h3>
@@ -156,7 +129,7 @@
     <!-- Hero Product Lists End -->
 
     <!-- Abaut Section Start -->
-    <section id="about" class="pt-36 pb-32 dark:bg-dark">
+    <section id="about" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="mb-10 w-full px-4 lg:w-1/2">
@@ -215,7 +188,7 @@
     <!-- Abaut Section End -->
 
     <!-- Portofolio Section Start -->
-    <section id="portofolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+    <section id="portofolio" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 text-center">
@@ -656,164 +629,7 @@
         </div>
     </div> -->
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            content: ['index.html'],
-            darkMode: 'class',
-            theme: {
-                container: {
-                    center: true,
-                    padding: '16px',
-                },
-                extend: {
-                    colors: {
-                        primary: '#00bcd4',
-                        secondary: '#64748b',
-                        secondarybg: '#a7b5c9',
-                        dark: '#000000',
-                    },
-                    animation: {
-                        'fade-in-down': 'fade-in-down 1s ease-out',
-                        'fade-out-down': 'fade-out-down 1s ease-out',
-                        'fade-in-up': 'fade-in-up 1s ease-out',
-                        'fade-out-up': 'fade-out-up 1s ease-out'
-                    },
-                    keyframes: {
-                        'fade-in-down': {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(-10px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-                        },
-                        'fade-out-down': {
-                            'from': {
-                                opacity: '1',
-                                transform: 'translateY(0px)'
-                            },
-                            'to': {
-                                opacity: '0',
-                                transform: 'translateY(10px)'
-                            },
-                        },
-                        'fade-in-up': {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(10px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-                        },
-                        'fade-out-up': {
-                            'from': {
-                                opacity: '1',
-                                transform: 'translateY(0px)'
-                            },
-                            'to': {
-                                opacity: '0',
-                                transform: 'translateY(10px)'
-                            },
-                        }
-                    },
-                    screens: {
-                        '2xl': '1600px',
-                    },
-                },
-            },
-            plugins: [],
-        }
-    </script>
-    <script type="text/javaScript">
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        // Navnbar fixed
-        window.onscroll = function() {
-            const header = document.querySelector("header");
-            const fixedNav = header.offsetTop;
-            const toTop = document.querySelector("#toTop");
-
-            if (window.pageYOffset > fixedNav) {
-                header.classList.add("navbar-fixed");
-                toTop.classList.remove("hidden");
-                toTop.classList.add("flex");
-            } else {
-                header.classList.remove("navbar-fixed");
-                toTop.classList.remove("flex");
-                toTop.classList.add("hidden");
-            }
-        };
-
-        // Hamburger
-        const hamburger = document.querySelector("#hamburger");
-        const navMenu = document.querySelector("#navMenu");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("hamburger-active");
-            navMenu.classList.toggle("hidden");
-        });
-
-        // Klik not hamburger
-        window.addEventListener("click", (e) => {
-            if (e.target != hamburger && e.target != navMenu) {
-                hamburger.classList.remove("hamburger-active");
-                navMenu.classList.add("hidden");
-            }
-        });
-
-        // dark mode toggle
-        const darkToggle = document.querySelector("#dark-toggle");
-        const html = document.querySelector("html");
-
-        darkToggle.addEventListener("click", () => {
-            if (darkToggle.checked) {
-                html.classList.add("dark");
-                localStorage.theme = "dark";
-            } else {
-                html.classList.remove("dark");
-                localStorage.theme = "light";
-            }
-        });
-
-        // Tombol pindah sesuai mode
-        if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-            darkToggle.checked = true;
-        } else {
-            darkToggle.checked = false;
-        }
-
-        const imgSwich = document.querySelector("#imgSwich");
-        const foto = imgSwich.getElementsByTagName("div");
-
-        for (var i = 1; i < foto.length; i++) {
-            foto[i].classList.add("hidden");
-        }
-        var counter = 1;
-        setInterval(function () {
-            for (var i = 0; i < foto.length; i++) {
-                foto[i].classList.add("hidden");
-            }
-            foto[counter].classList.remove("hidden")
-            counter++;
-            if (counter == foto.length) {
-                counter = 0;
-            }
-        }, 5000);
-        // console.log(foto);
-        // function toggle() {
-        //     i = (i + 1) % foto.length;  // update the counter
-        // }
-        // setInterval(toggle, 5000);
-    </script>
+    <script src="/assets/tailwind/js/script.js"></script>
 </body>
 
 </html>
