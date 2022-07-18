@@ -17,3 +17,13 @@ run seeds to fill in the data in the table use `php spark db:seed className` in 
 ## If error database
 
 Clear port database on `.env` file if the database cannot be accessed for example `database.default.port =`.
+
+## Referensi
+
+[Documentation Codeigniter 4](https://www.codeigniter.com/user_guide/index.html).
+
+[Documentation Tailwindcss 3](https://tailwindcss.com/docs/installation).
+
+[Documentation Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
+
+[Template Admin](https://adminkit.io/).
