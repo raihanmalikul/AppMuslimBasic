@@ -22,6 +22,8 @@ Clear port database on `.env` file if the database cannot be accessed for exampl
 
 [Documentation Codeigniter 4](https://www.codeigniter.com/user_guide/index.html).
 
+[Documentation Laravel Mix](https://laravel-mix.com/docs/6.0/installation).
+
 [Documentation Tailwindcss 3](https://tailwindcss.com/docs/installation).
 
 [Documentation Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
