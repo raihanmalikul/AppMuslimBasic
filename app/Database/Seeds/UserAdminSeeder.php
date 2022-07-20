@@ -12,8 +12,8 @@ class UserAdminSeeder extends Seeder
         $data = [
             'nama'         => 'didin irfandi',
             'username'     => 'darth@theempire.com',
-            'password'     => md5('202cb962ac59075b964b07152d234b70'),
-            'userlevel'    => 01,
+            'password'     => md5('123'),
+            'userlevel'    => 1,
             'status_login' => 0,
             'image'        => '',
             'user_valid'   => 1,

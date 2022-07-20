@@ -1,63 +1,31 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter 4 Application Muslim Basic
 
-## What is CodeIgniter?
+## Way to run?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+run tailwind css `npx tailwindcss -i ./src/css/input.css -o ./public/assets/tailwind/css/output.css --watch`
+run CI4 `php spark serve`.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## How to run migrate?
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+run migrate to create a table use migrate one table `php spark migrate -g databaseName -n "date_time_file_App\Database\Migrations\className"`
+or migrate all table `php spark migrate`.
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## How to run seeds?
 
-## Installation & updates
+run seeds to fill in the data in the table use `php spark db:seed className` in terminal.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## If error database
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Clear port database on `.env` file if the database cannot be accessed for example `database.default.port =`.
 
-## Setup
+## Referensi
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+[Documentation Codeigniter 4](https://www.codeigniter.com/user_guide/index.html).
 
-## Important Change with index.php
+[Documentation Laravel Mix](https://laravel-mix.com/docs/6.0/installation).
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+[Documentation Tailwindcss 3](https://tailwindcss.com/docs/installation).
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+[Documentation Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
 
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+[Template Admin](https://adminkit.io/).

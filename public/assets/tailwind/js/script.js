@@ -52,3 +52,22 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 } else {
     darkToggle.checked = false;
 }
+
+const imgSwich = document.querySelector("#imgSwich");
+const foto = imgSwich.getElementsByTagName("div");
+
+for (var i = 1; i < foto.length; i++) {
+    foto[i].classList.add("hidden");
+}
+
+var counter = 1;
+setInterval(function () {
+    for (var i = 0; i < foto.length; i++) {
+        foto[i].classList.add("hidden");
+    }
+    foto[counter].classList.remove("hidden")
+    counter++;
+    if (counter == foto.length) {
+        counter = 0;
+    }
+}, 5000);
