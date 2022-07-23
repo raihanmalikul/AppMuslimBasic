@@ -40,16 +40,13 @@
                                 <a href="#home" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
+                                <a href="#best" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
                             </li>
                             <li class="group">
-                                <a href="#portofolio" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ALL SHOP</a>
+                                <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
                             </li>
                             <li class="group">
-                                <a href="#pengalaman" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">SOLD OUT</a>
-                            </li>
-                            <li class="group">
-                                <a href="#blog" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOW TO SHOPPING</a>
+                                <a href="#reting" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RETING</a>
                             </li>
                             <li class="group">
                                 <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
@@ -76,7 +73,7 @@
 
     <!-- Hero Section Start -->
     <section id="home" class="pt-20 dark:bg-dark">
-        <div class="bg-dark pt-12 pb-12 bg-gradient-to-r from-gray-500 to-gray-900">
+        <div class="pt-12 pb-12 bg-gradient-to-r dark:from-gray-500 to-gray-900">
             <div class="flex flex-wrap justify-center items-center w-full h-full" id="imgSwich">
                 <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                     <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
@@ -100,11 +97,11 @@
 
 
     <!-- Hero Product Lists Start -->
-    <section id="about" class="pt-36 pb-32 dark:bg-dark">
+    <section id="best" class="bg-slate-100 pt-32 pb-16 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-4xl dark:text-white">BEST SELLER</h2>
+                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">BEST SELLER</h2>
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4">
@@ -144,8 +141,111 @@
     </section>
     <!-- Hero Product Lists End -->
 
+    <section id="discount" class="pt-32 pb-16 dark:bg-dark">
+        <div class="container">
+            <!-- <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2> -->
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 text-center">
+                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">ITEM DISCOUNT</h2>
+                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit minus aliquam consequuntur.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                <div class="group relative">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <div class="py-8 px-6">
+                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h3 class="text-sm text-gray-700">
+                                        <a href="#">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            Basic Tee
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">Black</p>
+                                </div>
+                                <p class="text-sm font-medium text-gray-900">$35</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <div class="py-8 px-6">
+                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h3 class="text-sm text-gray-700">
+                                        <a href="#">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            Basic Tee
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">Black</p>
+                                </div>
+                                <p class="text-sm font-medium text-gray-900">$35</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <div class="py-8 px-6">
+                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h3 class="text-sm text-gray-700">
+                                        <a href="#">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            Basic Tee
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">Black</p>
+                                </div>
+                                <p class="text-sm font-medium text-gray-900">$35</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <div class="py-8 px-6">
+                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <div>
+                                    <h3 class="text-sm text-gray-700">
+                                        <a href="#">
+                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                            Basic Tee
+                                        </a>
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-500">Black</p>
+                                </div>
+                                <p class="text-sm font-medium text-gray-900">$35</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More products... -->
+            </div>
+        </div>
+    </section>
+
     <!-- Abaut Section Start -->
-    <section id="about" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+    <section id="reting" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-500">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 text-center">
@@ -160,11 +260,11 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                 </div>
-                <div class="mb-5 flex items-center justify-center">
+                <div class="mb-5 flex items-center justify-center dark:text-white">
                     <p>Form 2388 Customers</p>
                 </div>
             </div>
-            <div id="reviews" class="carousel slide carousel-dark relative" data-bs-ride="carousel">
+            <div id="reviews" class="carousel slide carousel-fade carousel-dark relative " data-bs-ride="carousel">
                 <!-- Inner -->
                 <div class="carousel-inner relative w-full overflow-hidden">
                     <!-- Single item -->
@@ -172,65 +272,62 @@
                         <div class="flex flex-wrap w-full justify-center px-4">
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, temporibus explicabo nulla quia rem voluptatum, placeat natus asperiores doloribus reprehenderit sint aut. Explicabo, impedit vel!</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci illo nisi non debitis, vero quas nulla magni necessitatibus nesciunt at illum, dolorum, perspiciatis laboriosam esse!</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deleniti atque nulla voluptatum maxime aspernatur cupiditate, nisi amet repellat perferendis voluptas vel commodi laboriosam, asperiores quis optio suscipit sed facilis.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur et quaerat non eveniet voluptatum possimus, facere ex dolorem quo aliquid!</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quo?</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto corporis in, iure asperiores dolorem earum deleniti odio aspernatur ut molestias!</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laboriosam amet, exercitationem repudiandae ea nisi.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ipsam in voluptate voluptatum. Sed nisi harum natus eum minus. Nobis!</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                         </div>
@@ -240,63 +337,62 @@
                         <div class="flex flex-wrap w-full justify-center px-4">
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, temporibus explicabo nulla quia rem voluptatum, placeat natus asperiores doloribus reprehenderit sint aut. Explicabo, impedit vel!</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed natus animi facilis architecto amet unde molestias suscipit similique debitis consectetur?</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deleniti atque nulla voluptatum maxime aspernatur cupiditate, nisi amet repellat perferendis voluptas vel commodi laboriosam, asperiores quis optio suscipit sed facilis.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis id dolorem doloribus repellat mollitia cupiditate quo sunt fugit commodi ipsam.</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quo?</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint deserunt quasi quaerat. Dicta veritatis nulla dignissimos sit ad exercitationem tenetur.</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laboriosam amet, exercitationem repudiandae ea nisi.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam voluptatum adipisci doloremque saepe nesciunt natus et pariatur accusantium iusto.</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                         </div>
@@ -306,65 +402,62 @@
                         <div class="flex flex-wrap w-full justify-center px-4">
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, temporibus explicabo nulla quia rem voluptatum, placeat natus asperiores doloribus reprehenderit sint aut. Explicabo, impedit vel!</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum commodi minus vitae sint mollitia libero nostrum perferendis illum ex! Est.</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia deleniti atque nulla voluptatum maxime aspernatur cupiditate, nisi amet repellat perferendis voluptas vel commodi laboriosam, asperiores quis optio suscipit sed facilis.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt quaerat dicta consequuntur labore suscipit voluptatum, nulla placeat ad quidem quam?</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quo?</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eum modi fugiat! Ut dolor in a neque quod quo! Maxime?</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                             <div class="px-3 w-1/4">
                                 <div class="carousel-caption text-center">
-                                    <h5 class="text-sm">
-                                        <div class="text-amber-300">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </h5>
                                     <div class="text-sm">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laboriosam amet, exercitationem repudiandae ea nisi.</p>
+                                        <h5 class="text-amber-300 ">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores voluptatum harum aliquam, nemo fugit possimus voluptate nisi necessitatibus quod!</p>
                                     </div>
+                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
                                 </div>
                             </div>
                         </div>
@@ -383,160 +476,16 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+        </div>
     </section>
     <!-- Abaut Section End -->
 
-    <!-- Portofolio Section Start -->
-    <section id="portofolio" class="pt-36 pb-32 dark:bg-dark">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h4 class="mb-2 text-lg font-semibold uppercase text-primary">Portofolio</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Project Terbaru</h2>
-                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum libero sed tempore ut expedita quis dolorem voluptates, maiores dolores! Illum quisquam, enim earum atque officiis neque fugit doloribus numquam dolorem?
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="overflow-hidden rounded-md shadow-md">
-                        <img src="https://source.unsplash.com/600x300?codes" alt="Landing Page" width="w-full" />
-                    </div>
-                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Project Pertama</h3>
-                    <p class="text-base font-medium text-secondary dark:text-secondarybg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque vitae culpa sed, quas quis dicta a similique nesciunt illo quia?
-                    </p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="overflow-hidden rounded-md shadow-md">
-                        <img src="https://source.unsplash.com/600x300?programmer" alt="Landing Page" width="w-full" />
-                    </div>
-                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Project Kedua</h3>
-                    <p class="text-base font-medium text-secondary dark:text-secondarybg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque vitae culpa sed, quas quis dicta a similique nesciunt illo quia?
-                    </p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="overflow-hidden rounded-md shadow-md">
-                        <img src="https://source.unsplash.com/600x300?web-development" alt="Landing Page" width="w-full" />
-                    </div>
-                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Project Ketiga</h3>
-                    <p class="text-base font-medium text-secondary dark:text-secondarybg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque vitae culpa sed, quas quis dicta a similique nesciunt illo quia?
-                    </p>
-                </div>
-                <div class="mb-12 p-4 md:w-1/2">
-                    <div class="overflow-hidden rounded-md shadow-md">
-                        <img src="https://source.unsplash.com/600x300?android-app" alt="Landing Page" width="w-full" />
-                    </div>
-                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">Project Keempat</h3>
-                    <p class="text-base font-medium text-secondary dark:text-secondarybg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque vitae culpa sed, quas quis dicta a similique nesciunt illo quia?
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Portofolio Section End -->
-
-    <!-- Pengalaman Section Start -->
-    <!-- <section id="pengalaman" class="pt-36 pb-32 dark:bg-slate-300">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h4 class="mb-2 text-lg font-semibold uppercase text-primary">Pengalaman</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">Pernah Bekerja</h2>
-                    <p class="text-md font-medium text-secondary md:text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit minus aliquam consequuntur.
-                    </p>
-                </div>
-            </div>
-            <div class="w-full px-4">
-                <div class="flex flex-wrap items-center justify-center">
-                    <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-                        <img src="/assets/tailwind/img/work/PTPN8.svg" alt="PT Perkebunan Nusantara VII" />
-                    </a>
-                    <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-                        <img src="/assets/tailwind/img/work/pl.svg" alt="PT Primalogic" />
-                    </a>
-                    <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-                        <img src="/assets/tailwind/img/work/siscom.svg" alt="PT Shan Informasi Sistem (SISCOM)" />
-                    </a>
-                    <a href="#" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-                        <img src="/assets/tailwind/img/work/Infomedia.svg" alt="PT Infomedia Nusantara" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Pengalaman Section End -->
-
-    <!-- Blog Section Start -->
-    <section id="blog" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h4 class="mb-2 text-lg font-semibold uppercase text-primary">Blog</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Artikel Terbaru</h2>
-                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit minus aliquam consequuntur.
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-wrap">
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/600x300?web-developer" alt="Web Developer" class="w-full" />
-                        <div class="py-8 px-6">
-                            <h3 class="mb-3 truncate text-xl font-semibold text-dark dark:text-white">Web Developer</h3>
-                            <!-- <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Web Developer</a></h3> -->
-                            <p class="mb-6 text-base font-medium text-secondary dark:text-secondarybg">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum esse temporibus architecto velit nesciunt sit, eum corporis aut ea.
-                            </p>
-                            <a href="#" class="rounded-lg bg-primary py-2 px-4 font-medium hover:text-white hover:opacity-80 hover:shadow-lg dark:text-white dark:hover:text-black">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/600x300?web-peogrammer" alt="Web Programming" class="w-full" />
-                        <div class="py-8 px-6">
-                            <h3 class="mb-3 truncate text-xl font-semibold text-dark dark:text-white">Web Peogrammer</h3>
-                            <!-- <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Web Developer</a></h3> -->
-                            <p class="mb-6 text-base font-medium text-secondary dark:text-secondarybg">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste similique fugit quidem eos ipsum, deserunt at quo voluptate aliquid ab.
-                            </p>
-                            <a href="#" class="rounded-lg bg-primary py-2 px-4 font-medium hover:text-white hover:opacity-80 hover:shadow-lg dark:text-white dark:hover:text-black">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <img src="https://source.unsplash.com/600x300?data-analysis" alt="Data Analysis" class="w-full" />
-                        <div class="py-8 px-6">
-                            <h3 class="mb-3 truncate text-xl font-semibold text-dark dark:text-white">Data Analysis</h3>
-                            <!-- <h3><a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Web Developer</a></h3> -->
-                            <p class="mb-6 text-base font-medium text-secondary dark:text-secondarybg">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aut laudantium ad eius blanditiis quia molestias adipisci nam quo saepe.
-                            </p>
-                            <a href="#" class="rounded-lg bg-primary py-2 px-4 font-medium hover:text-white hover:opacity-80 hover:shadow-lg dark:text-white dark:hover:text-black">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
-
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32 dark:bg-slate-700">
+    <section id="contact" class="pt-36 pb-16 dark:bg-slate-700">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 text-center">
-                    <h4 class="mb-2 text-lg font-semibold uppercase text-primary">Contact</h4>
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Hubungi Kami</h2>
+                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Contact us</h2>
                     <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est libero accusamus similique quia. Repellendus eveniet qui atque reiciendis, saepe minima consequatur facilis reprehenderit aliquam. Quos distinctio harum cum sequi?
                     </p>
@@ -571,10 +520,8 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
-                    <h2 class="mb-5 text-4xl font-bold text-white">
-                        Didin Irfandi Jekri Ikrawan
-                    </h2>
-                    <h3 class="mb-2 text-2xl font-bold">Hubungi Saya</h3>
+                    <h2 class="mb-5 text-4xl font-bold text-white">Muslim Basic</h2>
+                    <h3 class="mb-2 text-2xl font-bold">Contact</h3>
                     <p>didinirfandy16@gmai.com</p>
                     <p>Jl. Cilandak Tengah Dalam No 20B</p>
                     <p>RT.2/RW.1, Cilandak Barat</p>
@@ -584,21 +531,21 @@
                 </div>
 
                 <div class="mb-12 w-full px-4 md:w-1/3">
-                    <h3 class="mb-5 text-xl font-semibold text-white">Kategori Tulisan</h3>
+                    <h3 class="mb-5 text-xl font-semibold text-white">Post Category</h3>
                     <ul class="text-slate-300">
-                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Web Developer</a></li>
-                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Teknologi</a></li>
-                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Gaya Hidup</a></li>
+                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Hijap</a></li>
+                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Gamis</a></li>
+                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Kemeja</a></li>
+                        <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Celana</a></li>
                     </ul>
                 </div>
                 <div class="mb-12 w-full px-4 md:w-1/3">
                     <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
                     <ul class="text-slate-300">
-                        <li><a href="#home" class="mb-3 inline-block text-base hover:text-primary">Beranda</a></li>
-                        <li><a href="#about" class="mb-3 inline-block text-base hover:text-primary">Tentang Saya</a></li>
-                        <li><a href="#portofolio" class="mb-3 inline-block text-base hover:text-primary">Portofolio</a></li>
-                        <li><a href="#pengalaman" class="mb-3 inline-block text-base hover:text-primary">Pengalaman</a></li>
-                        <li><a href="#blog" class="mb-3 inline-block text-base hover:text-primary">Blog</a></li>
+                        <li><a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a></li>
+                        <li><a href="#best" class="mb-3 inline-block text-base hover:text-primary">Best Seller</a></li>
+                        <li><a href="#discount" class="mb-3 inline-block text-base hover:text-primary">Item Discount</a></li>
+                        <li><a href="#reting" class="mb-3 inline-block text-base hover:text-primary">Reting</a></li>
                         <li><a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a></li>
                     </ul>
                 </div>
@@ -642,8 +589,8 @@
                     </a>
                 </div>
                 <p class="text-center text-xs font-medium text-slate-500">
-                    Copyright © 2022
-                    <a href="https://www.linkedin.com/in/didinirfandi/" target="_blank" class="font-bold text-primary">Didin Irfandi Jekri Ikrawan</a>, with
+                    Copyright © 2022 || Tugas Akhir
+                    <a href="https://www.linkedin.com/in/raihanmalikul/" target="_blank" class="font-bold text-primary">Raihan Malikul</a>, with
                     <a href="https://tailwindcss.com/" target="_balnk" class="font-bold text-primary">Tailwind CSS.</a>
                 </p>
             </div>
