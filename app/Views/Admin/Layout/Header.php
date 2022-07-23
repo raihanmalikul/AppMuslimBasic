@@ -6,7 +6,7 @@
 <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="shortcut icon" href="<?= base_url('assets/static/img/icons/icon-48x48.png')?>" />
+<link rel="shortcut icon" href="<?= base_url('public/assets/static/img/icons/icon-48x48.png')?>" />
 
 <title><?= $title; ?></title>
 

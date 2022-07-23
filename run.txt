@@ -1,0 +1,10 @@
+run tailwind css
+npx tailwindcss -i ./src/css/input.css -o ./public/assets/tailwind/css/output.css --watch
+
+run CI4
+php spark serve
+
+migrate one table
+php spark migrate -g muslimBasic -n "date_time_file_App\Database\Migrations\classname"
+migrate all table
+php spark migrate
