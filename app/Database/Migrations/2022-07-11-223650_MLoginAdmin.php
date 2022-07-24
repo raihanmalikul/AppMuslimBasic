@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
-
+use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
 class MLoginAdmin extends Migration
@@ -15,7 +15,7 @@ class MLoginAdmin extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama' => [
+            'name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
@@ -45,19 +45,19 @@ class MLoginAdmin extends Migration
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
+                'default'    => TIme::now(),
+            ],
+            'updated_at' => [
+                'type'       => 'DATETIME',
                 'null'       => true
-            ],
-            'created_by' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 15
-            ],
+            ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('login_admin');
+        $this->forge->createTable('m_login_admin');
     }
 
     public function down()
     {
-        $this->forge->dropTable('login_admin');
+        $this->forge->dropTable('m_login_admin');
     }
 }
