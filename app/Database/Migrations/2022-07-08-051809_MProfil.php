@@ -50,6 +50,10 @@ class MProfil extends Migration
                 'type'       => 'TINYINT',
                 'constraint' => 1
             ],
+            'image' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'default'    => TIme::now(),

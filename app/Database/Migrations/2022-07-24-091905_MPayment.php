@@ -44,11 +44,11 @@ class MPayment extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_cart');
+        $this->forge->createTable('m_payment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_cart');
+        $this->forge->dropTable('m_payment');
     }
 }
