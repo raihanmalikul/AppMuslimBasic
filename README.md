@@ -8,7 +8,7 @@ run CI4 `php spark serve`.
 
 ## How to run migrate?
 
-run migrate to create a table use migrate one table `php spark migrate -g databaseName -n "date_time_file_App\Database\Migrations\className"`
+run migrate to create a table use migrate one table `php spark migrate class_Name"`
 
 or migrate all table `php spark migrate`.
 
