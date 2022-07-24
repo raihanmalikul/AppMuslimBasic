@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LoginAdminModel extends Model
+class LoginModel extends Model
 {
     protected $table            = 'm_login';
     protected $useTimestamps    = true;

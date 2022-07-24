@@ -46,7 +46,7 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Pages::dashboard');
 $routes->get('/login', 'Login::login');
-$routes->get('/registrasi', 'Login::regis');
+$routes->get('/registrasi', 'Login::registrasi');
 $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
 
 /*
