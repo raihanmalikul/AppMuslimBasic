@@ -1,11 +1,10 @@
 <?php
-// Harap comment jika tidak melakukan create ke tabel
 
 namespace App\Database\Migrations;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
-class MLogin extends Migration
+class MPayment extends Migration
 {
     public function up()
     {
@@ -16,24 +15,24 @@ class MLogin extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
+            'payment_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'email' => [
+            'notes' => [
+                'type'       => 'TEXT'
+            ],
+            'total_price' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'email_verified_at' => [
-                'type'       => 'TIMESTAMP'
+            'evidence_payment' => [
+                'type'       => 'INT',
+                'constraint' => 11
             ],
-            'password' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'remember_token' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 100
+            'status' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -45,11 +44,11 @@ class MLogin extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_login');
+        $this->forge->createTable('m_cart');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_login');
+        $this->forge->dropTable('m_cart');
     }
 }

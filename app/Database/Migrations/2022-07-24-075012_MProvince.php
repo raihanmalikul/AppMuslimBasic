@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Database\Migrations;
-use CodeIgniter\I18n\Time;
-use CodeIgniter\Database\Migration;
 
-class MLoginAdmin extends Migration
+use CodeIgniter\Database\Migration;
+use CodeIgniter\I18n\Time;
+class MProvince extends Migration
 {
     public function up()
     {
@@ -15,33 +15,13 @@ class MLoginAdmin extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'username' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 15
-            ],
-            'password' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 15
-            ],
-            'userlevel' => [
+            'province_id' => [
                 'type'       => 'INT',
                 'constraint' => 11
             ],
-            'status_login' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'image' => [
+            'province' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
-            ],
-            'user_valid' => [
-                'type'       => 'INT',
-                'constraint' => 15
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -53,11 +33,11 @@ class MLoginAdmin extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_login_admin');
+        $this->forge->createTable('m_province');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_login_admin');
+        $this->forge->dropTable('m_province');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
-class MLogin extends Migration
+class MProfil extends Migration
 {
     public function up()
     {
@@ -24,16 +24,31 @@ class MLogin extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'email_verified_at' => [
-                'type'       => 'TIMESTAMP'
-            ],
-            'password' => [
+            'phone' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'remember_token' => [
+            'address' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 100
+                'constraint' => 255
+            ],
+            'province_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11
+            ],
+            'city_id' => [
+                'type'       => 'BIGINT',
+                'unsigned'   => true,
+                'constraint' => 20
+            ],
+            'postal_code' => [
+                'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'status' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -45,11 +60,11 @@ class MLogin extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_login');
+        $this->forge->createTable('m_profil');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_login');
+        $this->forge->dropTable('m_profil');
     }
 }

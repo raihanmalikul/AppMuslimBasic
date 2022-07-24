@@ -1,0 +1,10 @@
+ERROR - 2022-07-24 16:36:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(255) NOT NULL,
+	`remember_token` VARCAHR(100) NOT NULL,
+	`created_at` TIMEST...' at line 6
+ERROR - 2022-07-24 16:40:26 --> Invalid default value for 'created_at'
+ERROR - 2022-07-24 16:46:50 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`invoice` VARCHAR(255) NOT NULL,
+	`customer_id` VARCHAR(2...' at line 3
+ERROR - 2022-07-24 16:52:57 --> Invalid default value for 'updated_at'
+ERROR - 2022-07-24 16:54:02 --> Table 'm_cart' already exists
+ERROR - 2022-07-24 16:56:00 --> Table 'm_cart' already exists

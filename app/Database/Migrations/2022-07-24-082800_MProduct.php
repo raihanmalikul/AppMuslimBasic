@@ -1,18 +1,17 @@
 <?php
-// Harap comment jika tidak melakukan create ke tabel
 
 namespace App\Database\Migrations;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
-class MLogin extends Migration
+class MProduct extends Migration
 {
     public function up()
     {
         $this->forge->addField([
             'id' => [
-                'type'           => 'BIGINT',
-                'constraint'     => 20,
+                'type'           => 'INT',
+                'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
@@ -20,20 +19,41 @@ class MLogin extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'email' => [
+            'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'email_verified_at' => [
-                'type'       => 'TIMESTAMP'
+            'category_id' => [
+                'type'       => 'BIGINT',
+                'unsigned'   => true,
+                'constraint' => 11
             ],
-            'password' => [
+            'description' => [
+                'type'       => 'TEXT'
+            ],
+            'image' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'remember_token' => [
+            'size' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 100
+                'constraint' => 255
+            ],
+            'color' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'price' => [
+                'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'weight' => [
+                'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'stock' => [
+                'type'       => 'INT',
+                'constraint' => 11
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -45,11 +65,11 @@ class MLogin extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_login');
+        $this->forge->createTable('m_product');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_login');
+        $this->forge->dropTable('m_product');
     }
 }
