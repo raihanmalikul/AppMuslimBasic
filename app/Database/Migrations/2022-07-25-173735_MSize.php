@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
-class MProduct extends Migration
+class MSize extends Migration
 {
     public function up()
     {
@@ -20,33 +20,14 @@ class MProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'slug' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'category_id' => [
-                'type'       => 'BIGINT',
+            'size_id' => [
+                'type'       => 'INT',
                 'unsigned'   => true,
                 'constraint' => 11
             ],
-            'description' => [
-                'type'       => 'TEXT'
-            ],
-            'image' => [
+            'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
-            ],
-            'price' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'weight' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'stock' => [
-                'type'       => 'INT',
-                'constraint' => 11
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -58,11 +39,11 @@ class MProduct extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('m_product');
+        $this->forge->createTable('m_size');
     }
 
     public function down()
     {
-        $this->forge->dropTable('m_product');
+        $this->forge->dropTable('m_size');
     }
 }
