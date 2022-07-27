@@ -44,9 +44,13 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
+use App\Controllers\Login;
+
 $routes->get('/', 'Pages::dashboard');
 $routes->get('/login', 'Login::login');
+$routes->get('/logout', 'Login::logout');
 $routes->get('/register', 'Login::register');
+$routes->get('/Login/verify/(:alphanum)/(:any)', [[Login::class, 'verify'], '$2/$1']);
 $routes->get('/forgotPass', 'Login::forgotPass');
 $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
 

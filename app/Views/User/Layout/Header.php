@@ -5,6 +5,7 @@
 <link rel="shortcut icon" type="image/ico" href="/assets/tailwind/img/logo.jpg">
 <link href="/assets/tailwind/css/output.css" rel="stylesheet" />
 <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+<link href="/assets/plugins/toastr/toastr.min.css" rel="stylesheet">
 
 <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

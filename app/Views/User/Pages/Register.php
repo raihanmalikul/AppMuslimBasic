@@ -11,7 +11,6 @@
 
     <!-- BEGIN LINK -->
     <?= $this->include('User/Layout/Header') ?>
-    <link href="/assets/plugins/toastr/toastr.min.css" rel="stylesheet">
     <!-- END LINK -->
 </head>
 
@@ -44,8 +43,8 @@
 
                                 <div class="flex justify-between items-center mb-6">
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="rememberMe" />
-                                        <label class="form-check-label inline-block text-gray-800" for="exampleCheck2">Remember me</label>
+                                        <!-- <input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="rememberMe" /> -->
+                                        <!-- <label class="form-check-label inline-block text-gray-800" for="exampleCheck2">Remember me</label> -->
                                     </div>
                                     <a href="/forgotPass" class="text-gray-800">Forgot password?</a>
                                 </div>
@@ -69,24 +68,10 @@
 
     <!-- BEGIN SCRIPT -->
     <?= $this->include('User/Layout/Script') ?>
-    <script src="/assets/plugins/jquery/jquery.min.js"></script>
-    <script src="/assets/plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script src="/assets/plugins/jquery-validation/additional-methods.min.js"></script>
-    <script src="/assets/plugins/toastr/toastr.min.js"></script>
     <!-- END SCRIPT -->
 
-    <script>
+    <script type="text/javascript">
         $(function() {
-            let statusSuccess = "<?= $this->session->getFlashdata('msg'); ?>";
-            let statusError = "<?= $this->session->getFlashdata('msg_err'); ?>";
-
-            if (statusSuccess) {
-                toastr.success(statusSuccess);
-            }
-            if (statusError) {
-                toastr.warning(statusError);
-            }
-
             $('#checkRegis').validate({
                 rules: {
                     name: {

@@ -1,3 +1,4 @@
+<?php $this->session = \Config\Services::session(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,25 +29,25 @@
                             </div>
                             <form action="/Login/actionLogin" method="post" id="checkLogin">
                                 <!-- Email input -->
-                                <div class="mb-6">
-                                    <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email" name="email" placeholder="Email address" />
+                                <div class="mb-6 form-group">
+                                    <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email" name="email" placeholder="Email address" require />
                                 </div>
 
                                 <!-- Password input -->
-                                <div class="mb-6">
-                                    <input type="password" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="pass" name="pass" placeholder="Password" />
+                                <div class="mb-6 form-group">
+                                    <input type="password" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="pass" name="pass" placeholder="Password" require />
                                 </div>
 
                                 <div class="flex justify-between items-center mb-6">
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="exampleCheck2" />
-                                        <label class="form-check-label inline-block text-gray-800" for="exampleCheck2">Remember me</label>
+                                        <input type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" id="remember" />
+                                        <label class="form-check-label inline-block text-gray-800" for="remember">Remember me</label>
                                     </div>
                                     <a href="#!" class="text-gray-800">Forgot password?</a>
                                 </div>
 
                                 <div class="text-center lg:text-left">
-                                    <button type="button" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                                    <button type="submit" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                                         Login
                                     </button>
                                     <p class="text-sm font-semibold mt-2 pt-1 mb-0">
@@ -65,6 +66,40 @@
     <!-- BEGIN SCRIPT -->
     <?= $this->include('User/Layout/Script') ?>
     <!-- END SCRIPT -->
+
+    <script type="text/javascript">
+        $(function() {
+            $('#checkLogin').validate({
+                rules: {
+                    email: {
+                        required: true
+                    },
+                    pass: {
+                        required: true
+                    },
+                },
+                messages: {
+                    email: {
+                        required: "Email cannot be empty"
+                    },
+                    pass: {
+                        required: "Password cannot be empty"
+                    }
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('text-xs text-red-500');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
