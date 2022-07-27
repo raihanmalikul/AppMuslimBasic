@@ -47,7 +47,7 @@ class MProduct extends Migration
                 'type'       => 'INT',
                 'constraint' => 11
             ],
-            'qty' => [
+            'stock' => [
                 'type'       => 'INT',
                 'constraint' => 11
             ],
