@@ -20,19 +20,19 @@ class MCategorySeeds extends Seeder
             [
                 'name'          => 'KEMEJA',
                 'category_id'   => '02',
-                'slug'          => 'kemeja-01',
+                'slug'          => 'kemeja-02',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'CELANA',
                 'category_id'   => '03',
-                'slug'          => 'celana-01',
+                'slug'          => 'celana-03',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'JILBAB',
                 'category_id'   => '04',
-                'slug'          => 'jibab-01',
+                'slug'          => 'jibab-04',
                 'created_at'    => TIme::now()
             ]
         ];
