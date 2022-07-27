@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -25,6 +26,16 @@ class MCart extends Migration
             ],
             'description' => [
                 'type'       => 'TEXT'
+            ],
+            'color_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11
+            ],
+            'size_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11
             ],
             'qty' => [
                 'type'       => 'INT',

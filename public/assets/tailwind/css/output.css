@@ -4406,6 +4406,10 @@ textarea.form-control.is-invalid {
   z-index: 50;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .float-left {
   float: left;
 }
@@ -4430,6 +4434,30 @@ textarea.form-control.is-invalid {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mb-12 {

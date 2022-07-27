@@ -1,0 +1,6 @@
+ERROR - 2022-07-26 00:55:58 --> Error connecting to the database: Unknown database 'appmuslimbasic'
+ERROR - 2022-07-26 01:41:35 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1, 2, 3, 4) VALUES (:0:, :1:, :2:, :3:, :4:)' at line 1
+ERROR - 2022-07-26 01:44:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1, 2, 3, 4) VALUES (:0:, :1:, :2:, :3:, :4:)' at line 1
+ERROR - 2022-07-26 01:46:50 --> Unknown column 'created_by' in 'field list'
+ERROR - 2022-07-26 01:50:11 --> Unknown column 'created_by' in 'field list'
+ERROR - 2022-07-26 01:57:50 --> Unknown column 'created_by' in 'field list'
