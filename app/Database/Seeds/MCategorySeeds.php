@@ -13,26 +13,26 @@ class MCategorySeeds extends Seeder
         $data = [
             [
                 'name'          => 'GAMIS',
-                'category_id'   => 1,
-                'slug'          => '',
+                'category_id'   => '01',
+                'slug'          => 'gamis-01',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'KEMEJA',
-                'category_id'   => 2,
-                'slug'          => '',
+                'category_id'   => '02',
+                'slug'          => 'kemeja-01',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'CELANA',
-                'category_id'   => 3,
-                'slug'          => '',
+                'category_id'   => '03',
+                'slug'          => 'celana-01',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'JILBAB',
-                'category_id'   => 4,
-                'slug'          => '',
+                'category_id'   => '04',
+                'slug'          => 'jibab-01',
                 'created_at'    => TIme::now()
             ]
         ];

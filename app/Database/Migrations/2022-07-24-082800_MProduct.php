@@ -16,18 +16,21 @@ class MProduct extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'product_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'category_id' => [
-                'type'       => 'BIGINT',
-                'unsigned'   => true,
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'description' => [
                 'type'       => 'TEXT'
@@ -44,7 +47,7 @@ class MProduct extends Migration
                 'type'       => 'INT',
                 'constraint' => 11
             ],
-            'stock' => [
+            'qty' => [
                 'type'       => 'INT',
                 'constraint' => 11
             ],

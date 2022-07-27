@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -15,16 +16,15 @@ class MCategory extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
             'category_id' => [
-                'type'       => 'BIGINT',
-                'unsigned'   => true,
-                'constraint' => 20
-            ],
-            'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
