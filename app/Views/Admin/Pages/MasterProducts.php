@@ -35,7 +35,7 @@
                                             <th>Products Name</th>
                                             <th>Price (IDN)</th>
                                             <th>Weight (Gram)</th>
-                                            <th>Quantity</th>
+                                            <th>Stock</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
@@ -95,7 +95,7 @@
                             </div>
                             <div class="mb-3 col-md-2">
                                 <label class="form-label">&nbsp;</label>
-                                <input type="number" class="form-control" name="product_qty[]" id="product_qty" placeholder="Quantity">
+                                <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
                             </div>
                         </div>
                     </form>
@@ -169,7 +169,7 @@
                             'productName': value.product_name,
                             'price': value.price,
                             'weight': value.weight,
-                            'quantity': value.qty,
+                            'stock': value.stock,
                             'createdAt': value.created_at,
                             'action': btnAction
                         });
@@ -211,7 +211,7 @@
                     defaultContent: ''
                 },
                 {
-                    data: 'quantity',
+                    data: 'stock',
                     defaultContent: ''
                 },
                 {
@@ -238,7 +238,7 @@
                 "product_name[]": "required",
                 "product_price[]": "required",
                 "product_weight[]": "required",
-                "product_qty[]": "required",
+                "product_stock[]": "required",
             },
             messages: {
                 category_id: "Category id Cannot be Empty",
@@ -246,7 +246,7 @@
                 "product_name[]": "Product name Cannot be Empty",
                 "product_price[]": "Product price Cannot be Empty",
                 "product_weight[]": "Product weight Cannot be Empty",
-                "product_qty[]": "Product quantity Cannot be Empty",
+                "product_stock[]": "Product Stock Cannot be Empty",
             },
             errorElement: 'span',
             errorPlacement: function(error, element) {
@@ -271,23 +271,13 @@
             let product_name = $("#product_name").val()
             let product_price = $("#product_price").val()
             let product_weight = $("#product_weight").val()
-            let product_qty = $("#product_qty").val()
+            let product_stock = $("#product_stock").val()
 
             let data = $("#formAddProducts").serialize();
 
             $.ajax({
                 type: "POST",
                 url: "/ProsesAdmin/AddMasterCategory",
-                // data: {
-                //     optCategory: optCategory,
-                //     category_id: category_id,
-                //     category_name: category_name,
-                //     product_id: product_id,
-                //     product_name: product_name,
-                //     product_price: product_price,
-                //     product_weight: product_weight,
-                //     product_qty: product_qty
-                // },
                 data: data,
                 dataType: "json",
                 async: false,
@@ -356,8 +346,8 @@
                                     </div>
                                     <div class="mb-3 col-md-2">
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="product_qty[]" id="product_qty" placeholder="Quantity" aria-label="Quantity" aria-describedby="button-productQty">
-                                            <button type="button" class="btn btn-sm btn-outline-danger" id="button-productQty" onClick="removeProduct('` + newProduct + `')"><i class="fas fa-times"></i></button>
+                                            <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock" aria-label="Stock" aria-describedby="button-productStock">
+                                            <button type="button" class="btn btn-sm btn-outline-danger" id="button-productStock" onClick="removeProduct('` + newProduct + `')"><i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                 </div>`;
@@ -374,7 +364,7 @@
                 $('#product_name').val('')
                 $('#product_price').val('')
                 $('#product_weight').val('')
-                $('#product_qty').val('')
+                $('#product_stock').val('')
 
                 $('#category_name').attr('readonly', false)
             } else {
@@ -419,7 +409,7 @@
                 $('#product_name').val(json.product_name)
                 $('#product_price').val(json.product_price)
                 $('#product_weight').val(json.product_weight)
-                $('#product_qty').val(json.product_qty)
+                $('#product_stock').val(json.product_stock)
             }
         })
     }

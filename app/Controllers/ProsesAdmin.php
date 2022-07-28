@@ -22,7 +22,7 @@ class ProsesAdmin extends BaseController
     public function displayProduct()
     {
         $request     = $_REQUEST;
-        $col         = array(1 => 'category_id', 2 => 'category_name', 3 => 'product_id', 4 => 'product_name', 5 => 'price', 6 => 'weight', 7 => 'qty', 8 => 'created_at');
+        $col         = array(1 => 'category_id', 2 => 'category_name', 3 => 'product_id', 4 => 'product_name', 5 => 'price', 6 => 'weight', 7 => 'stock', 8 => 'created_at');
         $cari        = $request['search']['value'];
         $cari        = ($cari ? strtolower($cari) : $cari);
         $cariStart   = $request['start'];
@@ -39,7 +39,7 @@ class ProsesAdmin extends BaseController
                             OR a.product_name LIKE '%{$cari}%'
                             OR a.price LIKE '%{$cari}%'
                             OR a.weight LIKE '%{$cari}%'
-                            OR a.qty LIKE '%{$cari}%'
+                            OR a.stock LIKE '%{$cari}%'
                             OR a.created_at LIKE '%{$cari}%'
                         ";
             $sqlCari .= sprintf(" AND (%s) ", $sqlFilter);
@@ -47,7 +47,7 @@ class ProsesAdmin extends BaseController
         $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
-        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.qty, b.created_at
+        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at
                 FROM 
                     m_category a 
                     LEFT JOIN m_product b ON a.category_id = b.category_id ";
@@ -84,7 +84,7 @@ class ProsesAdmin extends BaseController
 
         $query  = "SELECT 
                         a.slug as slug_category, a.name as name_category, a.category_id, a.created_at, 
-                        b.slug as slug_product, b.product_id, b.name as name_product, b.price, b.weight, b.qty
+                        b.slug as slug_product, b.product_id, b.name as name_product, b.price, b.weight, b.stock
                     FROM 
                         m_category a 
                         LEFT JOIN m_product b ON a.category_id = b.category_id
@@ -104,7 +104,7 @@ class ProsesAdmin extends BaseController
                 $data['product_name']   = '';
                 $data['product_price']  = '';
                 $data['product_weight'] = '';
-                $data['product_qty']    = '';
+                $data['product_stock']  = '';
             } else {
                 $newProductId           = $product_id == '' ? $product_id + 1 : '';
                 $data['category_id']    = $category_id;
@@ -113,7 +113,7 @@ class ProsesAdmin extends BaseController
                 $data['product_name']   = $result['name_product'];
                 $data['product_price']  = $result['price'];
                 $data['product_weight'] = $result['weight'];
-                $data['product_qty']    = $result['qty'];
+                $data['product_stock']  = $result['stock'];
             }
         } else {
             $data[] = array();
@@ -130,7 +130,7 @@ class ProsesAdmin extends BaseController
         $product_name   = $this->request->getVar('product_name');
         $product_price  = $this->request->getVar('product_price');
         $product_weight = $this->request->getVar('product_weight');
-        $product_qty    = $this->request->getVar('product_qty');
+        $product_stock  = $this->request->getVar('product_stock');
         $slugCategory   = strtolower($category_name) . "-" . $category_id;
         $slugProduct    = strtolower($product_name) . "-" . $product_id;
         $return         = array();
@@ -141,7 +141,7 @@ class ProsesAdmin extends BaseController
 
             if ($queryCategory) {
                 for ($i = 0; $i < count($product_id); $i++) {
-                    $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `qty`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_qty, '" . TIme::now() . "')";
+                    $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `stock`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_stock, '" . TIme::now() . "')";
                     $queryProduct = $this->db->query($insertProduct);
                 }
                 $return = ['status' => 1];
@@ -151,7 +151,7 @@ class ProsesAdmin extends BaseController
         } else {
             $queryCategory = true;
             for ($i = 0; $i < count($product_id); $i++) {
-                $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `qty`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_qty, '" . TIme::now() . "')";
+                $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `stock`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_stock, '" . TIme::now() . "')";
                 $queryProduct = $this->db->query($insertProduct);
             }
             $return = ['status' => 1];
