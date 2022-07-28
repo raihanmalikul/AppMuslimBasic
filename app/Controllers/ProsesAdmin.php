@@ -50,7 +50,9 @@ class ProsesAdmin extends BaseController
         $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at
                 FROM 
                     m_category a 
-                    LEFT JOIN m_product b ON a.category_id = b.category_id ";
+                    LEFT JOIN m_product b ON a.category_id = b.category_id 
+                WHERE
+                    b.is_valid = 1";
 
         $query      = "SELECT * FROM ($queryM) a WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $data       = $this->db->query($query)->getResultArray();
