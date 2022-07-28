@@ -54,17 +54,18 @@ class ProsesAdmin extends BaseController
                 WHERE
                     b.is_valid = 1";
 
-        $query      = "SELECT * FROM ($queryM) a WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
+        $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $data       = $this->db->query($query)->getResultArray();
         // dd($data);
 
-        $queryTotal = "SELECT count(1) total FROM ($queryM) a WHERE 1=1 $sqlCari";
+        $queryTotal = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari";
         $dataTotal  = $this->db->query($queryTotal)->getResultArray();
+
 
         $json_data = array(
             "draw"              => intval($request['draw']),
-            "recordsTotal"      => intval($dataTotal),
-            "recordsFiltered"   => intval($dataTotal),
+            "recordsTotal"      => count($dataTotal),
+            "recordsFiltered"   => count($dataTotal),
             "data"              => $data
         );
 
