@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\LoginAdminModel;
+use CodeIgniter\I18n\Time;
 
 class ProsesAdmin extends BaseController
 {
@@ -18,6 +19,56 @@ class ProsesAdmin extends BaseController
         }
     }
 
+    public function displayProduct()
+    {
+        $request     = $_REQUEST;
+        $col         = array(1 => 'category_id', 2 => 'category_name', 3 => 'product_id', 4 => 'product_name', 5 => 'price', 6 => 'weight', 7 => 'qty', 8 => 'created_at');
+        $cari        = $request['search']['value'];
+        $cari        = ($cari ? strtolower($cari) : $cari);
+        $cariStart   = $request['start'];
+        $cariLength  = $request['length'];
+        $orderColumn = $col[$request['order'][0]['column']];
+        $orderDir    = $request['order'][0]['dir'];
+
+        $sqlCari = "";
+
+        if (!empty($cari)) {
+            $sqlFilter    = "a.category_id LIKE '%{$cari}%'
+                            OR a.category_name LIKE '%{$cari}%'
+                            OR a.product_id LIKE '%{$cari}%'
+                            OR a.product_name LIKE '%{$cari}%'
+                            OR a.price LIKE '%{$cari}%'
+                            OR a.weight LIKE '%{$cari}%'
+                            OR a.qty LIKE '%{$cari}%'
+                            OR a.created_at LIKE '%{$cari}%'
+                        ";
+            $sqlCari .= sprintf(" AND (%s) ", $sqlFilter);
+        }
+        $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
+        $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
+
+        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.qty, b.created_at
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id ";
+
+        $query      = "SELECT * FROM ($queryM) a WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
+        $data       = $this->db->query($query)->getResultArray();
+        // dd($data);
+
+        $queryTotal = "SELECT count(1) total FROM ($queryM) a WHERE 1=1 $sqlCari";
+        $dataTotal  = $this->db->query($queryTotal)->getResultArray();
+
+        $json_data = array(
+            "draw"              => intval($request['draw']),
+            "recordsTotal"      => intval($dataTotal),
+            "recordsFiltered"   => intval($dataTotal),
+            "data"              => $data
+        );
+
+        echo json_encode($json_data);
+    }
+
     public function getCategoryCode()
     {
         $query = "SELECT a.id, a.name, a.category_id, a.slug, a.created_at FROM m_category a WHERE a.slug IS NOT NULL";
@@ -26,9 +77,9 @@ class ProsesAdmin extends BaseController
         echo json_encode($data);
     }
 
-    public function getNewCategoryCode($slug = '')
+    public function getNewCategoryCode()
     {
-        // $slug = $this->request->getVar('slug');
+        $slug = $this->request->getVar('slug');
         $whereSlug = $slug != '' ? "AND a.slug='$slug'" : "";
 
         $query  = "SELECT 
@@ -46,20 +97,19 @@ class ProsesAdmin extends BaseController
         if (count($result) > 0) {
             $category_id = $result['category_id'];
             $product_id  = $result['product_id'];
-            if ($slug) {
-                $newCategoryId  = $category_id + 1;
-
-                $data['category_id']    = $newCategoryId;
+            if ($slug == '') {
+                $newCategoryId          = $category_id + 1;
+                $data['category_id']    = sprintf('%02d', $newCategoryId);
                 $data['product_id']     = '01';
                 $data['product_name']   = '';
                 $data['product_price']  = '';
                 $data['product_weight'] = '';
                 $data['product_qty']    = '';
             } else {
-                $newProductId = $product_id + 1;
+                $newProductId           = $product_id == '' ? $product_id + 1 : '';
                 $data['category_id']    = $category_id;
                 $data['category_name']  = $result['name_category'];
-                $data['product_id']     = $newProductId;
+                $data['product_id']     = sprintf('%02d', $newProductId);
                 $data['product_name']   = $result['name_product'];
                 $data['product_price']  = $result['price'];
                 $data['product_weight'] = $result['weight'];
@@ -69,5 +119,44 @@ class ProsesAdmin extends BaseController
             $data[] = array();
         }
         echo json_encode($data);
+    }
+
+    public function AddMasterCategory()
+    {
+        $optCategory    = $this->request->getVar('optCategory');
+        $category_id    = $this->request->getVar('category_id');
+        $category_name  = $this->request->getVar('category_name');
+        $product_id     = $this->request->getVar('product_id');
+        $product_name   = $this->request->getVar('product_name');
+        $product_price  = $this->request->getVar('product_price');
+        $product_weight = $this->request->getVar('product_weight');
+        $product_qty    = $this->request->getVar('product_qty');
+        $slugCategory   = strtolower($category_name) . "-" . $category_id;
+        $slugProduct    = strtolower($product_name) . "-" . $product_id;
+        $return         = array();
+
+        if ($optCategory == '') {
+            $insertCategory = "INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES ('$slugCategory', '$category_name', '$category_id', '" . TIme::now() . "')";
+            $queryCategory = $this->db->query($insertCategory);
+
+            if ($queryCategory) {
+                for ($i = 0; $i < count($product_id); $i++) {
+                    $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `qty`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_qty, '" . TIme::now() . "')";
+                    $queryProduct = $this->db->query($insertProduct);
+                }
+                $return = ['status' => 1];
+            } else {
+                $return = ['status' => 0];
+            }
+        } else {
+            $queryCategory = true;
+            for ($i = 0; $i < count($product_id); $i++) {
+                $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `qty`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_qty, '" . TIme::now() . "')";
+                $queryProduct = $this->db->query($insertProduct);
+            }
+            $return = ['status' => 1];
+        }
+
+        echo json_encode($return);
     }
 }

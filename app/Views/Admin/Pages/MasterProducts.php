@@ -21,18 +21,21 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <button class="btn btn-pill btn-primary" type="button" id="addProducts"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add Category</button>
+                            <button class="btn btn-pill btn-primary" type="button" id="addProducts"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add</button>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-sm table-bordered table-striped" id="tblMstrProducts">
+                            <div class="table-responsive-sm">
+                                <table class="table table-sm table-striped table-hover" id="tblMstrProducts">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Category Code</th>
+                                            <th>Category Name</th>
                                             <th>Products Code</th>
-                                            <th>Name</th>
+                                            <th>Products Name</th>
                                             <th>Price (IDN)</th>
+                                            <th>Weight (Gram)</th>
+                                            <th>Quantity</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
@@ -121,7 +124,106 @@
 
 <script type="text/javascript">
     $(function() {
-        $('#tblMstrProducts').DataTable();
+        $('#tblMstrProducts').DataTable({
+            serverSide: true,
+            autoWidth: false,
+            scrollX: true,
+            scrollCollapse: true,
+            lengthMenu: [5, 10, 15, 20, 30, 50, 100],
+            pageLength: 5,
+            order: [1, 'asc'],
+            processing: true,
+            language: {
+                infoFiltered: "",
+                processing: '<i class="fa-solid fa-spinner fa-pulse" style="font-size:24px;color:#080606;"></i><span style="font-size:18px">&nbsp;&nbsp;Loading...</span>'
+            },
+            fnInitComplete: function(oSettings) {
+                $(window).resize();
+            },
+            fnDrawCallback: function(oSettings) {
+                $(window).trigger('resize');
+            },
+            ajax: {
+                type: "POST",
+                url: "/ProsesAdmin/displayProduct",
+                data: function(prm) {
+                    prm.search.value = $('#tblMstrProducts_filter input').val();
+                },
+                dataType: "json",
+                dataSrc: function(json) {
+                    console.log(json)
+                    var return_data = new Array();
+                    var i = 1;
+
+                    $.each(json.data, function(index, value) {
+                        let btnAction = '';
+                        if (value.product_id != null) {
+                            btnAction = '<button class="btn btn-sm btn-pill btn-primary" type="button"onclick="editData(' + value.slug + ')"><i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit</button>' +
+                                '<button class="btn btn-sm btn-pill btn-danger" type="button"onclick="editData(' + value.slug + ')"><i class="fa-solid fa-trash-can"></i>&nbsp; Delete</button>';
+                        }
+                        return_data.push({
+                            'no': i,
+                            'categoryId': value.category_id,
+                            'categoryName': value.category_name,
+                            'productId': value.product_id,
+                            'productName': value.product_name,
+                            'price': value.price,
+                            'weight': value.weight,
+                            'quantity': value.qty,
+                            'createdAt': value.created_at,
+                            'action': btnAction
+                        });
+                        i++;
+                    });
+                    return return_data;
+                }
+            },
+            columns: [{
+                    data: 'no',
+                    defaultContent: ''
+                },
+                {
+                    data: 'categoryId',
+                    defaultContent: ''
+                },
+                {
+                    data: 'categoryName',
+                    defaultContent: ''
+                },
+                {
+                    data: 'productId',
+                    defaultContent: ''
+                },
+                {
+                    data: 'productName',
+                    defaultContent: ''
+                },
+                {
+                    data: 'name',
+                    defaultContent: ''
+                },
+                {
+                    data: 'price',
+                    defaultContent: ''
+                },
+                {
+                    data: 'weight',
+                    defaultContent: ''
+                },
+                {
+                    data: 'quantity',
+                    defaultContent: ''
+                },
+                {
+                    data: 'createdAt',
+                    defaultContent: ''
+                },
+                {
+                    data: 'action',
+                    defaultContent: ''
+                }
+            ]
+        })
 
         $("#addProducts").click(function() {
             getCategoryCode();
@@ -176,6 +278,16 @@
             $.ajax({
                 type: "POST",
                 url: "/ProsesAdmin/AddMasterCategory",
+                // data: {
+                //     optCategory: optCategory,
+                //     category_id: category_id,
+                //     category_name: category_name,
+                //     product_id: product_id,
+                //     product_name: product_name,
+                //     product_price: product_price,
+                //     product_weight: product_weight,
+                //     product_qty: product_qty
+                // },
                 data: data,
                 dataType: "json",
                 async: false,
@@ -254,10 +366,6 @@
 
         $("#optCategory").change(function() {
             let categorySlug = $("#optCategory").val()
-            let textOptAdd = $("#optTambah option:selected").text()
-            textOptAdd = textOptAdd.split(' ')
-            // console.log(textOptAdd)
-            let categoryNama = textOptAdd[1];
             $(".newProductBrg").remove()
 
             if (categorySlug == '') {
@@ -269,17 +377,9 @@
                 $('#product_qty').val('')
 
                 $('#category_name').attr('readonly', false)
-                $('#product_name').attr('readonly', false)
-                $('#product_price').attr('readonly', false)
-                $('#product_weight').attr('readonly', false)
-                $('#product_qty').attr('readonly', false)
             } else {
                 getNewCategoryCode(categorySlug);
-                $('#category_name').val(categoryNama)
                 $('#category_name').attr('readonly', true)
-                $('#product_name').attr('readonly', true)
-                $('#product_weight').attr('readonly', true)
-                $('#product_qty').attr('readonly', true)
             }
         });
     })
@@ -302,23 +402,24 @@
     }
 
     function getNewCategoryCode(slug = '') {
-        console.log(slug);
+        console.log(slug)
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "/ProsesAdmin/getNewCategoryCode",
             data: {
                 slug: slug
             },
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
+            async: false,
             dataType: "json",
             success: function(json) {
                 console.log(json);
                 $("#category_id").val(json.category_id);
-                $("#category_name").val(json.name);
-                $("#category_name").attr('readonly', true);
-                $("$product_id").val(json.product_id);
+                $("#category_name").val(json.category_name);
+                $("#product_id").val(json.product_id);
+                $('#product_name').val(json.product_name)
+                $('#product_price').val(json.product_price)
+                $('#product_weight').val(json.product_weight)
+                $('#product_qty').val(json.product_qty)
             }
         })
     }
