@@ -28,8 +28,9 @@
                                 <h2 class="mb-7 text-1xl font-bold text-dark sm:text-2xl lg:text-3xl dark:text-white">Register, Muslim Basic </h2>
                             </div>
                             <form action="/Login/actionRegis" method="post" id="checkRegis">
+                                <?= csrf_field(); ?>
                                 <div class="mb-4 form-group">
-                                    <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name" name="name" placeholder="Name" require />
+                                    <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name" name="name" placeholder="Name" autofocus require />
                                 </div>
                                 <div class="mb-4 form-group">
                                     <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email" name="email" placeholder="Email" require />

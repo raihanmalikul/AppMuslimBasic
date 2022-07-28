@@ -133,3 +133,119 @@ in APPPATH\Controllers\LoginAdmin.php on line 41.
  4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-28 03:35:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNSIGNED NOT NULL,
+	`slug` VARCHAR(255) NOT NULL,
+	`created_at` DATETIME NOT ...' at line 4
+CRITICAL - 2022-07-28 04:52:25 --> Undefined array key 1
+in APPPATH\Views\Admin\Layout\Sidebar.php on line 12.
+ 1 APPPATH\Views\Admin\Layout\Sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\Admin\\Layout\\Sidebar.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Layout\\Sidebar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('Admin/Layout/Sidebar', null, true)
+ 5 APPPATH\Views\Admin\Pages\Dashboard.php(8): CodeIgniter\View\View->include('Admin/Layout/Sidebar')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Dashboard.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Dashboard', [], true)
+ 9 APPPATH\Controllers\PagesAdmin.php(20): view('Admin/Pages/Dashboard', [...])
+10 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\PagesAdmin->dashboard()
+11 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesAdmin))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 04:52:39 --> Undefined array key 1
+in APPPATH\Views\Admin\Layout\Sidebar.php on line 12.
+ 1 APPPATH\Views\Admin\Layout\Sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\Admin\\Layout\\Sidebar.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Layout\\Sidebar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('Admin/Layout/Sidebar', null, true)
+ 5 APPPATH\Views\Admin\Pages\Dashboard.php(8): CodeIgniter\View\View->include('Admin/Layout/Sidebar')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Admin\\Pages\\Dashboard.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Admin/Pages/Dashboard', [], true)
+ 9 APPPATH\Controllers\PagesAdmin.php(20): view('Admin/Pages/Dashboard', [...])
+10 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\PagesAdmin->dashboard()
+11 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesAdmin))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-28 06:24:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1) VALUES (:0:, :1:)' at line 1
+ERROR - 2022-07-28 06:25:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1) VALUES (:0:, :1:)' at line 1
+ERROR - 2022-07-28 06:26:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1) VALUES (:0:, :1:)' at line 1
+CRITICAL - 2022-07-28 10:23:13 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:25:49 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:26:57 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:28:56 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:32:20 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:33:24 --> Too few arguments to function App\Controllers\ProsesAdmin::getNewCategoryCode(), 0 passed in C:\xampp80\htdocs\AppMuslimBasic\vendor\codeigniter4\framework\system\CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH\Controllers\ProsesAdmin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:34:09 --> Too few arguments to function App\Controllers\ProsesAdmin::getNewCategoryCode(), 0 passed in C:\xampp80\htdocs\AppMuslimBasic\vendor\codeigniter4\framework\system\CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH\Controllers\ProsesAdmin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:35:12 --> Too few arguments to function App\Controllers\ProsesAdmin::getNewCategoryCode(), 0 passed in C:\xampp80\htdocs\AppMuslimBasic\vendor\codeigniter4\framework\system\CodeIgniter.php on line 896 and exactly 1 expected
+in APPPATH\Controllers\ProsesAdmin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:35:54 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-28 10:37:04 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Controllers\ProsesAdmin.php on line 43.
+ 1 APPPATH\Controllers\ProsesAdmin.php(43): count(null)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->getNewCategoryCode()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-28 23:52:46 --> Error connecting to the database: No connection could be made because the target machine actively refused it

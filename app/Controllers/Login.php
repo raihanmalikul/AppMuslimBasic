@@ -1,6 +1,7 @@
 <?php
 
 namespace PHPMailer\PHPMailer;
+
 namespace App\Controllers;
 
 use App\Models\LoginModel;
@@ -16,7 +17,7 @@ class Login extends BaseController
     public function __construct()
     {
         helper(['form']);
-        $this->Login = new LoginModel(); 
+        $this->Login = new LoginModel();
         $this->Email = new PHPMailer(true);
     }
 
@@ -82,9 +83,14 @@ class Login extends BaseController
 
             // $this->session->set($data);
             $results   = $this->Login->insert($data);
-            $sendEmail = $this->_sendEmail($email, $token, 'regis');
+            if (!$results) {
+                throw new \CodeIgniter\Exceptions\PageNotFoundException('Gagal Insert data coba untuk periksa kembali codingan anda');
+            }
 
-            // dd($sendEmail);
+            $sendEmail = $this->_sendEmail($email, $token, 'regis');
+            if (!$sendEmail) {
+                throw new \CodeIgniter\Exceptions\PageNotFoundException('Send email ke email' . $email . ' mengalami kegagalan');
+            }
 
             if ($results && $sendEmail) {
                 $this->session->setFlashdata('msg', 'Registrasi Berhasil! Silahkan periksa email anda');
@@ -107,7 +113,7 @@ class Login extends BaseController
 
     // public function actionForgotPass()
     // {
-        
+
     // }
 
     private function _sendEmail($emailTo, $token, $type)
@@ -125,13 +131,13 @@ class Login extends BaseController
 
         // Isi Email
         $this->Email->isHTML(true);
-        
+
         if ($type == 'regis' && ($token != "" || $token != null)) {
             $this->Email->Subject   = 'Verification Account';
-            $this->Email->Body      = 'Click this link to verify you account : <a href="'. base_url() .'/Login/verify/' . urlencode($token) . '/' . $emailTo . '">Activate</a>';
+            $this->Email->Body      = 'Click this link to verify you account : <a href="' . base_url() . '/Login/verify/' . urlencode($token) . '/' . $emailTo . '">Activate</a>';
         } else {
             $this->Email->Subject   = 'Reset Password';
-            $this->Email->Body      = 'Click this link to reset your password : <a href="'. base_url() .'/Login/resetpassword/' . urlencode($token) . '/' . $emailTo . '">Reset Password</a>';
+            $this->Email->Body      = 'Click this link to reset your password : <a href="' . base_url() . '/Login/resetpassword/' . urlencode($token) . '/' . $emailTo . '">Reset Password</a>';
         }
 
         $results = $this->Email->send();
@@ -177,11 +183,10 @@ class Login extends BaseController
                 } else {
                     $this->session->setFlashdata('msg',  $emailTo . ' Akun Gagal Aktif, Silahkan Hubungi Tim Aplikasi!');
                 }
-
             } else {
                 $this->Login->where('email', $emailTo);
                 $this->Login->delete();
-                
+
                 $this->session->setFlashdata('msg_err', 'Token Kadaluarsa! Harap Registrasi Kembali');
             }
         } else {
@@ -190,8 +195,9 @@ class Login extends BaseController
         return redirect()->to('/login');
     }
 
-    private function _str_rand(int $length = 32){ // 64 = 32
+    private function _str_rand(int $length = 32)
+    { // 64 = 32
         $length = ($length < 4) ? 4 : $length;
-        return bin2hex(random_bytes(($length-($length%2))/2));
+        return bin2hex(random_bytes(($length - ($length % 2)) / 2));
     }
 }
