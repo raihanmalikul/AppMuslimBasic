@@ -24,18 +24,18 @@ $segment = $request->uri->getSegments();
                     <li class="sidebar-item <?php if ($segment[1] == 'konfPay') echo "active"; ?>"><a class="sidebar-link" href="/admin/konfPay">Konfirmasi Pembayaran</a></li>
                 </ul>
             </li>
-            
-            <li class="sidebar-item <?php if ($segment[1] == 'allProduk' || $segment[1] == 'inventaris' || $segment[1] == 'kategori') echo "active"; ?>">
+
+            <li class="sidebar-item <?php if ($segment[1] == 'masterProducts' || $segment[1] == 'inventaris' || $segment[1] == 'kategori') echo "active"; ?>">
                 <a data-bs-target="#products" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-                    <i class="fa-solid fa-cart-shopping"></i> <span class="align-middle">Produk</span>
+                    <i class="fa-solid fa-cart-shopping"></i> <span class="align-middle">Products</span>
                 </a>
                 <ul id="products" class="sidebar-dropdown list-unstyled collapse <?php if ($segment[1] == 'allProduk' || $segment[1] == 'inventaris' || $segment[1] == 'kategori') echo "show"; ?>" data-bs-parent="#products">
-                    <li class="sidebar-item <?php if ($segment[1] == 'allProduk') echo "active"; ?>"><a class="sidebar-link" href="/admin/allProduk">All Produk</a></li>
+                    <li class="sidebar-item <?php if ($segment[1] == 'masterProducts') echo "active"; ?>"><a class="sidebar-link" href="/admin/masterProducts">Master Products</a></li>
                     <li class="sidebar-item <?php if ($segment[1] == 'inventaris') echo "active"; ?>"><a class="sidebar-link" href="/admin/inventaris">Inventaris</a></li>
-                    <li class="sidebar-item <?php if ($segment[1] == 'kategori') echo "active"; ?>"><a class="sidebar-link" href="/admin/kategori">Kategori</a></li>
+                    <!-- <li class="sidebar-item <?php if ($segment[1] == 'kategori') echo "active"; ?>"><a class="sidebar-link" href="/admin/kategori">Kategori</a></li> -->
                 </ul>
             </li>
-            
+
             <li class="sidebar-item <?php if ($segment[1] == 'customerMData' || $segment[1] == 'historyOrder') echo "active"; ?>">
                 <a data-bs-target="#customers" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
                     <i class="fa-solid fa-user-group"></i> <span class="align-middle">Customer</span>
@@ -45,7 +45,7 @@ $segment = $request->uri->getSegments();
                     <li class="sidebar-item <?php if ($segment[1] == 'historyOrder') echo "active"; ?>"><a class="sidebar-link" href="/admin/historyOrder">History Order</a></li>
                 </ul>
             </li>
-            
+
             <li class="sidebar-item <?php if ($segment[1] == 'lprPenjualan' || $segment[1] == 'lprPengiriman') echo "active"; ?>">
                 <a data-bs-target="#reports" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
                     <i class="fa-solid fa-list"></i> <span class="align-middle">Report</span>
