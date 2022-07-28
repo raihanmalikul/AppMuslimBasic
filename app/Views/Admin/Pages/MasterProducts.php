@@ -133,16 +133,20 @@
             pageLength: 5,
             order: [1, 'asc'],
             processing: true,
-            language: {
-                infoFiltered: "",
-                processing: '<i class="fa-solid fa-spinner fa-pulse" style="font-size:24px;color:#080606;"></i><span style="font-size:18px">&nbsp;&nbsp;Loading...</span>'
-            },
             fnInitComplete: function(oSettings) {
                 $(window).resize();
             },
             fnDrawCallback: function(oSettings) {
                 $(window).trigger('resize');
             },
+            columnDefs: [{
+                searchable: false,
+                orderable: false,
+                targets: 0,
+                render: function(data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }
+            }],
             ajax: {
                 type: "POST",
                 url: "/ProsesAdmin/displayProduct",
@@ -162,7 +166,6 @@
                                 '<button class="btn btn-sm btn-pill btn-danger" type="button"onclick="editData(' + value.slug + ')"><i class="fa-solid fa-trash-can"></i>&nbsp; Delete</button>';
                         }
                         return_data.push({
-                            'no': i,
                             'categoryId': value.category_id,
                             'categoryName': value.category_name,
                             'productId': value.product_id,
@@ -179,10 +182,6 @@
                 }
             },
             columns: [{
-                    data: 'no',
-                    defaultContent: ''
-                },
-                {
                     data: 'categoryId',
                     defaultContent: ''
                 },
