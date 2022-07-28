@@ -21,9 +21,8 @@ class MColor extends Migration
                 'constraint' => 255
             ],
             'color_id' => [
-                'type'       => 'INT',
-                'unsigned'   => true,
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'slug' => [
                 'type'       => 'VARCHAR',

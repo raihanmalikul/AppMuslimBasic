@@ -13,25 +13,25 @@ class MSizeSeeder extends Seeder
         $data = [
             [
                 'name'          => 'S',
-                'size_id'       => 1,
+                'size_id'       => '01',
                 'slug'          => '',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'L',
-                'size_id'       => 2,
+                'size_id'       => '02',
                 'slug'          => '',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'XL',
-                'size_id'       => 3,
+                'size_id'       => '03',
                 'slug'          => '',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'XXL',
-                'size_id'       => 4,
+                'size_id'       => '04',
                 'slug'          => '',
                 'created_at'    => TIme::now()
             ]
