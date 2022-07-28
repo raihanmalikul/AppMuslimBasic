@@ -32,6 +32,14 @@ class MProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'color_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'size_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'description' => [
                 'type'       => 'TEXT'
             ],
@@ -50,6 +58,10 @@ class MProduct extends Migration
             'stock' => [
                 'type'       => 'INT',
                 'constraint' => 11
+            ],
+            'is_valid' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
