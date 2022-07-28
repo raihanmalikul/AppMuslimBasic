@@ -11,15 +11,16 @@ class MProfilSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name'          => 'BUTTON PANTS',
-            'slug'          => '',
-            'category_id'   => 3,
-            'description'   => '',
-            'image'         => '1.jpg',
-            'price'         => 189000,
-            'weight'        => '0.3 Kg',
-            'stock'         => 100,
-            'created_at'    => TIme::now()
+            'name'              => 'BUTTON PANTS',
+            'email'             => '',
+            'phone'             => 3,
+            'address'           => '',
+            'province_id'       => '1.jpg',
+            'city_id'           => 189000,
+            'postal_code'       => '',
+            'statud'            => 100,
+            'image'             => 100,
+            'created_at'        => TIme::now()
         ];
 
         // Using Query Builder
