@@ -13,7 +13,7 @@ class MColorSeeds extends Seeder
         $data = [
             'name'          => 'BLACK',
             'color_id'      => 1,
-            'slug'          => '',
+            'slug'          => 'black-01',
             'created_at'    => TIme::now()
         ];
 

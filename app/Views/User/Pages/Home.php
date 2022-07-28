@@ -4,542 +4,583 @@
 
 <?= $this->section('contentUser'); ?>
 
-    <!-- Header Start -->
-    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
-        <div class="container">
-            <div class="relative flex items-center justify-between">
-                <div class="px-4">
-                    <a href="#home" class="block py-6 text-xl font-bold text-dark dark:text-white">MuslimBasic</a>
-                </div>
-                <div class="flex items-center px-4">
-                    <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
-                        <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
-                    </button>
+<!-- Header Start -->
+<header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+    <div class="container">
+        <div class="relative flex items-center justify-between">
+            <div class="px-4">
+                <a href="#home" class="block py-6 text-xl font-bold text-dark dark:text-white">MuslimBasic</a>
+            </div>
+            <div class="flex items-center px-4">
+                <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+                    <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+                    <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                    <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+                </button>
 
-                    <nav id="navMenu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-700 lg:dark:bg-transparent dark:shadow-slate-400">
-                        <ul class="block lg:flex">
-                            <li class="group">
-                                <a href="#home" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
-                            </li>
-                            <li class="group">
-                                <a href="#best" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
-                            </li>
-                            <li class="group">
-                                <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
-                            </li>
-                            <li class="group">
-                                <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RaTING</a>
-                            </li>
-                            <li class="group">
-                                <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
-                            </li>
-                            <li class="group">
-                                <div class="mt-3 lg:mt-0 items-center flex pl-8">
-                                    <!-- <button type="button" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <nav id="navMenu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-700 lg:dark:bg-transparent dark:shadow-slate-400">
+                    <ul class="block lg:flex">
+                        <li class="group">
+                            <a href="#home" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
+                        </li>
+                        <li class="group">
+                            <a href="#best" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
+                        </li>
+                        <li class="group">
+                            <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
+                        </li>
+                        <li class="group">
+                            <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RaTING</a>
+                        </li>
+                        <li class="group">
+                            <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
+                        </li>
+                        <li class="group">
+                            <div class="mt-3 lg:mt-0 items-center flex pl-8">
+                                <div class="dropdown relative">
+                                    <a class="dropdown-toggle px-6 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa-solid fa-user"></i>
-                                    </button> -->
-                                    <a href="" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"><i class="fa-solid fa-user"></i></a>
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                            <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
+                                        <?php
+                                        if ($this->session->get('logged_in')) { ?>
+                                            <li>
+                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/settings">Settings</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/logout">Logout</a>
+                                            </li>
+
+                                        <?php } else { ?>
+                                            <li>
+                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/login">Login</a>
+                                            </li>
+                                        <?php }
+                                        ?>
+                                    </ul>
                                 </div>
-                            </li>
-                            <li class="mt-3 lg:mt-0 items-center flex pl-8">
-                                <div class="flex">
-                                    <span class="mr-2 text-sm text-dark dark:text-white">Light</span>
-                                    <input type="checkbox" class="hidden" id="dark-toggle" />
-                                    <label for="dark-toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-700 p-1">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-out"></div>
+                            </div>
+                        </li>
+                        <li class="mt-3 lg:mt-0 items-center flex pl-8">
+                            <div class="flex">
+                                <span class="mr-2 text-sm text-dark dark:text-white">Light</span>
+                                <input type="checkbox" class="hidden" id="dark-toggle" />
+                                <label for="dark-toggle">
+                                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-700 p-1">
+                                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-out">
                                         </div>
-                                    </label>
-                                    <span class="ml-2 text-sm text-dark dark:text-white">Dark</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Home Section Start -->
-    <section id="home" class="pt-20 dark:bg-dark">
-        <div class="pt-12 pb-12 bg-gradient-to-r dark:from-gray-500 to-gray-900">
-            <div class="flex flex-wrap justify-center items-center w-full h-full" id="imgSwich">
-                <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
-                </div>
-                <div class="transition animate-fade-in-up aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto1.jpg" alt="" class="relative z-10 h-[800px] ">
-                </div>
-                <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="relative z-10 h-[800px] ">
-                </div>
-                <div class="transition animate-fade-in-up aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="relative z-10 h-[800px] ">
-                </div>
-                <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="relative z-10 h-[800px] ">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Home Section End -->
-
-    <!-- Best Seller Section Start -->
-    <section id="best" class="bg-slate-100 pt-32 pb-16 dark:bg-slate-800">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">BEST SELLER</h2>
-                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit minus aliquam consequuntur.
-                    </p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4">
-                <a href="#" class="group">
-                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                        <img src="/assets/tailwind/img/toko/foto11.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Earthen Bottle</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$48</p>
-                </a>
-
-                <a href="#" class="group">
-                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                        <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Nomad Tumbler</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
-                </a>
-
-                <a href="#" class="group">
-                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                        <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Focus Paper Refill</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$89</p>
-                </a>
-
-                <a href="#" class="group">
-                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                        <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                    </div>
-                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Machined Mechanical Pencil</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Best Seller Section End -->
-
-    <section id="discount" class="pt-32 pb-16 dark:bg-dark">
-        <div class="container">
-            <!-- <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2> -->
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">ITEM DISCOUNT</h2>
-                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit minus aliquam consequuntur.
-                    </p>
-                </div>
-            </div>
-
-            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                <div class="group relative">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <div class="py-8 px-6">
-                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                            </div>
-                            <div class="mt-4 flex justify-between">
-                                <div>
-                                    <h3 class="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" class="absolute inset-0"></span>
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-                                    <p class="mt-1 text-sm text-gray-500">Black</p>
-                                </div>
-                                <p class="text-sm font-medium text-gray-900">$35</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <div class="py-8 px-6">
-                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                            </div>
-                            <div class="mt-4 flex justify-between">
-                                <div>
-                                    <h3 class="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" class="absolute inset-0"></span>
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-                                    <p class="mt-1 text-sm text-gray-500">Black</p>
-                                </div>
-                                <p class="text-sm font-medium text-gray-900">$35</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <div class="py-8 px-6">
-                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                            </div>
-                            <div class="mt-4 flex justify-between">
-                                <div>
-                                    <h3 class="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" class="absolute inset-0"></span>
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-                                    <p class="mt-1 text-sm text-gray-500">Black</p>
-                                </div>
-                                <p class="text-sm font-medium text-gray-900">$35</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="group relative">
-                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                        <div class="py-8 px-6">
-                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                            </div>
-                            <div class="mt-4 flex justify-between">
-                                <div>
-                                    <h3 class="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" class="absolute inset-0"></span>
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-                                    <p class="mt-1 text-sm text-gray-500">Black</p>
-                                </div>
-                                <p class="text-sm font-medium text-gray-900">$35</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More products... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Rarting Section Start -->
-    <section id="rating" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-400">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">What they say about us!</h2>
-                </div>
-                <div class="mb-5 flex items-center justify-center">
-                    <div class="text-amber-300">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <div class="mb-5 flex items-center justify-center dark:text-white">
-                    <p>Form 2388 Customers</p>
-                </div>
-            </div>
-            <div id="reviews" class="carousel slide carousel-dark relative" data-bs-ride="carousel">
-                <!-- Inner -->
-                <div class="carousel-inner relative w-full overflow-hidden">
-                    <!-- Single item -->
-                    <div class="carousel-item active relative float-left w-full">
-                        <div class="flex flex-wrap w-full justify-center px-4">
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci illo nisi non debitis, vero quas nulla magni necessitatibus nesciunt at illum, dolorum, perspiciatis laboriosam esse!</p>
                                     </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
+                                </label>
+                                <span class="ml-2 text-sm text-dark dark:text-white">Dark</span>
                             </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur et quaerat non eveniet voluptatum possimus, facere ex dolorem quo aliquid!</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto corporis in, iure asperiores dolorem earum deleniti odio aspernatur ut molestias!</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ipsam in voluptate voluptatum. Sed nisi harum natus eum minus. Nobis!</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single item -->
-                    <div class="carousel-item relative float-left w-full">
-                        <div class="flex flex-wrap w-full justify-center px-4">
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed natus animi facilis architecto amet unde molestias suscipit similique debitis consectetur?</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis id dolorem doloribus repellat mollitia cupiditate quo sunt fugit commodi ipsam.</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint deserunt quasi quaerat. Dicta veritatis nulla dignissimos sit ad exercitationem tenetur.</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam voluptatum adipisci doloremque saepe nesciunt natus et pariatur accusantium iusto.</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single item -->
-                    <div class="carousel-item relative float-left w-full">
-                        <div class="flex flex-wrap w-full justify-center px-4">
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum commodi minus vitae sint mollitia libero nostrum perferendis illum ex! Est.</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt quaerat dicta consequuntur labore suscipit voluptatum, nulla placeat ad quidem quam?</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eum modi fugiat! Ut dolor in a neque quod quo! Maxime?</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                            <div class="px-3 w-1/4">
-                                <div class="carousel-caption text-center">
-                                    <div class="text-sm">
-                                        <h5 class="text-amber-300 ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores voluptatum harum aliquam, nemo fugit possimus voluptate nisi necessitatibus quod!</p>
-                                    </div>
-                                    <div class="text-sm py-16">Dani, 06/09/2021</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Inner -->
-
-                <!-- Controls -->
-                <button class="carousel-control-prev absolute -top-28 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -left-28" type="button" data-bs-target="#reviews" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next absolute -top-28 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -right-28" type="button" data-bs-target="#reviews" data-bs-slide="next">
-                    <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <!-- Rerting Section End -->
-
-    <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-16 dark:bg-slate-700">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="mx-auto mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Contact us</h2>
-                    <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est libero accusamus similique quia. Repellendus eveniet qui atque reiciendis, saepe minima consequatur facilis reprehenderit aliquam. Quos distinctio harum cum sequi?
-                    </p>
-                </div>
-            </div>
-
-            <form>
-                <div class="w-full lg:mx-auto lg:w-2/3">
-                    <div class="mb-8 w-full px-4">
-                        <label for="name" class="text-base font-bold text-dark dark:text-white">Nama</label>
-                        <input type="text" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-                    </div>
-                    <div class="mb-8 w-full px-4">
-                        <label for="email" class="text-base font-bold text-dark dark:text-white">Email</label>
-                        <input type="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-                    </div>
-                    <div class="mb-8 w-full px-4">
-                        <label for="mesagge" class="text-base font-bold text-dark dark:text-white">Mesagge</label>
-                        <textarea type="email" id="email" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
-                    </div>
-                    <div class="w-full px-4">
-                        <button class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">Kirim</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-    <!-- Contact Section End -->
-
-    <!-- BEGIN Footer -->
-    <?= $this->include('User/Layout/Footer') ?>
-    <!-- END Footer -->
-
-    <!-- Modal Login Start -->
-    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="loginModal" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
-        <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-            <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-                <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-                    <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
-                        Modal title
-                    </h5>
-                    <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body relative p-4">
-                    <p>This is a vertically centered modal.</p>
-                </div>
-                <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                    <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
-                        Save changes
-                    </button>
-                </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-    <!-- Modal Login End -->
+</header>
+<!-- Header End -->
 
-    <!-- <div class="relative z-10" role="dialog" aria-modal="true">
+<!-- Home Section Start -->
+<section id="home" class="pt-20 dark:bg-dark">
+    <div class="pt-12 pb-12 bg-gradient-to-r dark:from-gray-500 to-gray-900">
+        <div class="flex flex-wrap justify-center items-center w-full h-full" id="imgSwich">
+            <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
+            </div>
+            <div class="transition animate-fade-in-up aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <img src="/assets/tailwind/img/toko/foto1.jpg" alt="" class="relative z-10 h-[800px] ">
+            </div>
+            <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="relative z-10 h-[800px] ">
+            </div>
+            <div class="transition animate-fade-in-up aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="relative z-10 h-[800px] ">
+            </div>
+            <div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="relative z-10 h-[800px] ">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Best Seller Section Start -->
+<section id="best" class="bg-slate-100 pt-32 pb-16 dark:bg-slate-800">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="mx-auto mb-16 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">BEST SELLER</h2>
+                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
+                    minus aliquam consequuntur.
+                </p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4">
+            <a href="#" class="group">
+                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="/assets/tailwind/img/toko/foto11.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Earthen Bottle</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$48</p>
+            </a>
+
+            <a href="#" class="group">
+                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Nomad Tumbler</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
+            </a>
+
+            <a href="#" class="group">
+                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Focus Paper Refill</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$89</p>
+            </a>
+
+            <a href="#" class="group">
+                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                    <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                </div>
+                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Machined Mechanical Pencil</h3>
+                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Best Seller Section End -->
+
+<section id="discount" class="pt-32 pb-16 dark:bg-dark">
+    <div class="container">
+        <!-- <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2> -->
+        <div class="w-full px-4">
+            <div class="mx-auto mb-16 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">ITEM DISCOUNT</h2>
+                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
+                    minus aliquam consequuntur.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <div class="group relative">
+                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                    <div class="py-8 px-6">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Basic Tee
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative">
+                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                    <div class="py-8 px-6">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Basic Tee
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative">
+                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                    <div class="py-8 px-6">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Basic Tee
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative">
+                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                    <div class="py-8 px-6">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Basic Tee
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Black</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More products... -->
+        </div>
+    </div>
+</section>
+
+<!-- Rarting Section Start -->
+<section id="rating" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-400">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="mx-auto mb-16 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">What they say
+                    about us!</h2>
+            </div>
+            <div class="mb-5 flex items-center justify-center">
+                <div class="text-amber-300">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="mb-5 flex items-center justify-center dark:text-white">
+                <p>Form 2388 Customers</p>
+            </div>
+        </div>
+        <div id="reviews" class="carousel slide carousel-dark relative" data-bs-ride="carousel">
+            <!-- Inner -->
+            <div class="carousel-inner relative w-full overflow-hidden">
+                <!-- Single item -->
+                <div class="carousel-item active relative float-left w-full">
+                    <div class="flex flex-wrap w-full justify-center px-4">
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci illo nisi non
+                                        debitis, vero quas nulla magni necessitatibus nesciunt at illum, dolorum,
+                                        perspiciatis laboriosam esse!</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur et quaerat non
+                                        eveniet voluptatum possimus, facere ex dolorem quo aliquid!</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto corporis in,
+                                        iure asperiores dolorem earum deleniti odio aspernatur ut molestias!</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ipsam in voluptate
+                                        voluptatum. Sed nisi harum natus eum minus. Nobis!</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single item -->
+                <div class="carousel-item relative float-left w-full">
+                    <div class="flex flex-wrap w-full justify-center px-4">
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed natus animi facilis
+                                        architecto amet unde molestias suscipit similique debitis consectetur?</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis id dolorem
+                                        doloribus repellat mollitia cupiditate quo sunt fugit commodi ipsam.</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint deserunt quasi
+                                        quaerat. Dicta veritatis nulla dignissimos sit ad exercitationem tenetur.</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam voluptatum
+                                        adipisci doloremque saepe nesciunt natus et pariatur accusantium iusto.</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single item -->
+                <div class="carousel-item relative float-left w-full">
+                    <div class="flex flex-wrap w-full justify-center px-4">
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum commodi minus
+                                        vitae sint mollitia libero nostrum perferendis illum ex! Est.</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt quaerat dicta
+                                        consequuntur labore suscipit voluptatum, nulla placeat ad quidem quam?</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eum modi fugiat!
+                                        Ut dolor in a neque quod quo! Maxime?</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                        <div class="px-3 w-1/4">
+                            <div class="carousel-caption text-center">
+                                <div class="text-sm">
+                                    <h5 class="text-amber-300 ">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores
+                                        voluptatum harum aliquam, nemo fugit possimus voluptate nisi necessitatibus
+                                        quod!</p>
+                                </div>
+                                <div class="text-sm py-16">Dani, 06/09/2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Inner -->
+
+            <!-- Controls -->
+            <button class="carousel-control-prev absolute -top-28 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -left-28" type="button" data-bs-target="#reviews" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next absolute -top-28 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -right-28" type="button" data-bs-target="#reviews" data-bs-slide="next">
+                <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Rerting Section End -->
+
+<!-- Contact Section Start -->
+<section id="contact" class="pt-36 pb-16 dark:bg-slate-700">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="mx-auto mb-16 text-center">
+                <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">Contact us</h2>
+                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est libero accusamus similique quia.
+                    Repellendus eveniet qui atque reiciendis, saepe minima consequatur facilis reprehenderit aliquam.
+                    Quos distinctio harum cum sequi?
+                </p>
+            </div>
+        </div>
+
+        <form>
+            <div class="w-full lg:mx-auto lg:w-2/3">
+                <div class="mb-8 w-full px-4">
+                    <label for="name" class="text-base font-bold text-dark dark:text-white">Nama</label>
+                    <input type="text" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+                </div>
+                <div class="mb-8 w-full px-4">
+                    <label for="email" class="text-base font-bold text-dark dark:text-white">Email</label>
+                    <input type="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+                </div>
+                <div class="mb-8 w-full px-4">
+                    <label for="mesagge" class="text-base font-bold text-dark dark:text-white">Mesagge</label>
+                    <textarea type="email" id="email" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+                </div>
+                <div class="w-full px-4">
+                    <button class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">Kirim</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- BEGIN Footer -->
+<?= $this->include('User/Layout/Footer') ?>
+<!-- END Footer -->
+
+<!-- Modal Login Start -->
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="loginModal" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                    Modal title
+                </h5>
+                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body relative p-4">
+                <p>This is a vertically centered modal.</p>
+            </div>
+            <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Login End -->
+
+<!-- <div class="relative z-10" role="dialog" aria-modal="true">
         <div class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
 
         <div class="fixed z-10 inset-0 overflow-y-auto">
@@ -709,5 +750,9 @@
             </div>
         </div>
     </div> -->
+
+<!-- BEGIN SCRIPT -->
+<?= $this->include('User/Layout/Script') ?>
+<!-- END SCRIPT -->
 
 <?= $this->endSection(); ?>

@@ -44,9 +44,14 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
+use App\Controllers\Login;
+
 $routes->get('/', 'Pages::dashboard');
 $routes->get('/login', 'Login::login');
-$routes->get('/registrasi', 'Login::registrasi');
+$routes->get('/logout', 'Login::logout');
+$routes->get('/register', 'Login::register');
+$routes->get('/Login/verify/(:alphanum)/(:any)', [[Login::class, 'verify'], '$2/$1']);
+$routes->get('/forgotPass', 'Login::forgotPass');
 $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
 
 /*
@@ -55,7 +60,7 @@ $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
  * --------------------------------------------------------------------
  */
 
-$routes->get('/LoginAdmin', 'LoginAdmin::index');
+$routes->get('/loginAdmin', 'LoginAdmin::index');
 $routes->get('/admin/dashboard', 'PagesAdmin::dashboard', ['filter' => 'auth']);
 $routes->get('/admin/allOrder', 'PagesAdmin::allOrder', ['filter' => 'auth']);
 $routes->get('/admin/konfPay', 'PagesAdmin::konfPay', ['filter' => 'auth']);

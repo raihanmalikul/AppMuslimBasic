@@ -11,8 +11,8 @@ class UserAdminSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name'         => 'raihan',
-            'username'     => 'raihanmalikulmulki@gmail.com',
+            'name'         => 'didin irfandi',
+            'username'     => 'darth@theempire.com',
             'password'     => md5('123'),
             'userlevel'    => 1,
             'status_login' => 0,
@@ -22,6 +22,6 @@ class UserAdminSeeder extends Seeder
         ];
 
         // Using Query Builder
-        $this->db->table('login_admin')->insert($data);
+        $this->db->table('m_login_admin')->insert($data);
     }
 }

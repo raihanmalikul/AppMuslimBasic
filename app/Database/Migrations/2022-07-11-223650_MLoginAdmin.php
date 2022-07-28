@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -21,11 +22,11 @@ class MLoginAdmin extends Migration
             ],
             'username' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 15
+                'constraint' => 255
             ],
             'password' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 15
+                'constraint' => 255
             ],
             'userlevel' => [
                 'type'       => 'INT',

@@ -1,1 +1,5 @@
 ERROR - 2022-07-25 00:43:12 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,...' at line 1
+ERROR - 2022-07-25 03:33:03 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+ERROR - 2022-07-25 03:35:04 --> Table 'appmuslimbasic.login_admin' doesn't exist
+ERROR - 2022-07-25 03:35:45 --> Unknown column 'nama' in 'field list'
+ERROR - 2022-07-25 03:35:59 --> Unknown column 'created_by' in 'field list'
