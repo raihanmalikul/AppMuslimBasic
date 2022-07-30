@@ -218,9 +218,34 @@ class ProsesAdmin extends BaseController
                     $product_slug[$i]   = strtolower(str_replace(" ", "-", $product_name[$i])) . '-' . $product_id[$i];
                     $product_name[$i]   = strtoupper($product_name[$i]);
                     $insertProduct      = "INSERT INTO `m_product` 
-                                                (`slug`, `name`, `product_id`, `category_id`, `color_id`, `size_id`, `description`, `price`, `weight`, `stock`, `is_valid`, `created_at`) 
-                                                VALUES 
-                                                ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', '$product_color[$i]', '$product_size[$i]', '$product_des[$i]', '$product_price[$i]', '$product_weight[$i]', '$product_stock[$i]', 1, '" . TIme::now() . "')";
+                                            (
+                                                `slug`, 
+                                                `name`, 
+                                                `product_id`, 
+                                                `category_id`, 
+                                                `color_id`, 
+                                                `size_id`, 
+                                                `description`, 
+                                                `price`, 
+                                                `weight`, 
+                                                `stock`, 
+                                                `is_valid`, 
+                                                `created_at`
+                                            ) 
+                                            VALUES 
+                                            (
+                                                '$product_slug[$i]'
+                                                , '$product_name[$i]'
+                                                , '$product_id[$i]'
+                                                , '$category_id'
+                                                , '$product_color[$i]'
+                                                , '$product_size[$i]'
+                                                , '$product_des[$i]'
+                                                , '$product_price[$i]'
+                                                , '$product_weight[$i]'
+                                                , '$product_stock[$i]', 1
+                                                , '" . TIme::now() . "'
+                                            )";
                     $queryProduct       = $this->db->query($insertProduct);
                 }
                 if ($queryProduct) $return = ['status' => 1];
