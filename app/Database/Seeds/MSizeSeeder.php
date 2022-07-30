@@ -14,25 +14,25 @@ class MSizeSeeder extends Seeder
             [
                 'name'          => 'S',
                 'size_id'       => '01',
-                'slug'          => '',
+                'slug'          => 's-01',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'L',
                 'size_id'       => '02',
-                'slug'          => '',
+                'slug'          => 'l-02',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'XL',
                 'size_id'       => '03',
-                'slug'          => '',
+                'slug'          => 'xl-03',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'XXL',
                 'size_id'       => '04',
-                'slug'          => '',
+                'slug'          => 'xxl-04',
                 'created_at'    => TIme::now()
             ]
         ];

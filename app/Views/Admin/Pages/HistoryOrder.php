@@ -5,7 +5,7 @@
 
 <!-- BEGIN NAVBAR -->
 <?= $this->include('Admin/Layout/Sidebar') ?>
-            <!-- END NAVBAR -->
+<!-- END NAVBAR -->
 <div class="main">
 
     <!-- BEGIN SCRIPT -->
@@ -46,21 +46,17 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row text-muted">
-                <div class="col-6 text-start">
-                    <p class="mb-0">
-                        <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> &copy; | Environment : <?= ENVIRONMENT ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- BEGIN Footer -->
+    <?= $this->include('Admin/Layout/Footer') ?>
+    <!-- END Footer -->
 </div>
 
+<!-- BEGIN SCRIPT -->
+<?= $this->include('Admin/Layout/Script') ?>
+<!-- END SCRIPT -->
+
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         $('#tblHistoryOrder').DataTable();
     });
 </script>

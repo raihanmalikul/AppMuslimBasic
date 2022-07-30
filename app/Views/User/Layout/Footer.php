@@ -72,7 +72,7 @@
                 </a>
             </div>
             <p class="text-center text-xs font-medium text-slate-500">
-                Copyright © 2022 || Tugas Akhir
+                Copyright © 2022 || D3 Teknik Informatika
                 <a href="https://www.linkedin.com/in/raihanmalikul/" target="_blank" class="font-bold text-primary">Raihan Malikul</a>, with
                 <a href="https://tailwindcss.com/" target="_balnk" class="font-bold text-primary">Tailwind CSS.</a>
             </p>

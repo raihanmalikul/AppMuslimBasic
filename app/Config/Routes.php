@@ -72,9 +72,9 @@ $routes->group('admin', static function ($routes) {
     $routes->get('historyOrder', 'PagesAdmin::historyOrder', ['filter' => 'auth']);
     $routes->get('lprPenjualan', 'PagesAdmin::lprPenjualan', ['filter' => 'auth']);
     $routes->get('lprPengiriman', 'PagesAdmin::lprPengiriman', ['filter' => 'auth']);
-    $routes->post('displayProduct/(:any)', 'ProsesAdmin::displayProduct/$1');
 });
 
+$routes->get('ProsesAdmin/AddMasterCategory/(:any)', [[Login::class, 'AddMasterCategory'], '$1']);
 // $routes->get('/ProsesAdmin/getNewCategoryCode/(:any)', 'ProsesAdmin::getNewCategoryCode/$1');
 
 

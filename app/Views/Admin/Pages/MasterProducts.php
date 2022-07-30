@@ -15,33 +15,29 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3"><strong>Master Products</strong></h1>
+            <h1 class="h3 mb-3">Master Products</h1>
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <button class="btn btn-pill btn-primary" type="button" id="addProducts"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add</button>
+                            <button class="btn btn-pill btn-primary" type="button" id="addProducts"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add New</button>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive-sm">
-                                <table class="table table-sm table-striped table-hover" id="tblMstrProducts">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Category Code</th>
-                                            <th>Category Name</th>
-                                            <th>Products Code</th>
-                                            <th>Products Name</th>
-                                            <th>Price (IDN)</th>
-                                            <th>Weight (Gram)</th>
-                                            <th>Stock</th>
-                                            <th>Created At</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
+                            <table class="table table-sm table-striped" id="tblMstrProducts">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Category Code</th>
+                                        <th>Category Name</th>
+                                        <th>Products Code</th>
+                                        <th>Products Name</th>
+                                        <th>Status</th>
+                                        <th>Created At</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -55,7 +51,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalAddCategoryLabel">Add Category</h5>
+                    <h5 class="modal-title" id="modalAddCategoryLabel">Add New Category or New Products</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -63,8 +59,7 @@
                     <form action="" method="POST" id="formAddProducts">
                         <div class="mb-3">
                             <label class="form-label">Select category</label>
-                            <select class="form-control" name="optCategory" id="optCategory">
-                            </select>
+                            <select class="form-control" name="optCategory" id="optCategory"></select>
                         </div>
                         <div class="row">
                             <div class="mb-3 col-md-6">
@@ -73,29 +68,45 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">&nbsp;</label>
-                                <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Name">
+                                <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Category Name">
                             </div>
                         </div>
                         <div class="row dtlProduct">
-                            <div class="mb-3 col-md-2">
-                                <label class="form-label">Products</label>
-                                <input type="text" class="form-control" name="product_id[]" id="product_id" placeholder="Code" readonly>
+                            <div class="row">
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label">Products</label>
+                                    <input type="text" class="form-control" name="product_id[]" id="product_id" placeholder="Code" readonly>
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label class="form-label">&nbsp;</label>
+                                    <input type="text" class="form-control" name="product_name[]" id="product_name" placeholder="Product Name">
+                                </div>
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label">&nbsp;</label>
+                                    <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                </div>
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label">&nbsp;</label>
+                                    <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                </div>
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label">&nbsp;</label>
+                                    <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                </div>
                             </div>
-                            <div class="mb-3 col-md-4">
-                                <label class="form-label">&nbsp;</label>
-                                <input type="text" class="form-control" name="product_name[]" id="product_name" placeholder="Name">
-                            </div>
-                            <div class="mb-3 col-md-2">
-                                <label class="form-label">&nbsp;</label>
-                                <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
-                            </div>
-                            <div class="mb-3 col-md-2">
-                                <label class="form-label">&nbsp;</label>
-                                <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
-                            </div>
-                            <div class="mb-3 col-md-2">
-                                <label class="form-label">&nbsp;</label>
-                                <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                </div>
+                                <div class="mb-3 col-md-3">
+                                    <!-- <input type="text" class="form-control" name="product_size[]" id="product_size" placeholder="Size"> -->
+                                    <select class="form-select mb-3" name="product_size[]" id="product_size" placeholder="Size"></select>
+                                </div>
+                                <div class="mb-3 col-md-3">
+                                    <input type="hidden" name="product_slug[]" id="product_slug">
+                                    <!-- <input type="text" class="form-control" name="product_color[]" id="product_color" placeholder="Color"> -->
+                                    <select class="form-select mb-3" name="product_color[]" id="product_color" placeholder="Color"></select>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -109,36 +120,33 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row text-muted">
-                <div class="col-6 text-start">
-                    <p class="mb-0">
-                        <a class="text-muted" href="#" target="_blank"><strong>AdminKit</strong></a> &copy; | Environment : <?= ENVIRONMENT ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- BEGIN Footer -->
+    <?= $this->include('Admin/Layout/Footer') ?>
+    <!-- END Footer -->
 </div>
+
+<!-- BEGIN SCRIPT -->
+<?= $this->include('Admin/Layout/Script') ?>
+<!-- END SCRIPT -->
 
 <script type="text/javascript">
     $(function() {
         $('#tblMstrProducts').DataTable({
+            // responsive: true,
             serverSide: true,
-            autoWidth: false,
-            scrollX: true,
-            scrollCollapse: true,
+            // autoWidth: false,
+            // scrollX: true,
+            // scrollCollapse: true,
             lengthMenu: [5, 10, 15, 20, 30, 50, 100],
-            pageLength: 5,
+            pageLength: 10,
             order: [1, 'asc'],
             processing: true,
-            fnInitComplete: function(oSettings) {
-                $(window).resize();
-            },
-            fnDrawCallback: function(oSettings) {
-                $(window).trigger('resize');
-            },
+            // fnInitComplete: function(oSettings) {
+            //     $(window).resize();
+            // },
+            // fnDrawCallback: function(oSettings) {
+            //     $(window).trigger('resize');
+            // },
             columnDefs: [{
                 searchable: false,
                 orderable: false,
@@ -155,24 +163,30 @@
                 },
                 dataType: "json",
                 dataSrc: function(json) {
-                    console.log(json)
+                    // console.log(json)
                     var return_data = new Array();
                     var i = 1;
 
                     $.each(json.data, function(index, value) {
-                        let btnAction = '';
+                        let btnAction = statusBadge = '';
                         if (value.product_id != null) {
-                            btnAction = '<button class="btn btn-sm btn-pill btn-primary" type="button"onclick="editData(' + value.slug + ')"><i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit</button>' +
-                                '<button class="btn btn-sm btn-pill btn-danger" type="button"onclick="editData(' + value.slug + ')"><i class="fa-solid fa-trash-can"></i>&nbsp; Delete</button>';
+                            btnAction = '' +
+                                '<button class="btn btn-sm btn-pill btn-primary" type="button"onclick="updData(' + value.slug + ')"><i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit</button>&nbsp;' +
+                                '<button class="btn btn-sm btn-pill btn-danger" type="button"onclick="updIsValid(' + value.slug + ')"><i class="fa-solid fa-trash-can"></i>&nbsp; Delete</button>';
                         }
+
+                        if (value.is_valid == 1) {
+                            statusBadge = '<span class="badge bg-success">Aktif</span>'
+                        } else {
+                            statusBadge = '<span class="badge bg-danger">Non Aktif</span>'
+                        }
+
                         return_data.push({
-                            'categoryId': value.category_id,
-                            'categoryName': value.category_name,
-                            'productId': value.product_id,
-                            'productName': value.product_name,
-                            'price': value.price,
-                            'weight': value.weight,
-                            'stock': value.stock,
+                            'category-code': value.category_id,
+                            'category-name': value.category_name,
+                            'product-code': value.product_id,
+                            'product-name': value.product_name,
+                            'status': statusBadge,
                             'createdAt': value.created_at,
                             'action': btnAction
                         });
@@ -182,35 +196,27 @@
                 }
             },
             columns: [{
-                    data: 'categoryId',
+                    data: 'no',
                     defaultContent: ''
                 },
                 {
-                    data: 'categoryName',
+                    data: 'category-code',
                     defaultContent: ''
                 },
                 {
-                    data: 'productId',
+                    data: 'category-name',
                     defaultContent: ''
                 },
                 {
-                    data: 'productName',
+                    data: 'product-code',
                     defaultContent: ''
                 },
                 {
-                    data: 'name',
+                    data: 'product-name',
                     defaultContent: ''
                 },
                 {
-                    data: 'price',
-                    defaultContent: ''
-                },
-                {
-                    data: 'weight',
-                    defaultContent: ''
-                },
-                {
-                    data: 'stock',
+                    data: 'status',
                     defaultContent: ''
                 },
                 {
@@ -225,8 +231,10 @@
         })
 
         $("#addProducts").click(function() {
-            getCategoryCode();
-            getNewCategoryCode();
+            getCategoryCode()
+            getSizeCode()
+            getColorCode()
+            getNewCategoryCode()
             $("#modalAddProducts").modal('show');
         })
 
@@ -235,17 +243,11 @@
                 category_id: "required",
                 category_name: "required",
                 "product_name[]": "required",
-                "product_price[]": "required",
-                "product_weight[]": "required",
-                "product_stock[]": "required",
             },
             messages: {
                 category_id: "Category id Cannot be Empty",
                 category_name: "Category name Cannot be Empty",
                 "product_name[]": "Product name Cannot be Empty",
-                "product_price[]": "Product price Cannot be Empty",
-                "product_weight[]": "Product weight Cannot be Empty",
-                "product_stock[]": "Product Stock Cannot be Empty",
             },
             errorElement: 'span',
             errorPlacement: function(error, element) {
@@ -268,9 +270,6 @@
             let category_name = $("#category_name").val()
             let product_id = $("#product_id").val()
             let product_name = $("#product_name").val()
-            let product_price = $("#product_price").val()
-            let product_weight = $("#product_weight").val()
-            let product_stock = $("#product_stock").val()
 
             let data = $("#formAddProducts").serialize();
 
@@ -280,40 +279,46 @@
                 data: data,
                 dataType: "json",
                 async: false,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
                 beforeSend: function() {
-                    $("#addDataCategory").prop("disabled", true);
-                    $("#closeDataCategory").prop("disabled", true);
+                    $("#addDataCategory").attr("disabled", true);
+                    $("#closeDataCategory").attr("disabled", true);
                     $("#formAddProducts").hide();
+                    $("#multiProduct").hide();
 
                     var loading = `<div class="col-12">
                                         <div class="placeholder-glow">
                                             <div class="placeholder mb-3" style="width: 99%;"></div>
                                             <div class="placeholder mb-3" style="width: 49%;"></div>
                                             <div class="placeholder mb-3" style="width: 49%;"></div>
-                                            <div class="placeholder mb-3" style="width: 16%;"></div>
-                                            <div class="placeholder mb-3" style="width: 33%;"></div>
-                                            <div class="placeholder mb-3" style="width: 16%;"></div>
-                                            <div class="placeholder mb-3" style="width: 16%;"></div>
-                                            <div class="placeholder mb-3" style="width: 16%;"></div>
+                                            <div class="placeholder mb-3" style="width: 49%;"></div>
+                                            <div class="placeholder mb-3" style="width: 49%;"></div>
                                         </div>
                                     </div>
                                     <button href="#" tabindex="-1" class="btn btn-sm btn-success disabled placeholder col-1"></button>`;
                     $("#loadingSimpan").html(loading);
                 },
-                success: function(data) {
-                    // console.log(data);
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Data Barang Berhasil Disimpan.'
-                    })
+                success: function(json) {
+                    // console.log(json);
+                    if (json.status) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Data Barang Berhasil Disimpan.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
 
-                    $("#formAddProducts").show();
-                    $("#addDataCategory").prop("disabled", false);
-                    $("#closeDataCategory").prop("disabled", false);
+                        // $("#formAddProducts").show();
+                        $("#addDataCategory").prop("disabled", false);
+                        $("#closeDataCategory").prop("disabled", false);
 
-                    setTimeout(() => {
-                        window.location.reload()
-                    }, 3000);
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 3000);
+                    }
                 }
             })
         })
@@ -322,35 +327,56 @@
             let indexForm = $(".dtlProduct").length
             let newProduct = "newProduct-" + indexForm;
             let product_id = $("#product_id").val()
-            // console.log(indexForm);
             if (indexForm > 1) {
                 let indexDetail = indexForm - 1
                 product_id = $(".newProduct-" + indexDetail + " #product_id").val()
             }
             product_id = product_id.replace('.', '')
-            product_id = String(parseInt(product_id) + 1).padStart(2, '0') + '.';
+            product_id = String(parseInt(product_id) + 1).padStart(2, '0');
+            // console.log(product_id);
 
             let formProduct = `<div class="row dtlProduct newProductBrg ` + newProduct + `">
-                                    <div class="mb-3 col-md-2">
-                                        <input type="text" class="form-control" name="product_id[]" id="product_id" placeholder="Code" value="` + product_id + `" readonly>
+                                    <div class="row">
+                                        <div class="mb-3 col-md-2">
+                                            <label class="form-label">Products</label>
+                                            <input type="text" class="form-control" name="product_id[]" id="product_id" value="` + product_id + `" placeholder="Code" readonly>
+                                        </div>
+                                        <div class="mb-3 col-md-4">
+                                            <label class="form-label">&nbsp;</label>
+                                            <input type="text" class="form-control" name="product_name[]" id="product_name" placeholder="Product Name">
+                                        </div>
+                                        <div class="mb-3 col-md-2">
+                                            <label class="form-label">&nbsp;</label>
+                                            <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                        </div>
+                                        <div class="mb-3 col-md-2">
+                                            <label class="form-label">&nbsp;</label>
+                                            <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                        </div>
+                                        <div class="mb-3 col-md-2">
+                                            <label class="form-label">&nbsp;</label>
+                                            <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                        </div>
                                     </div>
-                                    <div class="mb-3 col-md-4">
-                                        <input type="text" class="form-control" name="product_name[]" id="product_name" placeholder="Name">
-                                    </div>
-                                    <div class="mb-3 col-md-2">
-                                        <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
-                                    </div>
-                                    <div class="mb-3 col-md-2">
-                                        <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
-                                    </div>
-                                    <div class="mb-3 col-md-2">
-                                        <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock" aria-label="Stock" aria-describedby="button-productStock">
-                                            <button type="button" class="btn btn-sm btn-outline-danger" id="button-productStock" onClick="removeProduct('` + newProduct + `')"><i class="fas fa-times"></i></button>
+                                    <div class="row">
+                                        <div class="mb-3 col-md-6">
+                                            <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                        </div>
+                                        <div class="mb-3 col-md-3">
+                                            <select class="form-select mb-3" name="product_size[]" id="product_size` + product_id + `" placeholder="Size"></select>
+                                        </div>
+                                        <div class="mb-3 col-md-3">
+                                            <div class="input-group mb-3">
+                                                <select class="form-select" name="product_color[]" id="product_color` + product_id + `" placeholder="Color" aria-describedby="button-productColor"></select>
+                                                <input type="hidden" name="product_slug[]" id="product_slug">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" id="button-productColor" onClick="removeProduct('` + newProduct + `')"><i class="fas fa-times"></i></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>`;
             $("#formAddProducts").append(formProduct)
+            getSizeCode(product_id)
+            getColorCode(product_id)
         })
 
         $("#optCategory").change(function() {
@@ -361,14 +387,12 @@
                 getNewCategoryCode();
                 $('#category_name').val('')
                 $('#product_name').val('')
-                $('#product_price').val('')
-                $('#product_weight').val('')
-                $('#product_stock').val('')
 
                 $('#category_name').attr('readonly', false)
             } else {
                 getNewCategoryCode(categorySlug);
                 $('#category_name').attr('readonly', true)
+                $('#product_name').val('')
             }
         });
     })
@@ -380,18 +404,61 @@
             dataType: "json",
             async: false,
             success: function(json) {
-                console.log(json);
+                // console.log(json);
                 let row = '<option value="" selected>Add New Category</option>';
                 for (let i = 0; i < json.length; i++) {
-                    row += `<option value="` + json[i].slug + `">` + json[i].category_id + ` ` + json[i].name + `</option>`;
+                    row += `<option value="` + json[i].slug + `">` + json[i].name + `</option>`;
                 }
                 $('#optCategory').html(row)
             }
         })
     }
 
+    function getSizeCode(product_id = '') {
+        $.ajax({
+            type: "GET",
+            url: "/ProsesAdmin/getSizeCode",
+            dataType: "json",
+            async: false,
+            success: function(json) {
+                // console.log(json);
+                let row = '<option value="" selected>--Pilih--</option>';
+                for (let i = 0; i < json.length; i++) {
+                    row += `<option value="` + json[i].size_id + `">` + json[i].name + `</option>`;
+                }
+
+                if (product_id == 'new') {
+                    $('#product_size').html(row)
+                } else {
+                    $('#product_size' + product_id).html(row)
+                }
+            }
+        })
+    }
+
+    function getColorCode(product_id = '') {
+        $.ajax({
+            type: "GET",
+            url: "/ProsesAdmin/getColorCode",
+            dataType: "json",
+            async: false,
+            success: function(json) {
+                // console.log(json);
+                let row = '<option value="" selected>--Pilih--</option>';
+                for (let i = 0; i < json.length; i++) {
+                    row += `<option value="` + json[i].color_id + `">` + json[i].name + `</option>`;
+                }
+                if (product_id == '') {
+                    $('#product_color').html(row)
+                } else {
+                    $('#product_color' + product_id).html(row)
+                }
+            }
+        })
+    }
+
     function getNewCategoryCode(slug = '') {
-        console.log(slug)
+        // console.log(slug)
         $.ajax({
             type: "POST",
             url: "/ProsesAdmin/getNewCategoryCode",
@@ -401,14 +468,10 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json);
+                // console.log(json);
                 $("#category_id").val(json.category_id);
                 $("#category_name").val(json.category_name);
                 $("#product_id").val(json.product_id);
-                $('#product_name').val(json.product_name)
-                $('#product_price').val(json.product_price)
-                $('#product_weight').val(json.product_weight)
-                $('#product_stock').val(json.product_stock)
             }
         })
     }
@@ -416,6 +479,44 @@
     function removeProduct() {
         let indexProduct = $('.dtlProduct').length - 1
         $(".newProduct-" + indexProduct).remove();
+    }
+
+    function updIsValid(slug) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix) {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
 </script>
 
