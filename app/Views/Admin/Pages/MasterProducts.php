@@ -83,15 +83,15 @@
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                    <input type="number" min="1" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                    <input type="number" min="1" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                    <input type="number" min="1" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
                                 </div>
                             </div>
                             <div class="row">
@@ -347,15 +347,15 @@
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                            <input type="number" min="1" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                            <input type="number" min="1" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                            <input type="number" min="1" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
                                         </div>
                                     </div>
                                     <div class="row">
