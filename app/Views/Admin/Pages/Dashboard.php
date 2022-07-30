@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col mt-0">
-                                    <h5 class="card-title">Income</h5>
+                                    <h5 class="card-title">Products </h5>
                                 </div>
 
                                 <div class="col-auto">
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="mt-1 mb-3">$47.482</h1>
+                            <h1 class="mt-1 mb-3"><?= $sumProducts; ?></h1>
                             <div class="mb-0">
                                 <span class="badge badge-success-light"> <i class="mdi mdi-arrow-bottom-right"></i> 3.65% </span>
                                 <span class="text-muted">Since last week</span>
