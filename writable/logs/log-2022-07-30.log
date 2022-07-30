@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 CRITICAL - 2022-07-30 01:42:32 --> strtolower(): Argument #1 ($string) must be of type string, array given
 in APPPATH\Controllers\ProsesAdmin.php on line 145.
  1 APPPATH\Controllers\ProsesAdmin.php(145): strtolower([...])
+=======
+CRITICAL - 2022-07-30 03:45:29 --> strtolower(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 141.
+ 1 APPPATH\Controllers\ProsesAdmin.php(141): strtolower([...])
+>>>>>>> origin/didin
  2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
  3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
  4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+<<<<<<< HEAD
 ERROR - 2022-07-30 03:30:25 --> Table 'appmuslimbasic.login_admin' doesn't exist
 CRITICAL - 2022-07-30 03:30:25 --> Table 'appmuslimbasic.login_admin' doesn't exist
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
@@ -40,3 +47,322 @@ WHERE `id` = :id:', [...], false)
  8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+=======
+CRITICAL - 2022-07-30 03:57:02 --> strtolower(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 141.
+ 1 APPPATH\Controllers\ProsesAdmin.php(141): strtolower([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 03:59:08 --> strtolower(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 141.
+ 1 APPPATH\Controllers\ProsesAdmin.php(141): strtolower([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 04:03:42 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+in APPPATH\Controllers\ProsesAdmin.php on line 159.
+ 1 APPPATH\Controllers\ProsesAdmin.php(159): count('06')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 04:06:22 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+in APPPATH\Controllers\ProsesAdmin.php on line 159.
+ 1 APPPATH\Controllers\ProsesAdmin.php(159): count('06')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 04:53:10 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 140.
+ 1 APPPATH\Controllers\ProsesAdmin.php(140): strtoupper([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:01:44 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 140.
+ 1 APPPATH\Controllers\ProsesAdmin.php(140): strtoupper([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:04:30 --> strtolower(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 142.
+ 1 APPPATH\Controllers\ProsesAdmin.php(142): strtolower([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:05:15 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 140.
+ 1 APPPATH\Controllers\ProsesAdmin.php(140): strtoupper([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:05:42 --> explode(): Argument #2 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 141.
+ 1 APPPATH\Controllers\ProsesAdmin.php(141): explode(' ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:10:33 --> explode(): Argument #2 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 162.
+ 1 APPPATH\Controllers\ProsesAdmin.php(162): explode(' ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:19:07 --> Array to string conversion
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:19:55 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): strtoupper([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:23:53 --> Array to string conversion
+in APPPATH\Controllers\ProsesAdmin.php on line 168.
+ 1 APPPATH\Controllers\ProsesAdmin.php(168): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\ProsesAdmin.php', 168)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:25:14 --> Uninitialized string offset 1
+in APPPATH\Controllers\ProsesAdmin.php on line 168.
+ 1 APPPATH\Controllers\ProsesAdmin.php(168): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 1', 'APPPATH\\Controllers\\ProsesAdmin.php', 168)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:31:25 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:36:53 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:38:00 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:45:12 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:47:07 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:47:32 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:50:17 --> implode(): Argument #1 ($pieces) must be of type array, string given
+in APPPATH\Controllers\ProsesAdmin.php on line 169.
+ 1 APPPATH\Controllers\ProsesAdmin.php(169): implode('-')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:51:16 --> implode(): Argument #1 ($pieces) must be of type array, string given
+in APPPATH\Controllers\ProsesAdmin.php on line 169.
+ 1 APPPATH\Controllers\ProsesAdmin.php(169): implode('-')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:55:23 --> Array to string conversion
+in APPPATH\Controllers\ProsesAdmin.php on line 172.
+ 1 APPPATH\Controllers\ProsesAdmin.php(172): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\ProsesAdmin.php', 172)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 05:56:49 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:00:07 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:06:48 --> Only the first byte will be assigned to the string offset
+in APPPATH\Controllers\ProsesAdmin.php on line 169.
+ 1 APPPATH\Controllers\ProsesAdmin.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Only the first byte will be assigned to the string offset', 'APPPATH\\Controllers\\ProsesAdmin.php', 169)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:15:55 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:17:17 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:20:32 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:23:37 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:24:50 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:25:15 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 169.
+ 1 APPPATH\Controllers\ProsesAdmin.php(169): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 169)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:25:58 --> Uninitialized string offset 2
+in APPPATH\Controllers\ProsesAdmin.php on line 170.
+ 1 APPPATH\Controllers\ProsesAdmin.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 2', 'APPPATH\\Controllers\\ProsesAdmin.php', 170)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:33:38 --> Only the first byte will be assigned to the string offset
+in APPPATH\Controllers\ProsesAdmin.php on line 166.
+ 1 APPPATH\Controllers\ProsesAdmin.php(166): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Only the first byte will be assigned to the string offset', 'APPPATH\\Controllers\\ProsesAdmin.php', 166)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:37:46 --> Only the first byte will be assigned to the string offset
+in APPPATH\Controllers\ProsesAdmin.php on line 167.
+ 1 APPPATH\Controllers\ProsesAdmin.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Only the first byte will be assigned to the string offset', 'APPPATH\\Controllers\\ProsesAdmin.php', 167)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:52:24 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\ProsesAdmin.php on line 177.
+ 1 SYSTEMPATH\Router\Router.php(499): CodeIgniter\Router\AutoRouter->getRoute('ProsesAdmin/displayProduct')
+ 2 SYSTEMPATH\Router\Router.php(205): CodeIgniter\Router\Router->autoRoute('ProsesAdmin/displayProduct')
+ 3 SYSTEMPATH\CodeIgniter.php(771): CodeIgniter\Router\Router->handle('ProsesAdmin/displayProduct')
+ 4 SYSTEMPATH\CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 06:59:58 --> Only the first byte will be assigned to the string offset
+in APPPATH\Controllers\ProsesAdmin.php on line 148.
+ 1 APPPATH\Controllers\ProsesAdmin.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Only the first byte will be assigned to the string offset', 'APPPATH\\Controllers\\ProsesAdmin.php', 148)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 07:01:02 --> Only the first byte will be assigned to the string offset
+in APPPATH\Controllers\ProsesAdmin.php on line 148.
+ 1 APPPATH\Controllers\ProsesAdmin.php(148): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Only the first byte will be assigned to the string offset', 'APPPATH\\Controllers\\ProsesAdmin.php', 148)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-07-30 07:15:14 --> Column count doesn't match value count at row 1
+CRITICAL - 2022-07-30 07:15:14 --> Column count doesn't match value count at row 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES (\'ciamis-enak05\', \'CIAMIS ENAK\', \'05\', \'2022-07-30 07:15:14\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES (\'ciamis-enak05\', \'CIAMIS ENAK\', \'05\', \'2022-07-30 07:15:14\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES (\'ciamis-enak05\', \'CIAMIS ENAK\', \'05\', \'2022-07-30 07:15:14\')')
+ 4 APPPATH\Controllers\ProsesAdmin.php(150): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES (\'ciamis-enak05\', \'CIAMIS ENAK\', \'05\', \'2022-07-30 07:15:14\')')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+>>>>>>> origin/didin

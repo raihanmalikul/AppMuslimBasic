@@ -70,7 +70,7 @@ class LoginAdmin extends BaseController
     {
         $id = $this->session->get("id");
         $dt = ['status_login' => '0'];
-        $this->db->table('login_admin')->update($dt, array('id' => $id));
+        $this->db->table('m_login_admin')->update($dt, array('id' => $id));
         $this->session->destroy();
         return redirect()->to('/LoginAdmin');
     }

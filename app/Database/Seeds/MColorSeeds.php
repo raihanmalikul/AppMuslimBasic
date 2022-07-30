@@ -67,32 +67,32 @@ class MColorSeeds extends Seeder
             ],
             [
                 'name'          => 'STUNE',
-                'color_id'      => '010',
-                'slug'          => 'stune-010',
+                'color_id'      => '10',
+                'slug'          => 'stune-10',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'PINK',
-                'color_id'      => '011',
-                'slug'          => 'pink-011',
+                'color_id'      => '11',
+                'slug'          => 'pink-11',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'BROWN',
-                'color_id'      => '012',
-                'slug'          => 'brown-012',
+                'color_id'      => '12',
+                'slug'          => 'brown-12',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'MAROON',
-                'color_id'      => '013',
-                'slug'          => 'maroon-013',
+                'color_id'      => '13',
+                'slug'          => 'maroon-13',
                 'created_at'    => TIme::now()
             ],
             [
                 'name'          => 'GREEN',
-                'color_id'      => '014',
-                'slug'          => 'green-014',
+                'color_id'      => '14',
+                'slug'          => 'green-14',
                 'created_at'    => TIme::now()
             ],
 
