@@ -155,6 +155,12 @@ class ProsesAdmin extends BaseController
             $product_id     = $this->request->getPost('product_id');
             $product_name   = $this->request->getPost('product_name');
             $product_slug   = $this->request->getPost('product_slug');
+            $product_price  = $this->request->getPost('product_price');
+            $product_weight = $this->request->getPost('product_weight');
+            $product_stock  = $this->request->getPost('product_stock');
+            $product_des    = $this->request->getPost('product_description');
+            $product_size   = $this->request->getPost('product_size');
+            $product_color  = $this->request->getPost('product_color');
 
             $slugCategory   = '';
             $return         = array();
@@ -169,7 +175,10 @@ class ProsesAdmin extends BaseController
                     for ($i = 0; $i < count($product_id); $i++) {
                         $product_slug[$i]   = strtolower(str_replace(" ", "-", $product_name[$i])) . '-' . $product_id[$i];
                         $product_name[$i]   = strtoupper($product_name[$i]);
-                        $insertProduct      = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `is_valid`, `created_at`) VALUES ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', 1, '" . TIme::now() . "')";
+                        $insertProduct      = "INSERT INTO `m_product` 
+                                                (`slug`, `name`, `product_id`, `category_id`, `color_id`, `size_id`, `description`, `price`, `weight`, `stock`, `is_valid`, `created_at`) 
+                                                VALUES 
+                                                ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', '$product_color', '$product_size', '$product_des', '$product_price', '$product_weight', '$product_stock', 1, '" . TIme::now() . "')";
                         $queryProduct       = $this->db->query($insertProduct);
                     }
                     if ($queryProduct) $return = ['status' => 1];
@@ -181,7 +190,10 @@ class ProsesAdmin extends BaseController
                 for ($i = 0; $i < count($product_id); $i++) {
                     $product_slug[$i]   = strtolower(str_replace(" ", "-", $product_name[$i])) . '-' . $product_id[$i];
                     $product_name[$i]   = strtoupper($product_name[$i]);
-                    $insertProduct      = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `is_valid`, `created_at`) VALUES ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', 1, '" . TIme::now() . "')";
+                    $insertProduct      = "INSERT INTO `m_product` 
+                                                (`slug`, `name`, `product_id`, `category_id`, `color_id`, `size_id`, `description`, `price`, `weight`, `stock`, `is_valid`, `created_at`) 
+                                                VALUES 
+                                                ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', '$product_color', '$product_size', '$product_des', '$product_price', '$product_weight', '$product_stock', 1, '" . TIme::now() . "')";
                     $queryProduct       = $this->db->query($insertProduct);
                 }
                 if ($queryProduct) $return = ['status' => 1];
