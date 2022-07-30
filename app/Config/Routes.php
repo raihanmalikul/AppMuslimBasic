@@ -44,9 +44,14 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
+use App\Controllers\Login;
+
 $routes->get('/', 'Pages::dashboard');
 $routes->get('/login', 'Login::login');
-$routes->get('/registrasi', 'Login::regis');
+$routes->get('/logout', 'Login::logout');
+$routes->get('/register', 'Login::register');
+$routes->get('/Login/verify/(:alphanum)/(:any)', [[Login::class, 'verify'], '$2/$1']);
+$routes->get('/forgotPass', 'Login::forgotPass');
 $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
 
 /*
@@ -55,17 +60,23 @@ $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
  * --------------------------------------------------------------------
  */
 
-$routes->get('/LoginAdmin', 'LoginAdmin::index');
-$routes->get('/admin/dashboard', 'PagesAdmin::dashboard', ['filter' => 'auth']);
-$routes->get('/admin/allOrder', 'PagesAdmin::allOrder', ['filter' => 'auth']);
-$routes->get('/admin/konfPay', 'PagesAdmin::konfPay', ['filter' => 'auth']);
-$routes->get('/admin/allProduk', 'PagesAdmin::allProduk', ['filter' => 'auth']);
-$routes->get('/admin/inventaris', 'PagesAdmin::inventaris', ['filter' => 'auth']);
-$routes->get('/admin/kategori', 'PagesAdmin::kategori', ['filter' => 'auth']);
-$routes->get('/admin/customerMData', 'PagesAdmin::customerMData', ['filter' => 'auth']);
-$routes->get('/admin/historyOrder', 'PagesAdmin::historyOrder', ['filter' => 'auth']);
-$routes->get('/admin/lprPenjualan', 'PagesAdmin::lprPenjualan', ['filter' => 'auth']);
-$routes->get('/admin/lprPengiriman', 'PagesAdmin::lprPengiriman', ['filter' => 'auth']);
+$routes->get('/loginAdmin', 'LoginAdmin::index');
+$routes->group('admin', static function ($routes) {
+    $routes->get('dashboard', 'PagesAdmin::dashboard', ['filter' => 'auth']);
+    $routes->get('allOrder', 'PagesAdmin::allOrder', ['filter' => 'auth']);
+    $routes->get('konfPay', 'PagesAdmin::konfPay', ['filter' => 'auth']);
+    $routes->get('masterProducts', 'PagesAdmin::masterProducts', ['filter' => 'auth']);
+    $routes->get('inventaris', 'PagesAdmin::inventaris', ['filter' => 'auth']);
+    $routes->get('kategori', 'PagesAdmin::kategori', ['filter' => 'auth']);
+    $routes->get('customerMData', 'PagesAdmin::customerMData', ['filter' => 'auth']);
+    $routes->get('historyOrder', 'PagesAdmin::historyOrder', ['filter' => 'auth']);
+    $routes->get('lprPenjualan', 'PagesAdmin::lprPenjualan', ['filter' => 'auth']);
+    $routes->get('lprPengiriman', 'PagesAdmin::lprPengiriman', ['filter' => 'auth']);
+});
+
+$routes->get('ProsesAdmin/AddMasterCategory/(:any)', [[Login::class, 'AddMasterCategory'], '$1']);
+// $routes->get('/ProsesAdmin/getNewCategoryCode/(:any)', 'ProsesAdmin::getNewCategoryCode/$1');
+
 
 /*
  * --------------------------------------------------------------------

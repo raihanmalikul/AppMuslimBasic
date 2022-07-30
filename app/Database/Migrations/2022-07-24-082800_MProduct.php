@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -15,31 +16,34 @@ class MProduct extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'product_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'category_id' => [
-                'type'       => 'BIGINT',
-                'unsigned'   => true,
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'color_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'size_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'description' => [
                 'type'       => 'TEXT'
             ],
             'image' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'size' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'color' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
@@ -54,6 +58,10 @@ class MProduct extends Migration
             'stock' => [
                 'type'       => 'INT',
                 'constraint' => 11
+            ],
+            'is_valid' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'created_at' => [
                 'type'       => 'DATETIME',

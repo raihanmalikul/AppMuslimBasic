@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -29,6 +30,16 @@ class DOrder extends Migration
             ],
             'wight' => [
                 'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'color_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+                'constraint' => 11
+            ],
+            'size_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
                 'constraint' => 11
             ],
             'qty' => [

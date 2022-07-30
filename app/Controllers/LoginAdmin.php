@@ -9,7 +9,7 @@ class LoginAdmin extends BaseController
     protected $LoginAdmin;
     public function __construct()
     {
-        $this->LoginAdmin = new LoginAdminModel(); 
+        $this->LoginAdmin = new LoginAdminModel();
     }
 
     public function index()
@@ -27,24 +27,32 @@ class LoginAdmin extends BaseController
             $user_valid = $data['user_valid'];
             if ($user_valid == 1) {
                 $pass = $data['password'];
-                if($password == $pass){
+                if ($password == $pass) {
                     $id = $data['id'];
                     $dt = ['status_login' => '1'];
-                    $this->db->table('login_admin')->update($dt, array('id' => $id));
 
-                    $ses_data = [
-                        'id'            => $data['id'],
-                        'nama'          => $data['nama'],
-                        'username'      => $data['username'],
-                        'userlevel'     => $data['userlevel'],
-                        'image'         => $data['image'],
-                        'logged_in'     => TRUE
-                    ];
+                    $this->LoginAdmin->set($dt);
+                    $this->LoginAdmin->where('id', $id);
+                    $update = $this->LoginAdmin->update();
 
-                    $this->session->set($ses_data);
-                    $this->session->setFlashdata('msg', 'Login Berhasil');
-                    return redirect()->to('/admin/dashboard');
-                }else{
+                    if ($update) {
+                        $ses_data = [
+                            'id'            => $data['id'],
+                            'name'          => $data['name'],
+                            'username'      => $data['username'],
+                            'userlevel'     => $data['userlevel'],
+                            'image'         => $data['image'],
+                            'logged_in'     => TRUE
+                        ];
+
+                        $this->session->set($ses_data);
+                        $this->session->setFlashdata('msg', 'Login Berhasil');
+                        return redirect()->to('/admin/dashboard');
+                    } else {
+                        $this->session->setFlashdata('msg_err', 'Update Gagal');
+                        return redirect()->to('/LoginAdmin');
+                    }
+                } else {
                     $this->session->setFlashdata('msg_err', 'Username atau password salah');
                     return redirect()->to('/LoginAdmin');
                 }
@@ -52,7 +60,7 @@ class LoginAdmin extends BaseController
                 $this->session->setFlashdata('msg_err', 'User tidak aktif');
                 return redirect()->to('/LoginAdmin');
             }
-        }else{
+        } else {
             $this->session->setFlashdata('msg_err', 'Username atau password salah');
             return redirect()->to('/LoginAdmin');
         }
@@ -62,7 +70,7 @@ class LoginAdmin extends BaseController
     {
         $id = $this->session->get("id");
         $dt = ['status_login' => '0'];
-        $this->db->table('login_admin')->update($dt, array('id' => $id));
+        $this->db->table('m_login_admin')->update($dt, array('id' => $id));
         $this->session->destroy();
         return redirect()->to('/LoginAdmin');
     }

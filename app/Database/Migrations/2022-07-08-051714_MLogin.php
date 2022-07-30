@@ -25,7 +25,12 @@ class MLogin extends Migration
                 'constraint' => 255
             ],
             'email_verified_at' => [
-                'type'       => 'TIMESTAMP'
+                'type'       => 'DATETIME',
+                'null'       => true
+            ],
+            'is_active' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'password' => [
                 'type'       => 'VARCHAR',

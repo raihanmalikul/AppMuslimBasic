@@ -49,7 +49,7 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
 
-        $request = \Config\Services::request();
+        // $request = \Config\Services::request();
         $this->segment = $request->uri->getSegments();
 
         $this->session = \Config\Services::session();
