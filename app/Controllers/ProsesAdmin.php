@@ -47,7 +47,7 @@ class ProsesAdmin extends BaseController
         $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
-        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at
+        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
                 FROM 
                     m_category a 
                     LEFT JOIN m_product b ON a.category_id = b.category_id 
@@ -87,6 +87,22 @@ class ProsesAdmin extends BaseController
         echo json_encode($data);
     }
 
+    public function getSizeCode()
+    {
+        $query = "SELECT a.id, a.name, a.size_id, a.slug, a.created_at FROM m_size a WHERE a.slug IS NOT NULL";
+        $data  = $this->db->query($query)->getResultArray();
+
+        echo json_encode($data);
+    }
+
+    public function getColorCode()
+    {
+        $query = "SELECT a.id, a.name, a.color_id, a.slug, a.created_at FROM m_color a WHERE a.slug IS NOT NULL";
+        $data  = $this->db->query($query)->getResultArray();
+
+        echo json_encode($data);
+    }
+
     public function getNewCategoryCode()
     {
         $slug = $this->request->getVar('slug');
@@ -94,36 +110,35 @@ class ProsesAdmin extends BaseController
 
         $query  = "SELECT 
                         a.slug as slug_category, a.name as name_category, a.category_id, a.created_at, 
-                        b.slug as slug_product, b.product_id, b.name as name_product, b.price, b.weight, b.stock
+                        b.slug as slug_product, b.product_id, b.name as name_product, b.price, b.weight, b.stock, b.color_id, b.size_id, b.is_valid
                     FROM 
                         m_category a 
                         LEFT JOIN m_product b ON a.category_id = b.category_id
                     WHERE 
                         1=1
                         $whereSlug
-                    ORDER BY a.category_id DESC LIMIT 1";
+                    ORDER BY a.category_id DESC, b.product_id DESC LIMIT 1";
         $result = $this->db->query($query)->getRowArray();
 
         if (count($result) > 0) {
             $category_id = $result['category_id'];
             $product_id  = $result['product_id'];
+
             if ($slug == '') {
                 $newCategoryId          = $category_id + 1;
                 $data['category_id']    = sprintf('%02d', $newCategoryId);
                 $data['product_id']     = '01';
                 $data['product_name']   = '';
-                $data['product_price']  = '';
-                $data['product_weight'] = '';
-                $data['product_stock']  = '';
+                $data['product_status'] = '';
             } else {
-                $newProductId           = $product_id == '' ? $product_id + 1 : '';
+                $newProductId           = $product_id + 1;
+                $data['category_slug']  = $result['slug_category'];
                 $data['category_id']    = $category_id;
                 $data['category_name']  = $result['name_category'];
+                $data['product_slug']   = $result['slug_product'];
                 $data['product_id']     = sprintf('%02d', $newProductId);
                 $data['product_name']   = $result['name_product'];
-                $data['product_price']  = $result['price'];
-                $data['product_weight'] = $result['weight'];
-                $data['product_stock']  = $result['stock'];
+                $data['product_status'] = $result['is_valid'];
             }
         } else {
             $data[] = array();
@@ -133,40 +148,46 @@ class ProsesAdmin extends BaseController
 
     public function AddMasterCategory()
     {
-        $optCategory    = $this->request->getVar('optCategory');
-        $category_id    = $this->request->getVar('category_id');
-        $category_name  = $this->request->getVar('category_name');
-        $product_id     = $this->request->getVar('product_id');
-        $product_name   = $this->request->getVar('product_name');
-        $product_price  = $this->request->getVar('product_price');
-        $product_weight = $this->request->getVar('product_weight');
-        $product_stock  = $this->request->getVar('product_stock');
-        $slugCategory   = strtolower($category_name) . "-" . $category_id;
-        $slugProduct    = strtolower($product_name) . "-" . $product_id;
-        $return         = array();
+        if ($this->request->isAJAX()) {
+            $optCategory    = $this->request->getPost('optCategory');
+            $category_id    = $this->request->getPost('category_id');
+            $category_name  = $this->request->getPost('category_name');
+            $product_id     = $this->request->getPost('product_id');
+            $product_name   = $this->request->getPost('product_name');
+            $product_slug   = $this->request->getPost('product_slug');
 
-        if ($optCategory == '') {
-            $insertCategory = "INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`, `updated_at`) VALUES ('$slugCategory', '$category_name', '$category_id', '" . TIme::now() . "')";
-            $queryCategory = $this->db->query($insertCategory);
+            $slugCategory   = '';
+            $return         = array();
 
-            if ($queryCategory) {
-                for ($i = 0; $i < count($product_id); $i++) {
-                    $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `stock`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_stock, '" . TIme::now() . "')";
-                    $queryProduct = $this->db->query($insertProduct);
+            if ($optCategory == '') {
+                $slugCategory   = strtolower(implode("-", explode(" ", $category_name))) . '-' . $category_id;
+                $category_name  = strtoupper($category_name);
+                $insertCategory = "INSERT INTO `m_category` (`slug`, `name`, `category_id`, `created_at`) VALUES ('$slugCategory', '$category_name', '$category_id', '" . TIme::now() . "')";
+                $queryCategory  = $this->db->query($insertCategory);
+
+                if ($queryCategory) {
+                    for ($i = 0; $i < count($product_id); $i++) {
+                        $product_slug[$i]   = strtolower(str_replace(" ", "-", $product_name[$i])) . '-' . $product_id[$i];
+                        $product_name[$i]   = strtoupper($product_name[$i]);
+                        $insertProduct      = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `is_valid`, `created_at`) VALUES ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', 1, '" . TIme::now() . "')";
+                        $queryProduct       = $this->db->query($insertProduct);
+                    }
+                    if ($queryProduct) $return = ['status' => 1];
+                } else {
+                    $return = ['status' => 0];
                 }
-                $return = ['status' => 1];
             } else {
-                $return = ['status' => 0];
+                $queryCategory = true;
+                for ($i = 0; $i < count($product_id); $i++) {
+                    $product_slug[$i]   = strtolower(str_replace(" ", "-", $product_name[$i])) . '-' . $product_id[$i];
+                    $product_name[$i]   = strtoupper($product_name[$i]);
+                    $insertProduct      = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `is_valid`, `created_at`) VALUES ('$product_slug[$i]', '$product_name[$i]', '$product_id[$i]', '$category_id', 1, '" . TIme::now() . "')";
+                    $queryProduct       = $this->db->query($insertProduct);
+                }
+                if ($queryProduct) $return = ['status' => 1];
             }
-        } else {
-            $queryCategory = true;
-            for ($i = 0; $i < count($product_id); $i++) {
-                $insertProduct = "INSERT INTO `m_product` (`slug`, `name`, `product_id`, `category_id`, `price`, `weight`, `stock`, `created_at`) VALUES ('$slugProduct', '$product_name', '$product_id', '$category_id', $product_price, $product_weight, $product_stock, '" . TIme::now() . "')";
-                $queryProduct = $this->db->query($insertProduct);
-            }
-            $return = ['status' => 1];
-        }
 
-        echo json_encode($return);
+            echo json_encode($return);
+        }
     }
 }

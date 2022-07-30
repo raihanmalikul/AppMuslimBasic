@@ -347,6 +347,10 @@
     <!-- END Footer -->
 </div>
 
+<!-- BEGIN SCRIPT -->
+<?= $this->include('Admin/Layout/Script') ?>
+<!-- END SCRIPT -->
+
 <script type="text/javascript">
     $(function() {
         let status = "<?= $this->session->getFlashdata('msg'); ?>";
