@@ -28,6 +28,7 @@
                                 <table class="table table-sm table-bordered table-striped" id="tblMDataCustomer">
                                     <thead>
                                         <tr>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Position</th>
                                             <th>Office</th>
