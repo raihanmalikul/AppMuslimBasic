@@ -11,7 +11,7 @@ class UserAdminSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name'         => 'didin irfandi',
+            'name'         => 'malikul',
             'username'     => 'darth@theempire.com',
             'password'     => md5('123'),
             'userlevel'    => 1,
