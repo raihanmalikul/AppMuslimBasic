@@ -96,7 +96,7 @@
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-6">
-                                    <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                    <textarea class="form-control" name="product_des[]" id="product_des" placeholder="Description" rows="1"></textarea>
                                 </div>
                                 <div class="mb-3 col-md-3">
                                     <!-- <input type="text" class="form-control" name="product_size[]" id="product_size" placeholder="Size"> -->
@@ -360,7 +360,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
-                                            <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                            <textarea class="form-control" name="product_des[]" id="product_des" placeholder="Description" rows="1"></textarea>
                                         </div>
                                         <div class="mb-3 col-md-3">
                                             <select class="form-select mb-3" name="product_size[]" id="product_size` + product_id + `" placeholder="Size"></select>

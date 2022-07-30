@@ -323,3 +323,67 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
  7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 09:55:26 --> Array to string conversion
+in APPPATH\Controllers\ProsesAdmin.php on line 181.
+ 1 APPPATH\Controllers\ProsesAdmin.php(181): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\ProsesAdmin.php', 181)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 09:57:29 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 181.
+ 1 APPPATH\Controllers\ProsesAdmin.php(181): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 181)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:04:54 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\ProsesAdmin.php on line 181.
+ 1 APPPATH\Controllers\ProsesAdmin.php(181): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\ProsesAdmin.php', 181)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:07:32 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\ProsesAdmin.php on line 200.
+ 1 APPPATH\Controllers\ProsesAdmin.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\ProsesAdmin.php', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:10:19 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 200.
+ 1 APPPATH\Controllers\ProsesAdmin.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:12:06 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 200.
+ 1 APPPATH\Controllers\ProsesAdmin.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 200)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:21:33 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 204.
+ 1 APPPATH\Controllers\ProsesAdmin.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 204)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-30 10:23:44 --> Uninitialized string offset 0
+in APPPATH\Controllers\ProsesAdmin.php on line 204.
+ 1 APPPATH\Controllers\ProsesAdmin.php(204): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Uninitialized string offset 0', 'APPPATH\\Controllers\\ProsesAdmin.php', 204)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->AddMasterCategory()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
