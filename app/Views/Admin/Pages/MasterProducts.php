@@ -182,6 +182,10 @@
                 }
             },
             columns: [{
+                    data: 'name',
+                    defaultContent: ''
+                },
+                {
                     data: 'categoryId',
                     defaultContent: ''
                 },
@@ -195,10 +199,6 @@
                 },
                 {
                     data: 'productName',
-                    defaultContent: ''
-                },
-                {
-                    data: 'name',
                     defaultContent: ''
                 },
                 {

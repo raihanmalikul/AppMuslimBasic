@@ -46,7 +46,7 @@
                                 <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
                             </li>
                             <li class="group">
-                                <a href="#reting" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RETING</a>
+                                <a href="#reting" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RATING</a>
                             </li>
                             <li class="group">
                                 <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
