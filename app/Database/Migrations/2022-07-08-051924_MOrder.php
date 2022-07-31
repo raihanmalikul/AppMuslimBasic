@@ -61,6 +61,10 @@ class MOrder extends Migration
                 'type'       => 'INT',
                 'constraint' => 11
             ],
+            'status_order' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
+            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'default'    => TIme::now(),
