@@ -468,8 +468,8 @@
                 $.each(json.data, function(index, values) {
 
                     $("#desc").html(values.description);
-                    let detail = `<pre class="text-sm text-gray-600">` + values.detail + `</pre>`
-                    // let detail = values.detail
+                    // let detail = `<pre class="text-sm text-gray-600">` + values.detail + `</pre>`
+                    let detail = values.detail
                     $("#detail").html(detail);
                     var name = ucwords(values.name);
                     // name = name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
