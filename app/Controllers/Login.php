@@ -39,7 +39,8 @@ class Login extends BaseController
             $data = [
                 'name'      => $getData['name'],
                 'email'     => $email,
-                'is_active' => $getData['is_active']
+                'is_active' => $getData['is_active'],
+                'loggedIn'  => true
             ];
 
             $this->session->set($data);

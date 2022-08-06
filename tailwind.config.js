@@ -66,9 +66,12 @@ module.exports = {
                 '2xl': '1320px',
                 '3xl': '1600px',
             },
+            gridTemplateRows: {
+                '[auto,auto,1fr]': 'auto auto 1fr',
+            },
         },
     },
     plugins: [
-        require('tw-elements/dist/plugin')
+        require('tw-elements/dist/plugin'),
     ],
 }

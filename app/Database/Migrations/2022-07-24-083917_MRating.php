@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -15,9 +16,13 @@ class MRating extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'product_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'customer_id' => [
-                'type'       => 'INT',
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'slug' => [
                 'type'       => 'VARCHAR',
@@ -26,12 +31,18 @@ class MRating extends Migration
             'description' => [
                 'type'       => 'TEXT'
             ],
+            'score' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1,
+                'null'       => true
+            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'default'    => TIme::now(),
             ],
             'updated_at' => [
-                'type'       => 'DATETIME'
+                'type'       => 'DATETIME',
+                'null'       => true
             ]
         ]);
         $this->forge->addKey('id', true);

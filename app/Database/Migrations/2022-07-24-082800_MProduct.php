@@ -32,32 +32,17 @@ class MProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'color_id' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'size_id' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
             'description' => [
-                'type'       => 'TEXT'
+                'type'       => 'TEXT',
+                'null'       => true
             ],
-            'image' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
+            'highlights' => [
+                'type'       => 'TEXT',
+                'null'       => true
             ],
-            'price' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'weight' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'stock' => [
-                'type'       => 'INT',
-                'constraint' => 11
+            'details' => [
+                'type'       => 'TEXT',
+                'null'       => true
             ],
             'is_valid' => [
                 'type'       => 'TINYINT',

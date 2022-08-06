@@ -8,13 +8,15 @@ run CI4 `php spark serve`.
 
 ## How to run migrate?
 
-run migrate to create a table use migrate one table `php spark migrate class_Name"`
+Run migrate to create a table use migrate one table `php spark migrate class_Name"` or migrate all table `php spark migrate`.
 
-or migrate all table `php spark migrate`.
+Run `php spark migrate:refresh` to perform table repairs.
 
 ## How to run seeds?
 
-run seeds to fill in the data in the table use `php spark db:seed className` in terminal.
+Run seeds to fill in the data in the table use `php spark db:seed className` in terminal.
+
+Run `php spark db:seed AddDataSeeder` to populate the data back into the table.
 
 ## If error database
 

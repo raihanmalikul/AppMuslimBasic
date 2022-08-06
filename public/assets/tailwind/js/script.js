@@ -1,3 +1,28 @@
+// window.Components.radioGroup = function({
+//     initialCheckedIndex: e = 0
+// } = {}) {
+//     return {
+//         value: void 0,
+//         active: void 0,
+//         init() {
+//             let t = Array.from(this.$el.querySelectorAll("input"));
+//             this.value = t[e]?.value;
+//             for (let e of t)
+//                 e.addEventListener("change", (() => {
+//                     this.active = e.value
+//                 })),
+//                 e.addEventListener("focus", (() => {
+//                     this.active = e.value
+//                 }));
+//             window.addEventListener("focus", (() => {
+//                 console.log("Focus change"),
+//                     t.includes(document.activeElement) || (console.log("HIT"),
+//                         this.active = void 0)
+//             }), !0)
+//         }
+//     }
+// }
+
 // Navnbar fixed
 window.onscroll = function() {
     const header = document.querySelector("header");
@@ -33,8 +58,11 @@ window.addEventListener("click", (e) => {
 });
 
 // dark mode toggle
+document.querySelector("#disabledMode").classList.add("hidden")
+
 const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
+html.classList.remove("dark");
 
 darkToggle.addEventListener("click", () => {
     if (darkToggle.checked) {
@@ -54,20 +82,21 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 }
 
 const imgSwich = document.querySelector("#imgSwich");
-const foto = imgSwich.getElementsByTagName("div");
-
-for (var i = 1; i < foto.length; i++) {
-    foto[i].classList.add("hidden");
-}
-
-var counter = 1;
-setInterval(function () {
-    for (var i = 0; i < foto.length; i++) {
+if (imgSwich) {
+    const foto = imgSwich.getElementsByTagName("div");
+    for (var i = 1; i < foto.length; i++) {
         foto[i].classList.add("hidden");
     }
-    foto[counter].classList.remove("hidden")
-    counter++;
-    if (counter == foto.length) {
-        counter = 0;
-    }
-}, 5000);
+    
+    var counter = 1;
+    setInterval(function () {
+        for (var i = 0; i < foto.length; i++) {
+            foto[i].classList.add("hidden");
+        }
+        foto[counter].classList.remove("hidden")
+        counter++;
+        if (counter == foto.length) {
+            counter = 0;
+        }
+    }, 5000);
+}
