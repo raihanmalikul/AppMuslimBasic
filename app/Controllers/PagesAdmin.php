@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\ProductModel;
+use App\Models\MProductModel;
 
 class PagesAdmin extends BaseController
 {
@@ -10,7 +10,7 @@ class PagesAdmin extends BaseController
 
     public function __construct()
     {
-        $this->product = new ProductModel();
+        $this->product = new MProductModel();
         $this->session = \Config\Services::session();
         $username = $this->session->get("logged_in");
         if (empty($username)) {

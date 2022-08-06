@@ -40,9 +40,9 @@ class LoginAdmin extends BaseController
                             'id'            => $data['id'],
                             'name'          => $data['name'],
                             'username'      => $data['username'],
-                            'userlevel'     => $data['userlevel'],
+                            'userLevel'     => $data['userlevel'],
                             'image'         => $data['image'],
-                            'logged_in'     => TRUE
+                            'loggedInAdmin' => true
                         ];
 
                         $this->session->set($ses_data);

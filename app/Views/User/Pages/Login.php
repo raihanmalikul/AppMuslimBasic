@@ -69,6 +69,16 @@
 
     <script type="text/javascript">
         $(function() {
+            let statusSuccess = "<?= $this->session->getFlashdata('msg'); ?>";
+            let statusError = "<?= $this->session->getFlashdata('msg_err'); ?>";
+
+            if (statusSuccess) {
+                toastr.success(statusSuccess);
+            }
+            if (statusError) {
+                toastr.warning(statusError);
+            }
+
             $('#checkLogin').validate({
                 rules: {
                     email: {

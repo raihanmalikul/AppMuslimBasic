@@ -4,3 +4,19 @@ ERROR - 2022-07-31 02:02:51 --> Unknown column 'statud' in 'field list'
 ERROR - 2022-07-31 02:04:13 --> Unknown column 'statud' in 'field list'
 ERROR - 2022-07-31 02:05:07 --> Unknown column 'statud' in 'field list'
 ERROR - 2022-07-31 02:20:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0, 1, 2, 3, 4, 5, 6, 7) VALUES (:0:, :1:, :2:, :3:, :4:, :5:, :6:, :7:)' at line 1
+CRITICAL - 2022-07-31 09:30:02 --> Undefined array key "value"
+in APPPATH\Controllers\ProsesAdmin.php on line 334.
+ 1 APPPATH\Controllers\ProsesAdmin.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "value"', 'APPPATH\\Controllers\\ProsesAdmin.php', 334)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayAllOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-07-31 09:36:26 --> Undefined array key "value"
+in APPPATH\Controllers\ProsesAdmin.php on line 334.
+ 1 APPPATH\Controllers\ProsesAdmin.php(334): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "value"', 'APPPATH\\Controllers\\ProsesAdmin.php', 334)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayAllOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

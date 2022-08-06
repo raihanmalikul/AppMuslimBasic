@@ -24,9 +24,14 @@ class MColor extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'slug' => [
+            'class_code' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
+            ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true
             ],
             'created_at' => [
                 'type'       => 'DATETIME',

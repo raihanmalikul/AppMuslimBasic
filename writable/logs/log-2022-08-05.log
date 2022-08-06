@@ -1,0 +1,624 @@
+ERROR - 2022-08-05 00:37:14 --> Unknown column 'image' in 'field list'
+CRITICAL - 2022-08-05 00:37:14 --> Unknown column 'image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = :is_valid:
+AND `id` IN :id:
+ LIMIT 20', [...], false)
+ 5 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(20, 0)
+ 7 SYSTEMPATH\BaseModel.php(1088): CodeIgniter\BaseModel->findAll(20, 0)
+ 8 APPPATH\Controllers\Proses.php(79): CodeIgniter\BaseModel->paginate()
+ 9 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+10 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+11 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 00:38:14 --> Unknown column 'image' in 'field list'
+CRITICAL - 2022-08-05 00:38:14 --> Unknown column 'image' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = 1
+AND `id` IN (16,17,22,23)
+ LIMIT 20')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `slug`, `name`, `image`, `price`
+FROM `m_product`
+WHERE `is_valid` = :is_valid:
+AND `id` IN :id:
+ LIMIT 20', [...], false)
+ 5 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(20, 0)
+ 7 SYSTEMPATH\BaseModel.php(1088): CodeIgniter\BaseModel->findAll(20, 0)
+ 8 APPPATH\Controllers\Proses.php(79): CodeIgniter\BaseModel->paginate()
+ 9 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+10 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+11 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 00:59:23 --> Array to string conversion
+in APPPATH\Controllers\Proses.php on line 85.
+ 1 APPPATH\Controllers\Proses.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\Proses.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 01:33:35 --> Call to undefined method App\Models\ProductModel::getResultArray
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Proses.php(75): CodeIgniter\Model->__call('getResultArray', [])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 01:37:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:' at line 3
+CRITICAL - 2022-08-05 01:37:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1718): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:
+AND 2 = :2:
+AND 3 = :3:
+AND 4 = :4:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Proses.php(75): CodeIgniter\Model->__call('getWhere', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 01:37:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+CRITICAL - 2022-08-05 01:37:48 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1718): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Proses.php(75): CodeIgniter\Model->__call('getWhere', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 01:39:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+CRITICAL - 2022-08-05 01:39:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1718): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Proses.php(75): CodeIgniter\Model->__call('getWhere', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 01:39:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+CRITICAL - 2022-08-05 01:39:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+AND 1 = :1:' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1718): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE 0 = :0:
+AND 1 = :1:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Proses.php(75): CodeIgniter\Model->__call('getWhere', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 02:06:22 --> Table 'appmuslimbasic.m_products' doesn't exist
+CRITICAL - 2022-08-05 02:06:22 --> Table 'appmuslimbasic.m_products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `slug`, `name`
+FROM `m_products`
+WHERE `product_id` IN (\'02\',\'03\',\'05\',\'06\',\'07\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slug`, `name`
+FROM `m_products`
+WHERE `product_id` IN (\'02\',\'03\',\'05\',\'06\',\'07\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slug`, `name`
+FROM `m_products`
+WHERE `product_id` IN (\'02\',\'03\',\'05\',\'06\',\'07\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `slug`, `name`
+FROM `m_products`
+WHERE `product_id` IN :product_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(78): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 02:23:20 --> Table 'appmuslimbasic.d_products' doesn't exist
+CRITICAL - 2022-08-05 02:23:20 --> Table 'appmuslimbasic.d_products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `image`, `price`
+FROM `d_products`
+WHERE `slug` = \'salman-seris-02\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `image`, `price`
+FROM `d_products`
+WHERE `slug` = \'salman-seris-02\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `image`, `price`
+FROM `d_products`
+WHERE `slug` = \'salman-seris-02\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `image`, `price`
+FROM `d_products`
+WHERE `slug` = :slug:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(91): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 02:32:34 --> Trying to access array offset on value of type int
+in APPPATH\Controllers\Proses.php on line 86.
+ 1 APPPATH\Controllers\Proses.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'APPPATH\\Controllers\\Proses.php', 86)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 02:33:17 --> Trying to access array offset on value of type int
+in APPPATH\Controllers\Proses.php on line 86.
+ 1 APPPATH\Controllers\Proses.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'APPPATH\\Controllers\\Proses.php', 86)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 03:51:47 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', 'salman-seris-02', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', 'salman-seris-02')
+ 3 APPPATH\Controllers\Proses.php(122): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\Proses.php(35): App\Controllers\Proses->_getMsProduct('salman-seris-02')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 03:52:46 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 03:52:46 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(124): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(87): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:01:18 --> Cannot use object of type mysqli as array
+in APPPATH\Controllers\Proses.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:01:39 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Proses.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:02:44 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::paginate()
+in APPPATH\Controllers\Proses.php on line 127.
+ 1 APPPATH\Controllers\Proses.php(35): App\Controllers\Proses->_getMsProduct('salman-seris-02')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:03:32 --> Call to a member function get() on array
+in APPPATH\Controllers\Proses.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:05:22 --> Call to undefined method App\Models\MProductModel::getResultArray
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Proses.php(126): CodeIgniter\Model->__call('getResultArray', [])
+ 2 APPPATH\Controllers\Proses.php(35): App\Controllers\Proses->_getMsProduct('salman-seris-02')
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:14:47 --> You cannot use `getCompiledSelect()` in `App\Models\MProductModel`. This is a method of the `Query Builder` class.
+in SYSTEMPATH\Model.php on line 789.
+ 1 SYSTEMPATH\Model.php(789): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\MProductModel', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(769): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Controllers\Proses.php(125): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 APPPATH\Controllers\Proses.php(35): App\Controllers\Proses->_getMsProduct('salman-seris-02')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:18:16 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::where()
+in APPPATH\Controllers\Proses.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:33:37 --> Class "App\Controllers\Models\DtlProductModel" not found
+in APPPATH\Controllers\Proses.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Proses->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:42:28 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', 'salman-seris-02', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', 'salman-seris-02')
+ 3 APPPATH\Controllers\Proses.php(32): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:43:19 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', null, false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', null)
+ 3 APPPATH\Controllers\Proses.php(32): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail('salman-seris-02')
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 04:43:24 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', null, false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', null)
+ 3 APPPATH\Controllers\Proses.php(32): CodeIgniter\Model->__call('whereIn', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail('salman-seris-02')
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:03:04 --> Call to a member function getResultArray() on array
+in APPPATH\Controllers\Proses.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:07:10 --> Undefined array key "name"
+in APPPATH\Controllers\Proses.php on line 51.
+ 1 APPPATH\Controllers\Proses.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Controllers\\Proses.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:10:06 --> Undefined array key "name"
+in APPPATH\Controllers\Proses.php on line 51.
+ 1 APPPATH\Controllers\Proses.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Controllers\\Proses.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:34:15 --> Undefined array key "wight"
+in APPPATH\Controllers\Proses.php on line 51.
+ 1 APPPATH\Controllers\Proses.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "wight"', 'APPPATH\\Controllers\\Proses.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:40:46 --> Undefined array key 0
+in APPPATH\Controllers\Proses.php on line 40.
+ 1 APPPATH\Controllers\Proses.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Controllers\\Proses.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:41:13 --> Undefined array key 0
+in APPPATH\Controllers\Proses.php on line 40.
+ 1 APPPATH\Controllers\Proses.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Controllers\\Proses.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:41:35 --> Undefined array key 1
+in APPPATH\Controllers\Proses.php on line 40.
+ 1 APPPATH\Controllers\Proses.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Controllers\\Proses.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:44:31 --> Undefined array key 0
+in APPPATH\Controllers\Proses.php on line 40.
+ 1 APPPATH\Controllers\Proses.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'APPPATH\\Controllers\\Proses.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-05 05:53:34 --> Undefined array key "wight"
+in APPPATH\Controllers\Proses.php on line 53.
+ 1 APPPATH\Controllers\Proses.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "wight"', 'APPPATH\\Controllers\\Proses.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:14:35 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-08-05 16:14:35 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 416.
+ 1 SYSTEMPATH\Database\BaseConnection.php(586): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 3 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 5 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:16:45 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 16:16:45 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:17:07 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 16:17:07 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:17:43 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 16:17:43 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:18:47 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 16:18:47 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-05 16:21:17 --> Illegal parameter data types varchar and row for operation '='
+CRITICAL - 2022-08-05 16:21:17 --> Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `m_product`
+WHERE `slug` = (\'cardinal-cj-06\',\'cardinal-jeans-05\',\'cardinal-kemeja-07\',\'salman-seris-02\',\'thobe-sachet-03\')
+ORDER BY `product_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_product`
+WHERE `slug` = :slug:
+ORDER BY `product_id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(136): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(100): App\Controllers\Proses->_getMsProduct([...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
