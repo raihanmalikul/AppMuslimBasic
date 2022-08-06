@@ -16,6 +16,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "01",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -25,6 +26,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "02",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -34,6 +36,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "03",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -43,6 +46,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "04",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -52,6 +56,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "05",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -61,6 +66,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "06",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -70,6 +76,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "07",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -79,6 +86,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "08",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -88,6 +96,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "09",
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -97,6 +106,7 @@ class MProductSeeds extends Seeder
                 "product_id" => 10,
                 "category_id" => "03",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -106,6 +116,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "01",
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 22-24 JUNI 2022‼️ Pengen pake kemeja tapi tetep keliatan fresh? Atau.. mau beli kemeja tapi takut gak dipake karna biasanya bahannya gak nyaman, gerah, kasar, dan kaku? Tenang aja kang bro, kan sekarang ada Ali Series by Muslim Basic😎 Solusi buat kang bro yang mau pake kemeja tapi masih tetep mau keliatan CASUAL, RAPIH dan NYAMAN. Tentunya bisa dipake di segala aktivitas Insyā Allāh👍🏻",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -115,6 +126,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "02",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -124,6 +136,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "03",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -133,6 +146,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "04",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -142,6 +156,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "05",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -151,6 +166,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "06",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -160,6 +176,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "07",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -169,6 +186,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "08",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -178,6 +196,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "09",
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -187,6 +206,7 @@ class MProductSeeds extends Seeder
                 "product_id" => 10,
                 "category_id" => "02",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -196,6 +216,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "01",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -205,7 +226,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "02",
                 "category_id" => "01",
                 "description" => "‼️OPEN PRE ORDER 11-15 JULI 2022‼️ Pengen gamisan tapi takut keliatan terlalu formal? Atau.. mau beli gamis tapi takut cuma ngegantung di lemari aja karena gamis identiknya cuma dipake pas jum’atan aja? Tenang aja kang bro, kan ada Salman Series by Muslim Basic😎 Solusi buat kang bro yang mau pake gamis tapi masih tetep mau keliatan CASUAL dan NYAMAN. Tentunya bisa dipake di segala aktivitas Insyā Allāh👍🏻",
-                "detail" => 'Note : - Insyā Allāh pengerjaan selama 3-4 pekan, semoga Allāh mudahkan - Berat gamis kurleb 500 gram - Insyā Allāh 1kg muat 2 baju - Pengiriman via JNE dari Kota Bandung - Agar menjaga kualitas produk harap mengikuti cara perawatan produk ❗️Efek cahaya dan layar hp masing-masing mengakibatkan warna asli berbeda❗️',
+                "details" => "Note : - Insyā Allāh pengerjaan selama 3-4 pekan, semoga Allāh mudahkan - Berat gamis kurleb 500 gram - Insyā Allāh 1kg muat 2 baju - Pengiriman via JNE dari Kota Bandung - Agar menjaga kualitas produk harap mengikuti cara perawatan produk ❗️Efek cahaya dan layar hp masing-masing mengakibatkan warna asli berbeda❗️",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -215,6 +236,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "03",
                 "category_id" => "01",
                 "description" => "!!OPEN PRE ORDER 26-29 JULI 2022!!Mau pakai thobe premium, tapi biasanya harganya mahal?Tenang aja kang bro, kan ada Adam series by Muslim Basic. Muslim Basic bi'idznillah hadir untuk memfasilitasi kang bro semua supaya bisa TETAP TAAT dan MENAWAN tapi gak bikin kantong jebol",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -224,6 +246,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "04",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -233,6 +256,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "05",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -242,6 +266,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "06",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -251,6 +276,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "07",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -260,6 +286,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "08",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -269,6 +296,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "09",
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -278,6 +306,7 @@ class MProductSeeds extends Seeder
                 "product_id" => 10,
                 "category_id" => "01",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -287,6 +316,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "01",
                 "category_id" => "04",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -296,6 +326,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "02",
                 "category_id" => "04",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -305,6 +336,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "03",
                 "category_id" => "04",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -314,6 +346,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "04",
                 "category_id" => "04",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -323,6 +356,7 @@ class MProductSeeds extends Seeder
                 "product_id" => "05",
                 "category_id" => "04",
                 "description" => "",
+                "details" => "",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ]
