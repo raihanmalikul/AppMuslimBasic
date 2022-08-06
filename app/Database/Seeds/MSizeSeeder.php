@@ -12,9 +12,27 @@ class MSizeSeeder extends Seeder
     {
         $data = [
             [
+                'name'          => 'XXS',
+                'size_id'       => '07',
+                'slug'          => 'xxs-07',
+                'created_at'    => TIme::now()
+            ],
+            [
+                'name'          => 'XS',
+                'size_id'       => '06',
+                'slug'          => 'xs-06',
+                'created_at'    => TIme::now()
+            ],
+            [
                 'name'          => 'S',
                 'size_id'       => '01',
                 'slug'          => 's-01',
+                'created_at'    => TIme::now()
+            ],
+            [
+                'name'          => 'M',
+                'size_id'       => '05',
+                'slug'          => 'm-05',
                 'created_at'    => TIme::now()
             ],
             [
@@ -30,9 +48,15 @@ class MSizeSeeder extends Seeder
                 'created_at'    => TIme::now()
             ],
             [
-                'name'          => 'XXL',
+                'name'          => '2XL',
                 'size_id'       => '04',
                 'slug'          => 'xxl-04',
+                'created_at'    => TIme::now()
+            ],
+            [
+                'name'          => '3XL',
+                'size_id'       => '08',
+                'slug'          => 'xxxl-08',
                 'created_at'    => TIme::now()
             ]
         ];

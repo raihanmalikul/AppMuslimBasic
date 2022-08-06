@@ -1,7 +1,6 @@
 <?php $this->session = \Config\Services::session(); ?>
 
 <?= $this->extend('User/Layout/PageLayout'); ?>
-
 <?= $this->section('contentUser'); ?>
 
 <!-- Header Start -->
@@ -30,7 +29,7 @@
                             <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
                         </li>
                         <li class="group">
-                            <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RaTING</a>
+                            <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RATING</a>
                         </li>
                         <li class="group">
                             <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
@@ -46,7 +45,7 @@
                                     </a>
                                     <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                                         <?php
-                                        if ($this->session->get('logged_in')) { ?>
+                                        if ($this->session->get('loggedIn')) { ?>
                                             <li>
                                                 <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/settings">Settings</a>
                                             </li>
@@ -64,7 +63,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="mt-3 lg:mt-0 items-center flex pl-8">
+                        <li class="mt-3 lg:mt-0 items-center flex pl-8" id="disabledMode">
                             <div class="flex">
                                 <span class="mr-2 text-sm text-dark dark:text-white">Light</span>
                                 <input type="checkbox" class="hidden" id="dark-toggle" />
@@ -121,8 +120,9 @@
                 </p>
             </div>
         </div>
-        <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4">
-            <a href="#" class="group">
+        <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4" id="bastSeller">
+            <span id="bastSeller"></span>
+            <!-- <a href="#" class="group">
                 <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                     <img src="/assets/tailwind/img/toko/foto11.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
                 </div>
@@ -152,7 +152,7 @@
                 </div>
                 <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Machined Mechanical Pencil</h3>
                 <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -580,179 +580,241 @@
 </div>
 <!-- Modal Login End -->
 
-<!-- <div class="relative z-10" role="dialog" aria-modal="true">
-        <div class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
+<!-- Modal Item Product start -->
+<!-- <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto modalItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
 
-        <div class="fixed z-10 inset-0 overflow-y-auto">
-            <div class="flex items-stretch md:items-center justify-center min-h-full text-center md:px-2 lg:px-4">
-                <div class="flex text-base text-left transform transition w-full md:max-w-2xl md:px-4 md:my-8 lg:max-w-4xl">
-                    <div class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
-                        <button type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
-                            <span class="sr-only">Close</span>
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+    <div class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-stretch md:items-center justify-center min-h-full text-center md:px-2 lg:px-4">
+            <div class="flex text-base text-left transform transition w-full md:max-w-2xl md:px-4 md:my-8 lg:max-w-4xl">
+                <div class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+                    <button type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
+                        <span class="sr-only">Close</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
 
-                        <div class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
-                            <div class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg" alt="Two each of gray, white, and black shirts arranged on table." class="object-center object-cover">
-                            </div>
-                            <div class="sm:col-span-8 lg:col-span-7">
-                                <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">Basic Tee 6-Pack</h2>
+                    <div class="w-full grid grid-cols-1 gap-y-8 gap-x-6 items-start sm:grid-cols-12 lg:gap-x-8">
+                        <div class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5">
+                            <img src="https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg" alt="Two each of gray, white, and black shirts arranged on table." class="object-center object-cover">
+                        </div>
+                        <div class="sm:col-span-8 lg:col-span-7">
+                            <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">Basic Tee 6-Pack</h2>
 
-                                <section aria-labelledby="information-heading" class="mt-2">
-                                    <h3 id="information-heading" class="sr-only">Product information</h3>
+                            <section aria-labelledby="information-heading" class="mt-2">
+                                <h3 id="information-heading" class="sr-only">Product information</h3>
 
-                                    <p class="text-2xl text-gray-900">$192</p>
+                                <p class="text-2xl text-gray-900">$192</p>
 
-                                    <div class="mt-6">
-                                        <h4 class="sr-only">Reviews</h4>
+                                <div class="mt-6">
+                                    <h4 class="sr-only">Reviews</h4>
+                                    <div class="flex items-center">
                                         <div class="flex items-center">
-                                            <div class="flex items-center">
-                                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
+                                            <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
 
-                                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
+                                            <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
 
-                                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
+                                            <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
 
-                                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
+                                            <svg class="text-gray-900 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
 
-                                                <svg class="text-gray-200 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                </svg>
-                                            </div>
-                                            <p class="sr-only">3.9 out of 5 stars</p>
-                                            <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
+                                            <svg class="text-gray-200 h-5 w-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
                                         </div>
+                                        <p class="sr-only">3.9 out of 5 stars</p>
+                                        <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                                     </div>
-                                </section>
+                                </div>
+                            </section>
 
-                                <section aria-labelledby="options-heading" class="mt-10">
-                                    <h3 id="options-heading" class="sr-only">Product options</h3>
+                            <section aria-labelledby="options-heading" class="mt-10">
+                                <h3 id="options-heading" class="sr-only">Product options</h3>
 
-                                    <form>
-                                        <div>
-                                            <h4 class="text-sm text-gray-900 font-medium">Color</h4>
+                                <form>
+                                    <div>
+                                        <h4 class="text-sm text-gray-900 font-medium">Color</h4>
 
-                                            <fieldset class="mt-4">
-                                                <legend class="sr-only">Choose a color</legend>
-                                                <span class="flex items-center space-x-3">
-                                                    
-                                                    <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                                                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
-                                                        <span id="color-choice-0-label" class="sr-only"> White </span>
-                                                        <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
-                                                    </label>
-                                                    
-                                                    <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                                                        <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
-                                                        <span id="color-choice-1-label" class="sr-only"> Gray </span>
-                                                        <span aria-hidden="true" class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
-                                                    </label>
-                                                    
-                                                    <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-900">
-                                                        <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
-                                                        <span id="color-choice-2-label" class="sr-only"> Black </span>
-                                                        <span aria-hidden="true" class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
-                                                    </label>
-                                                </span>
-                                            </fieldset>
+                                        <fieldset class="mt-4">
+                                            <legend class="sr-only">Choose a color</legend>
+                                            <span class="flex items-center space-x-3">
+
+                                                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
+                                                    <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
+                                                    <span id="color-choice-0-label" class="sr-only"> White </span>
+                                                    <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
+                                                </label>
+
+                                                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
+                                                    <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
+                                                    <span id="color-choice-1-label" class="sr-only"> Gray </span>
+                                                    <span aria-hidden="true" class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
+                                                </label>
+
+                                                <label class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-900">
+                                                    <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
+                                                    <span id="color-choice-2-label" class="sr-only"> Black </span>
+                                                    <span aria-hidden="true" class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
+                                                </label>
+                                            </span>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="mt-10">
+                                        <div class="flex items-center justify-between">
+                                            <h4 class="text-sm text-gray-900 font-medium">Size</h4>
+                                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
                                         </div>
-                                        
-                                        <div class="mt-10">
-                                            <div class="flex items-center justify-between">
-                                                <h4 class="text-sm text-gray-900 font-medium">Size</h4>
-                                                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+
+                                        <fieldset class="mt-4">
+                                            <legend class="sr-only">Choose a size</legend>
+                                            <div class="grid grid-cols-4 gap-4">
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="XXS" class="sr-only" aria-labelledby="size-choice-0-label">
+                                                    <span id="size-choice-0-label"> XXS </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label">
+                                                    <span id="size-choice-1-label"> XS </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label">
+                                                    <span id="size-choice-2-label"> S </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label">
+                                                    <span id="size-choice-3-label"> M </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label">
+                                                    <span id="size-choice-4-label"> L </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label">
+                                                    <span id="size-choice-5-label"> XL </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                                    <input type="radio" name="size-choice" value="XXL" class="sr-only" aria-labelledby="size-choice-6-label">
+                                                    <span id="size-choice-6-label"> XXL </span>
+
+                                                    <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                                </label>
+
+                                                <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-gray-50 text-gray-200 cursor-not-allowed">
+                                                    <input type="radio" name="size-choice" value="XXXL" disabled class="sr-only" aria-labelledby="size-choice-7-label">
+                                                    <span id="size-choice-7-label"> XXXL </span>
+
+                                                    <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
+                                                        <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+                                                            <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
+                                                        </svg>
+                                                    </span>
+                                                </label>
                                             </div>
+                                        </fieldset>
+                                    </div>
 
-                                            <fieldset class="mt-4">
-                                                <legend class="sr-only">Choose a size</legend>
-                                                <div class="grid grid-cols-4 gap-4">
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="XXS" class="sr-only" aria-labelledby="size-choice-0-label">
-                                                        <span id="size-choice-0-label"> XXS </span>
-                                                        
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label">
-                                                        <span id="size-choice-1-label"> XS </span>
-                                                        
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label">
-                                                        <span id="size-choice-2-label"> S </span>
-
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label">
-                                                        <span id="size-choice-3-label"> M </span>
-
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label">
-                                                        <span id="size-choice-4-label"> L </span>
-                                                        
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label">
-                                                        <span id="size-choice-5-label"> XL </span>
-                                                        
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                                        <input type="radio" name="size-choice" value="XXL" class="sr-only" aria-labelledby="size-choice-6-label">
-                                                        <span id="size-choice-6-label"> XXL </span>
-                                                        
-                                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                                    </label>
-
-                                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 bg-gray-50 text-gray-200 cursor-not-allowed">
-                                                        <input type="radio" name="size-choice" value="XXXL" disabled class="sr-only" aria-labelledby="size-choice-7-label">
-                                                        <span id="size-choice-7-label"> XXXL </span>
-
-                                                        <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
-                                                            <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                                                                <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                                                            </svg>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </fieldset>
-                                        </div>
-
-                                        <button type="submit" class="mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
-                                    </form>
-                                </section>
-                            </div>
+                                    <button type="submit" class="mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
+                                </form>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+</div> -->
+<!-- Modal Item Product end -->
 
 <!-- BEGIN SCRIPT -->
 <?= $this->include('User/Layout/Script') ?>
 <!-- END SCRIPT -->
+
+<script type="text/javascript">
+    $(function() {
+        getBestSeller()
+    });
+
+    function getBestSeller() {
+        $.ajax({
+            type: "GET",
+            url: "/Proses/getBestSeller",
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let row = '';
+
+                if (json.success == 0) {
+                    row = `<div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                                <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
+                            </div>`;
+                    $('#bastSeller').html(row);
+                    return;
+                }
+
+                $.each(json.data, function(ind, val) {
+                    let rpPrice = formatRupiah(val.price, 'Rp. ');
+                    // let modalItem = $(".modalItem").attr('id', val.slug)
+                    // console.log(modalItem)
+                    row += `<a href="/productShow/` + val.slug + `" class="group">
+                                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                                    <img src="/uploads/product/` + val.image + `" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                                </div>
+                                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">` + val.name + `</h3>
+                                <p class="my-1 text-lg font-medium text-gray-900 dark:text-secondarybg">` + rpPrice + `</p>
+                            </a>`;
+
+                })
+                $('#bastSeller').html(row);
+            }
+        })
+    }
+
+    /* Fungsi formatRupiah */
+    function formatRupiah(angka, prefix) {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        // tambahkan titik jika yang di input sudah menjadi angka ribuan
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+</script>
 
 <?= $this->endSection(); ?>

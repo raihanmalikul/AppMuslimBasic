@@ -15,13 +15,20 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3">Master Products</h1>
+            <h1 class="h3 mb-3"><strong>Products</strong></h1>
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <button class="btn btn-pill btn-primary" type="button" id="addProducts"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add New</button>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="card-title">Master Product</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-pill btn-primary" type="button" id="addProducts" style="float: right; margin-left: 1%;"><i class="fas fa-plus-square"></i>&nbsp;&nbsp; Add New</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table class="table table-sm table-striped" id="tblMstrProducts">
@@ -83,29 +90,30 @@
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                    <input type="number" min="1" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                    <input type="number" min="1" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
                                 </div>
                                 <div class="mb-3 col-md-2">
                                     <label class="form-label">&nbsp;</label>
-                                    <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                    <input type="number" min="1" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="mb-3 col-md-6">
-                                    <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                <div class="mb-3 col-md-5">
+                                    <textarea class="form-control" name="product_des[]" id="product_des" placeholder="Description" rows="1"></textarea>
                                 </div>
                                 <div class="mb-3 col-md-3">
-                                    <!-- <input type="text" class="form-control" name="product_size[]" id="product_size" placeholder="Size"> -->
-                                    <select class="form-select mb-3" name="product_size[]" id="product_size" placeholder="Size"></select>
+                                    <input type="file" class="form-control" name="product_image[]" id="product_image" accept="image/png, image/jpeg" placeholder="Image">
                                 </div>
-                                <div class="mb-3 col-md-3">
+                                <div class="mb-3 col-md-2">
+                                    <select class="form-select" name="product_size[]" id="product_size" placeholder="Size"></select>
+                                </div>
+                                <div class="mb-3 col-md-2">
                                     <input type="hidden" name="product_slug[]" id="product_slug">
-                                    <!-- <input type="text" class="form-control" name="product_color[]" id="product_color" placeholder="Color"> -->
-                                    <select class="form-select mb-3" name="product_color[]" id="product_color" placeholder="Color"></select>
+                                    <select class="form-select" name="product_color[]" id="product_color" placeholder="Color"></select>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +142,7 @@
         $('#tblMstrProducts').DataTable({
             // responsive: true,
             serverSide: true,
-            // autoWidth: false,
+            autoWidth: false,
             // scrollX: true,
             // scrollCollapse: true,
             lengthMenu: [5, 10, 15, 20, 30, 50, 100],
@@ -347,25 +355,28 @@
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
+                                            <input type="number" min="1" class="form-control" name="product_price[]" id="product_price" placeholder="Price">
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
+                                            <input type="number" min="1" class="form-control" name="product_weight[]" id="product_weight" placeholder="Weight">
                                         </div>
                                         <div class="mb-3 col-md-2">
                                             <label class="form-label">&nbsp;</label>
-                                            <input type="number" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
+                                            <input type="number" min="1" class="form-control" name="product_stock[]" id="product_stock" placeholder="Stock">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="mb-3 col-md-6">
-                                            <textarea class="form-control" name="product_description" id="product_description" placeholder="Description" rows="1"></textarea>
+                                        <div class="mb-3 col-md-5">
+                                            <textarea class="form-control" name="product_des[]" id="product_des" placeholder="Description" rows="1"></textarea>
                                         </div>
                                         <div class="mb-3 col-md-3">
-                                            <select class="form-select mb-3" name="product_size[]" id="product_size` + product_id + `" placeholder="Size"></select>
+                                            <input type="file" class="form-control" name="product_image[]" id="product_image" accept="image/png, image/jpeg" placeholder="Image">
                                         </div>
-                                        <div class="mb-3 col-md-3">
+                                        <div class="mb-3 col-md-2">
+                                            <select class="form-select" name="product_size[]" id="product_size` + product_id + `" placeholder="Size"></select>
+                                        </div>
+                                        <div class="mb-3 col-md-2">
                                             <div class="input-group mb-3">
                                                 <select class="form-select" name="product_color[]" id="product_color` + product_id + `" placeholder="Color" aria-describedby="button-productColor"></select>
                                                 <input type="hidden" name="product_slug[]" id="product_slug">

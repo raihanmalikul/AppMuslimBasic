@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -14,6 +15,10 @@ class MOrder extends Migration
                 'constraint'     => 20,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'order_id' => [
                 'type'       => 'VARCHAR',
@@ -55,6 +60,10 @@ class MOrder extends Migration
             'subTotal' => [
                 'type'       => 'INT',
                 'constraint' => 11
+            ],
+            'status_order' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1
             ],
             'created_at' => [
                 'type'       => 'DATETIME',

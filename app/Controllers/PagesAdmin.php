@@ -2,10 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\MProductModel;
+
 class PagesAdmin extends BaseController
 {
+    protected $product;
+
     public function __construct()
     {
+        $this->product = new MProductModel();
         $this->session = \Config\Services::session();
         $username = $this->session->get("logged_in");
         if (empty($username)) {
@@ -17,6 +22,10 @@ class PagesAdmin extends BaseController
     public function dashboard()
     {
         $data['title'] = "Dashboard | Muslim Basic";
+        $query = $this->product->selectCount('id')->countAll();
+        $data['sumProducts'] = $query;
+        // dd($query);
+
         return view('Admin/Pages/Dashboard', $data);
     }
 
