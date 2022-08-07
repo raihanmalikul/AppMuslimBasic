@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\I18n\Time;
 
-class DProduct extends Migration
+class DProductColor extends Migration
 {
     public function up()
     {
@@ -20,13 +20,13 @@ class DProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'slug' => [
+            'color_code' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
-            'is_valid' => [
-                'type'       => 'TINYINT',
-                'constraint' => 1
+            'color_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -38,11 +38,11 @@ class DProduct extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('d_product');
+        $this->forge->createTable('d_color');
     }
 
     public function down()
     {
-        $this->forge->dropTable('d_product');
+        $this->forge->dropTable('d_color');
     }
 }
