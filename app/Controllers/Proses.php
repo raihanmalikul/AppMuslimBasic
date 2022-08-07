@@ -30,10 +30,12 @@ class Proses extends BaseController
 
     public function saveShop()
     {
-        $slug  = $this->request->getVar("slug");
-        $email = $this->request->getVar("email");
-        $slug  = $this->request->getVar("slug");
-        $slug  = $this->request->getVar("slug");
+        $slug       = $this->request->getVar("slug");
+        $email      = $this->request->getVar("email");
+        $price      = $this->request->getVar("price");
+        $size_id    = $this->request->getVar("size_id");
+        $color_id   = $this->request->getVar("color_id");
+        $qty        = $this->request->getVar("qty");
     }
 
     public function productDetail()

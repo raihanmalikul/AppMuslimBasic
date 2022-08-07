@@ -3,6 +3,22 @@
 <?= $this->extend('User/Layout/PageLayout'); ?>
 <?= $this->section('contentUser'); ?>
 
+<style>
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .custom-number-input input:focus {
+        outline: none !important;
+    }
+
+    .custom-number-input button:focus {
+        outline: none !important;
+    }
+</style>
+
 <!-- Header Start -->
 <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
     <div class="container">
@@ -22,7 +38,7 @@
                         <li class="group">
                             <a href="#home" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
                         </li>
-                        <li class="group">
+                        <!-- <li class="group">
                             <a href="#best" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
                         </li>
                         <li class="group">
@@ -33,7 +49,7 @@
                         </li>
                         <li class="group">
                             <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
-                        </li>
+                        </li> -->
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
                                 <div class="dropdown relative">
@@ -309,14 +325,23 @@
                             <h3 class="text-sm text-gray-900 font-medium">Quantity</h3>
                             <fieldset class="mt-4">
                                 <legend class="sr-only">Set your item quantity</legend>
-                                <div class="flex items-center space-x-3" id="qty">
-                                    <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="qty" name="qty" max="200" min="1" value="1" autocomplete="" required>
-                                </div>
+                                <div class="custom-number-input h-10 w-32">
+                                    <div class="flex items-center space-x-3" id="qty">
+                                        <div class="flex flex-row h-10 w-full border-2 border-gray-300 rounded-lg relative bg-transparent mt-1">
+                                            <button data-action="decrement" type="button" id="decrement" class=" bg-white text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                                <span class="m-auto text-2xl font-thin">−</span>
+                                            </button>
+                                            <input type="number" class="focus:outline-none text-center w-full bg-white font-semibold text-md hover:text-black focus:text-black  flex items-center text-gray-700  outline-none" name="qty" min="1" max="500" value="1"></input>
+                                            <button data-action="increment" type="button" id="increment" class="bg-white text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer outline-none">
+                                                <span class="m-auto text-2xl font-thin">+</span>
+                                            </button>
+                                        </div>
+                                    </div>
                             </fieldset>
                         </div>
                     </div>
 
-                    <button type="submit" id="saveShop" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
+                    <button type="button" id="saveShop" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
                 </form>
             </div>
 
@@ -367,6 +392,9 @@
     let color_id = null
     let slug = "<?= $slug ?>";
     let email = "<?= $this->session->get('email') ?>";
+
+
+
     $(function() {
         let statusSuccess = "<?= $this->session->getFlashdata('msg'); ?>";
         let statusError = "<?= $this->session->getFlashdata('msg_err'); ?>";
@@ -378,6 +406,29 @@
             toastr.warning(statusError);
         }
 
+        const decrementButtons = document.querySelectorAll("#decrement");
+        const incrementButtons = document.querySelectorAll("#increment");
+
+        decrementButtons.forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                const btn = e.target.parentNode.parentElement.querySelector("#decrement");
+                const target = btn.nextElementSibling;
+                let value = Number(target.value);
+                value--;
+                target.value = (value < 1) ? 1 : value
+            });
+        });
+
+        incrementButtons.forEach(btn => {
+            btn.addEventListener("click", function(e) {
+                const btn = e.target.parentNode.parentElement.querySelector("#decrement");
+                const target = btn.nextElementSibling;
+                let value = Number(target.value);
+                value++;
+                target.value = (value < 0) ? 0 : value;
+            });
+        });
+
         getDataDetail(slug)
         // buttonSize();
         // console.log(color_id)
@@ -385,14 +436,16 @@
         // console.log(cekColor)
         $("#saveShop").click(function() {
 
-            let price = document.querySelector('input[name=price]').value
-            let size_id = document.querySelector('input[name=size_id]').value
-            let color_id = document.querySelector('input[name=color_id]').value
-            let qty = document.querySelector('input[name=qty]').value
+            let price = $('input[name="price"]').val()
+            let size_id = $('input[name="size_id"]').val()
+            let color_id = $('input[name="color_id"]').val()
+            let qty = $('input[name="qty"]').val()
             console.log(price);
             console.log(size_id);
             console.log(color_id);
             console.log(qty);
+            console.log(email);
+            console.log(slug);
 
             $.ajax({
                 type: "POST",
@@ -506,9 +559,9 @@
                         rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
                                         <img src="/uploads/product/` + val.image + `" alt="` + val.name + `" class="w-full h-full object-center object-cover">
                                     </div>`;
-                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.color_id + `" ` + checked + ` onclick="getSize('` + val.price + `', '` + val.size_id + `', '` + val.size + `')"> ` + ucwords(val.color) + `</label>`;
+                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.color_id + `" value="` + val.color_id + `" ` + checked + ` onclick="getSize('` + val.price + `', '` + val.size_id + `', '` + val.size + `')"> ` + ucwords(val.color) + `</label>`;
 
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `"> ` + val.size + `</label>`;
+                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `"> ` + val.size + `</label>`;
                         // rowColor += `<label id="labelCek_` + val.colorId + `" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400 ` + active + `">
                         //                 <input type="radio" id="color_id_` + val.colorId + `" name="color_id" value="` + val.colorId + `" class="sr-only">
                         //                 <span id="color_id-` + val.colorId + `" class="sr-only"> ` + val.color + ` </span>
