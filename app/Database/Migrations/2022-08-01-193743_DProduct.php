@@ -20,6 +20,10 @@ class DProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'sub_code' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
