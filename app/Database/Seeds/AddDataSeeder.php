@@ -16,7 +16,6 @@ class AddDataSeeder extends Seeder
         $this->call('MLoginAdminSeeder');
         $this->call('MLoginSeeder');
         $this->call('MProductSeeds');
-        $this->call('DProductSeeds');
         $this->call('MProfilSeeder');
         $this->call('MProvinceSeeder');
         $this->call('MSizeSeeder');

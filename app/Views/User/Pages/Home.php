@@ -114,10 +114,7 @@
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">
                 <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">BEST SELLER</h2>
-                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
-                    minus aliquam consequuntur.
-                </p>
+                <!-- <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg"></p> -->
             </div>
         </div>
         <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4" id="bastSeller">
@@ -164,15 +161,15 @@
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">
                 <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">ITEM DISCOUNT</h2>
-                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                <!-- <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
                     minus aliquam consequuntur.
-                </p>
+                </p> -->
             </div>
         </div>
 
-        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div class="group relative">
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8" id="discountItem">
+            <!-- <div class="group relative">
                 <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
                     <div class="py-8 px-6">
                         <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -255,9 +252,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- More products... -->
+            </div> -->
         </div>
     </div>
 </section>
@@ -760,40 +755,72 @@
 <script type="text/javascript">
     $(function() {
         getBestSeller()
+        getDiscountItem()
     });
 
     function getBestSeller() {
         $.ajax({
-            type: "GET",
             url: "/Proses/getBestSeller",
             async: false,
             dataType: "json",
             success: function(json) {
-                // console.log(json)
-                let row = '';
+                console.log(json.data)
+                let row = rpPrice = '';
 
-                if (json.success == 0) {
-                    row = `<div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                                <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
-                            </div>`;
+                if (json.status == 1) {
+                    $.each(json.data, function(ind, val) {
+                        rpPrice = formatRupiah(val.price, 'Rp. ');
+                        let categoryName = val.categoryName.toLowerCase();
+
+                        row += `<a href="/productShow/` + val.slug + `" class="group">
+                                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                                        <img src="/uploads/product/` + categoryName + `/` + val.image + `" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">` + val.name + ` - ` + val.nmColor + ` (` + val.nmSize + `)</h3>
+                                    <p class="my-1 text-lg font-medium text-gray-900 dark:text-secondarybg">` + rpPrice + `</p>
+                                </a>`;
+                    })
                     $('#bastSeller').html(row);
-                    return;
                 }
+            }
+        })
+    }
 
-                $.each(json.data, function(ind, val) {
-                    let rpPrice = formatRupiah(val.price, 'Rp. ');
-                    // let modalItem = $(".modalItem").attr('id', val.slug)
-                    // console.log(modalItem)
-                    row += `<a href="/productShow/` + val.slug + `" class="group">
-                                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                                    <img src="/uploads/product/` + val.image + `" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+    function getDiscountItem() {
+        $.ajax({
+            url: "/Proses/getDiscountItem",
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let row = rpPrice = '';
+
+                $.each(json, function(i, v) {
+                    rpPrice = formatRupiah(v.price_disc, 'Rp. ');
+                    let categoryName = v.name_category.toLowerCase();
+                    row += `<div class="group relative">
+                                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                                    <div class="py-8 px-6">
+                                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                            <img src="/uploads/product/` + categoryName + `/` + v.image + `" alt="" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                                        </div>
+                                        <div class="mt-4 flex justify-between">
+                                            <div>
+                                                <h3 class="text-sm text-gray-700">
+                                                    <a href="/productShow/` + v.slug + `">
+                                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                                        ` + v.name_product + `
+                                                    </a>
+                                                </h3>
+                                                <p class="mt-1 text-sm text-gray-500">` + v.name_color + ` (` + v.name_size + `)</p>
+                                            </div>
+                                            <p class="text-sm font-medium text-gray-900">` + rpPrice + `</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">` + val.name + `</h3>
-                                <p class="my-1 text-lg font-medium text-gray-900 dark:text-secondarybg">` + rpPrice + `</p>
-                            </a>`;
-
+                            </div>`;
                 })
-                $('#bastSeller').html(row);
+                $('#discountItem').html(row);
             }
         })
     }

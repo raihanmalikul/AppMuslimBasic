@@ -1,0 +1,182 @@
+CRITICAL - 2022-08-13 07:48:16 --> Undefined variable $data
+in APPPATH\Controllers\Proses.php on line 139.
+ 1 APPPATH\Controllers\Proses.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\Proses.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 07:48:28 --> Undefined variable $data
+in APPPATH\Controllers\Proses.php on line 139.
+ 1 APPPATH\Controllers\Proses.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\Proses.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 07:58:04 --> Cannot use object of type mysqli as array
+in APPPATH\Controllers\Proses.php on line 119.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 07:58:16 --> Cannot use object of type mysqli as array
+in APPPATH\Controllers\Proses.php on line 119.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 07:59:48 --> Cannot use object of type mysqli as array
+in APPPATH\Controllers\Proses.php on line 119.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 08:51:11 --> Undefined array key "image"
+in APPPATH\Controllers\Proses.php on line 132.
+ 1 APPPATH\Controllers\Proses.php(132): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'APPPATH\\Controllers\\Proses.php', 132)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 08:55:49 --> Undefined array key "color_id"
+in APPPATH\Controllers\Proses.php on line 57.
+ 1 APPPATH\Controllers\Proses.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "color_id"', 'APPPATH\\Controllers\\Proses.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 09:28:57 --> Undefined array key "valSlug"
+in APPPATH\Controllers\Proses.php on line 119.
+ 1 APPPATH\Controllers\Proses.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "valSlug"', 'APPPATH\\Controllers\\Proses.php', 119)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 15:27:50 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', 'cardinal-cj-06', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', 'cardinal-cj-06')
+ 3 APPPATH\Controllers\Proses.php(220): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\Proses.php(125): App\Controllers\Proses->_getMsProductWhereIn('cardinal-cj-06')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 15:29:29 --> whereIn() expects $values to be of type array or closure
+in SYSTEMPATH\Database\BaseBuilder.php on line 907.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(789): CodeIgniter\Database\BaseBuilder->_whereIn('slug', 'cardinal-cj-06', false, 'AND ', null)
+ 2 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->whereIn('slug', 'cardinal-cj-06')
+ 3 APPPATH\Controllers\Proses.php(221): CodeIgniter\Model->__call('whereIn', [...])
+ 4 APPPATH\Controllers\Proses.php(125): App\Controllers\Proses->_getMsProductWhereIn('cardinal-cj-06')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-13 15:30:36 --> Unknown column 'color_id' in 'where clause'
+CRITICAL - 2022-08-13 15:30:36 --> Unknown column 'color_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `sieze_id` = \'02\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `sieze_id` = \'02\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `sieze_id` = \'02\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `d_product`
+WHERE `slug` = :slug:
+AND `color_id` = :color_id:
+AND `sieze_id` = :sieze_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(234): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(136): App\Controllers\Proses->_getDtlProduct('cardinal-cj-06', '02', '02')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-13 15:34:19 --> Unknown column 'color_id' in 'where clause'
+CRITICAL - 2022-08-13 15:34:19 --> Unknown column 'color_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `size_id` = \'02\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `size_id` = \'02\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `d_product`
+WHERE `slug` = \'cardinal-cj-06\'
+AND `color_id` = \'02\'
+AND `size_id` = \'02\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `d_product`
+WHERE `slug` = :slug:
+AND `color_id` = :color_id:
+AND `size_id` = :size_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Proses.php(234): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Proses.php(136): App\Controllers\Proses->_getDtlProduct('cardinal-cj-06', '02', '02')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 15:38:44 --> Undefined variable $data
+in APPPATH\Controllers\Proses.php on line 177.
+ 1 APPPATH\Controllers\Proses.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'APPPATH\\Controllers\\Proses.php', 177)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->getBestSeller()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 17:38:06 --> Undefined array key "color_id"
+in APPPATH\Controllers\Proses.php on line 59.
+ 1 APPPATH\Controllers\Proses.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "color_id"', 'APPPATH\\Controllers\\Proses.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 17:58:36 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getResArray()
+in APPPATH\Controllers\Proses.php on line 57.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 17:59:41 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getResArray()
+in APPPATH\Controllers\Proses.php on line 57.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productDetail()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-13 21:26:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::rowArray()
+in APPPATH\Controllers\Proses.php on line 70.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productMaster()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

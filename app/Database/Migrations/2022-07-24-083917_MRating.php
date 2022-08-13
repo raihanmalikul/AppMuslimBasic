@@ -28,6 +28,22 @@ class MRating extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'sub_code' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'color_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'size_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'image' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'description' => [
                 'type'       => 'TEXT'
             ],
