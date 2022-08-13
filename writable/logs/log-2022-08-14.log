@@ -1,0 +1,925 @@
+ERROR - 2022-08-14 00:37:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'undefined''
+                            AND a.color_id =...' at line 12
+CRITICAL - 2022-08-14 00:37:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'undefined''
+                            AND a.color_id =...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:39:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'undefined''
+                            AND a.color_id =...' at line 12
+CRITICAL - 2022-08-14 00:39:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'undefined''
+                            AND a.color_id =...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'undefined\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:40:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:40:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:40:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:40:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:41:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:41:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:42:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:42:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:43:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:43:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:43:44 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:43:44 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:47:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:47:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:48:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:48:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-14 00:49:01 --> Too few arguments to function App\Controllers\Proses::productSizeImage(), 0 passed in C:\xampp80\htdocs\AppMuslimBasic\vendor\codeigniter4\framework\system\CodeIgniter.php on line 896 and exactly 3 expected
+in APPPATH\Controllers\Proses.php on line 166.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:49:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+CRITICAL - 2022-08-14 00:49:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = ''...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:54:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = 'u...' at line 12
+CRITICAL - 2022-08-14 00:54:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA''
+                            AND a.color_id = 'u...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'undefined\'
+                            AND a.size_id = \'undefined\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'undefined\'
+                            AND a.size_id = \'undefined\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'undefined\'
+                            AND a.size_id = \'undefined\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\'\'
+                            AND a.color_id = \'undefined\'
+                            AND a.size_id = \'undefined\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-14 00:56:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA', colorId=undefined, sizeId=undefined'
+          ...' at line 12
+CRITICAL - 2022-08-14 00:56:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sc02', '01', '01', 'KEMEJA', colorId=undefined, sizeId=undefined'
+          ...' at line 12
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\', colorId=undefined, sizeId=undefined\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\', colorId=undefined, sizeId=undefined\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\', colorId=undefined, sizeId=undefined\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 4 APPPATH\Controllers\Proses.php(189): CodeIgniter\Database\BaseConnection->query('SELECT 
+                            a.image
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = \'\'sc02\', \'01\', \'01\', \'KEMEJA\', colorId=undefined, sizeId=undefined\'
+                            AND a.color_id = \'\'
+                            AND a.size_id = \'\'
+                        ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-14 00:59:14 --> Undefined array key "image"
+in APPPATH\Controllers\Proses.php on line 192.
+ 1 APPPATH\Controllers\Proses.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'APPPATH\\Controllers\\Proses.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productSizeImage()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

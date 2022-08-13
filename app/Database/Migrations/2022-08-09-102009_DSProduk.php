@@ -30,19 +30,38 @@ class DSProduk extends Migration
             ],
             'image' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 255
+                'constraint' => 255,
+                'null'       => true
             ],
             'price' => [
                 'type'       => 'INT',
-                'constraint' => 11
+                'constraint' => 11,
+                'null'       => true
             ],
             'weight' => [
                 'type'       => 'INT',
-                'constraint' => 11
+                'constraint' => 11,
+                'null'       => true
             ],
             'stock' => [
                 'type'       => 'INT',
-                'constraint' => 11
+                'constraint' => 11,
+                'null'       => true
+            ],
+            'price_disc' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null'       => true
+            ],
+            'percent_disc' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null'       => true
+            ],
+            'discount' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1,
+                'null'       => true
             ],
             'created_at' => [
                 'type'       => 'DATETIME',

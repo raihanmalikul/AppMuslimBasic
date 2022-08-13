@@ -102,54 +102,13 @@
 
 <section class=" bg-white">
     <div class="pt-20">
-        <!-- <nav aria-label="Breadcrumb">
-            <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
-                <li>
-                    <div class="flex items-center">
-                        <a href="#" class="mr-2 text-sm font-medium text-gray-900"> Men </a>
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-5 text-gray-300">
-                            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                        </svg>
-                    </div>
-                </li>
+        <nav aria-label="Breadcrumb" id="nameTag">
 
-                <li>
-                    <div class="flex items-center">
-                        <a href="#" class="mr-2 text-sm font-medium text-gray-900"> Clothing </a>
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-5 text-gray-300">
-                            <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                        </svg>
-                    </div>
-                </li>
-
-                <li class="text-sm">
-                    <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> Basic Tee 6-Pack </a>
-                </li>
-            </ol>
-        </nav> -->
+        </nav>
 
         <!-- Image gallery -->
         <div class="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8" id="imageCek">
-            <!-- <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover">
-            </div>
-            <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="w-full h-full object-center object-cover">
-                </div>
-                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover">
-                </div>
-            </div> -->
-            <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-            </div>
-            <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-            </div>
-            <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-            </div>
+
         </div>
 
         <!-- Product info -->
@@ -191,7 +150,7 @@
                 </div>
 
                 <form class="mt-10" name="AddDetailProduct">
-                    <input type="hidden" name="price" id="priceInpt">
+                    <input type="hidden" name="price" id="priceInp">
                     <!-- Colors -->
                     <div>
                         <h3 class="text-sm text-gray-900 font-medium">Color</h3>
@@ -393,8 +352,6 @@
     let slug = "<?= $slug ?>";
     let email = "<?= $this->session->get('email') ?>";
 
-
-
     $(function() {
         let statusSuccess = "<?= $this->session->getFlashdata('msg'); ?>";
         let statusError = "<?= $this->session->getFlashdata('msg_err'); ?>";
@@ -429,17 +386,21 @@
             });
         });
 
-        getDataDetail(slug)
+        getMaster(slug)
+        // getDetail(slug)
         // buttonSize();
         // console.log(color_id)
         // let cekColor = $("#color_" + color_id).attr("checked", true)
         // console.log(cekColor)
         $("#saveShop").click(function() {
-
             let price = $('input[name="price"]').val()
-            let size_id = $('input[name="size_id"]').val()
-            let color_id = $('input[name="color_id"]').val()
+            let size_id = $('input[name="size_id":checked]').val()
+            let color_id = $('input[name="color_id":checked]').val()
             let qty = $('input[name="qty"]').val()
+
+            let data = $("#formAddProducts").serialize();
+
+            console.log(data);
             console.log(price);
             console.log(size_id);
             console.log(color_id);
@@ -460,9 +421,9 @@
                 },
                 dataType: "json",
                 async: false,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
+                // headers: {
+                //     'X-Requested-With': 'XMLHttpRequest'
+                // },
                 // beforeSend: function() {
                 //     $("#addDataCategory").attr("disabled", true);
                 //     $("#closeDataCategory").attr("disabled", true);
@@ -506,81 +467,115 @@
 
     });
 
-    function getDataDetail(slug) {
+    function getMaster(slug) {
         $.ajax({
             type: "POST",
-            url: "/Proses/productDetail",
+            url: "/Proses/productMaster",
             data: {
                 slug: slug
             },
             async: false,
             dataType: "json",
             success: function(json) {
-                let rowColor = rowSize = rowImage = "";
-                let price = priceInpt = stock = ""
-                $.each(json.data, function(index, values) {
+                console.log(json.data)
+                let des = dtl = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
+                if (json.status == 1) {
+                    $.each(json.data, function(idx, val) {
+                        des = val.description;
+                        dtl = val.detail;
+                        prName = ucwords(val.name);
+                        priceInp += val.price
+                        price += formatRupiah(val.price, 'Rp. ');
+                        stock += (val.stock != 0) ? val.stock : "";
 
-                    $("#desc").html(values.description);
-                    // let detail = `<pre class="text-sm text-gray-600">` + values.detail + `</pre>`
-                    let detail = values.detail
-                    $("#detail").html(detail);
-                    var name = ucwords(values.name);
-                    // name = name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-                    //     return letter.toUpperCase();
-                    // });
-                    $("#productName").html(name);
+                        listHig += `<li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
+                                    <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
+                                    <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
+                                    <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>`;
 
-                    let listHig = `<li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>`;
-                    $("#highlights").html(listHig);
+                        nameTag += `<ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
+                                        <li>
+                                            <div class="flex items-center">
+                                                <a href="#" class="mr-2 text-sm font-medium text-gray-900"> ` + val.category + ` </a>
+                                                <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-5 text-gray-300">
+                                                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                                                </svg>
+                                            </div>
+                                        </li>
+                                        <li class="text-sm">
+                                            <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> ` + prName + ` </a>
+                                        </li>
+                                    </ol>`;
 
-
-                    $.each(values.list, function(ind, val) {
-                        // console.log(val);
-                        // console.log(ind);
-
-                        let active = ""
-                        let colorCode = val.colorCode;
-
-                        let checked = ""
-                        if (ind == 0) {
+                        if (idx == 0) {
                             active = "ring-2"
                             checked = "checked"
-                            priceInpt += val.price
-                            price += formatRupiah(val.price, 'Rp. ')
-                            stock += (val.stock != 0) ? val.stock : ""
                         }
 
-                        color_id = val.color_id
-                        // console.log(cekColor)
-
-                        rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                                        <img src="/uploads/product/` + val.image + `" alt="` + val.name + `" class="w-full h-full object-center object-cover">
-                                    </div>`;
-                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.color_id + `" value="` + val.color_id + `" ` + checked + ` onclick="getSize('` + val.price + `', '` + val.size_id + `', '` + val.size + `')"> ` + ucwords(val.color) + `</label>`;
-
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `"> ` + val.size + `</label>`;
+                        getDetail(val.subCode, val.colorId, val.category)
+                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.colorId + `" value="` + val.colorId + `" onclick="getDetail('` + val.subCode + `', '` + val.colorId + `', '` + val.category + `')"> ` + ucwords(val.nmColor) + `</label>`;
                         // rowColor += `<label id="labelCek_` + val.colorId + `" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400 ` + active + `">
                         //                 <input type="radio" id="color_id_` + val.colorId + `" name="color_id" value="` + val.colorId + `" class="sr-only">
                         //                 <span id="color_id-` + val.colorId + `" class="sr-only"> ` + val.color + ` </span>
                         //                 <span aria-hidden="true" class="h-8 w-8 bg-[` + colorCode + `] border border-black border-opacity-10 rounded-full"></span>
                         //             </label>`;
+                    })
+                    $("#nameTag").html(nameTag);
+                    $("#desc").html(des);
+                    $("#detail").html(dtl);
+                    $("#productName").html(prName);
+                    $("#highlights").html(listHig);
+                    $("#price").html(price)
+                    $("#stock").html(stock)
+                    $("#priceInp").val(priceInp)
+                    $("#colorCek").html(rowColor);
+                }
+            }
+        })
+    }
+
+    function getDetail(subCode, colorId, nmCtg) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/productSizeImage",
+            data: {
+                subCode: subCode,
+                colorId: colorId
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                console.log(json.data)
+                let rowSize = rowImage = active = checked = "";
+                if (json.status == 1) {
+
+                    $.each(json.data, function(idx, val) {
+
+                        rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                                        <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
+                                    </div>`;
+
+                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `"> ` + val.nm_size + `</label>`;
 
                         // $("#color_id-" + val.colorId).click(function(e) {
                         //     let hsl = $(this).prop("checked", true);
                         //     console.log(hsl)
                         //     $("#labelCek").addClass("ring ring-offset-1");
                         // })
-
                     })
-                })
-                $("#price").html(price)
-                $("#stock").html(stock)
-                $("#priceInpt").val(priceInpt)
+                } else {
+                    rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                                </div>
+                                <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                                </div>
+                                <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                                </div>`;
+                }
                 $("#imageCek").html(rowImage);
-                $("#colorCek").html(rowColor);
+                // $("#colorCek").html(rowColor);
                 $("#sizeCek").html(rowSize);
 
 
@@ -593,10 +588,6 @@
                 // });
             }
         })
-    }
-
-    function getSize(price, sizeId, sizeName) {
-
     }
 
     function buttonSize() {

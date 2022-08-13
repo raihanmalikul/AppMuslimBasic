@@ -14,7 +14,7 @@ class DtlProductModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['product_id', 'color_id', 'size_id', 'image', 'price', 'weight', 'stock', 'is_valid'];
+    protected $allowedFields    = ['product_id', 'category_id', 'sub_code', 'slug', 'is_valid'];
 
     // Dates
     protected $useTimestamps = false;
