@@ -810,7 +810,7 @@
                                         <div class="mt-4 flex justify-between">
                                             <div>
                                                 <h3 class="text-sm text-gray-700">
-                                                    <a href="/productShow/` + v.slug + `/` + v.color_id + `/` + v.size_id + `">
+                                                    <a href="/productShow/` + v.slug + `">
                                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                                         ` + v.name_product + `
                                                     </a>

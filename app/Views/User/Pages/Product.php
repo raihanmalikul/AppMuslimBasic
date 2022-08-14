@@ -36,20 +36,8 @@
                 <nav id="navMenu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-700 lg:dark:bg-transparent dark:shadow-slate-400">
                     <ul class="block lg:flex">
                         <li class="group">
-                            <a href="#home" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
+                            <a href="/" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
                         </li>
-                        <!-- <li class="group">
-                            <a href="#best" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">BEST SELLER</a>
-                        </li>
-                        <li class="group">
-                            <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
-                        </li>
-                        <li class="group">
-                            <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RATING</a>
-                        </li>
-                        <li class="group">
-                            <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
-                        </li> -->
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
                                 <div class="dropdown relative">
@@ -320,18 +308,18 @@
                     </div>
                 </div>
 
-                <div class="mt-10">
+                <!-- <div class="mt-10">
                     <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
 
                     <div class="mt-4">
                         <ul role="list" class="pl-4 list-disc text-sm space-y-2" id="highlights">
                             <li class="text-gray-400"><span class="text-gray-600">Not fount</span></li>
-                            <!-- <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
+                            <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
                             <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li> -->
+                            <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="mt-10">
                     <h2 class="text-sm font-medium text-gray-900">Details</h2>
@@ -535,7 +523,7 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                // console.log(json.data)
+                console.log(json.data)
                 let des = dtl = namePro = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -543,11 +531,8 @@
                         dtl = val.detail;
                         namePro = val.name
                         prName = ucwords(val.name);
-                        priceInp += val.price
-                        price += formatRupiah(val.price, 'Rp. ');
-                        stock += (val.stock != 0) ? val.stock : "";
 
-                        listHig += `<li class="text-gray-400"><span class="text-gray-600"></span></li>`;
+                        // listHig += `<li class="text-gray-400"><span class="text-gray-600"></span></li>`;
 
                         nameTag += `<ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
                                         <li>
@@ -570,11 +555,8 @@
                     $("#description").val(des);
                     $("#detail").html(dtl);
                     $("#productName").html(prName);
-                    $("#highlights").html(listHig);
-                    $("#price").html(price)
                     $("#stock").html(stock)
-                    $("#priceInp").val(priceInp)
-
+                    // $("#highlights").html(listHig);
                 }
             }
         })
@@ -636,8 +618,13 @@
                         rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
                                         <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
                                     </div>`;
-
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" require> ` + val.nm_size + `</label>`;
+                        if (idx == 0) {
+                            // active = "ring-2"
+                            checked = "checked"
+                        } else {
+                            checked = ""
+                        }
+                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" ` + checked + ` onclick="getPriceStock('` + val.sub_code + `', '` + colorId + `', '` + val.size_id + `')" require> ` + val.nm_size + `</label>`;
 
                         // $("#color_id-" + val.colorId).click(function(e) {
                         //     let hsl = $(this).prop("checked", true);
@@ -646,6 +633,9 @@
                         // })
                     })
                 }
+                $("#imageCek").html(rowImage);
+                $("#sizeCek").html(rowSize);
+                getPriceStock(subCode, colorId, json.data[0]['size_id'])
                 // rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
                 //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
                 //             </div>
@@ -655,9 +645,7 @@
                 //             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
                 //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
                 //             </div>`;
-                $("#imageCek").html(rowImage);
                 // $("#colorCek").html(rowColor);
-                $("#sizeCek").html(rowSize);
 
 
                 // $('#labelCek input').click(function() {
@@ -667,6 +655,33 @@
                 //     $(this).parent()
                 //         .addClass('checked');
                 // });
+            }
+        })
+    }
+
+    function getPriceStock(subCode, colorId, sizeId) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/productPriceStock",
+            data: {
+                subCode: subCode,
+                colorId: colorId,
+                sizeId: sizeId
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                console.log(json.data)
+                let rowColor = active = checked = subCode = priceInp = price = stock = "";
+                if (json.status == 1) {
+                    $.each(json.data, function(idx, val) {
+                        priceInp += val.price
+                        price += formatRupiah(val.price, 'Rp. ');
+                        stock += (val.stock != 0) ? val.stock : "";
+                    })
+                }
+                $("#price").html(price)
+                $("#priceInp").val(priceInp)
             }
         })
     }
