@@ -219,7 +219,7 @@ class Proses extends BaseController
     {
         $subCode   = $this->request->getVar('subCode');
         $colorId   = $this->request->getVar('colorId');
-        $sizeId    = $this->request->getVar('colorId');
+        $sizeId    = $this->request->getVar('sizeId');
 
         $arr = [];
         if ($subCode) {
