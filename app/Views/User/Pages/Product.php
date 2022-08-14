@@ -555,7 +555,6 @@
                     $("#description").val(des);
                     $("#detail").html(dtl);
                     $("#productName").html(prName);
-                    $("#stock").html(stock)
                     // $("#highlights").html(listHig);
                 }
             }
@@ -682,6 +681,7 @@
                 }
                 $("#price").html(price)
                 $("#priceInp").val(priceInp)
+                $("#stock").html(stock)
             }
         })
     }
