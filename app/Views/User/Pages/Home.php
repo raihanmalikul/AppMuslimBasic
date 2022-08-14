@@ -36,6 +36,9 @@
                         </li>
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
+                                <button type="button" class="px-6 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
                                 <div class="dropdown relative">
                                     <a class="dropdown-toggle px-6 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa-solid fa-user"></i>
@@ -807,7 +810,7 @@
                                         <div class="mt-4 flex justify-between">
                                             <div>
                                                 <h3 class="text-sm text-gray-700">
-                                                    <a href="/productShow/` + v.slug + `">
+                                                    <a href="/productShow/` + v.slug + `/` + v.color_id + `/` + v.size_id + `">
                                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                                         ` + v.name_product + `
                                                     </a>
