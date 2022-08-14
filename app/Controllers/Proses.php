@@ -30,14 +30,38 @@ class Proses extends BaseController
         // }
     }
 
-    public function saveShop()
+    public function saveShopChart()
     {
-        $slug       = $this->request->getVar("slug");
-        $email      = $this->request->getVar("email");
-        $price      = $this->request->getVar("price");
-        $size_id    = $this->request->getVar("size_id");
-        $color_id   = $this->request->getVar("color_id");
-        $qty        = $this->request->getVar("qty");
+        $description    = $this->request->getVar("description");
+        $namePro        = $this->request->getVar("namePro");
+        $slug           = $this->request->getVar("slug");
+        $email          = $this->request->getVar("email");
+        $price          = $this->request->getVar("price");
+        $size_id        = $this->request->getVar("size_id");
+        $color_id       = $this->request->getVar("color_id");
+        $qty            = $this->request->getVar("qty");
+        $totPrice       = $this->request->getVar("totPrice");
+
+        $data = array(
+            'email' => $email,
+            'name' => $namePro,
+            'slug' => $slug,
+            'description' => $description,
+            'color_id' => $color_id,
+            'size_id' => $size_id,
+            'qty' => $qty,
+            'price' => $price,
+            'tot_price' => $totPrice
+        );
+
+        $insert = $this->db->table('m_cart')->insert($data);
+
+        if ($insert) {
+            $result = ['status' => 1];
+        } else {
+            $result = ['status' => 0];
+        }
+        echo json_encode($result);
     }
 
     public function productMaster()
@@ -110,56 +134,43 @@ class Proses extends BaseController
         echo json_encode($result);
     }
 
-    public function productDetail()
+    public function productColor()
     {
-        $slug   = $this->request->getVar('slug');
+        $subCode   = $this->request->getVar('subCode');
+        // $colorId   = $this->request->getVar('colorId');
 
-        $arrDtl = [];
-        if ($slug) {
-            $detailProduct = $this->_getDtlProduct($slug)->getResultArray();
-            foreach ($detailProduct as $dVal) {
-                $valSubCode = $dVal['sub_code'];
+        $arr = [];
+        if ($subCode) {
+            $query   = "SELECT 
+                            a.sub_code
+                            , a.color_id
+                            , a.size_id
+                            , b.`name` nm_color
+                            , c.`name` nm_size
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE
+                            a.sub_code = '$subCode' 
+                        GROUP BY a.color_id
+                        ";
 
-                $query   = "SELECT 
-                                a.image
-                                , a.color_id
-                                , a.size_id
-                                , b.`name` nm_color
-                                , c.`name` nm_size
-                            FROM 
-                                ds_product a
-                                LEFT JOIN m_color b ON a.color_id = b.color_id
-                                LEFT JOIN m_size c ON a.size_id = c.size_id
-                            WHERE 
-                                a.sub_code = '$valSubCode'
-                            ORDER BY a.color_id ASC, a.size_id
-                            ";
+            $res = $this->db->query($query)->getResultArray();
 
-                $getDSProduct = $this->db->query($query)->getResultArray();
-
-                foreach ($getDSProduct as $dsVal) {
-                    $dsImage    = $dsVal['image'];
-                    $dsNmColor  = $dsVal['nm_color'];
-                    $dsNmSize   = $dsVal['nm_size'];
-                    $dsColorId  = $dsVal['color_id'];
-                    $dsSizeId   = $dsVal['size_id'];
-
-                    $data = [
-                        'image'     => $dsImage,
-                        'color'     => $dsNmColor,
-                        'colorId'   => $dsColorId,
-                        'size'      => $dsNmSize,
-                        'sizeId'    => $dsSizeId
-                    ];
-                    array_push($arrDtl, $data);
-                }
+            foreach ($res as $row) {
+                $data = array(
+                    'sub_code'  => $row['sub_code'],
+                    'nm_color'  => $row['nm_color'],
+                    'color_id'  => $row['color_id'],
+                    'size_id'   => $row['size_id'],
+                );
+                array_push($arr, $data);
             }
-
-            $result = ['status' => 1, 'data' => $arrDtl];
+            $result = ['status' => 1, 'data' => $arr];
         } else {
             $result = ['status' => 0, 'data' => null];
         }
-
         echo json_encode($result);
     }
 

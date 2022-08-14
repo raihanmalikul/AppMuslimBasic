@@ -121,7 +121,7 @@
             <div class="mt-4 lg:mt-0 lg:row-span-3">
                 <h2 class="text-gray-900">Product information</h2>
                 <p class="text-3xl text-gray-900" id="price"></p>
-                <h3 class="text-sm text-gray-900 font-medium">Stok Varian: <span id="stock"></span></h3>
+                <h3 class="text-sm text-gray-900 font-medium">Stock Varian: <span id="stock"></span></h3>
 
                 <!-- Reviews -->
                 <div class="mt-6">
@@ -149,8 +149,11 @@
                     </div>
                 </div>
 
-                <form class="mt-10" name="AddDetailProduct">
+                <form class="mt-10" name="AddDetailProduct" id="chekingForm">
                     <input type="hidden" name="price" id="priceInp">
+                    <input type="hidden" name="name" id="namePro">
+                    <input type="hidden" name="description" id="description">
+                    <input type="hidden" name="sub_code" id="subCode">
                     <!-- Colors -->
                     <div>
                         <h3 class="text-sm text-gray-900 font-medium">Color</h3>
@@ -189,98 +192,98 @@
                                 <legend class="sr-only">Choose a size</legend>
                                 <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4" id="sizeCek">
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed">
-                                        <!-- <input type="radio" name="size-choice" value="XXS" disabled class="sr-only" aria-labelledby="size-choice-0-label"> -->
-                                        <span id="size-choice-0-label"> XXS </span>
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed"> -->
+                                    <!-- <input type="radio" name="size-choice" value="XXS" disabled class="sr-only" aria-labelledby="size-choice-0-label"> -->
+                                    <!-- <span id="size-choice-0-label"> XXS </span> -->
 
-                                        <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
+                                    <!-- <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
                                             <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
                                                 <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
                                             </svg>
                                         </span>
-                                    </label>
+                                    </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group ring-2 ring-indigo-500 relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label"> -->
-                                        <span id="size-choice-1-label"> XS </span>
-                                        <!--
+                                    <!-- <label class="group ring-2 ring-indigo-500 relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label"> -->
+                                    <!-- <span id="size-choice-1-label"> XS </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute border border-indigo-500 -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute border border-indigo-500 -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                    </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label"> -->
-                                        <span id="size-choice-2-label"> S </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label"> -->
+                                    <!-- <span id="size-choice-2-label"> S </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
+                                    <!-- </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label"> -->
-                                        <span id="size-choice-3-label"> M </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label"> -->
+                                    <!-- <span id="size-choice-3-label"> M </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
+                                    <!-- </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label"> -->
-                                        <span id="size-choice-4-label"> L </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label"> -->
+                                    <!-- <span id="size-choice-4-label"> L </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
+                                    <!-- </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label"> -->
-                                        <span id="size-choice-5-label"> XL </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label"> -->
+                                    <!-- <span id="size-choice-5-label"> XL </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                    </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="2XL" class="sr-only" aria-labelledby="size-choice-6-label"> -->
-                                        <span id="size-choice-6-label"> 2XL </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="2XL" class="sr-only" aria-labelledby="size-choice-6-label"> -->
+                                    <!-- <span id="size-choice-6-label"> 2XL </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                    </label> -->
 
                                     <!-- Active: "ring-2 ring-indigo-500" -->
-                                    <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
-                                        <!-- <input type="radio" name="size-choice" value="3XL" class="sr-only" aria-labelledby="size-choice-7-label"> -->
-                                        <span id="size-choice-7-label"> 3XL </span>
-                                        <!--
+                                    <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
+                                    <!-- <input type="radio" name="size-choice" value="3XL" class="sr-only" aria-labelledby="size-choice-7-label"> -->
+                                    <!-- <span id="size-choice-7-label"> 3XL </span> -->
+                                    <!--
                                             Active: "border", Not Active: "border-2"
                                             Checked: "border-indigo-500", Not Checked: "border-transparent"
                                         -->
-                                        <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                                    </label>
+                                    <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
+                                    </label> -->
                                 </div>
                             </fieldset>
                         </div>
 
-                        <div>
+                        <div class="px-2">
                             <h3 class="text-sm text-gray-900 font-medium">Quantity</h3>
                             <fieldset class="mt-4">
                                 <legend class="sr-only">Set your item quantity</legend>
@@ -300,7 +303,10 @@
                         </div>
                     </div>
 
-                    <button type="button" id="saveShop" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
+                    <?php if ($this->session->get('loggedIn')) { ?>
+                        <button type="button" id="saveShop" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
+                    <?php } else { ?>
+                    <?php } ?>
                 </form>
             </div>
 
@@ -392,32 +398,72 @@
         // console.log(color_id)
         // let cekColor = $("#color_" + color_id).attr("checked", true)
         // console.log(cekColor)
+
+        // $('#chekingForm').validate({
+        //     rules: {
+        //         color_id: {
+        //             required: true
+        //         },
+        //         size_id: {
+        //             required: true
+        //         },
+        //     },
+        //     messages: {
+        //         color_id: {
+        //             required: "Color cannot be empty"
+        //         },
+        //         size_id: {
+        //             required: "Size cannot be empty"
+        //         }
+        //     },
+        //     errorElement: 'span',
+        //     errorPlacement: function(error, element) {
+        //         error.addClass('text-xs text-red-500');
+        //         element.closest('.form-group').append(error);
+        //     },
+        //     highlight: function(element, errorClass, validClass) {
+        //         $(element).addClass('is-invalid');
+        //     },
+        //     unhighlight: function(element, errorClass, validClass) {
+        //         $(element).removeClass('is-invalid');
+        //     }
+        // });
+
         $("#saveShop").click(function() {
+            let description = $('input[name="description"]').val()
+            let namePro = $('input[name="name"]').val()
             let price = $('input[name="price"]').val()
-            let size_id = $('input[name="size_id":checked]').val()
-            let color_id = $('input[name="color_id":checked]').val()
+            let size_id = $('input[name="size_id"]:checked').val()
+            let color_id = $('input[name="color_id"]:checked').val()
             let qty = $('input[name="qty"]').val()
 
-            let data = $("#formAddProducts").serialize();
+            let totPrice = qty * price;
 
-            console.log(data);
+            // let data = $("#formAddProducts").serialize();
+
+            console.log(description);
             console.log(price);
             console.log(size_id);
             console.log(color_id);
             console.log(qty);
             console.log(email);
             console.log(slug);
+            console.log(namePro);
+            console.log(totPrice);
 
             $.ajax({
                 type: "POST",
-                url: "/Proses/saveShop",
+                url: "/Proses/saveShopChart",
                 data: {
                     slug: slug,
                     email: email,
+                    namePro: namePro,
                     price: price,
                     size_id: size_id,
                     color_id: color_id,
-                    qty: qty
+                    qty: qty,
+                    totPrice: totPrice,
+                    description: description,
                 },
                 dataType: "json",
                 async: false,
@@ -444,7 +490,7 @@
                 // },
                 success: function(json) {
                     // console.log(json);
-                    if (json.status) {
+                    if (json.status == 1) {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -456,6 +502,18 @@
                         // $("#formAddProducts").show();
                         // $("#addDataCategory").prop("disabled", false);
                         // $("#closeDataCategory").prop("disabled", false);
+
+                        setTimeout(() => {
+                            window.location.href = "http://localhost:8080/";
+                        }, 3000);
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Data Barang gagal Disimpan.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
 
                         setTimeout(() => {
                             window.location.reload()
@@ -477,21 +535,19 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json.data)
-                let des = dtl = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
+                // console.log(json.data)
+                let des = dtl = namePro = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
                         des = val.description;
                         dtl = val.detail;
+                        namePro = val.name
                         prName = ucwords(val.name);
                         priceInp += val.price
                         price += formatRupiah(val.price, 'Rp. ');
                         stock += (val.stock != 0) ? val.stock : "";
 
-                        listHig += `<li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
-                                    <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                                    <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                                    <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>`;
+                        listHig += `<li class="text-gray-400"><span class="text-gray-600"></span></li>`;
 
                         nameTag += `<ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
                                         <li>
@@ -506,35 +562,61 @@
                                             <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> ` + prName + ` </a>
                                         </li>
                                     </ol>`;
-
-                        if (idx == 0) {
-                            active = "ring-2"
-                            checked = "checked"
-                        }
-
-                        getDetail(val.subCode, val.colorId, val.category)
-                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.colorId + `" value="` + val.colorId + `" onclick="getDetail('` + val.subCode + `', '` + val.colorId + `', '` + val.category + `')"> ` + ucwords(val.nmColor) + `</label>`;
-                        // rowColor += `<label id="labelCek_` + val.colorId + `" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400 ` + active + `">
-                        //                 <input type="radio" id="color_id_` + val.colorId + `" name="color_id" value="` + val.colorId + `" class="sr-only">
-                        //                 <span id="color_id-` + val.colorId + `" class="sr-only"> ` + val.color + ` </span>
-                        //                 <span aria-hidden="true" class="h-8 w-8 bg-[` + colorCode + `] border border-black border-opacity-10 rounded-full"></span>
-                        //             </label>`;
+                        getColor(val.subCode, val.category)
                     })
+                    $("#namePro").val(namePro);
                     $("#nameTag").html(nameTag);
                     $("#desc").html(des);
+                    $("#description").val(des);
                     $("#detail").html(dtl);
                     $("#productName").html(prName);
                     $("#highlights").html(listHig);
                     $("#price").html(price)
                     $("#stock").html(stock)
                     $("#priceInp").val(priceInp)
-                    $("#colorCek").html(rowColor);
+
                 }
             }
         })
     }
 
-    function getDetail(subCode, colorId, nmCtg) {
+    function getColor(subCode, category) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/productColor",
+            data: {
+                subCode: subCode
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                console.log(json.data)
+                let rowColor = active = checked = subCode = "";
+                if (json.status == 1) {
+                    $.each(json.data, function(idx, val) {
+                        if (idx == 0) {
+                            // active = "ring-2"
+                            checked = "checked"
+                        } else {
+                            checked = ""
+                        }
+                        subCode += val.subCode
+                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.color_id + `" value="` + val.color_id + `" ` + checked + ` onclick="getSizeImage('` + val.sub_code + `', '` + val.color_id + `', '` + category + `')" require> ` + ucwords(val.nm_color) + `</label>`;
+
+                        // rowColor += `<label id="labelCek_` + val.colorId + `" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400 ` + active + `">
+                        //                 <input type="radio" id="color_id_` + val.colorId + `" name="color_id" value="` + val.colorId + `" class="sr-only">
+                        //                 <span id="color_id-` + val.colorId + `" class="sr-only"> ` + val.color + ` </span>
+                        //                 <span aria-hidden="true" class="h-8 w-8 bg-[` + colorCode + `] border border-black border-opacity-10 rounded-full"></span>
+                        //             </label>`;
+                    })
+                }
+                $("#colorCek").html(rowColor);
+                getSizeImage(json.data[0]['sub_code'], json.data[0]['color_id'], category)
+            }
+        })
+    }
+
+    function getSizeImage(subCode, colorId, nmCtg) {
         $.ajax({
             type: "POST",
             url: "/Proses/productSizeImage",
@@ -545,7 +627,7 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let rowSize = rowImage = active = checked = "";
                 if (json.status == 1) {
 
@@ -555,7 +637,7 @@
                                         <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
                                     </div>`;
 
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `"> ` + val.nm_size + `</label>`;
+                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" require> ` + val.nm_size + `</label>`;
 
                         // $("#color_id-" + val.colorId).click(function(e) {
                         //     let hsl = $(this).prop("checked", true);
@@ -563,17 +645,16 @@
                         //     $("#labelCek").addClass("ring ring-offset-1");
                         // })
                     })
-                } else {
-                    rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                                </div>
-                                <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                                </div>
-                                <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                                    <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                                </div>`;
                 }
+                // rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                //             </div>
+                //             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                //             </div>
+                //             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+                //             </div>`;
                 $("#imageCek").html(rowImage);
                 // $("#colorCek").html(rowColor);
                 $("#sizeCek").html(rowSize);
