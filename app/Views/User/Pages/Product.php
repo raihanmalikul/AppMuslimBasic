@@ -624,7 +624,7 @@
                         } else {
                             checked = ""
                         }
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" ` + checked + ` onclick="getPriceStock('` + val.sub_code + `', '` + colorId + `', '` + val.size_id + `')" require> ` + val.nm_size + `</label>`;
+                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" ` + checked + ` onclick="getPriceStock('` + subCode + `', '` + colorId + `', '` + val.size_id + `')" require> ` + val.nm_size + `</label>`;
 
                         // $("#color_id-" + val.colorId).click(function(e) {
                         //     let hsl = $(this).prop("checked", true);
