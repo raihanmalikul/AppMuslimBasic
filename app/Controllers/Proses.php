@@ -215,6 +215,44 @@ class Proses extends BaseController
         echo json_encode($result);
     }
 
+    public function productPriceStock()
+    {
+        $subCode   = $this->request->getVar('subCode');
+        $colorId   = $this->request->getVar('colorId');
+        $sizeId    = $this->request->getVar('colorId');
+
+        $arr = [];
+        if ($subCode) {
+            $query   = "SELECT 
+                            a.price
+                            , a.stock
+                        FROM 
+                            ds_product a
+                            LEFT JOIN m_color b ON a.color_id = b.color_id
+                            LEFT JOIN m_size c ON a.size_id = c.size_id
+                        WHERE 
+                            a.sub_code = '$subCode'
+                            AND a.color_id = '$colorId'
+                            AND a.size_id = '$sizeId'
+                        GROUP BY a.size_id
+                        ";
+
+            $res = $this->db->query($query)->getResultArray();
+
+            foreach ($res as $row) {
+                $data = array(
+                    'price' => $row['price'],
+                    'stock' => $row['stock'],
+                );
+                array_push($arr, $data);
+            }
+            $result = ['status' => 1, 'data' => $arr];
+        } else {
+            $result = ['status' => 0, 'data' => null];
+        }
+        echo json_encode($result);
+    }
+
     public function getBestSeller()
     {
         $arrData = $data = array();
