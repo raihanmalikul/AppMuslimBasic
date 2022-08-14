@@ -6,6 +6,7 @@
 <link href="/assets/tailwind/css/output.css" rel="stylesheet" />
 <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
 <link href="/assets/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="/assets/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 
 <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

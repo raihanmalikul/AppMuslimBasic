@@ -5292,6 +5292,11 @@ textarea.form-control.is-invalid {
   padding-bottom: 2.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pt-24 {
   padding-top: 6rem;
 }
