@@ -1,0 +1,48 @@
+ERROR - 2022-08-15 00:04:38 --> Unknown column 'b.price' in 'field list'
+CRITICAL - 2022-08-15 00:04:38 --> Unknown column 'b.price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 4 APPPATH\Controllers\ProsesAdmin.php(57): CodeIgniter\Database\BaseConnection->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 00:36:11 --> Unknown column 'b.price' in 'field list'
+CRITICAL - 2022-08-15 00:36:11 --> Unknown column 'b.price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 4 APPPATH\Controllers\ProsesAdmin.php(57): CodeIgniter\Database\BaseConnection->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

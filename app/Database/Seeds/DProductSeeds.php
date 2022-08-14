@@ -19,10 +19,26 @@ class DProductSeeds extends Seeder
                 "created_at" => TIme::now()
             ],
             [
+                "product_id" => "02",
+                "category_id" => "03",
+                "sub_code" => "sc06",
+                "slug" => "chino-pants-02",
+                "is_valid" => 1,
+                "created_at" => TIme::now()
+            ],
+            [
+                "product_id" => "03",
+                "category_id" => "03",
+                "sub_code" => "sc07",
+                "slug" => "dean-culotte-03",
+                "is_valid" => 1,
+                "created_at" => TIme::now()
+            ],
+            [
                 "product_id" => "01",
                 "category_id" => "02",
                 "sub_code" => "sc02",
-                "slug" => "ali-seris-01-02",
+                "slug" => "ali-seris-01",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ],
@@ -39,6 +55,14 @@ class DProductSeeds extends Seeder
                 "category_id" => "02",
                 "sub_code" => "sc04",
                 "slug" => "cardinal-cj-06",
+                "is_valid" => 1,
+                "created_at" => TIme::now()
+            ],
+            [
+                "product_id" => "02",
+                "category_id" => "01",
+                "sub_code" => "sc05",
+                "slug" => "salman-seris-02",
                 "is_valid" => 1,
                 "created_at" => TIme::now()
             ]

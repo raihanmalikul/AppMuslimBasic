@@ -10,6 +10,10 @@ class MCart extends Migration
     public function up()
     {
         $this->forge->addField([
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'id' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
@@ -28,20 +32,22 @@ class MCart extends Migration
                 'type'       => 'TEXT'
             ],
             'color_id' => [
-                'type'       => 'INT',
-                'unsigned'   => true,
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'size_id' => [
-                'type'       => 'INT',
-                'unsigned'   => true,
-                'constraint' => 11
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'qty' => [
                 'type'       => 'INT',
                 'constraint' => 11
             ],
             'price' => [
+                'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'tot_price' => [
                 'type'       => 'INT',
                 'constraint' => 11
             ],
