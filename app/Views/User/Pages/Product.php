@@ -24,7 +24,7 @@
     <div class="container">
         <div class="relative flex items-center justify-between">
             <div class="px-4">
-                <a href="#home" class="block py-6 text-xl font-bold text-dark dark:text-white">MuslimBasic</a>
+                <a href="/" class="block py-6 text-xl font-bold text-dark dark:text-white">MuslimBasic</a>
             </div>
             <div class="flex items-center px-4">
                 <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
@@ -35,9 +35,6 @@
 
                 <nav id="navMenu" class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none dark:bg-slate-700 lg:dark:bg-transparent dark:shadow-slate-400">
                     <ul class="block lg:flex">
-                        <li class="group">
-                            <a href="/" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">HOME</a>
-                        </li>
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
                                 <div class="dropdown relative">
@@ -523,7 +520,7 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let des = dtl = namePro = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -571,7 +568,7 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let rowColor = active = checked = subCode = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -611,12 +608,41 @@
                 // console.log(json.data)
                 let rowSize = rowImage = active = checked = "";
                 if (json.status == 1) {
-
+                    let count = json.data.length;
+                    // console.log(json.data.length)
                     $.each(json.data, function(idx, val) {
+                        if (count > 3) {
+                            // console.log(idx)
+                            if (idx == 0) {
+                                rowImage += `<div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                                                <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
+                                            </div>`;
+                            }
+                            if (idx == 1) {
+                                rowImage += `<div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+                                                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                                                    <img src="/uploads/product/` + nmCtg + `/` + val.image + `">
+                                                </div>`;
+                            }
+                            if (idx == 2) {
+                                rowImage += `
+                                                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+                                                    <img src="/uploads/product/` + nmCtg + `/` + val.image + `">
+                                                </div>
+                                            </div>`;
 
-                        rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                                        <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
-                                    </div>`;
+                            }
+                            if (idx == 3) {
+                                rowImage += `<div class="aspect-w-3 aspect-h-4 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+                                                <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
+                                            </div>`;
+                            }
+                        } else if (count <= 3) {
+                            rowImage += `<div class="hidden aspect-w-3 aspect-h-3 rounded-lg overflow-hidden lg:block">
+                                            <img src="/uploads/product/` + nmCtg + `/` + val.image + `" class="w-full h-full object-center object-cover">
+                                        </div>`;
+                        }
+
                         if (idx == 0) {
                             // active = "ring-2"
                             checked = "checked"
@@ -670,7 +696,7 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let rowColor = active = checked = subCode = priceInp = price = stock = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -694,7 +720,7 @@
         // console.log(e)
         this.value = t[e]?.value;
         for (let e of t) {
-            console.log(e);
+            // console.log(e);
             // console.log(t);
             e.addEventListener("change", (() => {
                     this.active = t.value
@@ -724,31 +750,6 @@
                 console.log(this.value)
             });
         }
-    }
-
-    function ucwords(val) {
-        var name = val.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-            return letter.toUpperCase();
-        });
-        return name
-    }
-
-    /* Fungsi formatRupiah */
-    function formatRupiah(angka, prefix) {
-        var number_string = angka.replace(/[^,\d]/g, '').toString(),
-            split = number_string.split(','),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        // tambahkan titik jika yang di input sudah menjadi angka ribuan
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
 </script>
 
