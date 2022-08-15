@@ -36,10 +36,10 @@ class MProduct extends Migration
                 'type'       => 'TEXT',
                 'null'       => true
             ],
-            'highlights' => [
-                'type'       => 'TEXT',
-                'null'       => true
-            ],
+            // 'highlights' => [
+            //     'type'       => 'TEXT',
+            //     'null'       => true
+            // ],
             'details' => [
                 'type'       => 'TEXT',
                 'null'       => true
