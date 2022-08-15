@@ -10,15 +10,15 @@ class MCart extends Migration
     public function up()
     {
         $this->forge->addField([
-            'email' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
             'id' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'name' => [
                 'type'       => 'VARCHAR',
