@@ -28,4 +28,11 @@ class Pages extends BaseController
 
         return view('User/Pages/Product', $data);
     }
+
+    public function checkout($email = '')
+    {
+        $data['title'] = "Checkout | Muslim Basic";
+        $data['email'] = $email;
+        return view('User/Pages/Checkout', $data);
+    }
 }

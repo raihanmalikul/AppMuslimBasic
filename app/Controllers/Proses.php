@@ -22,7 +22,7 @@ class Proses extends BaseController
         $this->mColor       = new Models\MColorModel();
         $this->mSize        = new Models\MSizeModel();
         $this->mCategory    = new Models\MCategoryModel();
-        $this->mCart    = new Models\MCartModel();
+        $this->mCart        = new Models\MCartModel();
 
         // $this->session = \Config\Services::session();
         // $username = $this->session->get("logged_in");
@@ -367,6 +367,58 @@ class Proses extends BaseController
         echo json_encode($result);
     }
 
+    public function getDataCustomer()
+    {
+        $email = $this->request->getVar('email');
+        $dtArr = array();
+        $qry = "SELECT 
+                    a.id
+                    , a.email
+                    , a.first_name
+                    , a.last_name
+                    , a.address
+                    , a.phone
+                    , a.postal_code
+                    , a.province_id
+                    , a.city_id
+                    , b.province
+                    , b.city_name
+                    , b.type 
+                FROM 
+                    m_profil a
+                    LEFT JOIN m_city b ON a.city_id = b.city_id
+                WHERE
+                    a.email = '$email'
+                    AND a.`status` = 1
+                ";
+        $res  = $this->db->query($qry)->getResultArray();
+        foreach ($res as $row) {
+            $data = array(
+                'id'            => $row['id'],
+                'email'         => $row['email'],
+                'first_name'    => $row['first_name'],
+                'last_name'     => $row['last_name'],
+                'address'       => $row['address'],
+                'phone'         => $row['phone'],
+                'postal_code'   => $row['postal_code'],
+                'province_id'   => $row['province_id'],
+                'city_id'       => $row['city_id'],
+                'province'      => $row['province'],
+                'city'          => $row['city_name'],
+                'type'          => $row['type'],
+            );
+            array_push($dtArr, $data);
+        }
+
+        if ($dtArr) {
+            $result = ['status' => 1, 'data' => $dtArr];
+        } else {
+            $result = ['status' => 0, 'data' => null];
+        }
+
+        echo json_encode($result);
+    }
+
     public function getDataCart()
     {
         $email = $this->request->getVar('email');
@@ -392,7 +444,8 @@ class Proses extends BaseController
                     , d.stock
                     , e.`name` nm_color
                     , f.`name` nm_size
-                    , g.`name` nm_cus_order
+                    , g.first_name
+                    , g.last_name
                     , g.address
                     , g.phone
                     , g.postal_code
@@ -438,7 +491,8 @@ class Proses extends BaseController
                 'stock'         => $row['stock'],
                 'nm_color'      => $row['nm_color'],
                 'nm_size'       => $row['nm_size'],
-                'nm_cus_order'  => $row['nm_cus_order'],
+                'first_name'    => $row['first_name'],
+                'last_name'     => $row['last_name'],
                 'address'       => $row['address'],
                 'phone'         => $row['phone'],
                 'postal_code'   => $row['postal_code'],
@@ -462,6 +516,63 @@ class Proses extends BaseController
         echo json_encode($result);
     }
 
+    public function getDtCost()
+    {
+        $email = $this->request->getVar('email');
+        $courier = $this->request->getVar('courier');
+
+        $qty = "SELECT 
+                    SUM(a.tot_price) sub_total 
+                    , SUM(c.weight) tot_weight
+                    , d.province_id
+                    , d.city_id description
+                    , '23' origin
+                FROM 
+                    m_cart a
+                    LEFT JOIN d_product b ON a.slug = b.slug
+                    LEFT JOIN ds_product c ON b.sub_code = c.sub_code AND a.color_id = c.color_id AND a.size_id = c.size_id
+                    LEFT JOIN m_profil d ON a.email = d.email
+                    LEFT JOIN m_city e ON d.city_id = e.city_id
+                WHERE 
+                    a.email = '$email' 
+                GROUP BY a.email";
+        $res = $this->db->query($qty)->getRowArray();
+
+        $sub_total   = $res['sub_total'];
+        $weight      = intval($res['tot_weight']);
+        $province_id = $res['province_id'];
+        $description = $res['description'];
+        $origin      = $res['origin'];
+
+        $res = $this->_getApiCost($courier, $origin, $description, $weight);
+        $dtApi = json_decode($res);
+
+        $pushApi = array();
+        foreach ($dtApi as $row) {
+            $status = $row->status;
+            $result = $row->results;
+            $apiFix = array('status' => $status, 'result' => $result);
+            array_push($pushApi, $apiFix);
+        }
+
+        $dtArr = array(
+            'sub_total'   => $sub_total,
+            'weight'      => $weight,
+            'province_id' => $province_id,
+            'description' => $description,
+            'origin'      => $origin,
+            'dataApi'     => $pushApi
+        );
+
+        if ($dtArr) {
+            $result = ['status' => 1, 'data' => $dtArr];
+        } else {
+            $result = ['status' => 0, 'data' => null];
+        }
+
+        echo json_encode($result);
+    }
+
     public function delListCart()
     {
         $id = $this->request->getVar('id');
@@ -473,6 +584,37 @@ class Proses extends BaseController
         }
 
         echo json_encode($result);
+    }
+
+    private function _getApiCost($courier = "", $origin = "", $des = "", $weight = "")
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "origin=" . $origin . "&destination=" . $des . "&weight=" . $weight . "&courier=" . $courier,
+            CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded",
+                "key: 72c4d5880a5cfdb5db5259bbea568d7d"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            return "cURL Error #:" . $err;
+        } else {
+            return $response;
+        }
     }
 
     private function _getMsProduct($slug = "")

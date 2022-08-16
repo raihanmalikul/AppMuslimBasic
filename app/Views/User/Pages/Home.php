@@ -611,8 +611,7 @@
                             <div class="flex justify-between text-base font-medium text-gray-900" id="subTotalCart">
                             </div>
                             <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                            <div class="mt-6">
-                                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                            <div class="mt-6" id="btnCheckout">
                             </div>
                         </div>
                     </div>
@@ -929,7 +928,7 @@
             dataType: "JSON",
             success: function(json) {
                 console.log(json.data)
-                let rowCart = ""
+                let rowCart = btnCheck = ""
 
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -959,10 +958,12 @@
                                         </div>
                                     </li>`;
                     })
+                    btnCheck += `<a href="/Pages/checkout/` + email + `" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>`;
                 }
                 $('#dataCart').html(rowCart);
-                let subTot = `<p>Subtotal</p> <p>` + json.data[0]['sub_total'] + `</p>`;
+                let subTot = `<p>Subtotal</p> <p>` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</p>`;
                 $('#subTotalCart').html(subTot);
+                $('#btnCheckout').html(btnCheck);
             }
         })
     }
