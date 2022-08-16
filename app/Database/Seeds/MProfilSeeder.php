@@ -12,7 +12,8 @@ class MProfilSeeder extends Seeder
     {
         $data = [
             [
-                'name'              => 'Andi',
+                'first_name'        => 'Andi',
+                'last_name'         => 'Sapri',
                 'email'             => 'raihangamerindo@gmail.com',
                 'phone'             => '6381420548878',
                 'address'           => 'Jl.sariasu no.188',
@@ -24,7 +25,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Aldo',
+                'first_name'        => 'Aldo',
+                'last_name'         => 'Duwi',
                 'email'             => 'aldodwrzy@gmail.com',
                 'phone'             => '6381420248888',
                 'address'           => 'Jl.jepara.189',
@@ -36,7 +38,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Azmi',
+                'first_name'        => 'Raihan',
+                'last_name'         => 'Azmi',
                 'email'             => 'mraihanna.18@gmail.com',
                 'phone'             => '6382220248998',
                 'address'           => 'Jl.bengan no.190',
@@ -48,7 +51,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Ilham',
+                'first_name'        => 'Ilham',
+                'last_name'         => 'ferdiyansah',
                 'email'             => 'ilhamferdiansyah737@gmail.com',
                 'phone'             => '6381420248955',
                 'address'           => 'Jl.sapi 2 no.191',
@@ -60,7 +64,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Dedi',
+                'first_name'        => 'Dedi',
+                'last_name'         => 'Siregar',
                 'email'             => 'dedihidayat333@gmail.com',
                 'phone'             => '6381320248998',
                 'address'           => 'Jl.gunung merapi no.192',
@@ -72,7 +77,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Raihan',
+                'first_name'        => 'Raihan',
+                'last_name'         => 'Malikul',
                 'email'             => 'raihanmalikulmulki@gmail.com',
                 'phone'             => '6381499248998',
                 'address'           => 'Jl.pengalengan no.193',
@@ -84,7 +90,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Abdul',
+                'first_name'        => 'Abdul',
+                'last_name'         => 'Malik',
                 'email'             => 'raihanmalikul0@gmail.com',
                 'phone'             => '6381499248998',
                 'address'           => 'Jl.langit no.194',
@@ -96,7 +103,8 @@ class MProfilSeeder extends Seeder
                 'created_at'        => TIme::now()
             ],
             [
-                'name'              => 'Samsudin',
+                'first_name'        => 'Samsudin',
+                'last_name'         => 'Abdul',
                 'email'             => 'razorraih@gmail.com',
                 'phone'             => '6381450248998',
                 'address'           => 'Jl.pelangi no.195',

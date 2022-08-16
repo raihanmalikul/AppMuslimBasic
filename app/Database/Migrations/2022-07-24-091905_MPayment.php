@@ -20,6 +20,10 @@ class MPayment extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'notes' => [
                 'type'       => 'TEXT'
             ],
