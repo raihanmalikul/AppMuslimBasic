@@ -460,15 +460,37 @@
                                     ).join(' ');
                                 
                                 let deliverypos = $('input:radio[name="deliverypos"]:first').attr("checked", true);
+                                // let deliveryjne = $('input:radio[name="deliveryjne"]:first').attr("checked", true);
+                                // let deliverytiki = $('input:radio[name="deliverytiki"]:first').attr("checked", true);
                                 if (costs[0]) {
-                                    const el = document.querySelector("#labDelMetpos");
-                                    const hide = el.querySelector("#svgHiddenpos")
-                                    const bor = el.querySelector("#borHidpos")
-    
-                                    el.classList.add('ring-2');
-                                    el.classList.add('ring-indigo-500');
-                                    hide.classList.remove('hidden');
-                                    bor.classList.add('border-indigo-500');
+                                    if (code == 'pos') {
+                                        const el = document.querySelector("#labDelMetpos");
+                                        const hide = el.querySelector("#svgHiddenpos")
+                                        const bor = el.querySelector("#borHidpos")
+        
+                                        el.classList.add('ring-2');
+                                        el.classList.add('ring-indigo-500');
+                                        hide.classList.remove('hidden');
+                                        bor.classList.add('border-indigo-500');
+                                    } else if (code == 'jne') {
+                                        const el = document.querySelector("#labDelMetjne");
+                                        const hide = el.querySelector("#svgHiddenjne")
+                                        const bor = el.querySelector("#borHidjne")
+        
+                                        el.classList.add('ring-2');
+                                        el.classList.add('ring-indigo-500');
+                                        hide.classList.remove('hidden');
+                                        bor.classList.add('border-indigo-500');
+                                    } else if (code == 'tiki') {
+                                        const el = document.querySelector("#labDelMettiki");
+                                        const hide = el.querySelector("#svgHiddentiki")
+                                        const bor = el.querySelector("#borHidtiki")
+        
+                                        el.classList.add('ring-2');
+                                        el.classList.add('ring-indigo-500');
+                                        hide.classList.remove('hidden');
+                                        bor.classList.add('border-indigo-500');
+                                    }
                                 }
                             })
                         }
@@ -481,7 +503,7 @@
 
                 for (const pos of deliverypos) { pos.addEventListener('change', showSelectedpos); }
                 for (const jne of deliveryjne) { jne.addEventListener('change', showSelectedjne); }
-                for (const pos of deliverytiki) { tiki.addEventListener('change', showSelectedtiki); }
+                for (const tiki of deliverytiki) { tiki.addEventListener('change', showSelectedtiki); }
             }
         })
     }
