@@ -958,7 +958,7 @@
                                         </div>
                                     </li>`;
                     })
-                    btnCheck += `<a href="/Pages/checkout/` + email + `" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>`;
+                    btnCheck += `<a href="/Pages/checkout" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>`;
                 }
                 $('#dataCart').html(rowCart);
                 let subTot = `<p>Subtotal</p> <p>` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</p>`;

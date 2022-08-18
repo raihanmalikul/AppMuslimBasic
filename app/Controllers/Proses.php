@@ -147,6 +147,7 @@ class Proses extends BaseController
                             a.sub_code
                             , a.color_id
                             , a.size_id
+                            , b.class_code
                             , b.`name` nm_color
                             , c.`name` nm_size
                         FROM 
@@ -162,10 +163,11 @@ class Proses extends BaseController
 
             foreach ($res as $row) {
                 $data = array(
-                    'sub_code'  => $row['sub_code'],
-                    'nm_color'  => $row['nm_color'],
-                    'color_id'  => $row['color_id'],
-                    'size_id'   => $row['size_id'],
+                    'sub_code'   => $row['sub_code'],
+                    'nm_color'   => $row['nm_color'],
+                    'color_id'   => $row['color_id'],
+                    'size_id'    => $row['size_id'],
+                    'class_code' => $row['class_code'],
                 );
                 array_push($arr, $data);
             }

@@ -145,22 +145,6 @@
                     <fieldset class="mt-4">
                         <legend class="sr-only">Choose a color</legend>
                         <div class="flex items-center space-x-3" id="colorCek">
-                            <!-- Active and Checked: "ring ring-offset-1" Not Active and Checked: "ring-2" -->
-                            <!-- <label id="labelCek" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                            <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
-                            <span id="color-choice-0-label" class="sr-only"> White </span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-white border border-black border-opacity-10 rounded-full"></span>
-                        </label>
-                        <label id="labelCek" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
-                            <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
-                            <span id="color-choice-1-label" class="sr-only"> Gray </span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-gray-200 border border-black border-opacity-10 rounded-full"></span>
-                        </label>
-                        <label id="labelCek" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-900">
-                            <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
-                            <span id="color-choice-2-label" class="sr-only"> Black </span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-gray-900 border border-black border-opacity-10 rounded-full"></span>
-                        </label> -->
                         </div>
                     </fieldset>
                 </div>
@@ -175,94 +159,6 @@
                         <fieldset class="mt-4">
                             <legend class="sr-only">Choose a size</legend>
                             <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4" id="sizeCek">
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-gray-50 text-gray-200 cursor-not-allowed"> -->
-                                <!-- <input type="radio" name="size-choice" value="XXS" disabled class="sr-only" aria-labelledby="size-choice-0-label"> -->
-                                <!-- <span id="size-choice-0-label"> XXS </span> -->
-
-                                <!-- <span aria-hidden="true" class="absolute -inset-px rounded-md border-2 border-gray-200 pointer-events-none">
-                                    <svg class="absolute inset-0 w-full h-full text-gray-200 stroke-2" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                                        <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                                    </svg>
-                                </span>
-                            </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group ring-2 ring-indigo-500 relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label"> -->
-                                <!-- <span id="size-choice-1-label"> XS </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute border border-indigo-500 -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                            </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label"> -->
-                                <!-- <span id="size-choice-2-label"> S </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
-                                <!-- </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label"> -->
-                                <!-- <span id="size-choice-3-label"> M </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
-                                <!-- </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label"> -->
-                                <!-- <span id="size-choice-4-label"> L </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span> -->
-                                <!-- </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label"> -->
-                                <!-- <span id="size-choice-5-label"> XL </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                            </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="2XL" class="sr-only" aria-labelledby="size-choice-6-label"> -->
-                                <!-- <span id="size-choice-6-label"> 2XL </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                            </label> -->
-
-                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                <!-- <label class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer"> -->
-                                <!-- <input type="radio" name="size-choice" value="3XL" class="sr-only" aria-labelledby="size-choice-7-label"> -->
-                                <!-- <span id="size-choice-7-label"> 3XL </span> -->
-                                <!--
-                                    Active: "border", Not Active: "border-2"
-                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                -->
-                                <!-- <span class="absolute -inset-px rounded-md pointer-events-none" aria-hidden="true"></span>
-                            </label> -->
                             </div>
                         </fieldset>
                     </div>
@@ -569,27 +465,54 @@
                 // console.log(json.data)
                 let rowColor = active = checked = subCode = "";
                 if (json.status == 1) {
-                    $.each(json.data, function(idx, val) {
-                        if (idx == 0) {
-                            // active = "ring-2"
-                            checked = "checked"
-                        } else {
-                            checked = ""
-                        }
-                        subCode += val.subCode
-                        rowColor += `<label><input type="radio" name="color_id" id="color_` + val.color_id + `" value="` + val.color_id + `" ` + checked + ` onclick="getSizeImage('` + val.sub_code + `', '` + val.color_id + `', '` + category + `')" require> ` + ucwords(val.nm_color) + `</label>`;
+                    const colorCek = document.querySelector('#colorCek');
+                    const data = json.data
+                    colorCek.innerHTML = data
+                        .map(
+                            (val) => `<label id="cekColor" onclick="getSizeImage('${val.sub_code}', '${val.color_id}', '${category}')" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
+                                            <input type="radio" id="color_id" name="color_id" value="${val.color_id}" require class="sr-only">
+                                            <span id="color_id-${val.color_id}" class="sr-only"> ${val.nm_color} </span>
+                                            <span aria-hidden="true" class="h-8 w-8 bg-[${val.class_code}] border border-black border-opacity-10 rounded-full"></span>
+                                        </label>`
+                        ).join(' ');
 
-                        // rowColor += `<label id="labelCek_` + val.colorId + `" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400 ` + active + `">
-                        //                 <input type="radio" id="color_id_` + val.colorId + `" name="color_id" value="` + val.colorId + `" class="sr-only">
-                        //                 <span id="color_id-` + val.colorId + `" class="sr-only"> ` + val.color + ` </span>
-                        //                 <span aria-hidden="true" class="h-8 w-8 bg-[` + colorCode + `] border border-black border-opacity-10 rounded-full"></span>
-                        //             </label>`;
-                    })
+                    let colorPick = $('input:radio[name="color_id"]:first').attr("checked", true);
+                    if (data[0]) {
+                        const cekColor = document.querySelector('#cekColor')
+                        cekColor.classList.add('ring')
+                        cekColor.classList.add('ring-offset-1')
+                    }
                 }
-                $("#colorCek").html(rowColor);
+                const cc = document.querySelectorAll('input[name="color_id"]')
+                for (const cck of cc) {
+                    cck.addEventListener('change', showColor)
+                }
+
                 getSizeImage(json.data[0]['sub_code'], json.data[0]['color_id'], category)
             }
         })
+    }
+
+    function showColor(e) {
+        if (this.checked) {
+            // console.log(e)
+            const cekColor = document.querySelectorAll('#cekColor')
+
+            for (let i = 0; i < cekColor.length; i++) {
+                // console.log(el)
+                const el = cekColor[i];
+                if (el == e.path[1]) {
+                    e.checked = "checked";
+                    el.classList.add('ring')
+                    el.classList.add('ring-offset-1')
+                } else {
+                    // console.log(el)
+                    e.checked = false;
+                    el.classList.remove('ring')
+                    el.classList.remove('ring-offset-1')
+                }
+            }
+        }
     }
 
     function getSizeImage(subCode, colorId, nmCtg) {
@@ -641,45 +564,69 @@
                                         </div>`;
                         }
 
-                        if (idx == 0) {
-                            // active = "ring-2"
-                            checked = "checked"
-                        } else {
-                            checked = ""
-                        }
-                        rowSize += `<label><input type="radio" name="size_id" id="size_` + val.size_id + `" value="` + val.size_id + `" ` + checked + ` onclick="getPriceStock('` + subCode + `', '` + colorId + `', '` + val.size_id + `')" require> ` + val.nm_size + `</label>`;
-
-                        // $("#color_id-" + val.colorId).click(function(e) {
-                        //     let hsl = $(this).prop("checked", true);
-                        //     console.log(hsl)
-                        //     $("#labelCek").addClass("ring ring-offset-1");
-                        // })
                     })
+                    const data = json.data
+                    const sizeCek = document.querySelector('#sizeCek');
+                    sizeCek.innerHTML = data
+                        .map(
+                            (val) => `<!-- Active: "ring-2 ring-indigo-500" -->
+                                        <label id="cekSize" onclick="getPriceStock('${subCode}', '${colorId}', '${val.size_id}')" class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
+                                            <input type="radio" name="size_id" value="${val.size_id}" require class="sr-only" aria-labelledby="size_id-7-label">
+                                            <span id="size_id-7-label"> ${val.nm_size} </span>
+
+                                            <!--
+                                                Active: "border", Not Active: "border-2"
+                                                Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                            -->
+                                            <span id="borSize" class="absolute -inset-px rounded-md pointer-events-none border-indigo-500" aria-hidden="true"></span>
+                                        </label>`
+                        ).join(' ');
+                    let colorPick = $('input:radio[name="size_id"]:first').attr("checked", true);
+                    if (data[0]) {
+                        const cekSize = document.querySelector('#cekSize')
+                        const bor = cekSize.querySelector('#borSize')
+                        cekSize.classList.add('ring-2')
+                        cekSize.classList.add('ring-indigo-500')
+                        bor.classList.add('border-indigo-500')
+                    }
                 }
                 $("#imageCek").html(rowImage);
-                $("#sizeCek").html(rowSize);
+                // $("#sizeCek").html(rowSize);
+
+                const cs = document.querySelectorAll('input[name="size_id"]')
+                for (const csk of cs) {
+                    csk.addEventListener('change', showSize)
+                }
+
                 getPriceStock(subCode, colorId, json.data[0]['size_id'])
-                // rowImage += `<div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                //             </div>
-                //             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                //             </div>
-                //             <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-                //                 <img src="https://source.unsplash.com/600x600?fashion-man" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
-                //             </div>`;
-                // $("#colorCek").html(rowColor);
-
-
-                // $('#labelCek input').click(function() {
-                //     $(this).closest('#colorCek')
-                //         .find('#labelCek')
-                //         .removeClass('checked');
-                //     $(this).parent()
-                //         .addClass('checked');
-                // });
             }
         })
+    }
+
+    function showSize(e) {
+        if (this.checked) {
+            // const sizeId = document.querySelector('input[name="size_id"]:checked')
+            const cekSize = document.querySelectorAll('#cekSize')
+
+            for (let i = 0; i < cekSize.length; i++) {
+                const el = cekSize[i];
+                const bor = el.querySelector('#borSize')
+
+                if (el == e.path[1]) {
+                    // console.log(el)
+                    e.checked = "checked";
+                    el.classList.add('ring-2')
+                    el.classList.add('ring-indigo-500')
+                    bor.classList.add('border-indigo-500')
+                } else {
+                    // console.log(el)
+                    e.checked = false;
+                    el.classList.remove('ring-2')
+                    el.classList.remove('ring-indigo-500')
+                    bor.classList.remove('border-indigo-500')
+                }
+            }
+        }
     }
 
     function getPriceStock(subCode, colorId, sizeId) {
