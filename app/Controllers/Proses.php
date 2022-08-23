@@ -680,7 +680,7 @@ class Proses extends BaseController
             'waiting_time' => $time,
             'delivery_code' => $deliveryCode,
             'rekening' => $account,
-            'feedback' => 'Menuggu konfirmasi pembayaran',
+            'feedback' => 'Menuggu verifikasi pembayaran',
             'status' => 0
         );
 
