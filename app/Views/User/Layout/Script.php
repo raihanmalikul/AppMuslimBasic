@@ -31,4 +31,19 @@
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
+
+    function getTheMonth(num) {
+            if (num == 0) return 'Januari';
+            else if (num == 1) return 'Februari';
+            else if (num == 2) return 'Maret';
+            else if (num == 3) return 'April';
+            else if (num == 4) return 'Mei';
+            else if (num == 5) return 'Juni';
+            else if (num == 6) return 'Juli';
+            else if (num == 7) return 'Agustus';
+            else if (num == 8) return 'September';
+            else if (num == 9) return 'Oktober';
+            else if (num == 10) return 'November';
+            else if (num == 11) return 'Desember';
+        }
 </script>

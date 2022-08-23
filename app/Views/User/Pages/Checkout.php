@@ -80,9 +80,10 @@
                     <h2 class="text-lg font-medium text-gray-900">Contact information</h2>
 
                     <div class="mt-4">
-                        <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
+                        <label for="emailAddress" class="block text-sm font-medium text-gray-700">Email address</label>
                         <div class="mt-1">
-                            <input type="email" name="email-address" id="email-address" autocomplete="email" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                            <input type="email" name="emailAddress" id="emailAddress" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <input type="hidden" name="customerId" id="customerId">
                         </div>
                     </div>
                 </div>
@@ -92,30 +93,30 @@
 
                     <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                         <div>
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700">First name</label>
                             <div class="mt-1">
-                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="firstName" id="firstName" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                             </div>
                         </div>
 
                         <div>
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700">Last name</label>
                             <div class="mt-1">
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="lastName" id="lastName" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                             </div>
                         </div>
 
                         <div class="sm:col-span-2">
                             <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
                             <div class="mt-1">
-                                <input type="text" name="address" id="address" autocomplete="street-address" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="address" id="address" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                             </div>
                         </div>
 
                         <div>
                             <label for="city" class="block text-sm font-medium text-gray-700">City</label>
                             <div class="mt-1">
-                                <input type="text" name="city" id="city" autocomplete="address-level2" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="city" id="city" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                                 <input type="hidden" name="cityId" id="cityId">
                             </div>
                         </div>
@@ -123,22 +124,22 @@
                         <div>
                             <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
                             <div class="mt-1">
-                                <input type="text" name="region" id="region" autocomplete="address-level1" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="region" id="region" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                                 <input type="hidden" name="regionId" id="regionId">
                             </div>
                         </div>
 
                         <div>
-                            <label for="postal-code" class="block text-sm font-medium text-gray-700">Postal code</label>
+                            <label for="postalCode" class="block text-sm font-medium text-gray-700">Postal code</label>
                             <div class="mt-1">
-                                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="postalCode" id="postalCode" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                             </div>
                         </div>
 
                         <div class="sm:col-span-2">
                             <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
                             <div class="mt-1">
-                                <input type="text" name="phone" id="phone" autocomplete="tel" disabled class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Disabled input example">
+                                <input type="text" name="phone" id="phone" readonly class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,20 @@
                         </div>
 
                         <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4" id="courier">
-
+                            <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none ring-2 ring-indigo-500">
+                                <input type="radio" name="delivery-method" value="Standard" class="sr-only" aria-labelledby="delivery-method-0-label" aria-describedby="delivery-method-0-description-0 delivery-method-0-description-1">
+                                <div class="flex-1 flex">
+                                    <div class="flex flex-col">
+                                        <span id="delivery-method-0-label" class="block text-sm font-medium text-gray-900"> Standard </span>
+                                        <span id="delivery-method-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"> 0 Hari </span>
+                                        <span id="delivery-method-0-description-1" class="mt-6 text-sm font-medium text-gray-900"> Rp. 0 </span>
+                                    </div>
+                                </div>
+                                <div class="h-5 w-5 text-indigo-600 hidden">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="absolute -inset-px rounded-lg border-2 pointer-events-none border-indigo-500" aria-hidden="true"></div>
+                            </label>
                         </div>
                     </fieldset>
                 </div>
@@ -180,18 +194,18 @@
                         <legend class="sr-only">Payment type</legend>
                         <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
                             <div class="flex items-center">
-                                <input id="bni" name="payment-type" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <input id="bni" name="noReq" value="bni" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                 <label for="bni" class="ml-3 block text-sm font-medium text-gray-700"> BNI </label>
                             </div>
 
                             <div class="flex items-center">
-                                <input id="mandiri" name="payment-type" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <input id="mandiri" name="noReq" value="mandiri" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                 <label for="mandiri" class="ml-3 block text-sm font-medium text-gray-700"> MANDIRI
                                 </label>
                             </div>
 
                             <div class="flex items-center">
-                                <input id="bca" name="payment-type" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <input id="bca" name="noReq" value="bca" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                 <label for="bca" class="ml-3 block text-sm font-medium text-gray-700"> BCA </label>
                             </div>
                         </div>
@@ -199,7 +213,7 @@
 
                     <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
                         <div class="col-span-4">
-                            <h3 class="font-medium leading-tight text-2xl mt-0 mb-2">No Rekening : </h3>
+                            <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
                         </div>
                     </div>
                 </div>
@@ -211,12 +225,59 @@
 
                 <div class="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
                     <!-- <h3 class="sr-only">Items in your cart</h3> -->
-                    <ul role="list" class="divide-y divide-gray-200" id="dataCart"></ul>
-                    <dl class="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6" id="summary"></dl>
+                    <ul role="list" class="divide-y divide-gray-200" id="dataCart">
+                        <li class="flex py-6 px-4 sm:px-6">
+                            <div class="flex-shrink-0">
+                                <img src="/assets/tailwind/img/logo.jpg" class="w-20 rounded-md">
+                            </div>
+                            <div class="ml-6 flex-1 flex flex-col">
+                                <div class="flex">
+                                    <div class="min-w-0 flex-1">
+                                        <h4 class="text-sm">
+                                            <a href="#" class="font-medium text-gray-700 hover:text-gray-800">Product Name</a>
+                                        </h4>
+                                        <p class="mt-1 text-sm text-gray-500"></p>
+                                    </div>
+                                    <div class="ml-4 flex-shrink-0 flow-root">
+                                        <button type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500" onclick="delListCart(` + val.id + `,'` + val.email + `')">
+                                            <span class="sr-only">Remove</span>
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex-1 pt-2 flex items-end justify-between">
+                                    <p class="mt-1 text-sm font-medium text-gray-900">Rp. 0</p>
+                                    <div class="ml-4">
+                                        <p class="text-gray-500">Qty 0 ( 0 gr)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <dl class="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
+                        <div class="flex items-center justify-between">
+                            <dt class="text-sm">Subtotal</dt>
+                            <dd class="text-sm font-medium text-gray-900" id="subTotal">Rp. 0</dd>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <dt class="text-sm">Shipping</dt>
+                            <dd class="text-sm font-medium text-gray-900" id="shipping">Rp. 0</dd>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <dt class="text-sm">Insurance</dt>
+                            <dd class="text-sm font-medium text-gray-900" id="insurance">Rp. 0</dd>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-200 pt-6">
+                            <dt class="text-base font-medium">Total</dt>
+                            <dd class="text-base font-medium text-gray-900" id="total">Rp. 0</dd>
+                            <input type="hidden" name="totalVal" id="totalVal">
+                        </div>
+                    </dl>
 
                     <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
-                        <button type="submit" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Confirm
-                            order</button>
+                        <!-- <button type="button" id="saveCheckout" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Confirm order</button> -->
+                        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#confirmOrder">Confirm order</button>
                     </div>
                 </div>
             </div>
@@ -228,6 +289,30 @@
 <!-- BEGIN Footer -->
 <?= $this->include('User/Layout/Footer') ?>
 <!-- END Footer -->
+
+<!-- Modal -->
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog relative w-auto pointer-events-none">
+        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel"> Payment Order</h5>
+                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body relative p-4">
+                <div class="flex justify-center">
+                    <div class="mb-3 w-96">
+                        <label for="filePayment" class="form-label inline-block mb-2 text-gray-700">Upload Evidence Payment</label>
+                        <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="filePayment">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveCheckout" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- BEGIN SCRIPT -->
 <?= $this->include('User/Layout/Script') ?>
@@ -246,6 +331,102 @@
             let val = $(this).val()
             dtCost(val, email)
         });
+
+        $('#noReqVal').html('1345658765432')
+        $('input[name="noReq"]').change(function() {
+            let val = $(this).val();
+            console.log(val)
+
+            if (val == 'bni') {
+                $('#noReqVal').html('1345658765432')
+            } else if (val == 'mandiri') {
+                $('#noReqVal').html('1630000123345')
+            } else if (val == 'bca') {
+                $('#noReqVal').html('7345029342345')
+            } else {
+                $('#noReqVal').html('0')
+            }
+        })
+
+        $('#saveCheckout').click(function() {
+            let email           = $("#emailAddress").val()
+            let firstName       = $("#firstName").val()
+            let lastName        = $("#lastName").val()
+            let name            = (firstName != "") ? firstName : "" + (lastName != "") ? "-"+lastName : ""
+            let customerId      = $("#customerId").val()
+            let phone           = $("#phone").val()
+            let regionId        = $("#regionId").val()
+            let cityId          = $("#cityId").val()
+            let postalCode      = $("#postalCode").val()
+            let total           = $("#totalVal").val()
+            let deliveryCode    = $("#delivery_code").val()
+            let address         = $("#address").val()
+            let noReqVal        = $("#noReqVal").text()
+            let orderPro        = $("input[name='orderPro[]']").map(function(){return $(this).val();}).get();
+
+            // console.log(email)
+            // console.log(name)
+            // console.log(customerId)
+            // console.log(phone)
+            // console.log(regionId)
+            // console.log(cityId)
+            // console.log(postalCode)
+            // console.log(total)
+            // console.log(deliveryCode)
+            // console.log(address)
+            // console.log(noReqVal)
+            // console.log(orderPro)
+            // return
+
+            $.ajax({
+                type: "POST",
+                url: "/Proses/insListChart",
+                data: {
+                    email: email,
+                    name: name,
+                    customerId: customerId,
+                    phone: phone,
+                    regionId: regionId,
+                    cityId: cityId,
+                    postalCode: postalCode,
+                    total: total,
+                    deliveryCode: deliveryCode,
+                    account: noReqVal,
+                    address: address,
+                    orderPro: orderPro
+                },
+                async: false,
+                dataType: "JSON",
+                success: function(json) {
+                    // console.log(json)
+                    if (json.status == 1) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Data Barang Berhasil Disimpan.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+
+                        setTimeout(() => {
+                            window.location.href = "http://localhost:8080/";
+                        }, 3000);
+                    } else {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Data Barang gagal Disimpan.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 3000);
+                    }
+                }
+            })
+        })
     });
 
     function showSelectedpos(e) {
@@ -257,12 +438,31 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddenpos")
                 const bor = el.querySelector("#borHidpos")
+                
+                
                 if (el == e.path[1]) {
                     e.checked = "checked";
                     el.classList.add('ring-2');
                     el.classList.add('ring-indigo-500');
                     hide.classList.remove('hidden');
                     bor.classList.add('border-indigo-500');
+                    
+                    const sub = el.querySelector('#subTot').value
+                    const val = el.querySelector('#costValpos').innerText
+                    const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                    const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+    
+                    subx = formatRupiah(sub, 'Rp. ')
+                    valx = formatRupiah(val, 'Rp. ')
+                    insx = formatRupiah(ins.toString(), 'Rp. ')
+                    totx = formatRupiah(tot.toString(), 'Rp. ')
+    
+                    $('#subTotal').html(subx);
+                    $('#shipping').html(valx);
+                    $('#insurance').html(insx);
+                    $('#total').html(totx);
+                    $('#totalVal').val(tot);
+
                 } else {
                     e.checked = false;
                     el.classList.remove('ring-2');
@@ -272,20 +472,6 @@
                     bor.classList.remove('border-indigo-500');
                     bor.classList.add('border');
                 }
-
-                // window.addEventListener('click', (e) => {
-                //     console.log(el)
-                //     console.log(e.target)
-                //     if (e.target != el) {
-                //         e.checked = false;
-                //         el.classList.remove('ring-2');
-                //         el.classList.remove('ring-indigo-500');
-                //         el.classList.add('border-transparent');
-                //         hide.classList.add('hidden');
-                //         bor.classList.remove('border-indigo-500');
-                //         bor.classList.add('border-2');
-                //     }
-                // })
             }
         }
     }
@@ -299,12 +485,30 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddenjne")
                 const bor = el.querySelector("#borHidjne")
+
+                
                 if (el == e.path[1]) {
                     e.checked = "checked";
                     el.classList.add('ring-2');
                     el.classList.add('ring-indigo-500');
                     hide.classList.remove('hidden');
                     bor.classList.add('border-indigo-500');
+                    
+                    const sub = el.querySelector('#subTot').value
+                    const val = el.querySelector('#costValjne').innerText
+                    const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                    const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+    
+                    subx = formatRupiah(sub, 'Rp. ')
+                    valx = formatRupiah(val, 'Rp. ')
+                    insx = formatRupiah(ins.toString(), 'Rp. ')
+                    totx = formatRupiah(tot.toString(), 'Rp. ')
+    
+                    $('#subTotal').html(subx);
+                    $('#shipping').html(valx);
+                    $('#insurance').html(insx);
+                    $('#total').html(totx);
+                    $('#totalVal').val(tot);
                 } else {
                     e.checked = false;
                     el.classList.remove('ring-2');
@@ -314,20 +518,6 @@
                     bor.classList.remove('border-indigo-500');
                     bor.classList.add('border');
                 }
-
-                // window.addEventListener('click', (e) => {
-                //     console.log(el)
-                //     console.log(e.target)
-                //     if (e.target != el) {
-                //         e.checked = false;
-                //         el.classList.remove('ring-2');
-                //         el.classList.remove('ring-indigo-500');
-                //         el.classList.add('border-transparent');
-                //         hide.classList.add('hidden');
-                //         bor.classList.remove('border-indigo-500');
-                //         bor.classList.add('border-2');
-                //     }
-                // })
             }
         }
     }
@@ -341,12 +531,30 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddentiki")
                 const bor = el.querySelector("#borHidtiki")
+
+                
                 if (el == e.path[1]) {
                     e.checked = "checked";
                     el.classList.add('ring-2');
                     el.classList.add('ring-indigo-500');
                     hide.classList.remove('hidden');
                     bor.classList.add('border-indigo-500');
+                    
+                    const sub = el.querySelector('#subTot').value
+                    const val = el.querySelector('#costValtiki').innerText
+                    const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                    const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+    
+                    subx = formatRupiah(sub, 'Rp. ')
+                    valx = formatRupiah(val, 'Rp. ')
+                    insx = formatRupiah(ins.toString(), 'Rp. ')
+                    totx = formatRupiah(tot.toString(), 'Rp. ')
+    
+                    $('#subTotal').html(subx);
+                    $('#shipping').html(valx);
+                    $('#insurance').html(insx);
+                    $('#total').html(totx);
+                    $('#totalVal').val(tot);
                 } else {
                     e.checked = false;
                     el.classList.remove('ring-2');
@@ -356,20 +564,6 @@
                     bor.classList.remove('border-indigo-500');
                     bor.classList.add('border');
                 }
-
-                // window.addEventListener('click', (e) => {
-                //     console.log(el)
-                //     console.log(e.target)
-                //     if (e.target != el) {
-                //         e.checked = false;
-                //         el.classList.remove('ring-2');
-                //         el.classList.remove('ring-indigo-500');
-                //         el.classList.add('border-transparent');
-                //         hide.classList.add('hidden');
-                //         bor.classList.remove('border-indigo-500');
-                //         bor.classList.add('border-2');
-                //     }
-                // })
             }
         }
     }
@@ -388,27 +582,28 @@
 
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
-                        $('#email-address').val(val.email);
-                        $('#first-name').val(val.first_name);
-                        $('#last-name').val(val.last_name);
+                        $('#emailAddress').val(val.email);
+                        $('#customerId').val(val.id);
+                        $('#firstName').val(val.first_name);
+                        $('#lastName').val(val.last_name);
                         $('#address').val(val.address);
                         $('#region').val(val.province);
                         $('#regionId').val(val.province_id);
                         $('#city').val(val.city);
                         $('#cityId').val(val.city_id);
-                        $('#postal-code').val(val.postal_code);
+                        $('#postalCode').val(val.postal_code);
                         $('#phone').val(val.phone);
                     })
                 } else {
-                    $('#email-address').val('');
-                    $('#first-name').val('');
-                    $('#last-name').val('');
+                    $('#emailAddress').val('');
+                    $('#firstName').val('');
+                    $('#lastName').val('');
                     $('#address').val('');
                     $('#region').val('');
                     $('#regionId').val('');
                     $('#city').val('');
                     $('#cityId').val('');
-                    $('#postal-code').val('');
+                    $('#postalCode').val('');
                     $('#phone').val('');
                 }
             }
@@ -429,14 +624,12 @@
             dataType: "JSON",
             success: function(json) {
                 // console.log(json)
-                let row = cekLabel = border = hidden = checked = "";
+                let row = cekLabel = summary = hidden = checked = "";
+                let subx = valx = insx = totx = "";
                 if (json.status == 1) {
-                    $.each(json.data, function(idx, val) {
-
-                    })
-
                     $.each(json.data.dataApi, function(idx, val) {
                         if (val.status['code'] == 200) {
+                            let subTot = json.data['sub_total'];
                             $.each(val.result, function(i, v) {
                                 let code = v.code
                                 let costs = v.costs
@@ -447,21 +640,23 @@
                                                     <input type="radio" name="delivery${code}" value="${val.service}" id="${val.service}" class="sr-only peer" aria-labelledby="${code}-0-label" aria-describedby="${code}-0-description-0 ${code}-0-description-1">
                                                     <div class="flex-1 flex">
                                                         <div class="flex flex-col">
-                                                            <span id="${code}-0-label" class="block text-sm font-medium text-gray-900"> ${val.description} </span>
-                                                            <span id="${code}-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"> ${val.cost[0].etd} </span>
-                                                            <span id="${code}-0-description-1" class="mt-6 text-sm font-medium text-gray-900"> ${val.cost[0].value} </span>
+                                                            <span id="costDescription${code}" class="block text-sm font-medium text-gray-900">${val.description}</span>
+                                                            <span id="costEtd${code}" class="mt-1 flex items-center text-sm text-gray-500">${val.cost[0].etd}</span>
+                                                            <span id="costVal${code}" class="mt-6 text-sm font-medium text-gray-900">${formatRupiah(val.cost[0].value.toString(), 'Rp. ')}</span>
+                                                            <input type="hidden" id="costValFix${code}" value="${val.cost[0].value}">
                                                         </div>
                                                     </div>
                                                     <div id="svgHidden${code}" class="h-5 w-5 text-indigo-600 hidden">
                                                         <i class="fas fa-check-circle"></i>
                                                     </div>
                                                     <div id="borHid${code}" class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
+                                                    <input type="hidden" id="subTot" value="${subTot}">
+                                                    <input type="hidden" id="delivery_code" value="${code}-${val.description}-${val.cost[0].etd}-${val.cost[0].value}">
                                                 </label>`
                                     ).join(' ');
                                 
                                 let deliverypos = $('input:radio[name="deliverypos"]:first').attr("checked", true);
-                                // let deliveryjne = $('input:radio[name="deliveryjne"]:first').attr("checked", true);
-                                // let deliverytiki = $('input:radio[name="deliverytiki"]:first').attr("checked", true);
+
                                 if (costs[0]) {
                                     if (code == 'pos') {
                                         const el = document.querySelector("#labDelMetpos");
@@ -472,6 +667,22 @@
                                         el.classList.add('ring-indigo-500');
                                         hide.classList.remove('hidden');
                                         bor.classList.add('border-indigo-500');
+
+                                        const sub = el.querySelector('#subTot').value
+                                        const val = el.querySelector('#costValFixpos').value
+                                        const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                                        const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+
+                                        subx = formatRupiah(sub, 'Rp. ')
+                                        valx = formatRupiah(val, 'Rp. ')
+                                        insx = formatRupiah(ins.toString(), 'Rp. ')
+                                        totx = formatRupiah(tot.toString(), 'Rp. ')
+
+                                        $('#subTotal').html(subx);
+                                        $('#shipping').html(valx);
+                                        $('#insurance').html(insx);
+                                        $('#total').html(totx);
+                                        $('#totalVal').val(tot);
                                     } else if (code == 'jne') {
                                         const el = document.querySelector("#labDelMetjne");
                                         const hide = el.querySelector("#svgHiddenjne")
@@ -481,6 +692,22 @@
                                         el.classList.add('ring-indigo-500');
                                         hide.classList.remove('hidden');
                                         bor.classList.add('border-indigo-500');
+                                        
+                                        const sub = el.querySelector('#subTot').value
+                                        const val = el.querySelector('#costValFixjne').value
+                                        const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                                        const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+
+                                        subx = formatRupiah(sub, 'Rp. ')
+                                        valx = formatRupiah(val, 'Rp. ')
+                                        insx = formatRupiah(ins.toString(), 'Rp. ')
+                                        totx = formatRupiah(tot.toString(), 'Rp. ')
+
+                                        $('#subTotal').html(subx);
+                                        $('#shipping').html(valx);
+                                        $('#insurance').html(insx);
+                                        $('#total').html(totx);
+                                        $('#totalVal').val(tot);
                                     } else if (code == 'tiki') {
                                         const el = document.querySelector("#labDelMettiki");
                                         const hide = el.querySelector("#svgHiddentiki")
@@ -490,6 +717,22 @@
                                         el.classList.add('ring-indigo-500');
                                         hide.classList.remove('hidden');
                                         bor.classList.add('border-indigo-500');
+
+                                        const sub = el.querySelector('#subTot').value
+                                        const val = el.querySelector('#costValFixtiki ').value
+                                        const ins = parseInt(val) - (90 / 100 * parseInt(val))
+                                        const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
+
+                                        subx = formatRupiah(sub, 'Rp. ')
+                                        valx = formatRupiah(val, 'Rp. ')
+                                        insx = formatRupiah(ins.toString(), 'Rp. ')
+                                        totx = formatRupiah(tot.toString(), 'Rp. ')
+
+                                        $('#subTotal').html(subx);
+                                        $('#shipping').html(valx);
+                                        $('#insurance').html(insx);
+                                        $('#total').html(totx);
+                                        $('#totalVal').val(tot);
                                     }
                                 }
                             })
@@ -518,9 +761,8 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                // console.log(json.data)
+                console.log(json.data)
                 let rowCart = ""
-                let summary = ""
 
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
@@ -540,9 +782,7 @@
                                                 <div class="ml-4 flex-shrink-0 flow-root">
                                                     <button type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500" onclick="delListCart(` + val.id + `,'` + val.email + `')">
                                                         <span class="sr-only">Remove</span>
-                                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                                        </svg>
+                                                        <i class="fas fa-trash"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -552,78 +792,12 @@
                                                     <p class="text-gray-500">Qty ` + val.qty + ` ( ` + val.weight + ` gr)</p>
                                                 </div>
                                             </div>
+                                            <input type="hidden" id="orderPro" name="orderPro[]" value="${val.id}" >
                                         </div>
                                     </li>`;
                     })
-
-                    summary += `<div class="flex items-center justify-between">
-                                    <dt class="text-sm">Subtotal</dt>
-                                    <dd class="text-sm font-medium text-gray-900">` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</dd>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <dt class="text-sm">Shipping</dt>
-                                    <dd class="text-sm font-medium text-gray-900"><div id="shipping"></div></dd>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <dt class="text-sm">Insurance</dt>
-                                    <dd class="text-sm font-medium text-gray-900"><div id="insurance"></div></dd>
-                                </div>
-                                <div class="flex items-center justify-between border-t border-gray-200 pt-6">
-                                    <dt class="text-base font-medium">Total</dt>
-                                    <dd class="text-base font-medium text-gray-900">$75.52</dd>
-                                </div>`;
-                } else {
-                    rowCart +=
-                        `<li class="flex py-6 px-4 sm:px-6">
-                                        <div class="flex-shrink-0">
-                                            <img src="/uploads/defaultImage.png" class="w-20 rounded-md">
-                                        </div>
-                                        <div class="ml-6 flex-1 flex flex-col">
-                                            <div class="flex">
-                                                <div class="min-w-0 flex-1">
-                                                    <h4 class="text-sm">
-                                                        <a href="#" class="font-medium text-gray-700 hover:text-gray-800"></a>
-                                                    </h4>
-                                                    <p class="mt-1 text-sm text-gray-500"></p>
-                                                </div>
-                                                <div class="ml-4 flex-shrink-0 flow-root">
-                                                    <button type="button" class="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500" onclick="delListCart(` +
-                        val.id + `,'` + val.email + `')">
-                                                        <span class="sr-only">Remove</span>
-                                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex-1 pt-2 flex items-end justify-between">
-                                                <p class="mt-1 text-sm font-medium text-gray-900">Rp. 0</p>
-                                                <div class="ml-4">
-                                                    <p class="text-gray-500">Qty 0 ( 0 gr)</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>`;
-
-                    summary += `<div class="flex items-center justify-between">
-                                    <dt class="text-sm">Subtotal</dt>
-                                    <dd class="text-sm font-medium text-gray-900">Rp. 0</dd>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <dt class="text-sm">Shipping</dt>
-                                    <dd class="text-sm font-medium text-gray-900">Rp. 0</dd>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <dt class="text-sm">Insurance</dt>
-                                    <dd class="text-sm font-medium text-gray-900">Rp. 0</dd>
-                                </div>
-                                <div class="flex items-center justify-between border-t border-gray-200 pt-6">
-                                    <dt class="text-base font-medium">Total</dt>
-                                    <dd class="text-base font-medium text-gray-900">Rp. 0</dd>
-                                </div>`;
                 }
                 $('#dataCart').html(rowCart);
-                $('#summary').html(summary);
             }
         })
     }

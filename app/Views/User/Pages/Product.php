@@ -344,8 +344,8 @@
                     totPrice: totPrice,
                     description: description,
                 },
-                dataType: "json",
                 async: false,
+                dataType: "json",
                 // headers: {
                 //     'X-Requested-With': 'XMLHttpRequest'
                 // },

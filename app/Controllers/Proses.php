@@ -368,6 +368,29 @@ class Proses extends BaseController
 
         echo json_encode($result);
     }
+    
+    public function getTotTimeline()
+    {
+        $email = $this->request->getVar('email');
+        $res = $this->db->query("SELECT 
+                                    COUNT(*) total
+                                    , a.timeline_id
+                                FROM m_timeline a
+                                WHERE a.email = '$email'
+                                GROUP BY a.timeline_id")->getResultArray();
+        $data = array(
+            'total' => $res[0]['total'],
+            'timeline_id' => $res[0]['timeline_id'],
+        );
+
+        if ($data) {
+            $result = ['status' => 1, 'data' => $data];
+        } else {
+            $result = ['status' => 0, 'data' => $data];
+        }
+
+        echo json_encode($result);
+    }
 
     public function getDataCustomer()
     {
@@ -575,6 +598,105 @@ class Proses extends BaseController
         echo json_encode($result);
     }
 
+    public function insListChart()
+    {
+        $email          = $this->request->getVar("email");
+        $name           = $this->request->getVar("name");
+        $customerId     = $this->request->getVar("customerId");
+        $phone          = $this->request->getVar("phone");
+        $regionId       = $this->request->getVar("regionId");
+        $cityId         = $this->request->getVar("cityId");
+        $postalCode     = $this->request->getVar("postalCode");
+        $total          = $this->request->getVar("total");
+        $deliveryCode   = $this->request->getVar("deliveryCode");
+        $account        = $this->request->getVar("account");
+        $address        = $this->request->getVar("address");
+        $orderPro       = $this->request->getVar("orderPro");
+
+        $getOrdi = $this->db->table("m_order")->select('order_id')->orderBy('order_id', 'DESC')->get()->getRowArray();
+        if ($getOrdi) {
+            $formatOrderId = "ORDI" . $getOrdi['order_id'] + "1";
+        } else {
+            $formatOrderId = "ORDI0001";
+        }
+
+        $getPayId = $this->db->table("m_payment")->select('payment_id')->orderBy('payment_id', 'DESC')->get()->getRowArray();
+        if ($getPayId) {
+            $formatPayId = "PAYID". $getPayId['payment_id'] + "1";
+        } else {
+            $formatPayId = "PAYID0001";
+        }
+
+        $getTimelineId = $this->db->table("m_timeline")->select('timeline_id')->orderBy('timeline_id', 'DESC')->get()->getRowArray();
+        
+        $getCart = $this->db->table("m_cart")->whereIn('id', $orderPro)->get()->getResultArray();
+        $insTimeline = [];
+        foreach ($getCart as $each) {
+            if ($getTimelineId) {
+                $formatTimelineId = "TIME". $getPayId['m_timeline'] + "1";
+            } else {
+                $formatTimelineId = "TIME0001";
+            }
+
+            $data = array(
+                'timeline_id' => $formatTimelineId,
+                'order_id' => $formatOrderId,
+                'slug' => $each['slug'],
+                'email' => $each['email'],
+                'phone' => $phone,
+                'status' => 0,
+            );
+
+            array_push($insTimeline, $data);
+        }
+
+        $timeNow = TIme::now();
+        $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId . $formatPayId;
+
+        // insert to tbl m_order
+        $dataOrder = array(
+            'email' => $email,
+            'order_id' => $formatOrderId,
+            'invoice' => $formatInvoice,
+            'customer_id' => $customerId,
+            'customer_name' => $name,
+            'customer_phone' => $phone,
+            'customer_address' => $address,
+            'province_id' => $regionId,
+            'city_id' => $cityId,
+            'postal_code' => $postalCode,
+            'total' => $total,
+            'status_order' => 0
+        );
+
+        $time = new Time('+1 hour');
+
+        // insert to tbl m_payment
+        $dataPayment = array(
+            'email' => $email,
+            'payment_id' => $formatPayId,
+            'total_price' => $total,
+            'evidence_payment' => 0,
+            'waiting_time' => $time,
+            'delivery_code' => $deliveryCode,
+            'rekening' => $account,
+            'feedback' => 'Menuggu konfirmasi pembayaran',
+            'status' => 0
+        );
+
+        $insOrder   = $this->db->table("m_order")->insert($dataOrder);
+        $insPayment = $this->db->table("m_payment")->insert($dataPayment);
+        $insertTime = $this->db->table("m_timeline")->insertBatch($insTimeline);
+        $delChart   = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
+
+        if ($insOrder && $insPayment && $insertTime && $delChart) {
+            $result = ["status" => 1, "data" => array("Order" => $insOrder, "payment" => $insPayment, 'm_timeline' => $insertTime, 'chart' => $delChart)];
+        } else {
+            $result = ["status" => 0, "data" => array("Order" => $insOrder, "payment" => $insPayment, 'm_timeline' => $insertTime, 'chart' => $delChart)];
+        }
+        echo json_encode($result);
+    }
+
     public function delListCart()
     {
         $id = $this->request->getVar('id');
@@ -583,6 +705,48 @@ class Proses extends BaseController
             $result = ['status' => 1, 'data' => $res];
         } else {
             $result = ['status' => 0, 'data' => null];
+        }
+
+        echo json_encode($result);
+    }
+
+    public function getTimelineList()
+    {
+        $email      = $this->request->getVar('email');
+        $timelineId = $this->request->getVar('timelineId');
+
+        $res = $this->db->query("SELECT 
+                                    timeline_id
+                                    , order_id
+                                    , slug
+                                    , email
+                                    , phone
+                                    , feedback
+                                    , `status` stTimeLine
+                                    , created_at dateTimeline
+                                FROM m_timeline 
+                                WHERE timeline_id = '$timelineId' 
+                                GROUP BY created_at
+                                ORDER BY created_at DESC")->getResultArray();
+        $arry = array();
+        foreach ($res as $each) {
+            $data = array(
+                'timeline_id' => $each['timeline_id'],
+                'order_id' => $each['order_id'],
+                'slug' => $each['slug'],
+                'email' => $each['email'],
+                'phone' => $each['phone'],
+                'feedback' => $each['feedback'],
+                'stTimeLine' => $each['stTimeLine'],
+                'dateTimeline' => $each['dateTimeline']
+            );
+            array_push($arry, $data);
+        }
+
+        if ($arry) {
+            $result = ['status' => 1, 'data' => $arry];
+        } else {
+            $result = ['status' => 0, 'data' => $arry];
         }
 
         echo json_encode($result);

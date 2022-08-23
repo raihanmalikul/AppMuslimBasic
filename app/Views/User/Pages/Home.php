@@ -44,6 +44,11 @@
                                             <span class="sr-only">Shopping Chart</span>
                                             <div id="totChart"></div>
                                         </button>
+                                        <button type="button" class="inline-flex relative items-center px-3 py-2.5 text-sm font-medium text-center text-gray-700 rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300" data-bs-toggle="modal" data-bs-target="#timeline">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="sr-only">Notifications</span>
+                                            <div id="totTimeline"></div>
+                                        </button>
                                     <?php } ?>
                                     <div class="dropdown relative">
                                         <a class="dropdown-toggle px-3 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -626,6 +631,27 @@
 <?= $this->include('User/Layout/Footer') ?>
 <!-- END Footer -->
 
+<!-- Modal -->
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="timeline" tabindex="-1" aria-labelledby="timelineLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
+        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="timelineLabel"> Timeline </h5>
+                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body relative p-4">
+                <div class="flow-root">
+                    <ul role="list" class="-mb-8" id="timelineList">
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Item Product start -->
 <!-- <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto modalItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
@@ -809,6 +835,7 @@
         getBestSeller()
         getDiscountItem()
         getTotChart(email)
+        getTotTimeline(email)
 
         // $('#cartModal').hide();
         // $('#showCart').click(function() {
@@ -916,6 +943,28 @@
             }
         })
     }
+    
+    function getTotTimeline(email) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getTotTimeline",
+            data: {
+                email: email
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let row = "";
+                if (json.status == 1 && json.data['total'] != 0) {
+                    row += `<div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">` + json.data['total'] + `
+                                </div>`;
+                }
+                $("#totTimeline").html(row)
+                timelineList(email, json.data['timeline_id'])
+            }
+        })
+    }
 
     function dataCart(email) {
         $.ajax({
@@ -927,7 +976,7 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let rowCart = btnCheck = ""
 
                 if (json.status == 1) {
@@ -959,11 +1008,91 @@
                                     </li>`;
                     })
                     btnCheck += `<a href="/Pages/checkout" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>`;
+                    let subTot = `<p>Subtotal</p> <p>` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</p>`;
+                    $('#subTotalCart').html(subTot);
+                    $('#dataCart').html(rowCart);
                 }
-                $('#dataCart').html(rowCart);
-                let subTot = `<p>Subtotal</p> <p>` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</p>`;
-                $('#subTotalCart').html(subTot);
                 $('#btnCheckout').html(btnCheck);
+            }
+        })
+    }
+
+    function timelineList(email, timeline_id) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getTimelineList",
+            data: {
+                email: email,
+                timelineId: timeline_id
+            },
+            async: false,
+            dataType: "JSON",
+            success: function(json) {
+                console.log(json)
+                if (json.status == 1) {
+                    let row = icontList = timeList = ""
+                    let textList = "Not Fount";
+                    var tahun, bulan, nomorBulan, tgl, waktu;
+                    console.log(json.data)
+                    $.each(json.data, function(idx, val) {
+                        // console.log(idx)
+                        // console.log(val)
+                        var date = new Date(val.dateTimeline);
+                        nomorBulan = date.getMonth();
+                        tahun = date.getFullYear();
+                        bulan = getTheMonth(nomorBulan);
+                        tgl = ("00" + date.getDate()).slice(-2) + " " + bulan + " " + date.getFullYear();
+                        waktu = ("00" + date.getHours()).slice(-2) + ":" + ("00" + date.getMinutes()).slice(-2);
+                        
+                        textList = val.feedback
+                        timeList = tgl + ', ' + waktu;
+                        if (val.stTimeLine == "0") {
+                            icontList = '<i class="fas fa-clock" bg-yellow></i>'; //  verifikasi pembayaran
+                        } else if (val.stTimeLine == "1") {
+                            icontList = '<i class="fas fa-truck-moving bg-blue"></i>'; // pengiriman barang
+                        } else if (val.stTimeLine == "2") {
+                            icontList = '<i class="fas fa-check" bg-blue></i>'; // barang telah sampai
+                        } else {
+                            icontList = '<i class="fas fa-lock bg-red"></i>'; // barang telah sampai
+                        }
+
+                        row += `<li>
+                                    <div class="relative pb-8">
+                                        <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-400" aria-hidden="true"></span>
+                                        <div class="relative flex space-x-3">
+                                            <div>
+                                                <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
+                                                    ${icontList}
+                                                </span>
+                                            </div>
+                                            <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                <div>
+                                                    <p class="text-sm text-gray-500">${textList}</p>
+                                                </div>
+                                                <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                    <time datetime="${timeList}">${timeList}</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                    });
+
+                    if (json.data != "") {
+                        row += `<li>
+                                    <div class="relative pb-8">
+                                        <div class="relative flex space-x-3">
+                                            <div>
+                                                <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+                                                    <i class="fas fa-play"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                    }
+                    $('#timelineList').html(row);
+                }
             }
         })
     }
