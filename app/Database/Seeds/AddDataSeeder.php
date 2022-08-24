@@ -8,13 +8,14 @@ class AddDataSeeder extends Seeder
 {
     public function run()
     {
+        $this->call('DSProdukSeeder');
+        $this->call('DProductSeeds');
         $this->call('MCitySeeder');
         $this->call('MCategorySeeds');
         $this->call('MColorSeeds');
         $this->call('MLoginAdminSeeder');
         $this->call('MLoginSeeder');
         $this->call('MProductSeeds');
-        $this->call('DProductSeeds');
         $this->call('MProfilSeeder');
         $this->call('MProvinceSeeder');
         $this->call('MSizeSeeder');

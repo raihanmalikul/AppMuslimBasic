@@ -36,30 +36,45 @@
                         </li>
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
-                                <div class="dropdown relative">
-                                    <a class="dropdown-toggle px-6 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-user"></i>
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                            <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
-                                        </svg>
-                                    </a>
-                                    <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
-                                        <?php
-                                        if ($this->session->get('loggedIn')) { ?>
-                                            <li>
-                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/settings">Settings</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/logout">Logout</a>
-                                            </li>
+                                <div class="inline-flex hover:shadow-lg focus:shadow-lg" role="group">
+                                    <?php
+                                    if ($this->session->get('loggedIn')) { ?>
+                                        <button type="button" class="inline-flex relative items-center px-3 py-2.5 text-sm font-medium text-center text-gray-700 rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300" onclick="toggleSlideover()">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="sr-only">Shopping Chart</span>
+                                            <div id="totChart"></div>
+                                        </button>
+                                        <button type="button" class="inline-flex relative items-center px-3 py-2.5 text-sm font-medium text-center text-gray-700 rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300" data-bs-toggle="modal" data-bs-target="#timeline">
+                                            <i class="fas fa-bell"></i>
+                                            <span class="sr-only">Notifications</span>
+                                            <div id="totTimeline"></div>
+                                        </button>
+                                    <?php } ?>
+                                    <div class="dropdown relative">
+                                        <a class="dropdown-toggle px-3 py-2.5 text-gray-700 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-user"></i>
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                            </svg>
+                                        </a>
+                                        <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
+                                            <?php
+                                            if ($this->session->get('loggedIn')) { ?>
+                                                <li>
+                                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/settings">Settings</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/logout">Logout</a>
+                                                </li>
 
-                                        <?php } else { ?>
-                                            <li>
-                                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/login">Login</a>
-                                            </li>
-                                        <?php }
-                                        ?>
-                                    </ul>
+                                            <?php } else { ?>
+                                                <li>
+                                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/login">Login</a>
+                                                </li>
+                                            <?php }
+                                            ?>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -114,10 +129,7 @@
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">
                 <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">BEST SELLER</h2>
-                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
-                    minus aliquam consequuntur.
-                </p>
+                <!-- <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg"></p> -->
             </div>
         </div>
         <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4" id="bastSeller">
@@ -164,15 +176,15 @@
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">
                 <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl dark:text-white">ITEM DISCOUNT</h2>
-                <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
+                <!-- <p class="text-md font-medium text-secondary dark:text-secondarybg md:text-lg">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptates quisquam reprehenderit
                     minus aliquam consequuntur.
-                </p>
+                </p> -->
             </div>
         </div>
 
-        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div class="group relative">
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8" id="discountItem">
+            <!-- <div class="group relative">
                 <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
                     <div class="py-8 px-6">
                         <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -255,9 +267,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- More products... -->
+            </div> -->
         </div>
     </div>
 </section>
@@ -550,35 +560,97 @@
 </section>
 <!-- Contact Section End -->
 
-<!-- BEGIN Footer -->
-<?= $this->include('User/Layout/Footer') ?>
-<!-- END Footer -->
+<!-- Modal Cart Start -->
+<div class="relative z-10 invisible" aria-labelledby="slide-over-title" role="dialog" aria-modal="false" id="slideover-container">
+    <!--
+        Background backdrop, show/hide based on slide-over state.
 
-<!-- Modal Login Start -->
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="loginModal" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
-                    Modal title
-                </h5>
-                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body relative p-4">
-                <p>This is a vertically centered modal.</p>
-            </div>
-            <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">
-                    Close
-                </button>
-                <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
-                    Save changes
-                </button>
+        Entering: "ease-in-out duration-500"
+        From: "opacity-0"
+        To: "opacity-100"
+        Leaving: "ease-in-out duration-500"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 ease-in-out duration-500 opacity-0" id="slideover-bg"></div>
+
+    <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden transform transition-all ease-in-out duration-500 sm:duration-700 translate-x-full" id="slideover">
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                <!--
+                    Slide-over panel, show/hide based on slide-over state.
+
+                    Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                        From: "translate-x-full"
+                        To: "translate-x-0"
+                    Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                        From: "translate-x-0"
+                        To: "translate-x-full"
+                -->
+                <div class="pointer-events-auto w-screen max-w-md">
+                    <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                        <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                            <div class="flex items-start justify-between">
+                                <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                                <div class="ml-3 flex h-7 items-center">
+                                    <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500" onclick="toggleSlideover()">
+                                        <span class="sr-only">Close panel</span>
+                                        <!-- Heroicon name: outline/x -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <div class="flow-root">
+                                    <ul role="list" class="-my-6 divide-y divide-gray-200">
+                                        <div id="dataCart"></div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+                            <div class="flex justify-between text-base font-medium text-gray-900" id="subTotalCart">
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                            <div class="mt-6" id="btnCheckout">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Modal Login End -->
+<!-- Modal Cart End -->
+
+<!-- BEGIN Footer -->
+<?= $this->include('User/Layout/Footer') ?>
+<!-- END Footer -->
+
+<!-- Modal -->
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="timeline" tabindex="-1" aria-labelledby="timelineLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
+        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="timelineLabel"> Timeline </h5>
+                <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body relative p-4">
+                <div class="flow-root">
+                    <ul role="list" class="-mb-8" id="timelineList">
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal Item Product start -->
 <!-- <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto modalItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -758,62 +830,291 @@
 <!-- END SCRIPT -->
 
 <script type="text/javascript">
+    let email = "<?= $this->session->get('email') ?>";
     $(function() {
         getBestSeller()
+        getDiscountItem()
+        getTotChart(email)
+        getTotTimeline(email)
+
+        // $('#cartModal').hide();
+        // $('#showCart').click(function() {
+        //     $('#cartModal').show();
+        // });
+
+        // $('#hideCart').click(function() {
+        //     $('#cartModal').hide();
+        // })
     });
+
+    function toggleSlideover() {
+        document.getElementById('slideover-container').classList.toggle('invisible');
+        document.getElementById('slideover-bg').classList.toggle('opacity-0');
+        document.getElementById('slideover-bg').classList.toggle('opacity-100');
+        document.getElementById('slideover').classList.toggle('translate-x-full');
+    }
 
     function getBestSeller() {
         $.ajax({
-            type: "GET",
             url: "/Proses/getBestSeller",
             async: false,
             dataType: "json",
             success: function(json) {
-                // console.log(json)
-                let row = '';
+                // console.log(json.data)
+                let row = rpPrice = '';
 
-                if (json.success == 0) {
-                    row = `<div class="transition animate-fade-in-down aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                                <img src="/assets/tailwind/img/toko/startOrder.jpg" alt="" class="relative z-10 h-[800px] ">
-                            </div>`;
+                if (json.status == 1) {
+                    $.each(json.data, function(ind, val) {
+                        rpPrice = formatRupiah(val.price, 'Rp. ');
+                        let categoryName = val.categoryName.toLowerCase();
+
+                        row += `<a href="/productShow/` + val.slug + `" class="group">
+                                    <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+                                        <img src="/uploads/product/` + categoryName + `/` + val.image + `" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
+                                    </div>
+                                    <h3 class="mt-4 text-sm text-gray-700 dark:text-white">` + val.name + ` - ` + val.nmColor + ` (` + val.nmSize + `)</h3>
+                                    <p class="my-1 text-lg font-medium text-gray-900 dark:text-secondarybg">` + rpPrice + `</p>
+                                </a>`;
+                    })
                     $('#bastSeller').html(row);
-                    return;
+                    $('#subTotal').html(row);
                 }
-
-                $.each(json.data, function(ind, val) {
-                    let rpPrice = formatRupiah(val.price, 'Rp. ');
-                    // let modalItem = $(".modalItem").attr('id', val.slug)
-                    // console.log(modalItem)
-                    row += `<a href="/productShow/` + val.slug + `" class="group">
-                                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                                    <img src="/uploads/product/` + val.image + `" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                                </div>
-                                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">` + val.name + `</h3>
-                                <p class="my-1 text-lg font-medium text-gray-900 dark:text-secondarybg">` + rpPrice + `</p>
-                            </a>`;
-
-                })
-                $('#bastSeller').html(row);
             }
         })
     }
 
-    /* Fungsi formatRupiah */
-    function formatRupiah(angka, prefix) {
-        var number_string = angka.replace(/[^,\d]/g, '').toString(),
-            split = number_string.split(','),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+    function getDiscountItem() {
+        $.ajax({
+            url: "/Proses/getDiscountItem",
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let row = rpPrice = '';
 
-        // tambahkan titik jika yang di input sudah menjadi angka ribuan
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
+                if (json.status == 1) {
+                    $.each(json.data, function(i, v) {
+                        rpPrice = formatRupiah(v.price_disc, 'Rp. ');
+                        let categoryName = v.name_category.toLowerCase();
+                        row += `<div class="group relative">
+                                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                                        <div class="py-8 px-6">
+                                            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                                                <img src="/uploads/product/` + categoryName + `/` + v.image + `" alt="" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                                            </div>
+                                            <div class="mt-4 flex justify-between">
+                                                <div>
+                                                    <h3 class="text-sm text-gray-700">
+                                                        <a href="/productShow/` + v.slug + `">
+                                                            <span aria-hidden="true" class="absolute inset-0"></span>
+                                                            ` + v.name_product + `
+                                                        </a>
+                                                    </h3>
+                                                    <p class="mt-1 text-sm text-gray-500">` + v.name_color + ` (` + v.name_size + `)</p>
+                                                </div>
+                                                <p class="text-sm font-medium text-gray-900">` + rpPrice + `</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                    })
+                }
+                $('#discountItem').html(row);
+            }
+        })
+    }
 
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    function getTotChart(email) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getTotChart",
+            data: {
+                email: email
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let totChart = "";
+                if (json.status == 1 && json.data['total'] != 0) {
+                    totChart += `<div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">` + json.data['total'] + `
+                                </div>`;
+                }
+                $("#totChart").html(totChart)
+                dataCart(email)
+            }
+        })
+    }
+    
+    function getTotTimeline(email) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getTotTimeline",
+            data: {
+                email: email
+            },
+            async: false,
+            dataType: "json",
+            success: function(json) {
+                // console.log(json)
+                let row = "";
+                if (json.status == 1 && json.data['total'] != 0) {
+                    row += `<div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">` + json.data['total'] + `
+                                </div>`;
+                }
+                $("#totTimeline").html(row)
+                timelineList(email, json.data['timeline_id'])
+            }
+        })
+    }
+
+    function dataCart(email) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getDataCart",
+            data: {
+                email: email
+            },
+            async: false,
+            dataType: "JSON",
+            success: function(json) {
+                // console.log(json.data)
+                let rowCart = btnCheck = ""
+
+                if (json.status == 1) {
+                    $.each(json.data, function(idx, val) {
+                        let categoryName = val.nm_category.toLowerCase();
+                        rowCart += `<li class="flex py-6">
+                                        <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                            <img src="/uploads/product/` + categoryName + `/` + val.image + `" alt="" class="h-full w-full object-cover object-center">
+                                        </div>
+
+                                        <div class="ml-4 flex flex-1 flex-col">
+                                            <div>
+                                                <div class="flex justify-between text-base font-medium text-gray-900">
+                                                    <h3>
+                                                        <a href="#"> ` + ucwords(val.nm_product) + ` </a>
+                                                    </h3>
+                                                    <p class="ml-4">` + formatRupiah(val.tot_price, 'Rp. ') + `</p>
+                                                </div>
+                                                <p class="mt-1 text-sm text-gray-500">` + ucwords(val.nm_color) + ` (` + val.nm_size + `)</p>
+                                            </div>
+                                            <div class="flex flex-1 items-end justify-between text-sm">
+                                                <p class="text-gray-500">Qty ` + val.qty + `</p>
+
+                                                <div class="flex">
+                                                    <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500" onclick="delListCart(` + val.id + `,'` + val.email + `')">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>`;
+                    })
+                    btnCheck += `<a href="/Pages/checkout" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>`;
+                    let subTot = `<p>Subtotal</p> <p>` + formatRupiah(json.data[0]['sub_total'], 'Rp. ') + `</p>`;
+                    $('#subTotalCart').html(subTot);
+                    $('#dataCart').html(rowCart);
+                }
+                $('#btnCheckout').html(btnCheck);
+            }
+        })
+    }
+
+    function timelineList(email, timeline_id) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/getTimelineList",
+            data: {
+                email: email,
+                timelineId: timeline_id
+            },
+            async: false,
+            dataType: "JSON",
+            success: function(json) {
+                console.log(json)
+                if (json.status == 1) {
+                    let row = icontList = timeList = ""
+                    let textList = "Not Fount";
+                    var tahun, bulan, nomorBulan, tgl, waktu;
+                    console.log(json.data)
+                    $.each(json.data, function(idx, val) {
+                        // console.log(idx)
+                        // console.log(val)
+                        var date = new Date(val.dateTimeline);
+                        nomorBulan = date.getMonth();
+                        tahun = date.getFullYear();
+                        bulan = getTheMonth(nomorBulan);
+                        tgl = ("00" + date.getDate()).slice(-2) + " " + bulan + " " + date.getFullYear();
+                        waktu = ("00" + date.getHours()).slice(-2) + ":" + ("00" + date.getMinutes()).slice(-2);
+                        
+                        textList = val.feedback
+                        timeList = tgl + ', ' + waktu;
+                        if (val.stTimeLine == "0") {
+                            icontList = '<i class="fas fa-clock" bg-yellow></i>'; //  verifikasi pembayaran
+                        } else if (val.stTimeLine == "1") {
+                            icontList = '<i class="fas fa-truck-moving bg-blue"></i>'; // pengiriman barang
+                        } else if (val.stTimeLine == "2") {
+                            icontList = '<i class="fas fa-check" bg-blue></i>'; // barang telah sampai
+                        } else {
+                            icontList = '<i class="fas fa-lock bg-red"></i>'; // barang telah sampai
+                        }
+
+                        row += `<li>
+                                    <div class="relative pb-8">
+                                        <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-400" aria-hidden="true"></span>
+                                        <div class="relative flex space-x-3">
+                                            <div>
+                                                <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
+                                                    ${icontList}
+                                                </span>
+                                            </div>
+                                            <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                <div>
+                                                    <p class="text-sm text-gray-500">${textList}</p>
+                                                </div>
+                                                <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                    <time datetime="${timeList}">${timeList}</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                    });
+
+                    if (json.data != "") {
+                        row += `<li>
+                                    <div class="relative pb-8">
+                                        <div class="relative flex space-x-3">
+                                            <div>
+                                                <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+                                                    <i class="fas fa-play"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                    }
+                    $('#timelineList').html(row);
+                }
+            }
+        })
+    }
+
+    function delListCart(id, email) {
+        $.ajax({
+            type: "POST",
+            url: "/Proses/delListCart",
+            data: {
+                id: id
+            },
+            async: false,
+            dataType: "JSON",
+            success: function(json) {
+                if (json.status == 1) {
+                    dataCart(email)
+                    getTotChart(email)
+                }
+            }
+        })
     }
 </script>
 

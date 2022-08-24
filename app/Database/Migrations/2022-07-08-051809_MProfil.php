@@ -2,6 +2,7 @@
 // Harap comment jika tidak melakukan create ke tabel
 
 namespace App\Database\Migrations;
+
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -16,7 +17,11 @@ class MProfil extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
+            'first_name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'last_name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],

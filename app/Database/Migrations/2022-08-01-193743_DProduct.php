@@ -20,33 +20,17 @@ class DProduct extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'category_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'sub_code' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
-            ],
-            'color_id' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'size_id' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'image' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'price' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'weight' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
-            'stock' => [
-                'type'       => 'INT',
-                'constraint' => 11
             ],
             'is_valid' => [
                 'type'       => 'TINYINT',

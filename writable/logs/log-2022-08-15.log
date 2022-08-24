@@ -1,0 +1,247 @@
+<<<<<<< HEAD
+ERROR - 2022-08-15 00:04:38 --> Unknown column 'b.price' in 'field list'
+CRITICAL - 2022-08-15 00:04:38 --> Unknown column 'b.price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 4 APPPATH\Controllers\ProsesAdmin.php(57): CodeIgniter\Database\BaseConnection->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 00:36:11 --> Unknown column 'b.price' in 'field list'
+CRITICAL - 2022-08-15 00:36:11 --> Unknown column 'b.price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 4 APPPATH\Controllers\ProsesAdmin.php(57): CodeIgniter\Database\BaseConnection->query('SELECT (@cnt := @cnt + 1) orderID , a.* FROM (SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+                FROM 
+                    m_category a 
+                    LEFT JOIN m_product b ON a.category_id = b.category_id) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1  ORDER BY a.category_id asc LIMIT 0, 10')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\ProsesAdmin->displayProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProsesAdmin))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+=======
+ERROR - 2022-08-15 00:33:24 --> Unknown column 'email' in 'field list'
+CRITICAL - 2022-08-15 00:33:24 --> Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', NULL, \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', NULL, \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', NULL, \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:09:13 --> Unknown column 'email' in 'field list'
+CRITICAL - 2022-08-15 01:09:13 --> Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:13:09 --> Unknown column 'email' in 'field list'
+CRITICAL - 2022-08-15 01:13:09 --> Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:14:00 --> Unknown column 'email' in 'field list'
+CRITICAL - 2022-08-15 01:14:00 --> Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:14:23 --> Unknown column 'email' in 'field list'
+CRITICAL - 2022-08-15 01:14:23 --> Unknown column 'email' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:17:01 --> Column 'name' cannot be null
+CRITICAL - 2022-08-15 01:17:01 --> Column 'name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'2\', \'159000\', \'318000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:18:12 --> Column 'name' cannot be null
+CRITICAL - 2022-08-15 01:18:12 --> Column 'name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 01:23:06 --> Column 'name' cannot be null
+CRITICAL - 2022-08-15 01:23:06 --> Column 'name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (\'raihanmalikul0@gmail.com\', NULL, \'ali-seris-01\', \'\', \'01\', \'01\', \'1\', \'159000\', \'159000\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `m_cart` (`email`, `name`, `slug`, `description`, `color_id`, `size_id`, `qty`, `price`, `tot_price`) VALUES (:email:, :name:, :slug:, :description:, :color_id:, :size_id:, :qty:, :price:, :tot_price:)', [...], false)
+ 5 APPPATH\Controllers\Proses.php(57): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->saveShopChart()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-15 02:29:33 --> Undefined array key "sub_code"
+in APPPATH\Controllers\Proses.php on line 104.
+ 1 APPPATH\Controllers\Proses.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sub_code"', 'APPPATH\\Controllers\\Proses.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productMaster()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-08-15 02:32:42 --> Unknown column 'a.color_id' in 'group statement'
+CRITICAL - 2022-08-15 02:32:42 --> Unknown column 'a.color_id' in 'group statement'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 
+                                a.sub_code
+                                , a.slug
+                                , b.size_id
+                                , b.color_id
+                                , c.`name` nmColor
+                                , b.price
+                                , b.weight
+                                , b.stock
+                            FROM 
+                                d_product a
+                                LEFT JOIN ds_product b ON a.sub_code = b.sub_code
+                                LEFT JOIN m_color c ON b.color_id = c.color_id
+                            WHERE
+                                a.slug = \'thobe-premium-01\'
+                            GROUP BY a.color_id
+                            ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 
+                                a.sub_code
+                                , a.slug
+                                , b.size_id
+                                , b.color_id
+                                , c.`name` nmColor
+                                , b.price
+                                , b.weight
+                                , b.stock
+                            FROM 
+                                d_product a
+                                LEFT JOIN ds_product b ON a.sub_code = b.sub_code
+                                LEFT JOIN m_color c ON b.color_id = c.color_id
+                            WHERE
+                                a.slug = \'thobe-premium-01\'
+                            GROUP BY a.color_id
+                            ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 
+                                a.sub_code
+                                , a.slug
+                                , b.size_id
+                                , b.color_id
+                                , c.`name` nmColor
+                                , b.price
+                                , b.weight
+                                , b.stock
+                            FROM 
+                                d_product a
+                                LEFT JOIN ds_product b ON a.sub_code = b.sub_code
+                                LEFT JOIN m_color c ON b.color_id = c.color_id
+                            WHERE
+                                a.slug = \'thobe-premium-01\'
+                            GROUP BY a.color_id
+                            ')
+ 4 APPPATH\Controllers\Proses.php(103): CodeIgniter\Database\BaseConnection->query('SELECT 
+                                a.sub_code
+                                , a.slug
+                                , b.size_id
+                                , b.color_id
+                                , c.`name` nmColor
+                                , b.price
+                                , b.weight
+                                , b.stock
+                            FROM 
+                                d_product a
+                                LEFT JOIN ds_product b ON a.sub_code = b.sub_code
+                                LEFT JOIN m_color c ON b.color_id = c.color_id
+                            WHERE
+                                a.slug = \'thobe-premium-01\'
+                            GROUP BY a.color_id
+                            ')
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productMaster()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-08-15 02:48:00 --> Undefined array key "sub_code"
+in APPPATH\Controllers\Proses.php on line 163.
+ 1 APPPATH\Controllers\Proses.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sub_code"', 'APPPATH\\Controllers\\Proses.php', 163)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Proses->productColor()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proses))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+>>>>>>> 860ead5bcd3d558f940e525421f98f4a3e4f565e

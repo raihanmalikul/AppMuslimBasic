@@ -16,7 +16,7 @@
             <div class="mb-12 w-full px-4 md:w-1/3">
                 <h3 class="mb-5 text-xl font-semibold text-white">Post Category</h3>
                 <ul class="text-slate-300">
-                    <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Hijap</a></li>
+                    <!-- <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Hijap</a></li> -->
                     <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Gamis</a></li>
                     <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Kemeja</a></li>
                     <li><a href="#" class="mb-3 inline-block text-base hover:text-primary">Celana</a></li>
@@ -25,11 +25,11 @@
             <div class="mb-12 w-full px-4 md:w-1/3">
                 <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
                 <ul class="text-slate-300">
-                    <li><a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a></li>
-                    <li><a href="#best" class="mb-3 inline-block text-base hover:text-primary">Best Seller</a></li>
-                    <li><a href="#discount" class="mb-3 inline-block text-base hover:text-primary">Item Discount</a></li>
-                    <li><a href="#reting" class="mb-3 inline-block text-base hover:text-primary">Rating</a></li>
-                    <li><a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a></li>
+                    <li><a href="/#home" class="mb-3 inline-block text-base hover:text-primary">Home</a></li>
+                    <li><a href="/#best" class="mb-3 inline-block text-base hover:text-primary">Best Seller</a></li>
+                    <li><a href="/#discount" class="mb-3 inline-block text-base hover:text-primary">Item Discount</a></li>
+                    <li><a href="/#reting" class="mb-3 inline-block text-base hover:text-primary">Rating</a></li>
+                    <li><a href="/#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a></li>
                 </ul>
             </div>
         </div>
