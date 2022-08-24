@@ -17,7 +17,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Bahannya enak lembut",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -28,7 +28,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "lambat pemesanannya",
                 "score" => 2,
                 "created_at" => TIme::now()
             ],
@@ -39,7 +39,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Sesuai dengan gambara barangnya",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -50,7 +50,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Tidak bisa menghubungi admin via web ini",
                 "score" => 3,
                 "created_at" => TIme::now()
             ],
@@ -61,7 +61,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "esuai dengan gambara barangnya",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -72,7 +72,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "esuai dengan gambara barangnya",
                 "score" => 4,
                 "created_at" => TIme::now()
             ],
@@ -83,7 +83,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Baranya bagus",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -94,7 +94,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Cepat pemesanannya",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -105,7 +105,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Cepat pemerosesannnya",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -116,7 +116,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Sesui dengan gambar",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -127,7 +127,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Barangnya bagus",
                 "score" => 5,
                 "created_at" => TIme::now()
             ],
@@ -138,7 +138,7 @@ class MReting extends Seeder
                 "sub_code" => "sc04",
                 "color_id" => "02",
                 "size_id" => "02",
-                "description" => "",
+                "description" => "Cepat sampai",
                 "score" => 4,
                 "created_at" => TIme::now()
             ],
