@@ -187,7 +187,7 @@
                 </div>
 
                 <!-- Payment -->
-                <div class="mt-10 border-t border-gray-200 pt-10">
+                <!-- <div class="mt-10 border-t border-gray-200 pt-10">
                     <h2 class="text-lg font-medium text-gray-900">Payment Via bank</h2>
 
                     <fieldset class="mt-4">
@@ -216,7 +216,7 @@
                             <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Order summary -->
@@ -277,7 +277,7 @@
 
                     <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
                         <!-- <button type="button" id="saveCheckout" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Confirm order</button> -->
-                        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#confirmOrder">Confirm order</button>
+                        <button type="button" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500" data-bs-toggle="modal" data-bs-target="#confirmOrder">Confirm order</button>
                     </div>
                 </div>
             </div>
@@ -291,24 +291,55 @@
 <!-- END Footer -->
 
 <!-- Modal -->
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog relative w-auto pointer-events-none">
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="confirmOrder" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmOrderLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
         <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
             <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
                 <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel"> Payment Order</h5>
                 <button type="button" class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body relative p-4">
-                <div class="flex justify-center">
-                    <div class="mb-3 w-96">
+                <!-- Payment -->
+                <div class="mt-2 pt-2">
+                    <h2 class="text-lg font-medium text-gray-900">Payment Via bank</h2>
+
+                    <fieldset class="mt-1">
+                        <legend class="sr-only">Payment type</legend>
+                        <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                            <div class="flex items-center">
+                                <input id="bni" name="noReq" value="bni" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <label for="bni" class="ml-3 block text-sm font-medium text-gray-700"> BNI </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input id="mandiri" name="noReq" value="mandiri" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <label for="mandiri" class="ml-3 block text-sm font-medium text-gray-700"> MANDIRI
+                                </label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input id="bca" name="noReq" value="bca" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <label for="bca" class="ml-3 block text-sm font-medium text-gray-700"> BCA </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
+                        <div class="col-span-4">
+                            <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="mb-3">
                         <label for="filePayment" class="form-label inline-block mb-2 text-gray-700">Upload Evidence Payment</label>
-                        <input class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="filePayment">
+                        <input type="file" id="filePayment" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required>
                     </div>
                 </div>
             </div>
             <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="saveCheckout" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">Save</button>
+                <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+                <button type="button" id="saveCheckout" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1"><i class="fas fa-save"></i> Save</button>
             </div>
         </div>
     </div>
@@ -349,20 +380,21 @@
         })
 
         $('#saveCheckout').click(function() {
-            let email           = $("#emailAddress").val()
-            let firstName       = $("#firstName").val()
-            let lastName        = $("#lastName").val()
-            let name            = (firstName != "") ? firstName : "" + (lastName != "") ? "-"+lastName : ""
+            let email           = $("#emailAddress").val();
+            let firstName       = $("#firstName").val();
+            let lastName        = $("#lastName").val();
+            let name            = (firstName != "") ? firstName : "" + (lastName != "") ? "-"+lastName : "";
             let customerId      = $("#customerId").val()
-            let phone           = $("#phone").val()
-            let regionId        = $("#regionId").val()
-            let cityId          = $("#cityId").val()
-            let postalCode      = $("#postalCode").val()
-            let total           = $("#totalVal").val()
-            let deliveryCode    = $("#delivery_code").val()
-            let address         = $("#address").val()
-            let noReqVal        = $("#noReqVal").text()
+            let phone           = $("#phone").val();
+            let regionId        = $("#regionId").val();
+            let cityId          = $("#cityId").val();
+            let postalCode      = $("#postalCode").val();
+            let total           = $("#totalVal").val();
+            let deliveryCode    = $("#delivery_code").val();
+            let address         = $("#address").val();
+            let noReqVal        = $("#noReqVal").text();
             let orderPro        = $("input[name='orderPro[]']").map(function(){return $(this).val();}).get();
+            let filePayment     = $("#filePayment").val();
 
             // console.log(email)
             // console.log(name)
