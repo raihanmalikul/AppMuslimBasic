@@ -24,6 +24,10 @@ class MPayment extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'delivery_code' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'notes' => [
                 'type'       => 'TEXT'
             ],
@@ -39,9 +43,17 @@ class MPayment extends Migration
                 'type'       => 'DATETIME',
                 'null'       => true
             ],
+            'rekening' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'waiting_time' => [
                 'type'       => 'DATETIME',
                 'null'       => true
+            ],
+            'feedback' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'status' => [
                 'type'       => 'TINYINT',
