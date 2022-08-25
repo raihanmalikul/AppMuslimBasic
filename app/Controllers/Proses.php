@@ -23,8 +23,6 @@ class Proses extends BaseController
         $this->mCategory    = new Models\MCategoryModel();
         $this->mCart        = new Models\MCartModel();
 
-        helper(['url']);
-
         // $this->session = \Config\Services::session();
         // $username = $this->session->get("logged_in");
         // if (empty($username)) {
@@ -350,6 +348,8 @@ class Proses extends BaseController
                                 GROUP BY
                                     c.sub_code
                                     ")->getResultArray();
+        
+        $arry = [];
         foreach ($query as $each) {
             $data = [
                 'name_product' => $each["name_product"],
@@ -364,10 +364,12 @@ class Proses extends BaseController
                 'price_disc' => $each["price_disc"],
                 'percent_disc' => $each["percent_disc"],
             ];
+            
+            array_push($arry, $data);
         }
 
-        if ($data) {
-            $response = ['status' => 1, 'msg' => "success", 'data' => $data];
+        if ($arry) {
+            $response = ['status' => 1, 'msg' => "success", 'data' => $arry];
         } else {
             $response = ['status' => 0, 'msg' => "fail", 'data' => []];
         }
@@ -400,10 +402,14 @@ class Proses extends BaseController
                                 FROM m_timeline a
                                 WHERE a.email = '$email'
                                 GROUP BY a.timeline_id")->getResultArray();
-        $data = array(
-            'total' => $res[0]['total'],
-            'timeline_id' => $res[0]['timeline_id'],
-        );
+        if (count($res) > 0) {
+            $data = array(
+                'total' => $res[0]['total'],
+                'timeline_id' => $res[0]['timeline_id'],
+            );
+        } else {
+            $data = [];
+        }
 
         if ($data) {
             $response = ['status' => 1, 'msg' => "success", 'data' => $data];
@@ -620,6 +626,87 @@ class Proses extends BaseController
         return $this->response->setJSON($response);
     }
 
+    public function uploadFile()
+    {
+        helper(['form', 'url']);
+        // $validateImage = $this->validate([
+        //     'filePayment' => [
+        //         'uploaded[filePayment]',
+        //         'mime_in[filePayment, image/png, image/jpg, image/jpeg]',
+        //         'max_size[filePayment, 4096]'
+        //     ],
+        // ]);
+        
+        // if ($validateImage) {
+            $email          = $this->request->getVar("emailVal");
+            $deliveryCode   = $this->request->getVar("delCode");
+            $total          = $this->request->getVar("totalVal");
+            $account        = $this->request->getVar("noReq");
+            $imageFile      = $this->request->getFile('filePayment');
+            
+            $timeNow = TIme::now();
+            $timePlusOneHour = new Time('+1 hour');
+
+            $profile_image = $imageFile->getName();
+
+            $payment_id = "PAYID" . $timeNow->toLocalizedString('yyyyMMddHHmmss');
+            // Renaming file before upload
+            $temp = explode(".",$profile_image);
+            $newFilename = $payment_id . '.' . end($temp);
+            $pathFile = ROOTPATH ."public/uploads/evidencePay/". $timeNow->toLocalizedString('yyyyMMdd');
+
+            if (!file_exists($pathFile)) {
+                mkdir($pathFile, 0777, true);
+            }
+
+            if ($imageFile->move($pathFile, $newFilename)) {
+                // insert to tbl m_payment
+                $dataPayment = array(
+                    'email' => $email,
+                    'payment_id' => $payment_id,
+                    'total_price' => $total,
+                    'evidence_payment' => $pathFile ."/". $newFilename,
+                    'evidence_date' => $timeNow,
+                    'waiting_time' => $timePlusOneHour,
+                    'delivery_code' => $deliveryCode,
+                    'rekening' => $account,
+                    'feedback' => "Menuggu verifikasi pembayaran",
+                    'status' => 0
+                );
+                // insert data payment
+                $insPayment = $this->db->table("m_payment")->insert($dataPayment);
+                if ($insPayment) {
+                    $response = [
+                        'status' => 1,
+                        'msg' => "Data dan file tersimpan",
+                        'data' => []
+                    ];
+                } else {
+                    $response = [
+                        'status' => 0,
+                        'msg' => "Data dan file gagal tersimpan",
+                        'data' => []
+                    ];
+                }
+                return $this->response->setJSON($response);
+            } else {
+                $response = [
+                    'status' => 0,
+                    'msg' => "Failed to upload Image",
+                    'data' => []
+                ];
+                return $this->response->setJSON($response);
+            }
+        // } else {
+        //     $response = [
+        //         'status' => 0,
+        //         'msg' => "Periksa size dan format file hanya (jpg,jpeg,png)",
+        //         'data' => []
+        //     ];
+        //     return $this->response->setJSON($response);
+        // }
+    }
+
     public function insListChart()
     {
         $email          = $this->request->getVar("email");
@@ -630,11 +717,10 @@ class Proses extends BaseController
         $cityId         = $this->request->getVar("cityId");
         $postalCode     = $this->request->getVar("postalCode");
         $total          = $this->request->getVar("total");
-        $deliveryCode   = $this->request->getVar("deliveryCode");
-        $account        = $this->request->getVar("account");
         $address        = $this->request->getVar("address");
         $orderPro       = $this->request->getVar("orderPro");
-        $file           = $this->request->getFile('filePayment');
+
+        $timeNow = TIme::now();
 
         $getOrdi = $this->db->table("m_order")->select('order_id')->orderBy('order_id', 'DESC')->get()->getRowArray();
         if ($getOrdi) {
@@ -643,25 +729,11 @@ class Proses extends BaseController
             $formatOrderId = "ORDI0001";
         }
 
-        $getPayId = $this->db->table("m_payment")->select('payment_id')->orderBy('payment_id', 'DESC')->get()->getRowArray();
-        if ($getPayId) {
-            $formatPayId = "PAYID". $getPayId['payment_id'] + "1";
-        } else {
-            $formatPayId = "PAYID0001";
-        }
-        
-        $getTimelineId = $this->db->table("m_timeline")->select('timeline_id')->orderBy('timeline_id', 'DESC')->get()->getRowArray();
         $getCart = $this->db->table("m_cart")->whereIn('id', $orderPro)->get()->getResultArray();
         $insTimeline = [];
         foreach ($getCart as $each) {
-            if ($getTimelineId) {
-                $formatTimelineId = "TIME". $getPayId['m_timeline'] + "1";
-            } else {
-                $formatTimelineId = "TIME0001";
-            }
-
             $data = array(
-                'timeline_id' => $formatTimelineId,
+                'timeline_id' => "TIME". $timeNow->toLocalizedString('yyyyMMddHHmmss'),
                 'order_id' => $formatOrderId,
                 'slug' => $each['slug'],
                 'email' => $each['email'],
@@ -671,11 +743,11 @@ class Proses extends BaseController
 
             array_push($insTimeline, $data);
         }
+
         // insert data timeline
         $insertTime = $this->db->table("m_timeline")->insertBatch($insTimeline);
 
-        $timeNow = TIme::now();
-        $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId . $formatPayId;
+        $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId;
 
         // insert to tbl m_order
         $dataOrder = array(
@@ -689,57 +761,21 @@ class Proses extends BaseController
             'province_id' => $regionId,
             'city_id' => $cityId,
             'postal_code' => $postalCode,
-            'total' => $total,
+            'subTotal' => $total,
             'status_order' => 0
         );
         // insert data order
         $insOrder   = $this->db->table("m_order")->insert($dataOrder);
 
-        $timePlusOneHour = new Time('+1 hour');
-
-        $profile_image = $file->getName();
-
-        // Renaming file before upload
-        $temp = explode(".",$profile_image);
-        $newFilename = round(microtime(true)) . '.' . end($temp);
-        $pathFile = "/uploads/evidencePay/". mkdir($timeNow->toLocalizedString('yyyyMMdd'));
-
-        if ($file->move($pathFile, $newFilename)) {
-            // insert to tbl m_payment
-            $dataPayment = array(
-                'email' => $email,
-                'payment_id' => $formatPayId,
-                'total_price' => $total,
-                'evidence_payment' => $pathFile ."/". $newFilename,
-                'evidence_date' => $timeNow,
-                'waiting_time' => $timePlusOneHour,
-                'delivery_code' => $deliveryCode,
-                'rekening' => $account,
-                'feedback' => "Menuggu verifikasi pembayaran",
-                'status' => 0
-            );
-            // insert data payment
-            $insPayment = $this->db->table("m_payment")->insert($dataPayment);
-        } else {
-            $response = [
-                'success' => 0,
-                'msg' => "Failed to upload Image",
-                'data' => []
-            ];
-
-            return $this->response->setJSON($response);
-        }
-
         // delete data cart
         $delChart   = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
 
-        if ($insOrder && $insPayment && $insertTime && $delChart) {
+        if ($insOrder && $insertTime && $delChart) {
             $response = [
                 'status' => 1, 
                 'msg' => "success",
                 'data' => [
                             "Order" => $insOrder, 
-                            "payment" => $insPayment, 
                             "m_timeline" => $insertTime, 
                             "chart" => $delChart
                         ]
@@ -818,10 +854,7 @@ class Proses extends BaseController
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => "origin=" . $origin . "&destination=" . $des . "&weight=" . $weight . "&courier=" . $courier,
-            CURLOPT_HTTPHEADER => array(
-                "content-type: application/x-www-form-urlencoded",
-                "key: 72c4d5880a5cfdb5db5259bbea568d7d"
-            ),
+            CURLOPT_HTTPHEADER => array("content-type: application/x-www-form-urlencoded", "key: 0b90592ec39848eb4ce21d140b19c8c8" ),
         ));
 
         $response = curl_exec($curl);

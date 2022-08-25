@@ -144,79 +144,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-10 border-t border-gray-200 pt-10">
-                    <fieldset>
-                        <legend class="text-lg font-medium text-gray-900">Delivery method</legend>
-
-                        <div class="mt-4 space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                            <div class="flex items-center">
-                                <input id="pos" name="courier" type="radio" value="pos" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="pos" class="ml-3 block text-sm font-medium text-gray-700"> POS INDONESIA
-                                </label>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="jne" name="courier" type="radio" value="jne" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="jne" class="ml-3 block text-sm font-medium text-gray-700"> JNE </label>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="tiki" name="courier" type="radio" value="tiki" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="tiki" class="ml-3 block text-sm font-medium text-gray-700"> TIKI </label>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4" id="courier">
-                            <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none ring-2 ring-indigo-500">
-                                <input type="radio" name="delivery-method" value="Standard" class="sr-only" aria-labelledby="delivery-method-0-label" aria-describedby="delivery-method-0-description-0 delivery-method-0-description-1">
-                                <div class="flex-1 flex">
-                                    <div class="flex flex-col">
-                                        <span id="delivery-method-0-label" class="block text-sm font-medium text-gray-900"> Standard </span>
-                                        <span id="delivery-method-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"> 0 Hari </span>
-                                        <span id="delivery-method-0-description-1" class="mt-6 text-sm font-medium text-gray-900"> Rp. 0 </span>
-                                    </div>
-                                </div>
-                                <div class="h-5 w-5 text-indigo-600 hidden">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                                <div class="absolute -inset-px rounded-lg border-2 pointer-events-none border-indigo-500" aria-hidden="true"></div>
-                            </label>
-                        </div>
-                    </fieldset>
-                </div>
-
-                <!-- Payment -->
-                <!-- <div class="mt-10 border-t border-gray-200 pt-10">
-                    <h2 class="text-lg font-medium text-gray-900">Payment Via bank</h2>
-
-                    <fieldset class="mt-4">
-                        <legend class="sr-only">Payment type</legend>
-                        <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                            <div class="flex items-center">
-                                <input id="bni" name="noReq" value="bni" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="bni" class="ml-3 block text-sm font-medium text-gray-700"> BNI </label>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="mandiri" name="noReq" value="mandiri" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="mandiri" class="ml-3 block text-sm font-medium text-gray-700"> MANDIRI
-                                </label>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="bca" name="noReq" value="bca" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="bca" class="ml-3 block text-sm font-medium text-gray-700"> BCA </label>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
-                        <div class="col-span-4">
-                            <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
             <!-- Order summary -->
@@ -271,7 +198,6 @@
                         <div class="flex items-center justify-between border-t border-gray-200 pt-6">
                             <dt class="text-base font-medium">Total</dt>
                             <dd class="text-base font-medium text-gray-900" id="total">Rp. 0</dd>
-                            <input type="hidden" name="totalVal" id="totalVal">
                         </div>
                     </dl>
 
@@ -292,7 +218,7 @@
 
 <!-- Modal -->
 <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="confirmOrder" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmOrderLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+    <div class="modal-dialog modal-lg modal-dialog-centered relative w-auto pointer-events-none">
         <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
             <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
                 <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel"> Payment Order</h5>
@@ -300,42 +226,94 @@
             </div>
             <div class="modal-body relative p-4">
                 <!-- Payment -->
-                <div class="mt-2 pt-2">
-                    <h2 class="text-lg font-medium text-gray-900">Payment Via bank</h2>
+                <form method="post" id="upload_image_form" enctype="multipart/form-data">
+                    <div class="border-gray-200 pt-10">
+                        <fieldset>
+                            <legend class="text-lg font-medium text-gray-900">Delivery method</legend>
 
-                    <fieldset class="mt-1">
-                        <legend class="sr-only">Payment type</legend>
-                        <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                            <div class="flex items-center">
-                                <input id="bni" name="noReq" value="bni" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="bni" class="ml-3 block text-sm font-medium text-gray-700"> BNI </label>
+                            <div class="mt-4 space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                                <div class="flex items-center">
+                                    <input id="pos" name="courier" type="radio" value="pos" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="pos" class="ml-3 block text-sm font-medium text-gray-700"> POS INDONESIA
+                                    </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="jne" name="courier" type="radio" value="jne" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="jne" class="ml-3 block text-sm font-medium text-gray-700"> JNE </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="tiki" name="courier" type="radio" value="tiki" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="tiki" class="ml-3 block text-sm font-medium text-gray-700"> TIKI </label>
+                                </div>
                             </div>
 
-                            <div class="flex items-center">
-                                <input id="mandiri" name="noReq" value="mandiri" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="mandiri" class="ml-3 block text-sm font-medium text-gray-700"> MANDIRI
+                            <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4" id="courier">
+                                <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none ring-2 ring-indigo-500">
+                                    <input type="radio" name="delivery-method" value="Standard" class="sr-only" aria-labelledby="delivery-method-0-label" aria-describedby="delivery-method-0-description-0 delivery-method-0-description-1">
+                                    <div class="flex-1 flex">
+                                        <div class="flex flex-col">
+                                            <span id="delivery-method-0-label" class="block text-sm font-medium text-gray-900"> Standard </span>
+                                            <span id="delivery-method-0-description-0" class="mt-1 flex items-center text-sm text-gray-500"> 0 Hari </span>
+                                            <span id="delivery-method-0-description-1" class="mt-6 text-sm font-medium text-gray-900"> Rp. 0 </span>
+                                        </div>
+                                    </div>
+                                    <div class="h-5 w-5 text-indigo-600 hidden">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="absolute -inset-px rounded-lg border-2 pointer-events-none border-indigo-500" aria-hidden="true"></div>
                                 </label>
                             </div>
+                        </fieldset>
+                    </div>
+                    <div class="mt-2 pt-2">
+                        <h2 class="text-lg font-medium text-gray-900">Payment Via bank</h2>
 
-                            <div class="flex items-center">
-                                <input id="bca" name="noReq" value="bca" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="bca" class="ml-3 block text-sm font-medium text-gray-700"> BCA </label>
+                        <fieldset class="mt-1">
+                            <legend class="sr-only">Payment type</legend>
+                            <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                                <div class="flex items-center">
+                                    <input id="bni" name="noReq" value="bni" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="bni" class="ml-3 block text-sm font-medium text-gray-700"> BNI </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="mandiri" name="noReq" value="mandiri" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="mandiri" class="ml-3 block text-sm font-medium text-gray-700"> MANDIRI
+                                    </label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input id="bca" name="noReq" value="bca" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                    <label for="bca" class="ml-3 block text-sm font-medium text-gray-700"> BCA </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
+                            <div class="col-span-4">
+                                <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
+                                <input type="hidden" id="delCode" name="delCode">
+                                <input type="hidden" id="totalVal" name="totalVal">
+                                <input type="hidden" id="emailVal" name="emailVal">
                             </div>
                         </div>
-                    </fieldset>
-
-                    <div class="mt-6 grid grid-cols-4 gap-y-6 gap-x-4">
-                        <div class="col-span-4">
-                            <h3 class="font-medium leading-tight text-1xl mt-0 mb-2">No Rekening : <span id="noReqVal">0</span></h3>
+                    </div>
+                    <div class="mt-6">
+                        <div class="mb-3">
+                            <label for="filePayment" class="form-label inline-block mb-2 text-gray-700">Upload Evidence Payment</label>
+                            <div class="grid grid-cols-4">
+                                <div class="col-span-3">
+                                    <input type="file" id="filePayment" name="filePayment" multiple="true" onchange="onFileUpload(this);" accept="image/*" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required>
+                                </div>
+                                <div class="pl-6">
+                                    <button type="button" id="uploadFile" class="form-control block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"><i class="fas fa-upload"></i> Upload</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-6">
-                    <div class="mb-3">
-                        <label for="filePayment" class="form-label inline-block mb-2 text-gray-700">Upload Evidence Payment</label>
-                        <input type="file" id="filePayment" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
                 <button type="button" class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal"><i class="fas fa-times"></i> Close</button>
@@ -364,22 +342,69 @@
         });
 
         $('#noReqVal').html('1345658765432')
+        $('#account').val('1345658765432')
         $('input[name="noReq"]').change(function() {
             let val = $(this).val();
             console.log(val)
-
+            
             if (val == 'bni') {
                 $('#noReqVal').html('1345658765432')
+                $('#account').val('1345658765432')
             } else if (val == 'mandiri') {
                 $('#noReqVal').html('1630000123345')
+                $('#account').val('1630000123345')
             } else if (val == 'bca') {
                 $('#noReqVal').html('7345029342345')
+                $('#account').val('7345029342345')
             } else {
+                $('#account').val('0')
                 $('#noReqVal').html('0')
             }
         })
 
-        $('#saveCheckout').click(function() {
+        $('#uploadFile').click(function() {
+            if ($('#filePayment').val() == '') {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Upload gagal',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            } else {
+                $.ajax({
+                    url: "/Proses/uploadFile",
+                    type: "POST",
+                    data: new FormData(document.getElementById("upload_image_form")),
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    dataType: "json",
+                    success: function (json) {
+                        console.log(json.msg);
+                        if (json.status == 1) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Berhasil Upload.',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'Gagal Upload. ' +json.msg,
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+                    }
+                });
+            }
+        })
+
+        $("#saveCheckout").click(function() {
             let email           = $("#emailAddress").val();
             let firstName       = $("#firstName").val();
             let lastName        = $("#lastName").val();
@@ -392,9 +417,7 @@
             let total           = $("#totalVal").val();
             let deliveryCode    = $("#delivery_code").val();
             let address         = $("#address").val();
-            let noReqVal        = $("#noReqVal").text();
             let orderPro        = $("input[name='orderPro[]']").map(function(){return $(this).val();}).get();
-            let filePayment     = $("#filePayment").val();
 
             // console.log(email)
             // console.log(name)
@@ -408,6 +431,7 @@
             // console.log(address)
             // console.log(noReqVal)
             // console.log(orderPro)
+            // console.log(filePayment)
             // return
 
             $.ajax({
@@ -423,7 +447,6 @@
                     postalCode: postalCode,
                     total: total,
                     deliveryCode: deliveryCode,
-                    account: noReqVal,
                     address: address,
                     orderPro: orderPro
                 },
@@ -461,6 +484,17 @@
         })
     });
 
+    function onFileUpload(input, id) {
+        id = id || '#ajaxImgUpload';
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(id).attr('src', e.target.result).width(300)
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
     function showSelectedpos(e) {
         if (this.checked) {
             const delivery = document.querySelector('input[name="deliverypos"]:checked');
@@ -470,7 +504,7 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddenpos")
                 const bor = el.querySelector("#borHidpos")
-                
+                const delCode = el.querySelector("#delivery_code").value
                 
                 if (el == e.path[1]) {
                     e.checked = "checked";
@@ -480,7 +514,7 @@
                     bor.classList.add('border-indigo-500');
                     
                     const sub = el.querySelector('#subTot').value
-                    const val = el.querySelector('#costValpos').innerText
+                    const val = el.querySelector('#costValFixpos').value
                     const ins = parseInt(val) - (90 / 100 * parseInt(val))
                     const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
     
@@ -494,6 +528,7 @@
                     $('#insurance').html(insx);
                     $('#total').html(totx);
                     $('#totalVal').val(tot);
+                    $('#delCode').val(delCode);
 
                 } else {
                     e.checked = false;
@@ -517,6 +552,7 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddenjne")
                 const bor = el.querySelector("#borHidjne")
+                const delCode = el.querySelector("#delivery_code").value
 
                 
                 if (el == e.path[1]) {
@@ -527,7 +563,7 @@
                     bor.classList.add('border-indigo-500');
                     
                     const sub = el.querySelector('#subTot').value
-                    const val = el.querySelector('#costValjne').innerText
+                    const val = el.querySelector('#costValFixjne').value
                     const ins = parseInt(val) - (90 / 100 * parseInt(val))
                     const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
     
@@ -541,6 +577,7 @@
                     $('#insurance').html(insx);
                     $('#total').html(totx);
                     $('#totalVal').val(tot);
+                    $('#delCode').val(delCode);
                 } else {
                     e.checked = false;
                     el.classList.remove('ring-2');
@@ -563,6 +600,7 @@
                 const el = labDelMet[i];
                 const hide = el.querySelector("#svgHiddentiki")
                 const bor = el.querySelector("#borHidtiki")
+                const delCode = el.querySelector("#delivery_code").value
 
                 
                 if (el == e.path[1]) {
@@ -573,7 +611,7 @@
                     bor.classList.add('border-indigo-500');
                     
                     const sub = el.querySelector('#subTot').value
-                    const val = el.querySelector('#costValtiki').innerText
+                    const val = el.querySelector('#costValFixtiki').value
                     const ins = parseInt(val) - (90 / 100 * parseInt(val))
                     const tot = parseInt(sub) + parseInt(val) + parseInt(ins)
     
@@ -587,6 +625,7 @@
                     $('#insurance').html(insx);
                     $('#total').html(totx);
                     $('#totalVal').val(tot);
+                    $('#delCode').val(delCode);
                 } else {
                     e.checked = false;
                     el.classList.remove('ring-2');
@@ -615,6 +654,7 @@
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
                         $('#emailAddress').val(val.email);
+                        $('#emailVal').val(val.email);
                         $('#customerId').val(val.id);
                         $('#firstName').val(val.first_name);
                         $('#lastName').val(val.last_name);
@@ -793,7 +833,7 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                console.log(json.data)
+                // console.log(json.data)
                 let rowCart = ""
 
                 if (json.status == 1) {

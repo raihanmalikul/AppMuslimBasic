@@ -16,6 +16,10 @@ class MTimeline extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'timeline_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'order_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255
