@@ -67,3 +67,8 @@
     --tw-bg-opacity: 1;
     background-color: rgb(128 128 0 / var(--tw-bg-opacity));
   }
+
+  .bg-\[\#111827\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  }

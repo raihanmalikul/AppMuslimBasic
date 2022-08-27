@@ -861,7 +861,7 @@
                                                     <h3>
                                                         <a href="#"> ` + ucwords(val.nm_product) + ` </a>
                                                     </h3>
-                                                    <p class="ml-4">` + formatRupiah(val.tot_price, 'Rp. ') + `</p>
+                                                    <p class="ml-4">` + formatRupiah(val.price, 'Rp. ') + `</p>
                                                 </div>
                                                 <p class="mt-1 text-sm text-gray-500">` + ucwords(val.nm_color) + ` (` + val.nm_size + `)</p>
                                             </div>

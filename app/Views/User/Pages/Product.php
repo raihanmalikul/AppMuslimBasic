@@ -150,6 +150,10 @@
                 <input type="hidden" name="name" id="namePro">
                 <input type="hidden" name="description" id="description">
                 <input type="hidden" name="sub_code" id="subCode">
+                <input type="hidden" name="categoryId" id="categoryId">
+                <input type="hidden" name="productId" id="productId">
+                <input type="hidden" name="weight" id="weight">
+                <input type="hidden" name="dsId" id="dsId">
                 <!-- Colors -->
                 <div>
                     <h3 class="text-sm text-gray-900 font-medium">Color</h3>
@@ -211,19 +215,6 @@
                     <p class="text-base text-gray-900" id="desc">Not fount</p>
                 </div>
             </div>
-
-            <!-- <div class="mt-10">
-            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
-
-            <div class="mt-4">
-                <ul role="list" class="pl-4 list-disc text-sm space-y-2" id="highlights">
-                    <li class="text-gray-400"><span class="text-gray-600">Not fount</span></li>
-                    <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                    <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                    <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
-                </ul>
-            </div>
-        </div> -->
 
             <div class="mt-10">
                 <h2 class="text-sm font-medium text-gray-900">Details</h2>
@@ -356,63 +347,20 @@
         });
 
         getMaster(slug)
-        // getDetail(slug)
-        // buttonSize();
-        // console.log(color_id)
-        // let cekColor = $("#color_" + color_id).attr("checked", true)
-        // console.log(cekColor)
-
-        // $('#chekingForm').validate({
-        //     rules: {
-        //         color_id: {
-        //             required: true
-        //         },
-        //         size_id: {
-        //             required: true
-        //         },
-        //     },
-        //     messages: {
-        //         color_id: {
-        //             required: "Color cannot be empty"
-        //         },
-        //         size_id: {
-        //             required: "Size cannot be empty"
-        //         }
-        //     },
-        //     errorElement: 'span',
-        //     errorPlacement: function(error, element) {
-        //         error.addClass('text-xs text-red-500');
-        //         element.closest('.form-group').append(error);
-        //     },
-        //     highlight: function(element, errorClass, validClass) {
-        //         $(element).addClass('is-invalid');
-        //     },
-        //     unhighlight: function(element, errorClass, validClass) {
-        //         $(element).removeClass('is-invalid');
-        //     }
-        // });
 
         $("#saveShop").click(function() {
             let description = $('input[name="description"]').val()
+            let productId = $('input[name="productId"]').val()
+            let categoryId = $('input[name="categoryId"]').val()
+            let weight = $('input[name="weight"]').val()
             let namePro = $('input[name="name"]').val()
             let price = $('input[name="price"]').val()
             let size_id = $('input[name="size_id"]:checked').val()
             let color_id = $('input[name="color_id"]:checked').val()
             let qty = $('input[name="qty"]').val()
+            let dsId = $('input[name="dsId"]').val()
 
             let totPrice = qty * price;
-
-            // let data = $("#formAddProducts").serialize();
-
-            // console.log(description);
-            // console.log(price);
-            // console.log(size_id);
-            // console.log(color_id);
-            // console.log(qty);
-            // console.log(email);
-            // console.log(slug);
-            // console.log(namePro);
-            // console.log(totPrice);
 
             $.ajax({
                 type: "POST",
@@ -427,6 +375,10 @@
                     qty: qty,
                     totPrice: totPrice,
                     description: description,
+                    weight: weight,
+                    categoryId: categoryId,
+                    productId: productId,
+                    dsId: dsId
                 },
                 async: false,
                 dataType: "json",
@@ -475,15 +427,19 @@
             async: false,
             dataType: "json",
             success: function(json) {
-                // console.log(json.data)
+                console.log(json.data)
                 let des = dtl = namePro = prName = listHig = nameTag = price = priceInp = stock = rowColor = active = checked = "";
+                let productId = categoryId = weight = dsId = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
                         des = val.description;
                         dtl = val.detail;
                         namePro = val.name
                         prName = ucwords(val.name);
-
+                        productId = val.product_id
+                        categoryId = val.category_id
+                        weight = val.weight
+                        dsId = val.dsId
                         // listHig += `<li class="text-gray-400"><span class="text-gray-600"></span></li>`;
 
                         nameTag += `<ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -507,7 +463,9 @@
                     $("#description").val(des);
                     $("#detail").html(dtl);
                     $("#productName").html(prName);
-                    // $("#highlights").html(listHig);
+                    $("#productId").val(productId);
+                    $("#categoryId").val(categoryId);
+                    $("#weight").val(weight);
                 }
             }
         })
@@ -630,15 +588,9 @@
                     const sizeCek = document.querySelector('#sizeCek');
                     sizeCek.innerHTML = data
                         .map(
-                            (val) => `<!-- Active: "ring-2 ring-indigo-500" -->
-                                        <label id="cekSize" onclick="getPriceStock('${subCode}', '${colorId}', '${val.size_id}')" class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
+                            (val) => `<label id="cekSize" onclick="getPriceStock('${subCode}', '${colorId}', '${val.size_id}')" class="group relative border rounded-md py-3 px-4 flex items-center justify-center text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 bg-white shadow-sm text-gray-900 cursor-pointer">
                                             <input type="radio" name="size_id" value="${val.size_id}" require class="sr-only" aria-labelledby="size_id-7-label">
                                             <span id="size_id-7-label"> ${val.nm_size} </span>
-
-                                            <!--
-                                                Active: "border", Not Active: "border-2"
-                                                Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                            -->
                                             <span id="borSize" class="absolute -inset-px rounded-md pointer-events-none border-indigo-500" aria-hidden="true"></span>
                                         </label>`
                         ).join(' ');
@@ -703,17 +655,19 @@
             dataType: "json",
             success: function(json) {
                 // console.log(json.data)
-                let rowColor = active = checked = subCode = priceInp = price = stock = "";
+                let rowColor = active = checked = subCode = priceInp = price = stock = dsId = "";
                 if (json.status == 1) {
                     $.each(json.data, function(idx, val) {
                         priceInp += val.price
                         price += formatRupiah(val.price, 'Rp. ');
                         stock += (val.stock != 0) ? val.stock : "";
+                        dsId += val.id
                     })
                 }
                 $("#price").html(price)
                 $("#priceInp").val(priceInp)
                 $("#stock").html(stock)
+                $("#dsId").val(dsId)
             }
         })
     }
@@ -829,7 +783,7 @@
                                                     <h3>
                                                         <a href="#"> ` + ucwords(val.nm_product) + ` </a>
                                                     </h3>
-                                                    <p class="ml-4">` + formatRupiah(val.tot_price, 'Rp. ') + `</p>
+                                                    <p class="ml-4">` + formatRupiah(val.price, 'Rp. ') + `</p>
                                                 </div>
                                                 <p class="mt-1 text-sm text-gray-500">` + ucwords(val.nm_color) + ` (` + val.nm_size + `)</p>
                                             </div>
@@ -864,7 +818,7 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                console.log(json)
+                // console.log(json)
                 if (json.status == 1) {
                     let row = icontList = timeList = ""
                     let textList = "Not Fount";

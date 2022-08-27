@@ -14,3 +14,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="/assets/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+<link href="/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">
+<link href="/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css" rel="stylesheet">
