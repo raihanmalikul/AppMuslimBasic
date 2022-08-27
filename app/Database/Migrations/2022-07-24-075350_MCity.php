@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Database\Migrations;
+
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -40,8 +42,8 @@ class MCity extends Migration
                 'constraint' => 11
             ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',

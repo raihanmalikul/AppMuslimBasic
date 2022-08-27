@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Database\Migrations;
+
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
@@ -24,8 +26,8 @@ class MPasswordReset extends Migration
                 'constraint' => 255
             ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ]
         ]);
         $this->forge->addKey('id', true);

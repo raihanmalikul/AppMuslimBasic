@@ -21,8 +21,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 151,
                 'postal_code'       => 11220,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Aldo',
@@ -34,8 +33,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 79,
                 'postal_code'       => 4011,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Raihan',
@@ -47,8 +45,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 126,
                 'postal_code'       => 44126,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Ilham',
@@ -60,8 +57,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 107,
                 'postal_code'       => 40512,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Dedi',
@@ -73,8 +69,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 278,
                 'postal_code'       => 20228,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Raihan',
@@ -86,8 +81,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 109,
                 'postal_code'       => 45116,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Abdul',
@@ -99,8 +93,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 444,
                 'postal_code'       => 60119,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ],
             [
                 'first_name'        => 'Samsudin',
@@ -112,8 +105,7 @@ class MProfilSeeder extends Seeder
                 'city_id'           => 458,
                 'postal_code'       => 35619,
                 'status'            => 1,
-                'image'             => '',
-                'created_at'        => TIme::now()
+                'image'             => ''
             ]
         ];
 

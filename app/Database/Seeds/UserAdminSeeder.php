@@ -17,8 +17,7 @@ class UserAdminSeeder extends Seeder
             'userlevel'    => 1,
             'status_login' => 0,
             'image'        => '',
-            'user_valid'   => 1,
-            'created_at'   => TIme::now()
+            'user_valid'   => 1
         ];
 
         // Using Query Builder

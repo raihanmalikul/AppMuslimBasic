@@ -19,8 +19,7 @@ class MTimelineSeeder extends Seeder
                 "email" => "raihanmalikul0@gmail.com",
                 "phone" => '6381499248998',
                 "feedback" => "Menuggu verifikasi pembayaran",
-                "status" => 0,
-                "created_at" => TIme::now()
+                "status" => 0
             ],
             [
                 "id" => 2,
@@ -30,8 +29,7 @@ class MTimelineSeeder extends Seeder
                 "email" => "raihanmalikul0@gmail.com",
                 "phone" => '6381499248998',
                 "feedback" => "Menuggu verifikasi pembayaran",
-                "status" => 0,
-                "created_at" => TIme::now()
+                "status" => 0
             ]
         ];
 

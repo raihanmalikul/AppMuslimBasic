@@ -20,8 +20,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -33,8 +32,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -46,8 +44,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -59,8 +56,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -72,8 +68,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -85,8 +80,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -98,8 +92,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -111,8 +104,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -124,8 +116,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc01",
@@ -137,60 +128,55 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => 160650,
                 "percent_disc" => 15,
-                "discount" => 1,
-                "created_at" => TIme::now()
+                "discount" => 1
             ],
             [
                 "sub_code" => "sc06",
                 "color_id" => "01",
                 "size_id" => "02",
                 "image" => "chino-pants-02-03-sc06-01-02.jpg",
-                "price" => 65000,
+                "price" => 63000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc06",
                 "color_id" => "01",
                 "size_id" => "03",
                 "image" => "chino-pants-02-03-sc06-01-03.jpg",
-                "price" => 65000,
+                "price" => 63000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc06",
                 "color_id" => "12",
                 "size_id" => "03",
                 "image" => "chino-pants-02-03-sc06-12-03.jpg",
-                "price" => 65000,
+                "price" => 63000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc06",
                 "color_id" => "12",
                 "size_id" => "02",
                 "image" => "chino-pants-02-03-sc06-12-02.jpg",
-                "price" => 65000,
+                "price" => 63000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc07",
@@ -202,8 +188,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc07",
@@ -215,8 +200,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc07",
@@ -228,8 +212,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc07",
@@ -241,372 +224,343 @@ class DSProdukSeeder extends Seeder
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "01",
                 "size_id" => "04",
                 "image" => "flare-pants-04-03-sc08-01-04.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "01",
                 "size_id" => "02",
                 "image" => "flare-pants-04-03-sc08-01-02.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "01",
                 "size_id" => "03",
                 "image" => "flare-pants-04-03-sc08-01-03.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "05",
                 "size_id" => "01",
                 "image" => "flare-pants-04-03-sc08-05-01.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "05",
                 "size_id" => "02",
                 "image" => "flare-pants-04-03-sc08-05-02.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc08",
                 "color_id" => "05",
                 "size_id" => "03",
                 "image" => "flare-pants-04-03-sc08-05-03.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "01",
                 "size_id" => "04",
                 "image" => "gemma-pants-05-03-sc09-01-04.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "01",
                 "size_id" => "02",
                 "image" => "gemma-pants-05-03-sc09-01-02.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "01",
                 "size_id" => "03",
                 "image" => "gemma-pants-05-03-sc09-01-03.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "05",
                 "size_id" => "01",
                 "image" => "gemma-pants-05-03-sc09-05-01.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "05",
                 "size_id" => "02",
                 "image" => "gemma-pants-05-03-sc09-05-02.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc09",
                 "color_id" => "05",
                 "size_id" => "03",
                 "image" => "gemma-pants-05-03-sc09-05-0.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "04",
                 "size_id" => "01",
                 "image" => "ali-seris-01-02-sc02-04-01.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "04",
                 "size_id" => "02",
                 "image" => "ali-seris-01-02-sc02-04-02.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "04",
                 "size_id" => "03",
                 "image" => "ali-seris-01-02-sc02-04-03.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "05",
                 "size_id" => "01",
                 "image" => "ali-seris-01-02-sc02-05-01.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "05",
                 "size_id" => "02",
                 "image" => "ali-seris-01-02-sc02-05-02.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "05",
                 "size_id" => "03",
                 "image" => "ali-seris-01-02-sc02-05-03.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "05",
                 "size_id" => "04",
                 "image" => "ali-seris-01-02-sc02-05-04.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "01",
                 "size_id" => "01",
                 "image" => "ali-seris-01-02-sc02-01-01.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "01",
                 "size_id" => "02",
                 "image" => "ali-seris-01-02-sc02-01-02.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => 143100,
                 "percent_disc" => 10,
-                "discount" => 1,
-                "created_at" => TIme::now()
+                "discount" => 1
             ],
             [
                 "sub_code" => "sc02",
                 "color_id" => "01",
                 "size_id" => "03",
                 "image" => "ali-seris-01-02-sc02-01-03.jpg",
-                "price" => 55000,
+                "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "01",
                 "size_id" => "01",
                 "image" => "bukhori-seris-02-02-sc02-01-01.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "01",
                 "size_id" => "02",
                 "image" => "bukhori-seris-02-02-sc02-01-02.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "01",
                 "size_id" => "03",
                 "image" => "bukhori-seris-02-02-sc02-01-03.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "05",
                 "size_id" => "04",
                 "image" => "bukhori-seris-02-02-sc02-05-04.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "05",
                 "size_id" => "05",
                 "image" => "bukhori-seris-02-02-sc02-05-05.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc10",
                 "color_id" => "05",
                 "size_id" => "06",
                 "image" => "bukhori-seris-02-02-sc02-05-06.jpg",
-                "price" => 50000,
+                "price" => 30000,
                 "weight" => 3500,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -614,12 +568,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "01",
                 "image" => "thobe-premium-01-01-sc03-15-01.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -627,12 +580,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "02",
                 "image" => "thobe-premium-01-01-sc03-15-02.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -640,12 +592,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "03",
                 "image" => "thobe-premium-01-01-sc03-15-03.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -653,12 +604,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "04",
                 "image" => "thobe-premium-01-01-sc03-12-04.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -666,12 +616,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "05",
                 "image" => "thobe-premium-01-01-sc03-12-05.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -679,12 +628,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "06",
                 "image" => "thobe-premium-01-01-sc03-12-06.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -692,12 +640,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "07",
                 "image" => "thobe-premium-01-01-sc03-05-07.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -705,12 +652,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "01",
                 "image" => "thobe-premium-01-01-sc03-05-01.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc03",
@@ -718,12 +664,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "02",
                 "image" => "thobe-premium-01-01-sc03-05-02.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 100,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -735,8 +680,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -748,8 +692,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -761,8 +704,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -774,8 +716,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -787,8 +728,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -800,8 +740,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -813,8 +752,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -826,8 +764,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc05",
@@ -839,8 +776,7 @@ class DSProdukSeeder extends Seeder
                 "stock" => 44,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -848,12 +784,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "03",
                 "image" => "cardinal-cj-06-02-sc04-01-03.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 90,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -861,12 +796,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "02",
                 "image" => "cardinal-cj-06-02-sc04-01-02.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 88,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -874,12 +808,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "01",
                 "image" => "cardinal-cj-06-02-sc04-01-01.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 99,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -887,12 +820,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "01",
                 "image" => "cardinal-cj-06-02-sc04-02-01.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 78,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -900,12 +832,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "02",
                 "image" => "cardinal-cj-06-02-sc04-05-02.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 55,
                 "price_disc" => 260100,
                 "percent_disc" => 10,
-                "discount" => 1,
-                "created_at" => TIme::now()
+                "discount" => 1
             ],
             [
                 "sub_code" => "sc04",
@@ -913,12 +844,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "05",
                 "image" => "cardinal-cj-06-02-sc04-02-05.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 56,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ],
             [
                 "sub_code" => "sc04",
@@ -926,12 +856,11 @@ class DSProdukSeeder extends Seeder
                 "size_id" => "02",
                 "image" => "cardinal-cj-06-02-sc04-02-02.jpg",
                 "price" => 70000,
-                "weight" => 5000,
+                "weight" => 3000,
                 "stock" => 55,
                 "price_disc" => null,
                 "percent_disc" => null,
-                "discount" => null,
-                "created_at" => TIme::now()
+                "discount" => null
             ]
         ];
 
