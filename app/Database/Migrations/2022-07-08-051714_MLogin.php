@@ -4,7 +4,6 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\RawSql;
-use CodeIgniter\I18n\Time;
 use CodeIgniter\Database\Migration;
 
 class MLogin extends Migration

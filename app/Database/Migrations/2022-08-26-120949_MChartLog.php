@@ -4,7 +4,6 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
-use CodeIgniter\I18n\Time;
 
 class MChartLog extends Migration
 {
