@@ -724,9 +724,10 @@ class Proses extends BaseController
 
         $getOrdi = $this->db->table("m_order")->select('order_id')->orderBy('order_id', 'DESC')->get()->getRowArray();
         if ($getOrdi) {
-            $formatOrderId = "ORDI" . substr($getOrdi['order_id'], 4) + 1;
+            $formatOrderId = "ORDI" . ((int)substr($getOrdi['order_id'], 4) + 1);
+            // $formatOrderId = $getOrdi['order_id'] + "1";
         } else {
-            $formatOrderId = "ORDI0001";
+            $formatOrderId = "ORDI1";
         }
 
         $getCart = $this->db->table("m_cart")->whereIn('id', $orderPro)->get()->getResultArray();
