@@ -18,7 +18,6 @@ class MTimelineSeeder extends Seeder
                 "slug" => "ali-seris-01",
                 "email" => "raihanmalikul0@gmail.com",
                 "phone" => '6381499248998',
-                "remake" => "NULL",
                 "feedback" => "Menuggu verifikasi pembayaran",
                 "status" => 0,
                 "created_at" => TIme::now()
@@ -30,7 +29,6 @@ class MTimelineSeeder extends Seeder
                 "slug" => "cardinal-cj-06",
                 "email" => "raihanmalikul0@gmail.com",
                 "phone" => '6381499248998',
-                "remake" => "NULL",
                 "feedback" => "Menuggu verifikasi pembayaran",
                 "status" => 0,
                 "created_at" => TIme::now()

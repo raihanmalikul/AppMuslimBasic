@@ -7,6 +7,18 @@
 <script src="/assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 <script type="text/javascript">
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
     function ucwords(val) {
         var name = val.toLowerCase().replace(/\b[a-z]/g, function(letter) {
             return letter.toUpperCase();
@@ -33,17 +45,17 @@
     }
 
     function getTheMonth(num) {
-            if (num == 0) return 'Januari';
-            else if (num == 1) return 'Februari';
-            else if (num == 2) return 'Maret';
-            else if (num == 3) return 'April';
-            else if (num == 4) return 'Mei';
-            else if (num == 5) return 'Juni';
-            else if (num == 6) return 'Juli';
-            else if (num == 7) return 'Agustus';
-            else if (num == 8) return 'September';
-            else if (num == 9) return 'Oktober';
-            else if (num == 10) return 'November';
-            else if (num == 11) return 'Desember';
-        }
+        if (num == 0) return 'Januari';
+        else if (num == 1) return 'Februari';
+        else if (num == 2) return 'Maret';
+        else if (num == 3) return 'April';
+        else if (num == 4) return 'Mei';
+        else if (num == 5) return 'Juni';
+        else if (num == 6) return 'Juli';
+        else if (num == 7) return 'Agustus';
+        else if (num == 8) return 'September';
+        else if (num == 9) return 'Oktober';
+        else if (num == 10) return 'November';
+        else if (num == 11) return 'Desember';
+    }
 </script>

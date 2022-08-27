@@ -37,10 +37,12 @@ class MTimeline extends Migration
                 'constraint' => 255
             ],
             'remake' => [
-                'type'       => 'TEXT'
+                'type'       => 'TEXT',
+                'null'       => true
             ],
             'feedback' => [
-                'type'       => 'TEXT'
+                'type'       => 'TEXT',
+                'null'       => true
             ],
             'status' => [
                 'type'       => 'TINYINT',
