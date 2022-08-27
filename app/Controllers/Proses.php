@@ -629,15 +629,15 @@ class Proses extends BaseController
     public function uploadFile()
     {
         helper(['form', 'url']);
-        // $validateImage = $this->validate([
-        //     'filePayment' => [
-        //         'uploaded[filePayment]',
-        //         'mime_in[filePayment, image/png, image/jpg, image/jpeg]',
-        //         'max_size[filePayment, 4096]'
-        //     ],
-        // ]);
+        $validateImage = $this->validate([
+            'filePayment' => [
+                'uploaded[filePayment]',
+                'mime_in[filePayment,image/jpg,image/jpeg,image/gif,image/png]',
+                'max_size[filePayment,4096]',
+            ],
+        ]);
         
-        // if ($validateImage) {
+        if ($validateImage) {
             $email          = $this->request->getVar("emailVal");
             $deliveryCode   = $this->request->getVar("delCode");
             $total          = $this->request->getVar("totalVal");
@@ -697,14 +697,14 @@ class Proses extends BaseController
                 ];
                 return $this->response->setJSON($response);
             }
-        // } else {
-        //     $response = [
-        //         'status' => 0,
-        //         'msg' => "Periksa size dan format file hanya (jpg,jpeg,png)",
-        //         'data' => []
-        //     ];
-        //     return $this->response->setJSON($response);
-        // }
+        } else {
+            $response = [
+                'status' => 0,
+                'msg' => "Periksa size dan format file hanya (jpg,jpeg,png)",
+                'data' => []
+            ];
+            return $this->response->setJSON($response);
+        }
     }
 
     public function insListChart()
@@ -730,22 +730,41 @@ class Proses extends BaseController
         }
 
         $getCart = $this->db->table("m_cart")->whereIn('id', $orderPro)->get()->getResultArray();
-        $insTimeline = [];
+
+        $insTimeline = $insCartLog = [];
         foreach ($getCart as $each) {
+            $data2 = array(
+                'email' => $each['email'],
+                'name' => $each['name'],
+                'slug' => $each['slug'],
+                'description' => $each['description'],
+                'color_id' => $each['color_id'],
+                'size_id' => $each['size_id'],
+                'qty' => $each['qty'],
+                'price' => $each['price'],
+                'tot_price' => $each['tot_price'],
+            );
+
             $data = array(
                 'timeline_id' => "TIME". $timeNow->toLocalizedString('yyyyMMddHHmmss'),
                 'order_id' => $formatOrderId,
                 'slug' => $each['slug'],
                 'email' => $each['email'],
                 'phone' => $phone,
+                'feedback' => "Menuggu verifikasi pembayaran",
                 'status' => 0,
             );
 
             array_push($insTimeline, $data);
+            array_push($insCartLog, $data2);
         }
 
-        // insert data timeline
+        // insert data to tbl m_timeline
         $insertTime = $this->db->table("m_timeline")->insertBatch($insTimeline);
+        // insert data to m_cart_log
+        $insCartLog = $this->db->table("m_cart_log")->insertBatch($insCartLog);
+        // delete data m_cart
+        $delCart    = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
 
         $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId;
 
@@ -767,17 +786,15 @@ class Proses extends BaseController
         // insert data order
         $insOrder   = $this->db->table("m_order")->insert($dataOrder);
 
-        // delete data cart
-        $delChart   = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
-
-        if ($insOrder && $insertTime && $delChart) {
+        if ($insOrder && $insertTime && $insCartLog && $delCart) {
             $response = [
                 'status' => 1, 
                 'msg' => "success",
                 'data' => [
                             "Order" => $insOrder, 
-                            "m_timeline" => $insertTime, 
-                            "chart" => $delChart
+                            "Timeline" => $insertTime, 
+                            "chartLog" => $insCartLog,
+                            "delCart" => $delCart
                         ]
             ];
         } else {

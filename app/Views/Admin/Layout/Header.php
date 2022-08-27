@@ -13,3 +13,4 @@
 <link href="/assets/DataTables/DataTables-1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="/assets/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+<link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />

@@ -2,15 +2,19 @@
 
 namespace App\Controllers;
 
-use App\Models\MProductModel;
+use App\Models;
 
 class PagesAdmin extends BaseController
 {
     protected $product;
+    protected $profil;
+    protected $order;
 
     public function __construct()
     {
-        $this->product = new MProductModel();
+        $this->product = new Models\MProductModel();
+        $this->profil   = new Models\MProfilModel();
+        $this->order   = new Models\MOrderModel();
         $this->session = \Config\Services::session();
         $username = $this->session->get("logged_in");
         if (empty($username)) {
@@ -21,10 +25,24 @@ class PagesAdmin extends BaseController
 
     public function dashboard()
     {
-        $data['title'] = "Dashboard | Muslim Basic";
-        $query = $this->product->selectCount('id')->countAll();
-        $data['sumProducts'] = $query;
-        // dd($query);
+        
+        $qryProdCount   = $this->product->selectCount('id')->get()->getRowArray();
+        $qtyOrderCount  = $this->order->selectCount('id')->get()->getRowArray();
+        $qtyProfilCount = $this->profil->selectCount('id')->get()->getRowArray();
+        $qtyOrderSum    = $this->order->selectSum('subTotal')->get()->getRowArray();
+
+        // dd($qtyOrderSum);
+
+        $countProd   = ($qryProdCount != null) ? $qryProdCount['id'] : "0";
+        $countOrder  = ($qtyOrderCount != null) ? $qtyOrderCount['id'] : "0";
+        $countProfil = ($qtyProfilCount != null) ? $qtyProfilCount['id'] : "0";
+        $sumOrder    = ($qtyOrderSum['subTotal'] != null) ? $qtyOrderSum['subTotal'] : "0";
+
+        $data['countProd']   = $countProd;
+        $data['countOrder']  = $countOrder;
+        $data['countProfil'] = $countProfil;
+        $data['sumOrder']    = $sumOrder;
+        $data['title']       = "Dashboard | Muslim Basic";
 
         return view('Admin/Pages/Dashboard', $data);
     }

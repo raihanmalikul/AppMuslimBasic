@@ -23,7 +23,16 @@ class ProsesAdmin extends BaseController
     public function displayProduct()
     {
         $request     = $_REQUEST;
-        $col         = array(1 => 'category_id', 2 => 'category_name', 3 => 'product_id', 4 => 'product_name', 5 => 'price', 6 => 'weight', 7 => 'stock', 8 => 'created_at');
+        $col         = array(
+                            1 => 'category_id'
+                            , 2 => 'category_name'
+                            , 3 => 'product_id'
+                            , 4 => 'product_name'
+                            , 5 => 'price'
+                            , 6 => 'weight'
+                            , 7 => 'stock'
+                            , 8 => 'created_at'
+                        );
         $cari        = $request['search']['value'];
         $cari        = ($cari ? strtolower($cari) : $cari);
         $cariStart   = $request['start'];
@@ -48,10 +57,21 @@ class ProsesAdmin extends BaseController
         $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
-        $queryM = "SELECT a.category_id, a.name as category_name, b.product_id, b.name as product_name, b.price, b.weight, b.stock, b.created_at, b.is_valid
+        $queryM = "SELECT 
+                    a.category_id
+                    , a.name as category_name
+                    , b.product_id
+                    , b.name as product_name
+                    , b.price
+                    , b.weight
+                    , b.stock
+                    , b.created_at
+                    , b.is_valid
                 FROM 
                     m_category a 
-                    LEFT JOIN m_product b ON a.category_id = b.category_id";
+                    LEFT JOIN m_product b ON a.category_id = b.category_id AND a.is_valid = b.is_valid
+                WHERE
+                    a.is_valid = 1";
 
         $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $listData   = $this->db->query($query)->getResultArray();
@@ -66,14 +86,93 @@ class ProsesAdmin extends BaseController
             $id++;
         }
 
-        $json_data = array(
+        $response = array(
             "draw"              => intval($request['draw']),
             "recordsTotal"      => intval(sizeof($dataTotal)),
             "recordsFiltered"   => intval(sizeof($dataTotal)),
             "data"              => $data
         );
 
-        echo json_encode($json_data);
+        return $this->response->setJSON($response);
+    }
+    
+    public function displayTopSelling()
+    {
+        $request     = $_REQUEST;
+        $col         = array(
+                            1 => 'name_customer'
+                            , 2 => 'name_category'
+                            , 3 => 'name_product'
+                            , 4 => 'orders'
+                        );
+        $cari        = $request['search']['value'];
+        $cari        = ($cari ? strtolower($cari) : $cari);
+        $cariStart   = $request['start'];
+        $cariLength  = $request['length'];
+        $orderColumn = $col[$request['order'][0]['column']];
+        $orderDir    = $request['order'][0]['dir'];
+
+        $sqlCari = "";
+
+        if (!empty($cari)) {
+            $sqlFilter    = "a.name_customer LIKE '%{$cari}%'
+                            OR a.name_category LIKE '%{$cari}%'
+                            OR a.name_product LIKE '%{$cari}%'
+                            OR a.product_name LIKE '%{$cari}%'
+                            OR a.orders LIKE '%{$cari}%'
+                        ";
+            $sqlCari .= sprintf(" AND (%s) ", $sqlFilter);
+        }
+        $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
+        $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
+
+        $queryM = "SELECT
+                        CONCAT(a.first_name, ' ',a.last_name) name_customer
+                        , name_category
+                        , name_product
+                        , COUNT(b.qty) orders
+                        , d.`status`
+                    FROM 
+                        m_profil a
+                        LEFT JOIN m_cart_log b ON a.email = b.email
+                        LEFT JOIN m_payment d ON a.email = d.email
+                        LEFT JOIN (
+                            SELECT
+                                b.`name` name_category 
+                                , a.`name` name_product
+                                , c.slug
+                            FROM 
+                                m_product a
+                                LEFT JOIN m_category b ON a.category_id = b.category_id
+                                LEFT JOIN d_product c ON a.category_id = c.category_id AND a.product_id = c.product_id
+                            WHERE
+                                a.is_valid = 1
+                        ) c ON c.slug = b.slug
+                    WHERE
+                        a.`status` = 1
+                    ORDER BY orders DESC";
+
+        $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
+        $listData   = $this->db->query($query)->getResultArray();
+
+        $queryTotal = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari";
+        $dataTotal  = $this->db->query($queryTotal)->getResultArray();
+
+        $id   = 0;
+        $data = array();
+        foreach ($listData as $row) {
+            array_push($data, $row);
+            $id++;
+        }
+
+        $response = array(
+            "draw"              => intval($request['draw']),
+            "recordsTotal"      => intval(sizeof($dataTotal)),
+            "recordsFiltered"   => intval(sizeof($dataTotal)),
+            "data"              => $data
+        );
+
+        return $this->response->setJSON($response);
     }
 
     public function getCategoryCode()
@@ -140,7 +239,7 @@ class ProsesAdmin extends BaseController
         } else {
             $data[] = array();
         }
-        echo json_encode($data);
+        return $this->response->setJSON($data);
     }
 
     public function AddMasterCategory()
@@ -288,7 +387,7 @@ class ProsesAdmin extends BaseController
                 if ($queryProduct) $return = ['status' => 1, 'messageError' => 'success', 'data' => $result];
             }
 
-            echo json_encode($return);
+            return $this->response->setJSON($return);
         }
     }
 
@@ -372,14 +471,14 @@ class ProsesAdmin extends BaseController
             $id++;
         }
 
-        $json_data = array(
+        $response = array(
             "draw"              => intval($request['draw']),
             "recordsTotal"      => intval(sizeof($dataTotal)),
             "recordsFiltered"   => intval(sizeof($dataTotal)),
             "data"              => $data
         );
 
-        echo json_encode($json_data);
+        return $this->response->setJSON($response);
     }
 
     public function displayAllOrder()
@@ -408,14 +507,19 @@ class ProsesAdmin extends BaseController
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
         $queryM = "SELECT
-                        a.order_id
+                        a.id
+                        , a.order_id
                         , a.email
-                        , a.customer_name
+                        , CONCAT(b.first_name, ' ',b.last_name) name_customer
                         , a.invoice
                         , a.subTotal
                         , a.status_order
                     FROM 
-                        m_order a";
+                        m_order a
+                        LEFT JOIN m_profil b ON a.email = b.email
+                    GROUP BY a.order_id ASC
+                    ORDER BY a.created_at ASC
+                    ";
 
         $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $listData   = $this->db->query($query)->getResultArray();
@@ -430,13 +534,110 @@ class ProsesAdmin extends BaseController
             $id++;
         }
 
-        $json_data = array(
+        $response = array(
             "draw"              => intval($request['draw']),
             "recordsTotal"      => intval(sizeof($dataTotal)),
             "recordsFiltered"   => intval(sizeof($dataTotal)),
             "data"              => $data
         );
 
-        echo json_encode($json_data);
+        return $this->response->setJSON($response);
+    }
+
+    public function displayOrderConfirm()
+    {
+        $request     = $_REQUEST;
+        $col         = array(1 => 'order_id', 2 => 'email', 3 => 'invoice', 4 => 'subTotal', 5 => 'status_order');
+        $cari        = $request['search']['value'];
+        $cari        = ($cari ? strtolower($cari) : $cari);
+        $cariStart   = $request['start'];
+        $cariLength  = $request['length'];
+        $orderColumn = $col[$request['order'][0]['column']];
+        $orderDir    = $request['order'][0]['dir'];
+
+        $sqlCari = "";
+
+        if (!empty($cari)) {
+            $sqlFilter    = "a.order_id LIKE '%{$cari}%'
+                            OR a.email LIKE '%{$cari}%'
+                            OR a.invoice LIKE '%{$cari}%'
+                            OR a.subTotal LIKE '%{$cari}%'
+                            OR a.status_order LIKE '%{$cari}%'
+                        ";
+            $sqlCari .= sprintf(" AND (%s) ", $sqlFilter);
+        }
+        $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
+        $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
+
+        $queryM = "SELECT
+                        a.id
+                        , a.order_id
+                        , a.email
+                        , CONCAT(b.first_name, ' ',b.last_name) name_customer
+                        , a.invoice
+                        , a.subTotal
+                        , a.status_order
+                    FROM 
+                        m_order a
+                        LEFT JOIN m_profil b ON a.email = b.email
+                    GROUP BY a.order_id ASC
+                    ORDER BY a.created_at ASC
+                    ";
+
+        $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
+        $listData   = $this->db->query($query)->getResultArray();
+
+        $queryTotal = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari";
+        $dataTotal  = $this->db->query($queryTotal)->getResultArray();
+
+        $id   = 0;
+        $data = array();
+        foreach ($listData as $row) {
+            $subData = [];
+            $subData[] = $row['id'];
+            $subData[] = $row['order_id'];
+            $subData[] = $row['email'];
+            $subData[] = $row['name_customer'];
+            $subData[] = $row['invoice'];
+            $subData[] = $row['subTotal'];
+
+            if ($row['status_order'] == 0) {
+                $subData[] = '<span class="badge bg-warning">Verifikasi Pembayaran</span>';
+            } else if ($row['status_order'] == 1) {
+                $subData[] = '<span class="badge bg-info">Delivery Proses</span>';
+            } else if ($row['status_order'] == 2) {
+                $subData[] = '<span class="badge bg-success">Complete</span>';
+            } else {
+                $subData[] = '<span class="badge bg-danger">Cancelled</span>';
+            }
+
+            array_push($data, $subData);
+            $id++;
+        }
+
+        $response = array(
+            "draw"              => intval($request['draw']),
+            "recordsTotal"      => intval(sizeof($dataTotal)),
+            "recordsFiltered"   => intval(sizeof($dataTotal)),
+            "data"              => $data
+        );
+
+        return $this->response->setJSON($response);
+    }
+
+    public function updConfirm()
+    {
+        $id = $this->request->getVar('id');
+        
+        if ($id) {
+            $res  = $this->db->table('m_order')->whereIn('id', $id)->update(['status_order' => 1]);
+            $res2 = $this->db->table('m_timeline')->whereIn('id', $id)->update(['status_order' => 1]);
+
+            $response = ['status' => 1, 'msg' => "success", 'data' => ''];
+        } else {
+            $response = ['status' => 0, 'msg' => "fail", 'data' => null];
+        }
+
+        return $this->response->setJSON($response);
     }
 }

@@ -37,8 +37,7 @@
                         <li class="group">
                             <div class="mt-3 lg:mt-0 items-center flex pl-8">
                                 <div class="inline-flex hover:shadow-lg focus:shadow-lg" role="group">
-                                    <?php
-                                    if ($this->session->get('loggedIn')) { ?>
+                                    <?php if ($this->session->get('loggedIn')) { ?>
                                         <button type="button" class="inline-flex relative items-center px-3 py-2.5 text-sm font-medium text-center text-gray-700 rounded-lg hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300" onclick="toggleSlideover()">
                                             <i class="fas fa-shopping-cart"></i>
                                             <span class="sr-only">Shopping Chart</span>
@@ -134,37 +133,6 @@
         </div>
         <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-4" id="bastSeller">
             <span id="bastSeller"></span>
-            <!-- <a href="#" class="group">
-                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto11.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                </div>
-                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Earthen Bottle</h3>
-                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$48</p>
-            </a>
-
-            <a href="#" class="group">
-                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto2.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                </div>
-                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Nomad Tumbler</h3>
-                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
-            </a>
-
-            <a href="#" class="group">
-                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto4.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                </div>
-                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Focus Paper Refill</h3>
-                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$89</p>
-            </a>
-
-            <a href="#" class="group">
-                <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                    <img src="/assets/tailwind/img/toko/foto3.jpg" alt="" class="w-full h-full object-center object-cover group-hover:opacity-75">
-                </div>
-                <h3 class="mt-4 text-sm text-gray-700 dark:text-white">Machined Mechanical Pencil</h3>
-                <p class="mt-1 text-lg font-medium text-gray-900 dark:text-secondarybg">$35</p>
-            </a> -->
         </div>
     </div>
 </section>
@@ -184,90 +152,6 @@
         </div>
 
         <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8" id="discountItem">
-            <!-- <div class="group relative">
-                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                    <div class="py-8 px-6">
-                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Basic Tee
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900">$35</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative">
-                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                    <div class="py-8 px-6">
-                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Basic Tee
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900">$35</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative">
-                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                    <div class="py-8 px-6">
-                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Basic Tee
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900">$35</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="group relative">
-                <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
-                    <div class="py-8 px-6">
-                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                        </div>
-                        <div class="mt-4 flex justify-between">
-                            <div>
-                                <h3 class="text-sm text-gray-700">
-                                    <a href="#">
-                                        <span aria-hidden="true" class="absolute inset-0"></span>
-                                        Basic Tee
-                                    </a>
-                                </h3>
-                                <p class="mt-1 text-sm text-gray-500">Black</p>
-                            </div>
-                            <p class="text-sm font-medium text-gray-900">$35</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -560,33 +444,18 @@
 </section>
 <!-- Contact Section End -->
 
+
+<!-- BEGIN Footer -->
+<?= $this->include('User/Layout/Footer') ?>
+<!-- END Footer -->
+
 <!-- Modal Cart Start -->
 <div class="relative z-10 invisible" aria-labelledby="slide-over-title" role="dialog" aria-modal="false" id="slideover-container">
-    <!--
-        Background backdrop, show/hide based on slide-over state.
-
-        Entering: "ease-in-out duration-500"
-        From: "opacity-0"
-        To: "opacity-100"
-        Leaving: "ease-in-out duration-500"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 ease-in-out duration-500 opacity-0" id="slideover-bg"></div>
 
     <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden transform transition-all ease-in-out duration-500 sm:duration-700 translate-x-full" id="slideover">
             <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                <!--
-                    Slide-over panel, show/hide based on slide-over state.
-
-                    Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                        From: "translate-x-full"
-                        To: "translate-x-0"
-                    Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                        From: "translate-x-0"
-                        To: "translate-x-full"
-                -->
                 <div class="pointer-events-auto w-screen max-w-md">
                     <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                         <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
@@ -627,11 +496,7 @@
 </div>
 <!-- Modal Cart End -->
 
-<!-- BEGIN Footer -->
-<?= $this->include('User/Layout/Footer') ?>
-<!-- END Footer -->
-
-<!-- Modal -->
+<!-- Modal Timeline Start-->
 <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="timeline" tabindex="-1" aria-labelledby="timelineLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
         <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
@@ -651,6 +516,7 @@
         </div>
     </div>
 </div>
+<!-- Modal Timeline End-->
 
 <!-- Modal Item Product start -->
 <!-- <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto modalItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
