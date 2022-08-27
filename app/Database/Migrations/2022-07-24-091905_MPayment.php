@@ -32,12 +32,12 @@ class MPayment extends Migration
                 'type'       => 'TEXT'
             ],
             'total_price' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255
-            ],
-            'evidence_payment' => [
                 'type'       => 'INT',
                 'constraint' => 11
+            ],
+            'evidence_payment' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
             ],
             'evidence_date' => [
                 'type'       => 'DATETIME',
