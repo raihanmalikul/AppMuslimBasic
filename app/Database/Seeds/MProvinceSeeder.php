@@ -12,173 +12,139 @@ class MProvinceSeeder extends Seeder
         $data =  [
             [
                 'province_id' => 1,
-                'province' => 'Bali',
-                'created_at' => TIme::now()
+                'province' => 'Bali'
             ],
             [
                 'province_id' => 2,
-                'province' => 'Bangka Belitung',
-                'created_at' => TIme::now()
+                'province' => 'Bangka Belitung'
             ],
             [
                 'province_id' => 3,
-                'province' => 'Banten',
-                'created_at' => TIme::now()
+                'province' => 'Banten'
             ],
             [
                 'province_id' => 4,
-                'province' => 'Bengkulu',
-                'created_at' => TIme::now()
+                'province' => 'Bengkulu'
             ],
             [
                 'province_id' => 5,
-                'province' => 'DI Yogyakarta',
-                'created_at' => TIme::now()
+                'province' => 'DI Yogyakarta'
             ],
             [
                 'province_id' => 6,
-                'province' => 'DKI Jakarta',
-                'created_at' => TIme::now()
+                'province' => 'DKI Jakarta'
             ],
             [
                 'province_id' => 7,
-                'province' => 'Gorontalo',
-                'created_at' => TIme::now()
+                'province' => 'Gorontalo'
             ],
             [
                 'province_id' => 8,
-                'province' => 'Jambi',
-                'created_at' => TIme::now()
+                'province' => 'Jambi'
             ],
             [
                 'province_id' => 9,
-                'province' => 'Jawa Barat',
-                'created_at' => TIme::now()
+                'province' => 'Jawa Barat'
             ],
             [
                 'province_id' => 10,
-                'province' => 'Jawa Tengah',
-                'created_at' => TIme::now()
+                'province' => 'Jawa Tengah'
             ],
             [
                 'province_id' => 11,
-                'province' => 'Jawa Timur',
-                'created_at' => TIme::now()
+                'province' => 'Jawa Timur'
             ],
             [
                 'province_id' => 12,
-                'province' => 'Kalimantan Barat',
-                'created_at' => TIme::now()
+                'province' => 'Kalimantan Barat'
             ],
             [
                 'province_id' => 13,
-                'province' => 'Kalimantan Selatan',
-                'created_at' => TIme::now()
+                'province' => 'Kalimantan Selatan'
             ],
             [
                 'province_id' => 14,
-                'province' => 'Kalimantan Tengah',
-                'created_at' => TIme::now()
+                'province' => 'Kalimantan Tengah'
             ],
             [
                 'province_id' => 15,
-                'province' => 'Kalimantan Timur',
-                'created_at' => TIme::now()
+                'province' => 'Kalimantan Timur'
             ],
             [
                 'province_id' => 16,
-                'province' => 'Kalimantan Utara',
-                'created_at' => TIme::now()
+                'province' => 'Kalimantan Utara'
             ],
             [
                 'province_id' => 17,
-                'province' => 'Kepulauan Riau',
-                'created_at' => TIme::now()
+                'province' => 'Kepulauan Riau'
             ],
             [
                 'province_id' => 18,
-                'province' => 'Lampung',
-                'created_at' => TIme::now()
+                'province' => 'Lampung'
             ],
             [
                 'province_id' => 19,
-                'province' => 'Maluku',
-                'created_at' => TIme::now()
+                'province' => 'Maluku'
             ],
             [
                 'province_id' => 20,
-                'province' => 'Maluku Utara',
-                'created_at' => TIme::now()
+                'province' => 'Maluku Utara'
             ],
             [
                 'province_id' => 21,
-                'province' => 'Nanggroe Aceh Darussalam (NAD)',
-                'created_at' => TIme::now()
+                'province' => 'Nanggroe Aceh Darussalam (NAD)'
             ],
             [
                 'province_id' => 22,
-                'province' => 'Nusa Tenggara Barat (NTB)',
-                'created_at' => TIme::now()
+                'province' => 'Nusa Tenggara Barat (NTB)'
             ],
             [
                 'province_id' => 23,
-                'province' => 'Nusa Tenggara Timur (NTT)',
-                'created_at' => TIme::now()
+                'province' => 'Nusa Tenggara Timur (NTT)'
             ],
             [
                 'province_id' => 24,
-                'province' => 'Papua',
-                'created_at' => TIme::now()
+                'province' => 'Papua'
             ],
             [
                 'province_id' => 25,
-                'province' => 'Papua Barat',
-                'created_at' => TIme::now()
+                'province' => 'Papua Barat'
             ],
             [
                 'province_id' => 26,
-                'province' => 'Riau',
-                'created_at' => TIme::now()
+                'province' => 'Riau'
             ],
             [
                 'province_id' => 27,
-                'province' => 'Sulawesi Barat',
-                'created_at' => TIme::now()
+                'province' => 'Sulawesi Barat'
             ],
             [
                 'province_id' => 28,
-                'province' => 'Sulawesi Selatan',
-                'created_at' => TIme::now()
+                'province' => 'Sulawesi Selatan'
             ],
             [
                 'province_id' => 29,
-                'province' => 'Sulawesi Tengah',
-                'created_at' => TIme::now()
+                'province' => 'Sulawesi Tengah'
             ],
             [
                 'province_id' => 30,
-                'province' => 'Sulawesi Tenggara',
-                'created_at' => TIme::now()
+                'province' => 'Sulawesi Tenggara'
             ],
             [
                 'province_id' => 31,
-                'province' => 'Sulawesi Utara',
-                'created_at' => TIme::now()
+                'province' => 'Sulawesi Utara'
             ],
             [
                 'province_id' => 32,
-                'province' => 'Sumatera Barat',
-                'created_at' => TIme::now()
+                'province' => 'Sumatera Barat'
             ],
             [
                 'province_id' => 33,
-                'province' => 'Sumatera Selatan',
-                'created_at' => TIme::now()
+                'province' => 'Sumatera Selatan'
             ],
             [
                 'province_id' => 34,
-                'province' => 'Sumatera Utara',
-                'created_at' => TIme::now()
+                'province' => 'Sumatera Utara'
             ]
         ];
 

@@ -17,8 +17,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Aldo',
@@ -26,8 +25,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Azmi',
@@ -35,8 +33,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Ilham',
@@ -44,8 +41,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Dedi',
@@ -53,8 +49,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Raihan',
@@ -62,8 +57,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Abdul',
@@ -71,8 +65,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ],
             [
                 'name'         => 'Samsudin',
@@ -80,8 +73,7 @@ class MLoginSeeder extends Seeder
                 'email_verified_at'     => '',
                 'is_active'    => '',
                 'password' => md5('123'),
-                'remember_token'        => '',
-                'created_at'   => TIme::now()
+                'remember_token'        => ''
             ]
         ];
 

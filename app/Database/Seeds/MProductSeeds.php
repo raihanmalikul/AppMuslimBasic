@@ -24,8 +24,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "CHINO PANTS",
@@ -42,8 +41,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "DEAN CULOTTE",
@@ -60,8 +58,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "FLARE PANTS",
@@ -77,8 +74,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "GEMMA PANTS",
@@ -95,8 +91,7 @@ class MProductSeeds extends Seeder
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih
                 ",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "INNER PENTS",
@@ -112,8 +107,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIGH WAIST CULOTTE",
@@ -129,8 +123,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "KNIT JOGGER PANTS",
@@ -147,8 +140,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "LINEA PANTS",
@@ -164,8 +156,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan mesin cuci, sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "WIDE PANTS",
@@ -181,8 +172,7 @@ class MProductSeeds extends Seeder
                 Jemur di tempat teduh
                 Setrika dengan suhu medium
                 Tidak dianjurkan mencuci menggunakan sikat dan pemutih",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ALI SERIS",
@@ -191,8 +181,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 22-24 JUNI 2022‼️ Pengen pake kemeja tapi tetep keliatan fresh? Atau.. mau beli kemeja tapi takut gak dipake karna biasanya bahannya gak nyaman, gerah, kasar, dan kaku? Tenang aja kang bro, kan sekarang ada Ali Series by Muslim Basic😎 Solusi buat kang bro yang mau pake kemeja tapi masih tetep mau keliatan CASUAL, RAPIH dan NYAMAN. Tentunya bisa dipake di segala aktivitas Insyā Allāh👍🏻",
                 "details" => "Nyaman dipakai untuk kerja, meeting, beribadah, hangout, kajian, dan kumpul keluarga sekalipun",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "BUKHORI SERIS",
@@ -205,8 +194,7 @@ class MProductSeeds extends Seeder
                 
                 ‼️OPEN PRE ORDER 6-10 JUNI 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ANDREW SMITH LENGAN PANJANG ",
@@ -215,8 +203,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 22-24 Mei 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ANDREW SMITH LENGAN PENDEK ",
@@ -225,8 +212,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 19-20 JUNI 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "CARDINAL JEANS",
@@ -235,8 +221,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 22-24 November 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "CARDINAL CJ",
@@ -245,8 +230,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER 23-26 JUNI 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "CARDINAL KEMEJA",
@@ -255,8 +239,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER Agustus 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "CARDINAL  CCSL",
@@ -265,8 +248,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER November 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ANDREW SMITH KEMEJA",
@@ -275,8 +257,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER Januri 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ANDREW SMITH",
@@ -285,8 +266,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "02",
                 "description" => "‼️OPEN PRE ORDER JUNI 2022‼️",
                 "details" => "Menggunakan bahan COTTON BAMBOO, lembut, adem, ada teknologi anti bau, anti bakteri, cocok untuk segala tipe kulit bahkan untuk kulit sensitif sekalipun, menyerap keringat sempurna, jatuh, flowy",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "THOBE PREMIUM",
@@ -295,8 +275,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "Muslim Basic bi’idznillāh hadir untuk memfasilitasi kang bro semua supaya bisa TETAP TAAT dan MENAWAN tapi gak bikin kantong jebol👍🏻",
                 "details" => "Menggunakan kain COTTON DELUXE, nyaman, adem, dingin, gak nerawang, gak gampang kusut, bahannya jatuh dan ada sedikit kilap bikin makin keliatan elegan dan mewah!",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "SALMAN SERIS",
@@ -305,8 +284,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "‼️OPEN PRE ORDER 11-15 JULI 2022‼️ Pengen gamisan tapi takut keliatan terlalu formal? Atau.. mau beli gamis tapi takut cuma ngegantung di lemari aja karena gamis identiknya cuma dipake pas jum’atan aja? Tenang aja kang bro, kan ada Salman Series by Muslim Basic😎 Solusi buat kang bro yang mau pake gamis tapi masih tetep mau keliatan CASUAL dan NYAMAN. Tentunya bisa dipake di segala aktivitas Insyā Allāh👍🏻",
                 "details" => "Note : - Insyā Allāh pengerjaan selama 3-4 pekan, semoga Allāh mudahkan - Berat gamis kurleb 500 gram - Insyā Allāh 1kg muat 2 baju - Pengiriman via JNE dari Kota Bandung - Agar menjaga kualitas produk harap mengikuti cara perawatan produk ❗️Efek cahaya dan layar hp masing-masing mengakibatkan warna asli berbeda❗️",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "THOBE SACHET",
@@ -315,8 +293,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "!!OPEN PRE ORDER 26-29 JULI 2022!!Mau pakai thobe premium, tapi biasanya harganya mahal?Tenang aja kang bro, kan ada Adam series by Muslim Basic. Muslim Basic bi'idznillah hadir untuk memfasilitasi kang bro semua supaya bisa TETAP TAAT dan MENAWAN tapi gak bikin kantong jebol",
                 "details" => "Cuttingan pakai sistem 'pecah pola' di bagian samping, jadi bikin tetap bisa leluasa bergerak",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "NOOR ABAY",
@@ -325,8 +302,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "❗️OPEN PRE ORDER 22-23 MARET 2022❗️",
                 "details" => " Abaya menggunakan Valerie Platinum (karakter kain sangat lembut, tidak menerawang, jatuh, stretch, empuk, serat twill, sangat adem, menyerap keringat, flowy.. cukup ironless, nyaman dipakai kapanpun dimanapun insyaaAllah) kainnya berkelass 🖤",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "BALQIS ABAYA",
@@ -335,8 +311,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "❗️OPEN PRE ORDER 19-21 MEI 2022❗️",
                 "details" => "Menggunakan bahan Premium Shakilla Import, kain yang sudah terkenal nyamannya (karakter kain sangat lembut, tidak menerawang, jatuh, stretch, empuk, serat twill, sangat adem, menyerap keringat, flowy.. cukup ironless, nyaman dipakai kapanpun dimanapun insyaaAllah) kainnya berkelass 🖤",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "NONA ABAYA",
@@ -345,8 +320,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "❗️OPEN PRE ORDER 22-23 MARET 2022❗️",
                 "details" => "Abaya menggunakan Valerie Platinum (karakter kain sangat lembut, tidak menerawang, jatuh, stretch, empuk, serat twill, sangat adem, menyerap keringat, flowy.. cukup ironless, nyaman dipakai kapanpun dimanapun insyaaAllah) kainnya berkelass 🖤",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "JOBB",
@@ -355,8 +329,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "Cuttingan pakai sistem 'pecah pola' di bagian samping, jadi bikin tetap bisa leluasa bergerak",
                 "details" => "Menggunakan kain COTTON DELUXE, nyaman, adem, dingin, gak nerawang, gak gampang kusut, bahannya jatuh dan ada sedikit kilap bikin makin keliatan elegan dan mewah!",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "SALT N PEPPER",
@@ -365,8 +338,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "Cuttingan pakai sistem 'pecah pola' di bagian samping, jadi bikin tetap bisa leluasa bergerak",
                 "details" => "Menggunakan kain COTTON DELUXE, nyaman, adem, dingin, gak nerawang, gak gampang kusut.",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "ARJUNA WEDA",
@@ -375,8 +347,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "Cuttingan pakai sistem 'pecah pola' di bagian samping, jadi bikin tetap bisa leluasa bergerak",
                 "details" => "Menggunakan kain COTTON DELUXE, nyaman, adem, dingin, gak nerawang, gak gampang kusut.",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "LOIS JEANS",
@@ -385,8 +356,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "01",
                 "description" => "Cuttingan pakai sistem 'pecah pola' di bagian samping, jadi bikin tetap bisa leluasa bergerak",
                 "details" => "Menggunakan kain COTTON DELUXE, nyaman, adem, dingin, gak nerawang, gak gampang kusut.",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIJAB SERIS",
@@ -395,8 +365,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "04",
                 "description" => "",
                 "details" => "",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIJAB SERIS",
@@ -405,8 +374,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "04",
                 "description" => "",
                 "details" => "",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIJAB SERIS",
@@ -415,8 +383,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "04",
                 "description" => "",
                 "details" => "",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIJAB SERIS",
@@ -425,8 +392,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "04",
                 "description" => "",
                 "details" => "",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ],
             [
                 "name" => "HIJAB SERIS",
@@ -435,8 +401,7 @@ class MProductSeeds extends Seeder
                 "category_id" => "04",
                 "description" => "",
                 "details" => "",
-                "is_valid" => 1,
-                "created_at" => TIme::now()
+                "is_valid" => 1
             ]
         ];
 

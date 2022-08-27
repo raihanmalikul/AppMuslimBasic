@@ -2,7 +2,8 @@
 // Harap comment jika tidak melakukan create ke tabel
 
 namespace App\Database\Migrations;
-use CodeIgniter\I18n\Time;
+
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
 
 class MLogin extends Migration
@@ -41,8 +42,8 @@ class MLogin extends Migration
                 'constraint' => 100
             ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',

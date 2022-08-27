@@ -17,8 +17,7 @@ class MLoginAdminSeeder extends Seeder
                 'userlevel'    => 1,
                 'status_login' => 0,
                 'image'        => '',
-                'user_valid'   => 1,
-                'created_at'   => TIme::now()
+                'user_valid'   => 1
             ],
             [
                 'name'         => 'Dedi',
@@ -27,8 +26,7 @@ class MLoginAdminSeeder extends Seeder
                 'userlevel'    => 1,
                 'status_login' => 0,
                 'image'        => '',
-                'user_valid'   => 1,
-                'created_at'   => TIme::now()
+                'user_valid'   => 1
             ],
             [
                 'name'         => 'Aldo',
@@ -37,8 +35,7 @@ class MLoginAdminSeeder extends Seeder
                 'userlevel'    => 1,
                 'status_login' => 0,
                 'image'        => '',
-                'user_valid'   => 1,
-                'created_at'   => TIme::now()
+                'user_valid'   => 1
             ],
             [
                 'name'         => 'Azmi',
@@ -47,8 +44,7 @@ class MLoginAdminSeeder extends Seeder
                 'userlevel'    => 1,
                 'status_login' => 0,
                 'image'        => '',
-                'user_valid'   => 1,
-                'created_at'   => TIme::now()
+                'user_valid'   => 1
             ],
             [
                 'name'         => 'Ilham',
@@ -57,8 +53,7 @@ class MLoginAdminSeeder extends Seeder
                 'userlevel'    => 1,
                 'status_login' => 0,
                 'image'        => '',
-                'user_valid'   => 1,
-                'created_at'   => TIme::now()
+                'user_valid'   => 1
             ]
         ];
 

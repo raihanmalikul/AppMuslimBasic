@@ -2,8 +2,9 @@
 
 namespace App\Database\Migrations;
 
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
-use CodeIgniter\I18n\Time;
+
 class MProvince extends Migration
 {
     public function up()
@@ -24,8 +25,8 @@ class MProvince extends Migration
                 'constraint' => 255
             ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',

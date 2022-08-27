@@ -21,6 +21,7 @@ class AddDataSeeder extends Seeder
         $this->call('MSizeSeeder');
         $this->call('MReting');
         $this->call('UserAdminSeeder');
-        $this->call('MTimelineSeeder');
+        // $this->call('MPaymentSeeds');
+        // $this->call('MTimelineSeeder');
     }
 }

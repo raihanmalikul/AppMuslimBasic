@@ -2,7 +2,7 @@
 
 namespace App\Database\Migrations;
 
-use CodeIgniter\I18n\Time;
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
 
 class MCart extends Migration
@@ -15,6 +15,20 @@ class MCart extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],
+            'dsId' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null'       => true
+            ],
+            'product_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'weight' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'null'       => true
             ],
             'email' => [
                 'type'       => 'VARCHAR',
@@ -47,13 +61,9 @@ class MCart extends Migration
                 'type'       => 'INT',
                 'constraint' => 11
             ],
-            'tot_price' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',

@@ -14,26 +14,22 @@ class MCategorySeeds extends Seeder
             [
                 'name'          => 'GAMIS',
                 'category_id'   => '01',
-                'slug'          => 'gamis-01',
-                'created_at'    => TIme::now()
+                'slug'          => 'gamis-01'
             ],
             [
                 'name'          => 'KEMEJA',
                 'category_id'   => '02',
-                'slug'          => 'kemeja-02',
-                'created_at'    => TIme::now()
+                'slug'          => 'kemeja-02'
             ],
             [
                 'name'          => 'CELANA',
                 'category_id'   => '03',
-                'slug'          => 'celana-03',
-                'created_at'    => TIme::now()
+                'slug'          => 'celana-03'
             ],
             [
                 'name'          => 'JILBAB',
                 'category_id'   => '04',
-                'slug'          => 'jibab-04',
-                'created_at'    => TIme::now()
+                'slug'          => 'jibab-04'
             ]
         ];
 

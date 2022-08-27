@@ -2,8 +2,8 @@
 
 namespace App\Database\Migrations;
 
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
-use CodeIgniter\I18n\Time;
 
 class MChartLog extends Migration
 {
@@ -15,6 +15,18 @@ class MChartLog extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],
+            'dsId' => [
+                'type'       => 'INT',
+                'constraint' => 11
+            ],
+            'product_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'weight' => [
+                'type'       => 'INT',
+                'constraint' => 11
             ],
             'email' => [
                 'type'       => 'VARCHAR',
@@ -47,13 +59,9 @@ class MChartLog extends Migration
                 'type'       => 'INT',
                 'constraint' => 11
             ],
-            'tot_price' => [
-                'type'       => 'INT',
-                'constraint' => 11
-            ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',

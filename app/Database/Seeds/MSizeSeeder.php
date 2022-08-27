@@ -14,50 +14,42 @@ class MSizeSeeder extends Seeder
             [
                 'name'          => 'XXS',
                 'size_id'       => '07',
-                'slug'          => 'xxs-07',
-                'created_at'    => TIme::now()
+                'slug'          => 'xxs-07'
             ],
             [
                 'name'          => 'XS',
                 'size_id'       => '06',
-                'slug'          => 'xs-06',
-                'created_at'    => TIme::now()
+                'slug'          => 'xs-06'
             ],
             [
                 'name'          => 'S',
                 'size_id'       => '01',
-                'slug'          => 's-01',
-                'created_at'    => TIme::now()
+                'slug'          => 's-01'
             ],
             [
                 'name'          => 'M',
                 'size_id'       => '05',
-                'slug'          => 'm-05',
-                'created_at'    => TIme::now()
+                'slug'          => 'm-05'
             ],
             [
                 'name'          => 'L',
                 'size_id'       => '02',
-                'slug'          => 'l-02',
-                'created_at'    => TIme::now()
+                'slug'          => 'l-02'
             ],
             [
                 'name'          => 'XL',
                 'size_id'       => '03',
-                'slug'          => 'xl-03',
-                'created_at'    => TIme::now()
+                'slug'          => 'xl-03'
             ],
             [
                 'name'          => '2XL',
                 'size_id'       => '04',
-                'slug'          => 'xxl-04',
-                'created_at'    => TIme::now()
+                'slug'          => 'xxl-04'
             ],
             [
                 'name'          => '3XL',
                 'size_id'       => '08',
-                'slug'          => 'xxxl-08',
-                'created_at'    => TIme::now()
+                'slug'          => 'xxxl-08'
             ]
         ];
 

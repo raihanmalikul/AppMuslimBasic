@@ -2,7 +2,7 @@
 
 namespace App\Database\Migrations;
 
-use CodeIgniter\I18n\Time;
+use CodeIgniter\Database\RawSql;
 use CodeIgniter\Database\Migration;
 
 class MColor extends Migration
@@ -34,8 +34,8 @@ class MColor extends Migration
                 'null'       => true
             ],
             'created_at' => [
-                'type'       => 'DATETIME',
-                'default'    => TIme::now(),
+                'type'    => 'TIMESTAMP',
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',
