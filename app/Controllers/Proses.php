@@ -724,7 +724,7 @@ class Proses extends BaseController
 
         $getOrdi = $this->db->table("m_order")->select('order_id')->orderBy('order_id', 'DESC')->get()->getRowArray();
         if ($getOrdi) {
-            $formatOrderId = "ORDI" . $getOrdi['order_id'] + "1";
+            $formatOrderId = "ORDI" . substr($getOrdi['order_id'], 3) + 1;
         } else {
             $formatOrderId = "ORDI0001";
         }
