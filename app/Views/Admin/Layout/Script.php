@@ -5,9 +5,19 @@
 <script src="/assets/plugins/toastr/toastr.min.js"></script>
 <script src="/assets/DataTables/DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="/assets/DataTables/DataTables-1.12.1/js/dataTables.bootstrap5.min.js"></script>
-<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
 <script src="/assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="/package/dist/chart.min.js"></script>
+<script src="/assets/plugins/moment/moment-with-locales.min.js"></script>
+<script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+<script src="/assets/plugins/jszip/jszip.min.js"></script>
+<script src="/assets/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/assets/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/assets/plugins/datatables-buttons/js/buttons.colVis.js"></script>
 
 <!-- Time active -->
 <script src="/js/custom/time.js"></script>

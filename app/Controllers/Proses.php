@@ -34,6 +34,9 @@ class Proses extends BaseController
     public function saveShopChart()
     {
         $description    = $this->request->getVar("description");
+        $productId      = $this->request->getVar("productId");
+        // $categoryId     = $this->request->getVar("categoryId");
+        $weight         = $this->request->getVar("weight");
         $namePro        = $this->request->getVar("namePro");
         $slug           = $this->request->getVar("slug");
         $email          = $this->request->getVar("email");
@@ -41,18 +44,20 @@ class Proses extends BaseController
         $size_id        = $this->request->getVar("size_id");
         $color_id       = $this->request->getVar("color_id");
         $qty            = $this->request->getVar("qty");
-        $totPrice       = $this->request->getVar("totPrice");
+        $dsId           = $this->request->getVar("dsId");
 
         $data = array(
             'email' => $email,
+            'product_id' => $productId,
             'name' => $namePro,
             'slug' => $slug,
             'description' => $description,
+            'weight' => $weight,
             'color_id' => $color_id,
             'size_id' => $size_id,
             'qty' => $qty,
             'price' => $price,
-            'tot_price' => $totPrice
+            'dsId' => $dsId
         );
 
         $insert = $this->db->table('m_cart')->insert($data);
@@ -85,7 +90,9 @@ class Proses extends BaseController
                 $nmCtg  = $rowCtg['nm_ctg'];
 
                 $query2 = "SELECT 
-                                a.sub_code
+                                a.product_id
+                                , a.category_id
+                                , a.sub_code
                                 , a.slug
                                 , b.size_id
                                 , b.color_id
@@ -103,20 +110,23 @@ class Proses extends BaseController
                             ";
                 $rowDtl = $this->db->query($query2)->getRowArray();
 
-                $subCode    = $rowDtl['sub_code'];
-                $nmColor    = $rowDtl['nmColor'];
-                $sizeId     = $rowDtl['size_id'];
-                $colorId    = $rowDtl['color_id'];
-                $price      = $rowDtl['price'];
-                $weight     = $rowDtl['weight'];
-                $stock      = $rowDtl['stock'];
+                $subCode     = $rowDtl['sub_code'];
+                $nmColor     = $rowDtl['nmColor'];
+                $sizeId      = $rowDtl['size_id'];
+                $colorId     = $rowDtl['color_id'];
+                $price       = $rowDtl['price'];
+                $weight      = $rowDtl['weight'];
+                $stock       = $rowDtl['stock'];
+                $product_id  = $rowDtl['product_id'];
+                $category_id = $rowDtl['category_id'];
 
                 $data = [
                     'category'      => $nmCtg,
                     'name'          => $mName,
                     'slug'          => $mSlug,
                     'description'   => $mDesc,
-                    // 'highlights'    => $mHigh,
+                    'product_id'    => $product_id,
+                    'category_id'   => $category_id,
                     'detail'        => $mDtl,
                     'price'         => $price,
                     'weight'        => $weight,
@@ -226,8 +236,9 @@ class Proses extends BaseController
 
         $arr = [];
         if ($subCode) {
-            $query   = "SELECT 
-                            a.price
+            $query   = "SELECT
+                            a.id
+                            , if(a.price_disc <> '', a.price_disc, a.price) price
                             , a.stock
                         FROM 
                             ds_product a
@@ -244,6 +255,7 @@ class Proses extends BaseController
 
             foreach ($res as $row) {
                 $data = array(
+                    'id' => $row['id'],
                     'price' => $row['price'],
                     'stock' => $row['stock'],
                 );
@@ -483,7 +495,9 @@ class Proses extends BaseController
                     , a.slug
                     , a.description
                     , a.price
-                    , a.tot_price
+                    , (
+                        SELECT SUM(price) tot_price FROM m_cart WHERE email = a.email
+                    ) tot_price
                     , a.qty
                     , a.color_id
                     , a.size_id
@@ -521,16 +535,16 @@ class Proses extends BaseController
                 WHERE
                     a.email = '$email'
                     AND g.`status` = 1";
-        $qty2 = "SELECT SUM(tot_price) sub_total FROM m_cart WHERE email = '$email' GROUP BY email";
+        // $qty2 = "SELECT SUM(price) sub_total FROM m_cart WHERE email = '$email' GROUP BY email";
         $res  = $this->db->query($qry)->getResultArray();
-        $res2 = $this->db->query($qty2)->getRowArray();
+        // $res2 = $this->db->query($qty2)->getRowArray();
         foreach ($res as $row) {
             $data = array(
                 'id'            => $row['id'],
                 'email'         => $row['email'],
                 'slug'          => $row['slug'],
                 'description'   => $row['description'],
-                'tot_price'     => $row['tot_price'],
+                'price'         => $row['price'],
                 'qty'           => $row['qty'],
                 'color_id'      => $row['color_id'],
                 'size_id'       => $row['size_id'],
@@ -555,7 +569,7 @@ class Proses extends BaseController
                 'city_name'     => $row['city_name'],
                 'type'          => $row['type'],
                 'nm_category'   => $row['nm_category'],
-                'sub_total'     => $res2['sub_total']
+                'sub_total'     => $row['tot_price']
             );
             array_push($dtArr, $data);
         }
@@ -575,8 +589,8 @@ class Proses extends BaseController
         $courier = $this->request->getVar('courier');
 
         $qty = "SELECT 
-                    SUM(a.tot_price) sub_total 
-                    , SUM(c.weight) tot_weight
+                    SUM(a.price) sub_total 
+                    , SUM(a.weight) tot_weight
                     , d.province_id
                     , d.city_id description
                     , '23' origin
@@ -592,7 +606,7 @@ class Proses extends BaseController
         $res = $this->db->query($qty)->getRowArray();
 
         $sub_total   = $res['sub_total'];
-        $weight      = intval($res['tot_weight']);
+        $weight      = $res['tot_weight'];
         $province_id = $res['province_id'];
         $description = $res['description'];
         $origin      = $res['origin'];
@@ -679,7 +693,9 @@ class Proses extends BaseController
                     $response = [
                         'status' => 1,
                         'msg' => "Data dan file tersimpan",
-                        'data' => []
+                        'data' => [
+                            'payment_id' => $payment_id
+                        ]
                     ];
                 } else {
                     $response = [
@@ -719,32 +735,25 @@ class Proses extends BaseController
         $total          = $this->request->getVar("total");
         $address        = $this->request->getVar("address");
         $orderPro       = $this->request->getVar("orderPro");
+        $paymentId      = $this->request->getVar("paymentId");
 
         $timeNow = TIme::now();
 
         $getOrdi = $this->db->table("m_order")->select('order_id')->orderBy('order_id', 'DESC')->get()->getRowArray();
         if ($getOrdi) {
-            $formatOrderId = "ORDI" . substr($getOrdi['order_id'], 4) + 1;
+            $formatOrderId = "ORDI" . ((int)substr($getOrdi['order_id'], 4) + 1);
         } else {
-            $formatOrderId = "ORDI0001";
+            $formatOrderId = "ORDI1";
         }
 
         $getCart = $this->db->table("m_cart")->whereIn('id', $orderPro)->get()->getResultArray();
 
-        $insTimeline = $insCartLog = [];
+        $insTimeline = $insCartLog = $insDtlOrder = [];
         foreach ($getCart as $each) {
-            $data2 = array(
-                'email' => $each['email'],
-                'name' => $each['name'],
-                'slug' => $each['slug'],
-                'description' => $each['description'],
-                'color_id' => $each['color_id'],
-                'size_id' => $each['size_id'],
-                'qty' => $each['qty'],
-                'price' => $each['price'],
-                'tot_price' => $each['tot_price'],
-            );
-
+            $each2 = $this->db->table('ds_product')->select('stock')->where('id', $each['dsId'])->get()->getRowArray();
+            $updStock = $each2['stock'] - $each['qty'];
+            $runUpd = $this->db->table('ds_product')->where('id', $each['dsId'])->update(['stock' => $updStock]);
+            
             $data = array(
                 'timeline_id' => "TIME". $timeNow->toLocalizedString('yyyyMMddHHmmss'),
                 'order_id' => $formatOrderId,
@@ -754,17 +763,43 @@ class Proses extends BaseController
                 'feedback' => "Menuggu verifikasi pembayaran",
                 'status' => 0,
             );
+            
+            $data2 = array(
+                'email' => $each['email'],
+                'dsId' => $each['dsId'],
+                'product_id' => $each['product_id'],
+                'name' => $each['name'],
+                'slug' => $each['slug'],
+                'description' => $each['description'],
+                'weight' => $each['weight'],
+                'color_id' => $each['color_id'],
+                'size_id' => $each['size_id'],
+                'qty' => $each['qty'],
+                'price' => $each['price']
+            );
+            
+            $data3 = array(
+                'order_id' => $formatOrderId,
+                'product_id' => $each['product_id'],
+                'payment_id' => $paymentId,
+                'weight' => $each['weight'],
+                'color_id' => $each['color_id'],
+                'size_id' => $each['size_id'],
+                'qty' => $each['qty'],
+                'price' => $each['price']
+            );
 
             array_push($insTimeline, $data);
             array_push($insCartLog, $data2);
+            array_push($insDtlOrder, $data3);
         }
 
         // insert data to tbl m_timeline
-        $insertTime = $this->db->table("m_timeline")->insertBatch($insTimeline);
+        $insertTimeline = $this->db->table("m_timeline")->insertBatch($insTimeline);
         // insert data to m_cart_log
-        $insCartLog = $this->db->table("m_cart_log")->insertBatch($insCartLog);
-        // delete data m_cart
-        $delCart    = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
+        $insertCartLog  = $this->db->table("m_cart_log")->insertBatch($insCartLog);
+        // insert data to d_order
+        $insertDtlOrder = $this->db->table("d_order")->insertBatch($insDtlOrder);
 
         $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId;
 
@@ -786,16 +821,18 @@ class Proses extends BaseController
         // insert data order
         $insOrder   = $this->db->table("m_order")->insert($dataOrder);
 
-        if ($insOrder && $insertTime && $insCartLog && $delCart) {
+        if ($insOrder && $insertTimeline && $insertCartLog && $insertDtlOrder && $runUpd) {
+            $delCart        = $this->db->table("m_cart")->whereIn('id', $orderPro)->delete();
             $response = [
                 'status' => 1, 
                 'msg' => "success",
                 'data' => [
-                            "Order" => $insOrder, 
-                            "Timeline" => $insertTime, 
-                            "chartLog" => $insCartLog,
-                            "delCart" => $delCart
-                        ]
+                    "Timeline"  => $insertTimeline, 
+                    "chartLog"  => $insertCartLog,
+                    "dtlOrder"  => $insertDtlOrder,
+                    "Order"     => $insOrder, 
+                    "delCart"   => $delCart
+                ]
             ];
         } else {
             $response = ["status" => 0, "msh" => "fail", "data" => []];

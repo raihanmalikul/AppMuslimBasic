@@ -150,6 +150,8 @@ class ProsesAdmin extends BaseController
                         ) c ON c.slug = b.slug
                     WHERE
                         a.`status` = 1
+                        AND b.qty != 0
+					GROUP BY a.email
                     ORDER BY orders DESC";
 
         $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
@@ -552,8 +554,8 @@ class ProsesAdmin extends BaseController
         $cari        = ($cari ? strtolower($cari) : $cari);
         $cariStart   = $request['start'];
         $cariLength  = $request['length'];
-        $orderColumn = $col[$request['order'][0]['column']];
-        $orderDir    = $request['order'][0]['dir'];
+        // $orderColumn = $col[$request['order'][0]['column']];
+        // $orderDir    = $request['order'][0]['dir'];
 
         $sqlCari = "";
 
@@ -566,7 +568,7 @@ class ProsesAdmin extends BaseController
                         ";
             $sqlCari .= sprintf(" AND (%s) ", $sqlFilter);
         }
-        $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
+        // $sqlOrder   = "ORDER BY a." . $orderColumn . " " . $orderDir;
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
         $queryM = "SELECT
@@ -575,16 +577,19 @@ class ProsesAdmin extends BaseController
                         , a.email
                         , CONCAT(b.first_name, ' ',b.last_name) name_customer
                         , a.invoice
+                        , (
+                            SELECT COUNT(qty) FROM m_cart_log WHERE email = a.email
+                        ) qty
                         , a.subTotal
                         , a.status_order
                     FROM 
                         m_order a
                         LEFT JOIN m_profil b ON a.email = b.email
-                    GROUP BY a.order_id ASC
-                    ORDER BY a.created_at ASC
-                    ";
+                    GROUP BY a.order_id
+                    ORDER BY qty DESC, a.created_at DESC";
 
-        $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
+        $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlLimit";
+        // $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $listData   = $this->db->query($query)->getResultArray();
 
         $queryTotal = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari";
@@ -599,6 +604,7 @@ class ProsesAdmin extends BaseController
             $subData[] = $row['email'];
             $subData[] = $row['name_customer'];
             $subData[] = $row['invoice'];
+            $subData[] = $row['qty'];
             $subData[] = $row['subTotal'];
 
             if ($row['status_order'] == 0) {
@@ -628,16 +634,73 @@ class ProsesAdmin extends BaseController
     public function updConfirm()
     {
         $id = $this->request->getVar('id');
-        
         if ($id) {
+            $qry  = $this->db->table('m_order')->whereIn('id', $id)->get()->getResultArray();
+            foreach ($qry as $each) {
+                $order_id = $each['order_id'];
+                $res2 = $this->db->table('m_timeline')->where('order_id', $order_id)->update(['status' => 1]);
+            }
             $res  = $this->db->table('m_order')->whereIn('id', $id)->update(['status_order' => 1]);
-            $res2 = $this->db->table('m_timeline')->whereIn('id', $id)->update(['status_order' => 1]);
+            
+            if ($res && $res2) {
+                $response = ['status' => 1, 'msg' => "success"];
+            } else {
+                $response = ['status' => 1, 'msg' => "Failed to update status"];
+            }
+            return $this->response->setJSON($response);
+        } else {
+            $response = ['status' => 0, 'msg' => "id not found"];
+        }
+        return $this->response->setJSON($response);
+    }
 
-            $response = ['status' => 1, 'msg' => "success", 'data' => ''];
+    public function purchaseReport()
+    {
+        $start = $this->request->getVar('start');
+        $end   = $this->request->getVar('end');
+
+        $startDate  = Time::createFromFormat('d/m/Y', $start)->format('Y-m-d');
+        $endDate    = Time::createFromFormat('d/m/Y', $end)->format('Y-m-d');
+
+        $qry = "SELECT
+                    mo.kodeBuy
+                    , DATE(mo.tglBuy) tglBuy
+                    , (
+                        SELECT LOWER(mc.`name`) 
+                        FROM m_category mc 
+                        LEFT JOIN m_product mp ON mc.category_id = mp.category_id 
+                        WHERE mp.product_id = a.product_id LIMIT 1
+                    ) nameCategory
+                    , (SELECT LOWER(mp.`name`) FROM m_product mp WHERE mp.product_id = a.product_id LIMIT 1) nameProduct
+                    , a.qty
+                    , a.price
+                    , (SELECT ms.`name` FROM m_size ms WHERE ms.size_id = a.size_id) nameColor
+                    , (SELECT LOWER(mc.`name`) FROM m_color mc WHERE mc.color_id = a.color_id) nameSize
+                    , mo.totQty
+                    , mo.totPrice
+                FROM d_order a
+                LEFT JOIN (
+                        SELECT 
+                            mo.order_id kodeBuy
+                            , mo.created_at tglBuy 
+                            , (SELECT SUM(d.qty) FROM d_order d WHERE mo.order_id = d.order_id) totQty
+                            , (SELECT SUM(d.price) FROM d_order d WHERE mo.order_id = d.order_id) totPrice
+                        FROM m_order mo
+                ) mo ON mo.kodeBuy = a.order_id
+                WHERE DATE(mo.tglBuy) BETWEEN '$startDate' AND '$endDate'
+                ORDER BY a.order_id DESC";
+        $getData = $this->db->query($qry)->getResultArray();
+        
+        $lapDt = [];
+        foreach ($getData as $each) {
+            array_push($lapDt, $each);
+        }
+
+        if ($getData) {
+            $response = ['status' => 1, 'msg' => "success", 'data' => $lapDt];
         } else {
             $response = ['status' => 0, 'msg' => "fail", 'data' => null];
         }
-
-        return $this->response->setJSON($response);
+        return $this->response->setJson($response);
     }
 }

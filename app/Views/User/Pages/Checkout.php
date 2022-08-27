@@ -423,14 +423,15 @@
                         })
                         return false;
                     } else {
-                        saveCheck()
+                        let paymentId = json.data.payment_id
+                        saveCheck(paymentId)
                     }
                 }
             });
         }
     }
 
-    function saveCheck() {
+    function saveCheck(paymentId) {
         let email           = $("#emailAddress").val();
         let firstName       = $("#firstName").val();
         let lastName        = $("#lastName").val();
@@ -459,7 +460,8 @@
                 total: total,
                 deliveryCode: deliveryCode,
                 address: address,
-                orderPro: orderPro
+                orderPro: orderPro,
+                paymentId: paymentId
             },
             async: false,
             dataType: "JSON",
@@ -842,7 +844,7 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                // console.log(json.data)
+                console.log(json.data)
                 let rowCart = ""
 
                 if (json.status == 1) {
@@ -868,7 +870,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex-1 pt-2 flex items-end justify-between">
-                                                <p class="mt-1 text-sm font-medium text-gray-900">` + formatRupiah(val.tot_price, 'Rp. ') + `</p>
+                                                <p class="mt-1 text-sm font-medium text-gray-900">` + formatRupiah(val.price, 'Rp. ') + `</p>
                                                 <div class="ml-4">
                                                     <p class="text-gray-500">Qty ` + val.qty + ` ( ` + val.weight + ` gr)</p>
                                                 </div>
@@ -916,7 +918,7 @@
             async: false,
             dataType: "JSON",
             success: function(json) {
-                console.log(json)
+                // console.log(json)
                 if (json.status == 1) {
                     let row = icontList = timeList = ""
                     let textList = "Not Fount";

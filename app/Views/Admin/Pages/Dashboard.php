@@ -138,7 +138,7 @@
                                         <th>Name</th>
                                         <th>Category</th>
                                         <th>Product</th>
-                                        <th class="text-end">Orders</th>
+                                        <th>Orders</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
