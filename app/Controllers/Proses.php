@@ -800,6 +800,8 @@ class Proses extends BaseController
         $insertCartLog  = $this->db->table("m_cart_log")->insertBatch($insCartLog);
         // insert data to d_order
         $insertDtlOrder = $this->db->table("d_order")->insertBatch($insDtlOrder);
+        // update order_id in table m_payment
+        $runUpd         = $this->db->table('m_payment')->set('order_id', $formatOrderId)->where('payment_id', $paymentId)->update();
 
         $formatInvoice = "INV". $timeNow->toLocalizedString('yyyyMMddHHmmss') . $formatOrderId;
 

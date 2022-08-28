@@ -62,16 +62,13 @@ class ProsesAdmin extends BaseController
                     , a.name as category_name
                     , b.product_id
                     , b.name as product_name
-                    , b.price
-                    , b.weight
-                    , b.stock
                     , b.created_at
                     , b.is_valid
                 FROM 
                     m_category a 
-                    LEFT JOIN m_product b ON a.category_id = b.category_id AND a.is_valid = b.is_valid
+                    LEFT JOIN m_product b ON a.category_id = b.category_id
                 WHERE
-                    a.is_valid = 1";
+                    b.is_valid = 1";
 
         $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $listData   = $this->db->query($query)->getResultArray();
@@ -636,13 +633,30 @@ class ProsesAdmin extends BaseController
         $id = $this->request->getVar('id');
         if ($id) {
             $qry  = $this->db->table('m_order')->whereIn('id', $id)->get()->getResultArray();
+            $insTimeline = [];
             foreach ($qry as $each) {
                 $order_id = $each['order_id'];
-                $res2 = $this->db->table('m_timeline')->where('order_id', $order_id)->update(['status' => 1]);
+                $res2 = $this->db->table('m_payment')->where('order_id', $order_id)->update(['status' => 1]);
+
+                $getData = $this->db->table('m_timeline')->where('order_id', $order_id)->get()->getResultArray();
+                foreach ($getData as $each) {
+                    $data = array(
+                        'timeline_id' => $each['timeline_id'],
+                        'order_id' => $each['order_id'],
+                        'slug' => $each['slug'],
+                        'email' => $each['email'],
+                        'phone' => $each['phone'],
+                        'feedback' => "Telah Melakukan Pembayaran",
+                        'status' => 1,
+                    );
+                    array_push($insTimeline, $data);
+                }
+                // insert data to tbl m_timeline
+                $insertTimeline = $this->db->table("m_timeline")->insertBatch($insTimeline);
             }
             $res  = $this->db->table('m_order')->whereIn('id', $id)->update(['status_order' => 1]);
             
-            if ($res && $res2) {
+            if ($res && $res2 && $insertTimeline) {
                 $response = ['status' => 1, 'msg' => "success"];
             } else {
                 $response = ['status' => 1, 'msg' => "Failed to update status"];

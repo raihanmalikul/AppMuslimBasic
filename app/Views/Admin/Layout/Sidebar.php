@@ -52,7 +52,7 @@ $segment = $request->uri->getSegments();
                 </a>
                 <ul id="reports" class="sidebar-dropdown list-unstyled collapse <?php if ($segment[1] == 'lprPenjualan' || $segment[1] == 'lprPengiriman') echo "show"; ?>" data-bs-parent="#reports">
                     <li class="sidebar-item <?php if ($segment[1] == 'lprPenjualan') echo "active"; ?>"><a class="sidebar-link" href="/admin/lprPenjualan">Penjualan</a></li>
-                    <li class="sidebar-item <?php if ($segment[1] == 'lprPengiriman') echo "active"; ?>"><a class="sidebar-link" href="/admin/lprPengiriman">Pengiriman</a></li>
+                    <!-- <li class="sidebar-item <?php if ($segment[1] == 'lprPengiriman') echo "active"; ?>"><a class="sidebar-link" href="/admin/lprPengiriman">Pengiriman</a></li> -->
                 </ul>
             </li>
         </ul>
