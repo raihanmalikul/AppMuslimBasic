@@ -120,14 +120,14 @@
                     if (json.status == 0) {
                         Toast.fire({
                             icon: 'error',
-                            title: 'Confirmation failed!'
+                            title: 'Confirmation failed! ' + json.msg
                         })
                     } else {
                         Toast.fire({
                             icon: 'success',
                             title: 'Confirmation successfully!'
                         })
-                        $('#tblKonfPay').DataTable().reload();
+                        $('#tblKonfPay').DataTable().ajax.reload();
                     }
                 }
             })
