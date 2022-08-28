@@ -73,10 +73,11 @@
 
                                 <div class="col-auto">
                                     <div class="stat text-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign align-middle">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign align-middle">
                                             <line x1="12" y1="1" x2="12" y2="23"></line>
                                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                        </svg>
+                                        </svg> -->
+                                        <i class="fa-solid fa-user-group"></i>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +114,7 @@
             </div>
 
             <div class="row">
-                <div class="col-12 col-lg-4 col-xxl-3 d-flex">
+                <!-- <div class="col-12 col-lg-4 col-xxl-3 d-flex">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="card-title mb-0">Sales/Revenue</h5>
@@ -124,8 +125,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-8 col-xxl-9 d-flex">
+                </div> -->
+                <div class="col-12 col-lg-12 col-xxl-12 d-flex">
                     <div class="card flex-fill">
                         <div class="card-header">
                             <h5 class="card-title mb-0">Top Selling Products</h5>
@@ -286,7 +287,6 @@
             }
         });
     }
-
 </script>
 
 <?= $this->endSection(); ?>
