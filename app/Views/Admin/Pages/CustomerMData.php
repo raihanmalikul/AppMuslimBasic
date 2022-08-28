@@ -33,7 +33,7 @@
                                             <th colspan="6" style="text-align: center;">Address Data</th>
                                             <th rowspan="2">Order Qty</th>
                                             <th rowspan="2">Status</th>
-                                            <th rowspan="2">Action</th>
+                                            <!-- <th rowspan="2">Action</th> -->
                                         </tr>
                                         <tr>
                                             <th>Address</th>
@@ -120,47 +120,50 @@
                             'order': order,
                             'postal': value.postal_code,
                             'status': statusBadge,
-                            'action': btnAction
+                            // 'action': btnAction
                         });
                         i++;
                     });
                     return return_data;
                 }
             },
-            columns: [{
-                data: 'no',
-                defaultContent: ''
-            }, {
-                data: 'name',
-                defaultContent: ''
-            }, {
-                data: 'address',
-                defaultContent: ''
-            }, {
-                data: 'phone',
-                defaultContent: ''
-            }, {
-                data: 'email',
-                defaultContent: ''
-            }, {
-                data: 'province',
-                defaultContent: ''
-            }, {
-                data: 'city',
-                defaultContent: ''
-            }, {
-                data: 'postal',
-                defaultContent: ''
-            }, {
-                data: 'order',
-                defaultContent: ''
-            }, {
-                data: 'status',
-                defaultContent: ''
-            }, {
-                data: 'action',
-                defaultContent: ''
-            }]
+            columns: [
+                {
+                    data: 'no',
+                    defaultContent: ''
+                }, {
+                    data: 'name',
+                    defaultContent: ''
+                }, {
+                    data: 'address',
+                    defaultContent: ''
+                }, {
+                    data: 'phone',
+                    defaultContent: ''
+                }, {
+                    data: 'email',
+                    defaultContent: ''
+                }, {
+                    data: 'province',
+                    defaultContent: ''
+                }, {
+                    data: 'city',
+                    defaultContent: ''
+                }, {
+                    data: 'postal',
+                    defaultContent: ''
+                }, {
+                    data: 'order',
+                    defaultContent: ''
+                }, {
+                    data: 'status',
+                    defaultContent: ''
+                }, 
+                // {
+                //     data: 'action',
+                //     defaultContent: ''
+                // }
+            ]
         });
     });
 
