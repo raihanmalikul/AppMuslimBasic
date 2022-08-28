@@ -433,7 +433,7 @@ class ProsesAdmin extends BaseController
 
         $queryM = "SELECT 
                     a.id
-                    , a.`name`
+                    , CONCAT(a.first_name,' ',a.last_name) `name`
                     , a.address
                     , a.email
                     , a.phone
