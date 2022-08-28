@@ -126,7 +126,7 @@ class DSProdukSeeder extends Seeder
                 "price" => 60000,
                 "weight" => 3000,
                 "stock" => 100,
-                "price_disc" => 160650,
+                "price_disc" => 51000,
                 "percent_disc" => 15,
                 "discount" => 1
             ],
@@ -474,7 +474,7 @@ class DSProdukSeeder extends Seeder
                 "price" => 53000,
                 "weight" => 3500,
                 "stock" => 50,
-                "price_disc" => 143100,
+                "price_disc" => 47700,
                 "percent_disc" => 10,
                 "discount" => 1
             ],
@@ -834,7 +834,7 @@ class DSProdukSeeder extends Seeder
                 "price" => 70000,
                 "weight" => 3000,
                 "stock" => 55,
-                "price_disc" => 260100,
+                "price_disc" => 63000,
                 "percent_disc" => 10,
                 "discount" => 1
             ],
