@@ -28,9 +28,12 @@
                         <li class="group">
                             <a href="#discount" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ITEM DISCOUNT</a>
                         </li>
-                        <li class="group">
+                        <!-- <li class="group">
                             <a href="#rating" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">RATING</a>
-                        </li>
+                        </li> -->
+                        <!-- <li class="group">
+                            <a href="/allProduct" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">ALL PRODUCT</a>
+                        </li> -->
                         <li class="group">
                             <a href="#contact" class="mx-3 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">CONTACT</a>
                         </li>
@@ -138,6 +141,7 @@
 </section>
 <!-- Best Seller Section End -->
 
+<!-- Discount Section Start -->
 <section id="discount" class="pt-32 pb-16 dark:bg-dark">
     <div class="container">
         <!-- <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Customers also purchased</h2> -->
@@ -155,9 +159,10 @@
         </div>
     </div>
 </section>
-
+<!-- Discount Section End -->
+    
 <!-- Rarting Section Start -->
-<section id="rating" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-400">
+<!-- <section id="rating" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-400">
     <div class="container">
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">
@@ -178,9 +183,7 @@
             </div>
         </div>
         <div id="reviews" class="carousel slide carousel-dark relative" data-bs-ride="carousel">
-            <!-- Inner -->
             <div class="carousel-inner relative w-full overflow-hidden">
-                <!-- Single item -->
                 <div class="carousel-item active relative float-left w-full">
                     <div class="flex flex-wrap w-full justify-center px-4">
                         <div class="px-3 w-1/4">
@@ -250,7 +253,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Single item -->
                 <div class="carousel-item relative float-left w-full">
                     <div class="flex flex-wrap w-full justify-center px-4">
                         <div class="px-3 w-1/4">
@@ -319,7 +321,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Single item -->
                 <div class="carousel-item relative float-left w-full">
                     <div class="flex flex-wrap w-full justify-center px-4">
                         <div class="px-3 w-1/4">
@@ -389,11 +390,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- Inner -->
-
-            <!-- Controls -->
+            
             <button class="carousel-control-prev absolute -top-28 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline -left-28" type="button" data-bs-target="#reviews" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -404,11 +402,11 @@
             </button>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Rerting Section End -->
 
 <!-- Contact Section Start -->
-<section id="contact" class="pt-36 pb-16 dark:bg-slate-700">
+<section id="contact" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-400">
     <div class="container">
         <div class="w-full px-4">
             <div class="mx-auto mb-16 text-center">

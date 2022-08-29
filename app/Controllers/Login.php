@@ -176,10 +176,16 @@ class Login extends BaseController
 
                 $this->Login->set($data);
                 $this->Login->where('id', $getData['id']);
-                $this->Login->where('email', $emailTo);
+                $this->Login->where('email', $getData['email']);
                 $update = $this->Login->update();
 
-                if ($update) {
+                $data2 = array(
+                    'first_name' => $getData['name'],
+                    'email' => $getData['email']
+                );
+                $insert = $this->db->table('m_profil')->insert($data2);
+
+                if ($update && $insert) {
                     $this->session->setFlashdata('msg',  $emailTo . ' Akun Berhasil Aktif, Silahkan Login!');
                 } else {
                     $this->session->setFlashdata('msg',  $emailTo . ' Akun Gagal Aktif, Silahkan Hubungi Tim Aplikasi!');
