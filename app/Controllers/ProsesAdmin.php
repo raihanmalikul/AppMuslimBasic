@@ -683,9 +683,9 @@ class ProsesAdmin extends BaseController
                         SELECT LOWER(mc.`name`) 
                         FROM m_category mc 
                         LEFT JOIN m_product mp ON mc.category_id = mp.category_id 
-                        WHERE mp.product_id = a.product_id LIMIT 1
+                        WHERE mp.slug = a.slug LIMIT 1
                     ) nameCategory
-                    , (SELECT LOWER(mp.`name`) FROM m_product mp WHERE mp.product_id = a.product_id LIMIT 1) nameProduct
+                    , (SELECT LOWER(mp.`name`) FROM m_product mp WHERE mp.slug = a.slug LIMIT 1) nameProduct
                     , a.qty
                     , a.price
                     , (SELECT ms.`name` FROM m_size ms WHERE ms.size_id = a.size_id) nameColor

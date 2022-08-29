@@ -34,4 +34,10 @@ class Pages extends BaseController
         $data['title'] = "Checkout | Muslim Basic";
         return view('User/Pages/Checkout', $data);
     }
+    
+    public function allProduct()
+    {
+        $data['title'] = "All Product | Muslim Basic";
+        return view('User/Pages/AllProduct', $data);
+    }
 }

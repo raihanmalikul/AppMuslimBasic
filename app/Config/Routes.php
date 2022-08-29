@@ -53,6 +53,7 @@ $routes->get('/register', 'Login::register');
 $routes->get('/Login/verify/(:alphanum)/(:any)', [[Login::class, 'verify'], '$2/$1']);
 $routes->get('/forgotPass', 'Login::forgotPass');
 $routes->get('/checkout', 'Login::checkout');
+$routes->get('/allProduct', 'Pages::allProduct');
 $routes->get('/productShow/(:any)', 'Pages::productShow/$1');
 // $routes->get('/dashboard', 'Pages::dashboard', ['filter' => 'auth']);
 

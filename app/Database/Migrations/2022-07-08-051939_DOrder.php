@@ -20,6 +20,10 @@ class DOrder extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255
+            ],
             'product_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255

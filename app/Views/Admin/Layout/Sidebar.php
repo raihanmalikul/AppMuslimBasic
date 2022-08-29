@@ -31,7 +31,7 @@ $segment = $request->uri->getSegments();
                 </a>
                 <ul id="products" class="sidebar-dropdown list-unstyled collapse <?php if ($segment[1] == 'allProduk' || $segment[1] == 'inventaris' || $segment[1] == 'kategori') echo "show"; ?>" data-bs-parent="#products">
                     <li class="sidebar-item <?php if ($segment[1] == 'masterProducts') echo "active"; ?>"><a class="sidebar-link" href="/admin/masterProducts">Master Products</a></li>
-                    <li class="sidebar-item <?php if ($segment[1] == 'inventaris') echo "active"; ?>"><a class="sidebar-link" href="/admin/inventaris">Inventaris</a></li>
+                    <!-- <li class="sidebar-item <?php if ($segment[1] == 'inventaris') echo "active"; ?>"><a class="sidebar-link" href="/admin/inventaris">Inventaris</a></li> -->
                     <!-- <li class="sidebar-item <?php if ($segment[1] == 'kategori') echo "active"; ?>"><a class="sidebar-link" href="/admin/kategori">Kategori</a></li> -->
                 </ul>
             </li>
@@ -42,7 +42,7 @@ $segment = $request->uri->getSegments();
                 </a>
                 <ul id="customers" class="sidebar-dropdown list-unstyled collapse <?php if ($segment[1] == 'customerMData' || $segment[1] == 'historyOrder') echo "show"; ?>" data-bs-parent="#customers">
                     <li class="sidebar-item <?php if ($segment[1] == 'customerMData') echo "active"; ?>"><a class="sidebar-link" href="/admin/customerMData">Master Data</a></li>
-                    <li class="sidebar-item <?php if ($segment[1] == 'historyOrder') echo "active"; ?>"><a class="sidebar-link" href="/admin/historyOrder">History Order</a></li>
+                    <!-- <li class="sidebar-item <?php if ($segment[1] == 'historyOrder') echo "active"; ?>"><a class="sidebar-link" href="/admin/historyOrder">History Order</a></li> -->
                 </ul>
             </li>
 

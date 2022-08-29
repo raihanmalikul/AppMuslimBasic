@@ -780,6 +780,7 @@ class Proses extends BaseController
             
             $data3 = array(
                 'order_id' => $formatOrderId,
+                'slug' => $each['slug'],
                 'product_id' => $each['product_id'],
                 'payment_id' => $paymentId,
                 'weight' => $each['weight'],
