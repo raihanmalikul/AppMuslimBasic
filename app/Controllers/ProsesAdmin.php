@@ -24,15 +24,8 @@ class ProsesAdmin extends BaseController
     {
         $request     = $_REQUEST;
         $col         = array(
-                            1 => 'category_id'
-                            , 2 => 'category_name'
-                            , 3 => 'product_id'
-                            , 4 => 'product_name'
-                            , 5 => 'price'
-                            , 6 => 'weight'
-                            , 7 => 'stock'
-                            , 8 => 'created_at'
-                        );
+            1 => 'category_id', 2 => 'category_name', 3 => 'product_id', 4 => 'product_name', 5 => 'price', 6 => 'weight', 7 => 'stock', 8 => 'created_at'
+        );
         $cari        = $request['search']['value'];
         $cari        = ($cari ? strtolower($cari) : $cari);
         $cariStart   = $request['start'];
@@ -58,17 +51,23 @@ class ProsesAdmin extends BaseController
         $sqlLimit   = "LIMIT " . $cariStart . ", " . $cariLength;
 
         $queryM = "SELECT 
-                    a.category_id
-                    , a.name as category_name
-                    , b.product_id
-                    , b.name as product_name
-                    , b.created_at
-                    , b.is_valid
-                FROM 
-                    m_category a 
-                    LEFT JOIN m_product b ON a.category_id = b.category_id
-                WHERE
-                    b.is_valid = 1";
+                        a.category_id
+                        , a.name as category_name
+                        , b.product_id
+                        , b.name as product_name
+                        , d.stock 
+                        , b.created_at
+                        , b.is_valid
+                    FROM 
+                        m_category a 
+                        LEFT JOIN m_product b ON a.category_id = b.category_id
+                        LEFT JOIN d_product c ON b.slug = c.slug 
+                        LEFT JOIN ds_product d ON d.sub_code = c.sub_code  
+                    WHERE
+                        b.is_valid = 1
+                        AND d.stock IS NOT NULL 
+                    GROUP BY c.slug 
+                    ";
 
         $query      = "SELECT (@cnt := @cnt + 1) orderID , a.* FROM ($queryM) a CROSS JOIN (SELECT @cnt := 0) b2 WHERE 1=1 $sqlCari $sqlOrder $sqlLimit";
         $listData   = $this->db->query($query)->getResultArray();
@@ -92,16 +91,13 @@ class ProsesAdmin extends BaseController
 
         return $this->response->setJSON($response);
     }
-    
+
     public function displayTopSelling()
     {
         $request     = $_REQUEST;
         $col         = array(
-                            1 => 'name_customer'
-                            , 2 => 'name_category'
-                            , 3 => 'name_product'
-                            , 4 => 'orders'
-                        );
+            1 => 'name_customer', 2 => 'name_category', 3 => 'name_product', 4 => 'orders'
+        );
         $cari        = $request['search']['value'];
         $cari        = ($cari ? strtolower($cari) : $cari);
         $cariStart   = $request['start'];
@@ -516,6 +512,7 @@ class ProsesAdmin extends BaseController
                     FROM 
                         m_order a
                         LEFT JOIN m_profil b ON a.email = b.email
+                    WHERE a.status_order=1
                     GROUP BY a.order_id ASC
                     ORDER BY a.created_at ASC
                     ";
@@ -582,6 +579,7 @@ class ProsesAdmin extends BaseController
                     FROM 
                         m_order a
                         LEFT JOIN m_profil b ON a.email = b.email
+                    WHERE a.status_order=0
                     GROUP BY a.order_id
                     ORDER BY qty DESC, a.created_at DESC";
 
@@ -602,7 +600,6 @@ class ProsesAdmin extends BaseController
             $subData[] = $row['name_customer'];
             $subData[] = $row['invoice'];
             $subData[] = $row['qty'];
-            $subData[] = $row['subTotal'];
 
             if ($row['status_order'] == 0) {
                 $subData[] = '<span class="badge bg-warning">Verifikasi Pembayaran</span>';
@@ -613,6 +610,7 @@ class ProsesAdmin extends BaseController
             } else {
                 $subData[] = '<span class="badge bg-danger">Cancelled</span>';
             }
+            $subData[] = $row['subTotal'];
 
             array_push($data, $subData);
             $id++;
@@ -655,7 +653,7 @@ class ProsesAdmin extends BaseController
                 $insertTimeline = $this->db->table("m_timeline")->insertBatch($insTimeline);
             }
             $res  = $this->db->table('m_order')->whereIn('id', $id)->update(['status_order' => 1]);
-            
+
             if ($res && $res2 && $insertTimeline) {
                 $response = ['status' => 1, 'msg' => "success"];
             } else {
@@ -704,7 +702,7 @@ class ProsesAdmin extends BaseController
                 WHERE DATE(mo.tglBuy) BETWEEN '$startDate' AND '$endDate'
                 ORDER BY a.order_id DESC";
         $getData = $this->db->query($qry)->getResultArray();
-        
+
         $lapDt = [];
         foreach ($getData as $each) {
             array_push($lapDt, $each);

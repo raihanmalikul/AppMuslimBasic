@@ -39,6 +39,7 @@
                                         <th>Category Name</th>
                                         <th>Products Code</th>
                                         <th>Products Name</th>
+                                        <th>Stock</th>
                                         <th>Status</th>
                                         <th>Created At</th>
                                         <th>Action</th>
@@ -194,6 +195,7 @@
                             'category-name': value.category_name,
                             'product-code': value.product_id,
                             'product-name': value.product_name,
+                            'stock': value.stock,
                             'status': statusBadge,
                             'createdAt': value.created_at,
                             'action': btnAction
@@ -221,6 +223,10 @@
                 },
                 {
                     data: 'product-name',
+                    defaultContent: ''
+                },
+                {
+                    data: 'stock',
                     defaultContent: ''
                 },
                 {
